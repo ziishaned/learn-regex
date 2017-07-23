@@ -43,7 +43,7 @@ Meta characters are the building blocks of the regular expressions. Some meta ch
 |<b>{n}</b>|Braces. Matches “n” repetitions of the preceding symbol.|
 |<b>(xyz)</b>|Character group. Matches the characters xyz in that exact order.|
 |<b>&#124;</b>|Alternation. Matches either the characters before or the characters after the symbol.|
-|<b>\</b>|Escapes the next character. This allows you to match reserved characters `[ ] ( ) { } . * + ? ^ $ \ &#124;`|
+|<b>&#92;</b>|Escapes the next character. This allows you to match reserved characters `[ ] ( ) { } . * + ? ^ $ \ &#124;`|
 |<b>^</b>|Matches the beginning of the input.|
 |<b>$</b>|Matches the end of the input.|
 
