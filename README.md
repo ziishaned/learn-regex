@@ -34,18 +34,18 @@ Meta characters are the building blocks of the regular expressions. Some meta ch
 
 |Meta character|Description|
 |:----:|----|
-|**.**|Period matches any single character except a line break.|
-|**[ ]**|Character class. Matches any character contained between the square brackets.|
-|**[^ ]**|Negated character class. Matches any character that is not contained between the square brackets|
-|*****|Matches 0 or more repetitions of the preceding symbol.|
-|**+**|Matches 1 or more repetitions of the preceding symbol.
-|**?**|Makes the preceding symbol optional.|
-|**{n}**|Braces. Matches “n” repetitions of the preceding symbol.|
-|**(xyz)**|Character group. Matches the characters xyz in that exact order.|
-|**&#124;**|Alternation. Matches either the characters before or the characters after the symbol.|
-|**\**|Escapes the next character. This allows you to match reserved characters `[ ] ( ) { } . * + ? ^ $ \ &#124;`|
-|**^**|Matches the beginning of the input.|
-|**$**|Matches the end of the input.|
+|<b>.</b>|Period matches any single character except a line break.|
+|<b>[ ]</b>|Character class. Matches any character contained between the square brackets.|
+|<b>[^ ]</b>|Negated character class. Matches any character that is not contained between the square brackets|
+|<b>*</b>|Matches 0 or more repetitions of the preceding symbol.|
+|<b>+</b>|Matches 1 or more repetitions of the preceding symbol.
+|<b>?</b>|Makes the preceding symbol optional.|
+|<b>{n}</b>|Braces. Matches “n” repetitions of the preceding symbol.|
+|<b>(xyz)</b>|Character group. Matches the characters xyz in that exact order.|
+|<b>&#124;</b>|Alternation. Matches either the characters before or the characters after the symbol.|
+|<b>\</b>|Escapes the next character. This allows you to match reserved characters `[ ] ( ) { } . * + ? ^ $ \ &#124;`|
+|<b>^</b>|Matches the beginning of the input.|
+|<b>$</b>|Matches the end of the input.|
 
 # 2.1 Full stop
 
