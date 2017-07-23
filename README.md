@@ -54,18 +54,18 @@ The meta character are as follows:
 
 |Meta character|Description|
 |:----:|----|
-|<b>.</b>|Period matches any single character except a line break.|
-|<b>[ ]</b>|Character class. Matches any character contained between the square brackets.|
-|<b>[^ ]</b>|Negated character class. Matches any character that is not contained between the square brackets|
-|<b>*</b>|Matches 0 or more repetitions of the preceding symbol.|
-|<b>+</b>|Matches 1 or more repetitions of the preceding symbol.
-|<b>?</b>|Makes the preceding symbol optional.|
-|<b>{n}</b>|Braces. Matches “n” repetitions of the preceding symbol.|
-|<b>(xyz)</b>|Character group. Matches the characters xyz in that exact order.|
-|<b>&#124;</b>|Alternation. Matches either the characters before or the characters after the symbol.|
-|<b>&#92;</b>|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|<b>^</b>|Matches the beginning of the input.|
-|<b>$</b>|Matches the end of the input.|
+|.|Period matches any single character except a line break.|
+|[ ]|Character class. Matches any character contained between the square brackets.|
+|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
+|*|Matches 0 or more repetitions of the preceding symbol.|
+|+|Matches 1 or more repetitions of the preceding symbol.
+|?|Makes the preceding symbol optional.|
+|{n}|Braces. Matches “n” repetitions of the preceding symbol.|
+|(xyz)|Character group. Matches the characters xyz in that exact order.|
+|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
+|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Matches the beginning of the input.|
+|$|Matches the end of the input.|
 
 ## 2.1 Full stop
 
@@ -87,6 +87,12 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <strong><u>The</u></strong> car parked in <strong><u>the</u></strong> garage.
 </pre>
 
+Just like above example the regular expression `ar[.]` means: an lowercase character `a`, followed by letter `r`, followed by any character.
+
+<pre>
+"ar[.]" => The car p<strong><u>ark</u></strong>ed in the g<strong><u>ara</u></strong>ge.
+</pre>
+
 ### 2.2.1 Negated character set
 
 In general the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the 
@@ -98,11 +104,49 @@ the letter `r`.
 </pre>
 
 
-### 2.2.2 Repeating character set
+## 2.3 Repetitions
 
-We can repeat a character class by using `+`, `*` or `?` operators. For example the regular expression `[a-z]+` means: any number of 
-lowercase letters in a row.
+Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occurs. These meta characters act 
+differently in different situations. 
+
+### 2.3.1 The Star
+
+The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions 
+of preceding lowercase character `a`. But if it apperas after a character set or class that it finds the repetitions of the whole 
+character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
-"[a-z]+" => <strong><u>The</u></strong> <strong><u>car</u></strong> <strong><u>parked</u></strong> <strong><u>in</u></strong> <strong><u>the</u></strong> <strong><u>garage</u></strong>.
+"[a-z]*" => <strong><u>The</u></strong> <strong><u>car</u></strong> <strong><u>parked</u></strong> <strong><u>in</u></strong> <strong><u>the</u></strong> <strong><u>garage</u></strong> #21.
 </pre>
+
+The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
+whitespace character `\s` to match a string of whitespace characters. For example the expression `\s*cat\s*` means: zero or more 
+spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by 
+zero or more spaces.
+
+<pre>
+"\s*cat\s*" => The fat<strong><u> cat </u></strong>sat on the <strong><u>cat</u></strong>.
+</pre>
+
+### 2.3.2 The Plus
+
+The symbol `+` matches one or more repetitions of the preceding character. For example the regular expression `c.+t` means: lowercase 
+letter `c`, followed by any number of character, followed by the lowercase character `t`.
+
+<pre>
+"c.+t" => The fat <strong><u>cat sat on the mat</u></strong>.
+</pre>
+
+### 2.3.3 The Question Mark
+
+In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or more repetitions of 
+the preceding character. For example the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase 
+character `h`, followed by the lowercase character `e`.
+
+<pre>
+"[T]he" => <strong><u>The</u></strong> car is parked in the garage.
+</pre>
+<pre>
+"[T]?he" => <strong><u>The</u></strong> car is parked in t<strong><u>he</u></strong> garage.
+</pre>
+
