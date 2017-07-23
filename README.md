@@ -10,9 +10,7 @@ Imagine you are writing an application and you want to set the rules when user c
 contains letter, number, underscore and hyphen. We also want to limit the number of characters in username so it does not look ugly. 
 We use the following regular expression to validate a username:
 
-<p align="center">
-![Regular expression](https://i.imgur.com/UrDb9qc.png)
-</p>
+<img align="center" src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
 
 Above regular expression can accepts the strings "john_doe", "jo-hn\_doe" and "john12\_as". It does not match "Jo" because that string 
 contains uppercase letter and also it is too short.  
