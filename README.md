@@ -35,7 +35,7 @@ A regular expression is just a pattern of letters and digits that we used to sea
 `cat` means: the letter `c`, followed by the letter `a`, followed by the letter `t`. 
 
 <pre>
-"cat" => The <strong><a href="#learn-regex">cat</a></strong> sat on the mat
+"cat" => The <a href="#learn-regex"><strong>cat</strong></a> sat on the mat
 </pre>
 
 The regular expression `123` matches the string "123". The regular expression is matched against an input string by comparing each 
@@ -43,7 +43,7 @@ character in the regular expression to each character in the input string, one a
 case-sensitive so the regular expression `Cat` would not match the string "cat".
 
 <pre>
-"Cat" => The cat sat on the <strong><a href="#learn-regex">Cat</a></strong>
+"Cat" => The cat sat on the <a href="#learn-regex"><strong>Cat</strong></a>
 </pre>
 
 ## 2. Meta Characters
@@ -60,7 +60,7 @@ The meta character are as follows:
 |*|Matches 0 or more repetitions of the preceding symbol.|
 |+|Matches 1 or more repetitions of the preceding symbol.
 |?|Makes the preceding symbol optional.|
-|{n}|Braces. Matches “n” repetitions of the preceding symbol.|
+|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
 |(xyz)|Character group. Matches the characters xyz in that exact order.|
 |&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
 |&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
@@ -74,7 +74,7 @@ or new line characters. For example the regular expression `.ar` means: any char
 letter `r`.
 
 <pre>
-".ar" => The <strong><a href="#learn-regex">car</a></strong> <strong><a href="#learn-regex">par</a></strong>ked in the <strong><a href="#learn-regex">gar</a></strong>age.
+".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
 ## 2.2 Character set
@@ -84,13 +84,13 @@ specify the characters range. The order of the character range inside square bra
 expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
 
 <pre>
-"[Tt]he" => <strong><a href="#learn-regex">The</a></strong> car parked in <strong><a href="#learn-regex">the</a></strong> garage.
+"[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
 Just like above example the regular expression `ar[.]` means: an lowercase character `a`, followed by letter `r`, followed by any character.
 
 <pre>
-"ar[.]" => The car p<strong><a href="#learn-regex">ark</a></strong>ed in the g<strong><a href="#learn-regex">ara</a></strong>ge.
+"ar[.]" => The car p<a href="#learn-regex"><strong>ark</strong></a>ed in the g<a href="#learn-regex"><strong>ara</strong></a>ge.
 </pre>
 
 ### 2.2.1 Negated character set
@@ -100,7 +100,7 @@ character set. For example the regular expression `[^c]ar` means: any character 
 the letter `r`.
 
 <pre>
-"[^c]ar" => The car <strong><a href="#learn-regex">par</a></strong>ked in the <strong><a href="#learn-regex">gar</a></strong>age.
+"[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
 
@@ -116,7 +116,7 @@ of preceding lowercase character `a`. But if it apperas after a character set or
 character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
-"[a-z]*" => <strong><a href="#learn-regex">The</a></strong> <strong><a href="#learn-regex">car</a></strong> <strong><a href="#learn-regex">parked</a></strong> <strong><a href="#learn-regex">in</a></strong> <strong><a href="#learn-regex">the</a></strong> <strong><a href="#learn-regex">garage</a></strong> #21.
+"[a-z]*" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
@@ -125,7 +125,7 @@ spaces, followed by lowercase character `c`, followed by lowercase character `a`
 zero or more spaces.
 
 <pre>
-"\s*cat\s*" => The fat<strong><a href="#learn-regex"> cat </a></strong>sat on the <strong><a href="#learn-regex">cat</a></strong>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 ### 2.3.2 The Plus
@@ -134,7 +134,7 @@ The symbol `+` matches one or more repetitions of the preceding character. For e
 letter `c`, followed by any number of character, followed by the lowercase character `t`.
 
 <pre>
-"c.+t" => The fat <strong><a href="#learn-regex">cat sat on the mat</a></strong>.
+"c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
 ### 2.3.3 The Question Mark
@@ -144,9 +144,29 @@ the preceding character. For example the regular expression `[T]?he` means: Opti
 character `h`, followed by the lowercase character `e`.
 
 <pre>
-"[T]he" => <strong><a href="#learn-regex">The</a></strong> car is parked in the garage.
+"[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 <pre>
-"[T]?he" => <strong><a href="#learn-regex">The</a></strong> car is parked in t<strong><a href="#learn-regex">he</a></strong> garage.
+"[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
+## 2.4 Braces
+
+In  regular expression braces that are also called quantifiers used to specify the number of times that a group of character or a 
+character can be repeated. For example the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
+characters in the range of 0 to 9).
+
+<pre>
+"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+
+We can leave out the second number. For example the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
+the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
+
+<pre>
+"[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+
+<pre>
+"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
