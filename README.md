@@ -267,3 +267,17 @@ regular expressions The shorthand character sets are as follows:
 |\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace character: `[^\s]`|
 |\c|Matches non-whitespace character: `[^\s]`|
+
+## 4. Lookaheads
+
+
+
+## 5. Flags
+
+These flags can be used in any order or combination, and are an integral part of the RegExp.
+
+|Flag|Description|
+|:----:|----|
+|i|Case insensitive: Sets matching to be case-insensitive.|
+|g|Global Search: Search for a pattern throughout the input string.|
+|m|Multiline: Anchor meta character works on each line.|
