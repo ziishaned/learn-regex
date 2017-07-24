@@ -251,3 +251,19 @@ must be end of the string.
 <pre>
 "(at.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
+
+##  3. Shorthand Character Sets
+
+Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used 
+regular expressions The shorthand character sets are as follows:
+
+|Shorthand|Description|
+|:----:|----|
+|.|Any character except new line|
+|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
+|\W|Matches non-alphanumeric characters: `[^\w]`|
+|\d|Matches digit: `[0-9]`|
+|\D|Matches non-digit: `[^\d]`|
+|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
+|\S|Matches non-whitespace character: `[^\s]`|
+|\c|Matches non-whitespace character: `[^\s]`|
