@@ -30,6 +30,7 @@ contains uppercase letter and also it is too short.
     - [The Question Mark]()
   - [Character Group]()
   - [Alternation]()
+  - [Escaping special character]()
 - [Quantifiers]()
 - [OR operator]()
 - [Character Sets]()
@@ -202,4 +203,16 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 <pre>
 "[T|t]he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+</pre>
+
+## 2.6 Escaping special character
+
+Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
+including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
+For example the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
+expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
+`t`, followed by optional `.` character.
+
+<pre>
+"[f|c|m]at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
