@@ -19,15 +19,23 @@ contains uppercase letter and also it is too short.
 
 ## Table of Contents 
 
-1. [Basic Matchers]()
-2. [Meta character]()
-3. [Quantifiers]()
-4. [OR operator]()
-5. [Character Sets]()
-6. [Shorthand Character Sets]()
-7. [Grouping]()
-8. [Lookaheads]()
-9. [Flags]()
+- [Basic Matchers]()
+- [Meta character]()
+  - [Full stop]()
+  - [Character set]()
+    - [Negated character set]()
+  - [Repetitions]()
+    - [The Star]()
+    - [The Plus]()
+    - [The Question Mark]()
+  - [Character Group]()
+- [Quantifiers]()
+- [OR operator]()
+- [Character Sets]()
+- [Shorthand Character Sets]()
+- [Grouping]()
+- [Lookaheads]()
+- [Flags]()
 
 ## 1. Basic Matchers
 
@@ -169,4 +177,16 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 
 <pre>
 "[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+
+## 2.4 Character Group
+
+Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
+if we put quantifier after character than it will repeats the preceding character. But if we put quantifier after a character group than 
+it repeats the whole character group. For example the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
+We can also use the alternation inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
+`g` or `p`, followed by character `a`, followed by character `r`.
+
+<pre>
+"(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
