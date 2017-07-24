@@ -31,11 +31,10 @@ contains uppercase letter and also it is too short.
   - [Character Group]()
   - [Alternation]()
   - [Escaping special character]()
-- [Quantifiers]()
-- [OR operator]()
-- [Character Sets]()
+  - [Anchors]()
+    - [Caret]()
+    - [Dolar]()
 - [Shorthand Character Sets]()
-- [Grouping]()
 - [Lookaheads]()
 - [Flags]()
 
@@ -215,4 +214,40 @@ expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 <pre>
 "[f|c|m]at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
+
+## 2.7 Anchors
+
+In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
+we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the character of the input and the 
+second type is Dolar `$` that checks if matching character is the last character of the input string.
+
+### 2.7.1 Caret
+
+Caret `^` symbol is use to check if matching character is the first character of the input string. If we apply the following regular 
+expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above 
+input string it does not match anything. Beacause in input string `abc` "b" is not the starting symbol. Lets take a look on another 
+regular expression `^[T|t]he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string, 
+followed by lowercase character `h`, followed by lowercase character `e`.
+
+<pre>
+"[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+</pre>
+
+<pre>
+"^[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
+</pre>
+
+### 2.7.2 Dolar
+
+Dolar `$` symbol is use to check if matching character is the last character of the input string. For example regular expression 
+`(at.)$` means: lowercase character `a`, followed by lowercase character `t`, followed by anything except new line and the matcher 
+must be end of the string.
+
+<pre>
+"(at.)" => The f<a href="#learn-regex"><strong>at </strong></a>c<a href="#learn-regex"><strong>at </strong></a>s<a href="#learn-regex"><strong>at </strong></a>on the m<a href="#learn-regex"><strong>at.</strong></a>
+</pre>
+
+<pre>
+"(at.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
