@@ -29,6 +29,7 @@ contains uppercase letter and also it is too short.
     - [The Plus]()
     - [The Question Mark]()
   - [Character Group]()
+  - [Alternation]()
 - [Quantifiers]()
 - [OR operator]()
 - [Character Sets]()
@@ -184,9 +185,21 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
 if we put quantifier after character than it will repeats the preceding character. But if we put quantifier after a character group than 
 it repeats the whole character group. For example the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
-We can also use the alternation inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
+We can also use the alternation `|` meta character inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+## 2.5 Alternation
+
+In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now, 
+you maybe thinking that character set and alternation works the same way. But the big difference between character set and alternation 
+is that character set works on character level but alternation works on expression level. For example the regular expression 
+`[T|t]he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e` 
+or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
+
+<pre>
+"[T|t]he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
