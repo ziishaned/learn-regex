@@ -35,7 +35,7 @@ A regular expression is just a pattern of letters and digits that we used to sea
 `cat` means: the letter `c`, followed by the letter `a`, followed by the letter `t`. 
 
 <pre>
-"cat" => The <strong><u>cat</u></strong> sat on the mat
+"cat" => The <strong><a href="#learn-regex">cat</a></strong> sat on the mat
 </pre>
 
 The regular expression `123` matches the string "123". The regular expression is matched against an input string by comparing each 
@@ -43,7 +43,7 @@ character in the regular expression to each character in the input string, one a
 case-sensitive so the regular expression `Cat` would not match the string "cat".
 
 <pre>
-"Cat" => The cat sat on the <strong><u>Cat</u></strong>
+"Cat" => The cat sat on the <strong><a href="#learn-regex">Cat</a></strong>
 </pre>
 
 ## 2. Meta Characters
@@ -74,7 +74,7 @@ or new line characters. For example the regular expression `.ar` means: any char
 letter `r`.
 
 <pre>
-".ar" => The <strong><u>car</u></strong> <strong><u>par</u></strong>ked in the <strong><u>gar</u></strong>age.
+".ar" => The <strong><a href="#learn-regex">car</a></strong> <strong><a href="#learn-regex">par</a></strong>ked in the <strong><a href="#learn-regex">gar</a></strong>age.
 </pre>
 
 ## 2.2 Character set
@@ -84,13 +84,13 @@ specify the characters range. The order of the character range inside square bra
 expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
 
 <pre>
-"[Tt]he" => <strong><u>The</u></strong> car parked in <strong><u>the</u></strong> garage.
+"[Tt]he" => <strong><a href="#learn-regex">The</a></strong> car parked in <strong><a href="#learn-regex">the</a></strong> garage.
 </pre>
 
 Just like above example the regular expression `ar[.]` means: an lowercase character `a`, followed by letter `r`, followed by any character.
 
 <pre>
-"ar[.]" => The car p<strong><u>ark</u></strong>ed in the g<strong><u>ara</u></strong>ge.
+"ar[.]" => The car p<strong><a href="#learn-regex">ark</a></strong>ed in the g<strong><a href="#learn-regex">ara</a></strong>ge.
 </pre>
 
 ### 2.2.1 Negated character set
@@ -100,7 +100,7 @@ character set. For example the regular expression `[^c]ar` means: any character 
 the letter `r`.
 
 <pre>
-"[^c]ar" => The car <strong><u>par</u></strong>ked in the <strong><u>gar</u></strong>age.
+"[^c]ar" => The car <strong><a href="#learn-regex">par</a></strong>ked in the <strong><a href="#learn-regex">gar</a></strong>age.
 </pre>
 
 
@@ -116,7 +116,7 @@ of preceding lowercase character `a`. But if it apperas after a character set or
 character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
-"[a-z]*" => <strong><u>The</u></strong> <strong><u>car</u></strong> <strong><u>parked</u></strong> <strong><u>in</u></strong> <strong><u>the</u></strong> <strong><u>garage</u></strong> #21.
+"[a-z]*" => <strong><a href="#learn-regex">The</a></strong> <strong><a href="#learn-regex">car</a></strong> <strong><a href="#learn-regex">parked</a></strong> <strong><a href="#learn-regex">in</a></strong> <strong><a href="#learn-regex">the</a></strong> <strong><a href="#learn-regex">garage</a></strong> #21.
 </pre>
 
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
@@ -125,7 +125,7 @@ spaces, followed by lowercase character `c`, followed by lowercase character `a`
 zero or more spaces.
 
 <pre>
-"\s*cat\s*" => The fat<strong><u> cat </u></strong>sat on the <strong><u>cat</u></strong>.
+"\s*cat\s*" => The fat<strong><a href="#learn-regex"> cat </a></strong>sat on the <strong><a href="#learn-regex">cat</a></strong>.
 </pre>
 
 ### 2.3.2 The Plus
@@ -134,7 +134,7 @@ The symbol `+` matches one or more repetitions of the preceding character. For e
 letter `c`, followed by any number of character, followed by the lowercase character `t`.
 
 <pre>
-"c.+t" => The fat <strong><u>cat sat on the mat</u></strong>.
+"c.+t" => The fat <strong><a href="#learn-regex">cat sat on the mat</a></strong>.
 </pre>
 
 ### 2.3.3 The Question Mark
@@ -144,9 +144,9 @@ the preceding character. For example the regular expression `[T]?he` means: Opti
 character `h`, followed by the lowercase character `e`.
 
 <pre>
-"[T]he" => <strong><u>The</u></strong> car is parked in the garage.
+"[T]he" => <strong><a href="#learn-regex">The</a></strong> car is parked in the garage.
 </pre>
 <pre>
-"[T]?he" => <strong><u>The</u></strong> car is parked in t<strong><u>he</u></strong> garage.
+"[T]?he" => <strong><a href="#learn-regex">The</a></strong> car is parked in t<strong><a href="#learn-regex">he</a></strong> garage.
 </pre>
 
