@@ -1,3 +1,8 @@
+<br/>
+<p align="center">
+<img src="https://i.imgur.com/srSc0oK.png" alt="Logo">
+</p><br/>
+
 ## What is Regular Expression?
 
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text. 
@@ -19,32 +24,33 @@ contains uppercase letter and also it is too short.
 
 ## Table of Contents 
 
-- [Basic Matchers]()
-- [Meta character]()
-  - [Full stop]()
-  - [Character set]()
-    - [Negated character set]()
-  - [Repetitions]()
-    - [The Star]()
-    - [The Plus]()
-    - [The Question Mark]()
-  - [Character Group]()
-  - [Alternation]()
-  - [Escaping special character]()
-  - [Anchors]()
-    - [Caret]()
-    - [Dollar]()
-- [Shorthand Character Sets]()
-- [Lookaround]()
-  - [Positive Lookahead]()
-  - [Negative Lookahead]()
-  - [Positive Lookbehind]()
-  - [Negative Lookbehind]()
-- [Flags]()
-  - [Case Insensitive]()
-  - [Global search]()
-  - [Multiline]()
-- [Bonus]()
+- [Basic Matchers](#1-basic-matchers)
+- [Meta character](#2-meta-characters)
+  - [Full stop](#21-full-stop)
+  - [Character set](#22-character-set)
+    - [Negated character set](#221-negated-character-set)
+  - [Repetitions](#23-repetitions)
+    - [The Star](#231-the-star)
+    - [The Plus](#232-the-plus)
+    - [The Question Mark](#233-the-question-mark)
+  - [Braces](#24-braces)
+  - [Character Group](#25-character-group)
+  - [Alternation](#26-alternation)
+  - [Escaping special character](#27-escaping-special-character)
+  - [Anchors](#28-anchors)
+    - [Caret](#281-caret)
+    - [Dollar](#282-dollar)
+- [Shorthand Character Sets](#3-shorthand-character-sets)
+- [Lookaround](#4-ookaround)
+  - [Positive Lookahead](#41-positive-lookahead)
+  - [Negative Lookahead](#42-negative-lookahead)
+  - [Positive Lookbehind](#43-positive-lookbehind)
+  - [Negative Lookbehind](#44-negative-lookbehind)
+- [Flags](#5-flags)
+  - [Case Insensitive](#51-case-insensitive)
+  - [Global search](#52-global-search)
+  - [Multiline](#53-multiline)
+- [Bonus](#bonus)
 
 ## 1. Basic Matchers
 
@@ -188,7 +194,7 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 "[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-## 2.4 Character Group
+## 2.5 Character Group
 
 Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
 if we put quantifier after character than it will repeats the preceding character. But if we put quantifier after a character group than 
@@ -200,7 +206,7 @@ We can also use the alternation `|` meta character inside character group. For e
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-## 2.5 Alternation
+## 2.6 Alternation
 
 In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now, 
 you maybe thinking that character set and alternation works the same way. But the big difference between character set and alternation 
@@ -212,7 +218,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 "[T|t]he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-## 2.6 Escaping special character
+## 2.7 Escaping special character
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
@@ -224,13 +230,13 @@ expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 "[f|c|m]at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-## 2.7 Anchors
+## 2.8 Anchors
 
 In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
 we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
 input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
 
-### 2.7.1 Caret
+### 2.8.1 Caret
 
 Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular 
 expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above 
@@ -246,7 +252,7 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 "^[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-### 2.7.2 Dollar
+### 2.8.2 Dollar
 
 Dollar `$` symbol is used to check if matching character is the last character of the input string. For example regular expression 
 `(at.)$` means: lowercase character `a`, followed by lowercase character `t`, followed by anything except new line and the matcher 
