@@ -180,7 +180,7 @@ character can be repeated. For example the regular expression `[0-9]{2,3}` means
 characters in the range of 0 to 9).
 
 <pre>
-"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+"[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
 We can leave out the second number. For example the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
@@ -407,15 +407,15 @@ line. And beacause of `m` flag now regular expression engine matches pattern at 
 
 * *Positive Integers*: `^\d+$`
 * *Negative Integers*: `^-\d+$`
-* *Phone Number*: `^+?[\d\s]{3,}$`
-* *Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
+* *US Phone Number*: `^+?[\d\s]{3,}$`
+* *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
 * *Integers*: `^-?\d+$`
 * *Username*: `^[\w\d_.]{4,16}$`
 * *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
 * *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
 * *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
 * *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$`
-* *IP address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
+* *IPv4 address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
 * *Lowercase letters only*: `^([a-z])*$`
 * *Uppercase letters only*: `^([A-Z])*$`
 * *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
