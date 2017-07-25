@@ -222,8 +222,8 @@ expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 ## 2.7 Anchors
 
 In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
-we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the character of the input and the 
-second type is Dolar `$` that checks if matching character is the last character of the input string.
+we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
+input and the second type is Dolar `$` that checks if matching character is the last character of the input string.
 
 ### 2.7.1 Caret
 
@@ -258,7 +258,7 @@ must be end of the string.
 ##  3. Shorthand Character Sets
 
 Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used 
-regular expressions The shorthand character sets are as follows:
+regular expressions. The shorthand character sets are as follows:
 
 |Shorthand|Description|
 |:----:|----|
@@ -270,7 +270,64 @@ regular expressions The shorthand character sets are as follows:
 |\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace character: `[^\s]`|
 
-## 4. Lookaheads
+## 4. Lookaround
+
+Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not 
+included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain 
+pattern. For example we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`. 
+We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contains `.` character and preceded 
+by `$` character. Following are the lookarounds that are used in regular expressions:
+
+|Symbol|Description|
+|:----:|----|
+|?=|Positive Lookahead|
+|?!|Negative Lookahead|
+|?<=|Positive Lookbehind|
+|?<!|Negative Lookbehind|
+
+### 4.1 Positive Lookahead
+
+The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
+only contains the text that is matched by the first part of the expression. To define a positive lookahead braces are used and within 
+those braces question mark with equal sign is used like this `(?=...)`. Lookahead expression is written after the equal sign inside 
+braces. For example the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
+followed by letter `h`, followed by letter `e`. In braces we define positive lookahead which tells regular expression engine to match
+`The` or `the` which are followed by the word `fat`. 
+
+<pre>
+"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+</pre>
+
+### 4.2 Negative Lookahead
+
+Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead 
+defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character 
+i.e. `(?!...)`. Lets take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from 
+input string that are not followed by the word `fat` precedes by a space character.
+
+<pre>
+"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+</pre>
+
+### 4.3 Positive Lookbehind
+
+Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by 
+`(?<=...)`. For example the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
+are after the word `The` or `the`.
+
+<pre>
+"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+</pre>
+
+### 4.4 Negative Lookbehind
+
+Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
+`(?<!...)`. For example the regular expression `(?&lt;![T|t]he\s)(cat)` means: get all `cat` words from input string that 
+are after not after the word `The` or `the`.
+
+<pre>
+"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+</pre>
 
 ## 5. Flags
 
@@ -334,3 +391,14 @@ line. And beacause of `m` flag now regular expression engine matches pattern at 
                   cat <a href="#learn-regex"><strong>sat</strong></a>
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
+
+## Contribution
+
+* Report issues
+* Open pull request with improvements
+* Spread the word 
+* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+
+## License
+
+MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
