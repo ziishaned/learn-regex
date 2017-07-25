@@ -3,10 +3,10 @@
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text. 
 
 A regular expression is a pattern that is matched against a subject string from left to right. The word "Regular expression" is a 
-mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text withing 
+mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within 
 a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
 
-Imagine you are writing an application and you want to set the rules when user chosing their username. We want the username can 
+Imagine you are writing an application and you want to set the rules when user choosing their username. We want the username can 
 contains letter, number, underscore and hyphen. We also want to limit the number of characters in username so it does not look ugly. 
 We use the following regular expression to validate a username:
 
@@ -33,7 +33,7 @@ contains uppercase letter and also it is too short.
   - [Escaping special character]()
   - [Anchors]()
     - [Caret]()
-    - [Dolar]()
+    - [Dollar]()
 - [Shorthand Character Sets]()
 - [Lookaround]()
   - [Positive Lookahead]()
@@ -44,6 +44,7 @@ contains uppercase letter and also it is too short.
   - [Case Insensitive]()
   - [Global search]()
   - [Multiline]()
+- [Bonus]()
 
 ## 1. Basic Matchers
 
@@ -128,7 +129,7 @@ differently in different situations.
 ### 2.3.1 The Star
 
 The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions 
-of preceding lowercase character `a`. But if it apperas after a character set or class that it finds the repetitions of the whole 
+of preceding lowercase character `a`. But if it appears after a character set or class that it finds the repetitions of the whole 
 character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
@@ -227,13 +228,13 @@ expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
 we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
-input and the second type is Dolar `$` that checks if matching character is the last character of the input string.
+input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
 
 ### 2.7.1 Caret
 
-Caret `^` symbol is use to check if matching character is the first character of the input string. If we apply the following regular 
+Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular 
 expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above 
-input string it does not match anything. Beacause in input string `abc` "b" is not the starting symbol. Lets take a look on another 
+input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look on another 
 regular expression `^[T|t]he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string, 
 followed by lowercase character `h`, followed by lowercase character `e`.
 
@@ -245,9 +246,9 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 "^[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-### 2.7.2 Dolar
+### 2.7.2 Dollar
 
-Dolar `$` symbol is use to check if matching character is the last character of the input string. For example regular expression 
+Dollar `$` symbol is used to check if matching character is the last character of the input string. For example regular expression 
 `(at.)$` means: lowercase character `a`, followed by lowercase character `t`, followed by anything except new line and the matcher 
 must be end of the string.
 
@@ -306,7 +307,7 @@ followed by letter `h`, followed by letter `e`. In braces we define positive loo
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead 
 defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character 
-i.e. `(?!...)`. Lets take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from 
+i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from 
 input string that are not followed by the word `fat` precedes by a space character.
 
 <pre>
@@ -335,7 +336,7 @@ are after not after the word `The` or `the`.
 
 ## 5. Flags
 
-Flags are also called modifiers beacause they modifies the output of a regular expression. These flags can be used in any order or 
+Flags are also called modifiers because they modifies the output of a regular expression. These flags can be used in any order or 
 combination, and are an integral part of the RegExp.
 
 |Flag|Description|
@@ -348,7 +349,7 @@ combination, and are an integral part of the RegExp.
 
 The `i` modifier is used to perform case-insensitive matching. For example the regular expression `/The/gi` means: uppercase letter 
 `T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the 
-regular expression engine to ignore the case. As you can see we also provided `g` flag beacause we want to search for the pattern in 
+regular expression engine to ignore the case. As you can see we also provided `g` flag because we want to search for the pattern in 
 the whole input string.
 
 <pre>
@@ -364,7 +365,7 @@ the whole input string.
 
 The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example the 
 regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase 
-character `t`. Beacause we provided `g` flag at the end of the regular expression now it will find every matches from whole input 
+character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input 
 string.
 
 
@@ -379,7 +380,7 @@ string.
 
 ### 5.3 Multiline
 
-The `m` modifier is used to perform a multiline match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
+The `m` modifier is used to perform a multi line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
 the beginning of the input or end fo the input string. But if we want that anchors works on each line we use `m` flag. For example the
 regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new 
 line. And beacause of `m` flag now regular expression engine matches pattern at the end of each line in a string.
@@ -395,6 +396,27 @@ line. And beacause of `m` flag now regular expression engine matches pattern at 
                   cat <a href="#learn-regex"><strong>sat</strong></a>
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
+
+## Bonus
+
+* *Positive Integers*: `^\d+$`
+* *Negative Integers*: `^-\d+$`
+* *Phone Number*: `^+?[\d\s]{3,}$`
+* *Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
+* *Integers*: `^-?\d+$`
+* *Username*: `^[\w\d_.]{4,16}$`
+* *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
+* *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
+* *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
+* *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$`
+* *IP address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
+* *Lowercase letters only*: `^([a-z])*$`
+* *Uppercase letters only*: `^([A-Z])*$`
+* *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
+* *VISA credit card numbers*: `^(4[0-9]{12}(?:[0-9]{3})?)*$`
+* *Date (MM/DD/YYYY)*: `^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$`
+* *Date (YYYY/MM/DD)*: `^(19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$`
+* *MasterCard credit card numbers*: `^(5[1-5][0-9]{14})*$`
 
 ## Contribution
 
