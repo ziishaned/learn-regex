@@ -37,6 +37,9 @@ contains uppercase letter and also it is too short.
 - [Shorthand Character Sets]()
 - [Lookaheads]()
 - [Flags]()
+  - [Case Insensitive]()
+  - [Global search]()
+  - [Multiline]()
 
 ## 1. Basic Matchers
 
@@ -266,18 +269,68 @@ regular expressions The shorthand character sets are as follows:
 |\D|Matches non-digit: `[^\d]`|
 |\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace character: `[^\s]`|
-|\c|Matches non-whitespace character: `[^\s]`|
 
 ## 4. Lookaheads
 
-
-
 ## 5. Flags
 
-These flags can be used in any order or combination, and are an integral part of the RegExp.
+Flags are also called modifiers beacause they modifies the output of a regular expression. These flags can be used in any order or 
+combination, and are an integral part of the RegExp.
 
 |Flag|Description|
 |:----:|----|
 |i|Case insensitive: Sets matching to be case-insensitive.|
 |g|Global Search: Search for a pattern throughout the input string.|
 |m|Multiline: Anchor meta character works on each line.|
+
+### 5.1 Case Insensitive
+
+The `i` modifier is used to perform case-insensitive matching. For example the regular expression `/The/gi` means: uppercase letter 
+`T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the 
+regular expression engine to ignore the case. As you can see we also provided `g` flag beacause we want to search for the pattern in 
+the whole input string.
+
+<pre>
+"The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+</pre>
+
+<pre>
+"/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+</pre>
+
+### 5.2 Global search
+
+
+The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example the 
+regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase 
+character `t`. Beacause we provided `g` flag at the end of the regular expression now it will find every matches from whole input 
+string.
+
+
+
+<pre>
+".(at)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
+</pre>
+
+<pre>
+"/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
+</pre>
+
+### 5.3 Multiline
+
+The `m` modifier is used to perform a multiline match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
+the beginning of the input or end fo the input string. But if we want that anchors works on each line we use `m` flag. For example the
+regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new 
+line. And beacause of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+
+<pre>
+"/.at(.)?$/" => The fat
+                cat sat
+                on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
+
+<pre>
+"/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
+                  cat <a href="#learn-regex"><strong>sat</strong></a>
+                  on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
