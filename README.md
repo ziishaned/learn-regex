@@ -41,7 +41,7 @@ contains uppercase letter and also it is too short.
     - [Caret](#281-caret)
     - [Dollar](#282-dollar)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
-- [Lookaround](#4-ookaround)
+- [Lookaround](#4-lookaround)
   - [Positive Lookahead](#41-positive-lookahead)
   - [Negative Lookahead](#42-negative-lookahead)
   - [Positive Lookbehind](#43-positive-lookbehind)
