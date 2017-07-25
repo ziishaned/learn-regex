@@ -19,7 +19,7 @@ We use the following regular expression to validate a username:
 <img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
 </p>
 
-Above regular expression can accepts the strings "john_doe", "jo-hn\_doe" and "john12\_as". It does not match "Jo" because that string 
+Above regular expression can accepts the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
 contains uppercase letter and also it is too short.  
 
 ## Table of Contents 
