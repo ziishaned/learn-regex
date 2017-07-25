@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-<img src="https://i.imgur.com/srSc0oK.png" alt="Logo">
+<img src="https://i.imgur.com/bYwl7Vf.png" alt="Logo">
 </p><br/>
 
 ## What is Regular Expression?
