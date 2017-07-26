@@ -110,17 +110,10 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-<<<<<<< HEAD
-Just like above example the regular expression `ge[.]` means: a lowercase character `g`, followed by letter `e`, followed by `.` character.
-
-<pre>
-"ge[.]" => The car parked in the gara<a href="#learn-regex"><strong>ge.</strong></a>
-=======
-A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period.
+A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
->>>>>>> 7cac291415345a24a7bf1db02b6612576aab0446
 </pre>
 
 ### 2.2.1 Negated character set
