@@ -19,7 +19,7 @@ We use the following regular expression to validate a username:
 <img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
 </p>
 
-Above regular expression can accepts the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
+Above regular expression can accept the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
 contains uppercase letter and also it is too short.  
 
 ## Table of Contents 
@@ -232,7 +232,7 @@ expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 ## 2.8 Anchors
 
-In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
+In regular expression to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
 we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
 input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
 
@@ -342,7 +342,7 @@ are after not after the word `The` or `the`.
 
 ## 5. Flags
 
-Flags are also called modifiers because they modifies the output of a regular expression. These flags can be used in any order or 
+Flags are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or 
 combination, and are an integral part of the RegExp.
 
 |Flag|Description|
@@ -387,9 +387,9 @@ string.
 ### 5.3 Multiline
 
 The `m` modifier is used to perform a multi line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
-the beginning of the input or end fo the input string. But if we want that anchors works on each line we use `m` flag. For example the
+the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example the
 regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new 
-line. And beacause of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
 
 <pre>
 "/.at(.)?$/" => The fat
