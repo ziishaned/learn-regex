@@ -169,7 +169,7 @@ letter `c`, followed by any number of character, followed by the lowercase chara
 
 ### 2.3.3 The Question Mark
 
-In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or more repetitions of 
+In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of 
 the preceding character. For example the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase 
 character `h`, followed by the lowercase character `e`.
 
