@@ -19,7 +19,7 @@ We use the following regular expression to validate a username:
 <img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
 </p>
 
-Above regular expression can accept the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
+Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string 
 contains uppercase letter and also it is too short.  
 
 ## Table of Contents 
@@ -54,7 +54,7 @@ contains uppercase letter and also it is too short.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of letters and digits that we used to search in a text.  For example the regular expression 
+A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example the regular expression 
 `cat` means: the letter `c`, followed by the letter `a`, followed by the letter `t`. 
 
 <pre>
@@ -73,7 +73,7 @@ case-sensitive so the regular expression `Cat` would not match the string "cat".
 
 Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are 
 interpreted in some special way. Some meta characters have a special meaning that are written inside the square brackets. 
-The meta character are as follows:
+The meta characters are as follows:
 
 |Meta character|Description|
 |:----:|----|
@@ -148,7 +148,7 @@ spaces, followed by lowercase character `c`, followed by lowercase character `a`
 zero or more spaces.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex"><strong>cat</strong></a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
 
 ### 2.3.2 The Plus
@@ -175,8 +175,8 @@ character `h`, followed by the lowercase character `e`.
 
 ## 2.4 Braces
 
-In  regular expression braces that are also called quantifiers used to specify the number of times that a group of character or a 
-character can be repeated. For example the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
+In  regular expression braces that are also called quantifiers are used to specify the number of times that a 
+character or a group of characters can be repeated. For example the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
 characters in the range of 0 to 9).
 
 <pre>
@@ -197,7 +197,7 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 ## 2.5 Character Group
 
 Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
-if we put quantifier after character than it will repeats the preceding character. But if we put quantifier after a character group than 
+if we put a quantifier after a character than it will repeat the preceding character. But if we put quantifier after a character group then 
 it repeats the whole character group. For example the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
 We can also use the alternation `|` meta character inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
@@ -232,7 +232,7 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 ## 2.8 Anchors
 
-In regular expression to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
+In regular expressions, to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
 we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
 input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
 
