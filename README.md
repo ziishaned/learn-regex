@@ -110,10 +110,10 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-Just like above example the regular expression `ar[.]` means: an lowercase character `a`, followed by letter `r`, followed by any character.
+Just like above example the regular expression `ge[.]` means: a lowercase character `g`, followed by letter `e`, followed by `.` character.
 
 <pre>
-"ar[.]" => The car p<a href="#learn-regex"><strong>ark</strong></a>ed in the g<a href="#learn-regex"><strong>ara</strong></a>ge.
+"ge[.]" => The car parked in the gara<a href="#learn-regex"><strong>ge.</strong></a>
 </pre>
 
 ### 2.2.1 Negated character set
@@ -211,11 +211,11 @@ We can also use the alternation `|` meta character inside character group. For e
 In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now, 
 you maybe thinking that character set and alternation works the same way. But the big difference between character set and alternation 
 is that character set works on character level but alternation works on expression level. For example the regular expression 
-`[T|t]he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e` 
+`(T|t)he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e` 
 or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
 
 <pre>
-"[T|t]he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+"(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
 ## 2.7 Escaping special character
@@ -223,11 +223,11 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
 For example the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
-expression `[f|c|m]at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
+expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
 `t`, followed by optional `.` character.
 
 <pre>
-"[f|c|m]at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
+"(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
 ## 2.8 Anchors
@@ -241,29 +241,29 @@ input and the second type is Dollar `$` that checks if matching character is the
 Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular 
 expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above 
 input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look on another 
-regular expression `^[T|t]he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string, 
+regular expression `^(T|t)he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string, 
 followed by lowercase character `h`, followed by lowercase character `e`.
 
 <pre>
-"[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+"(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
 <pre>
-"^[T|t]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
+"^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
 ### 2.8.2 Dollar
 
 Dollar `$` symbol is used to check if matching character is the last character of the input string. For example regular expression 
-`(at.)$` means: lowercase character `a`, followed by lowercase character `t`, followed by anything except new line and the matcher 
+`(at\.)$` means: a lowercase character `a`, followed by lowercase character `t`, followed by a `.` character and the matcher 
 must be end of the string.
 
 <pre>
-"(at.)" => The f<a href="#learn-regex"><strong>at </strong></a>c<a href="#learn-regex"><strong>at </strong></a>s<a href="#learn-regex"><strong>at </strong></a>on the m<a href="#learn-regex"><strong>at.</strong></a>
+"(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
 <pre>
-"(at.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
+"(at\.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
 ##  3. Shorthand Character Sets
@@ -301,43 +301,43 @@ by `$` character. Following are the lookarounds that are used in regular express
 The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
 only contains the text that is matched by the first part of the expression. To define a positive lookahead braces are used and within 
 those braces question mark with equal sign is used like this `(?=...)`. Lookahead expression is written after the equal sign inside 
-braces. For example the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
+braces. For example the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
 followed by letter `h`, followed by letter `e`. In braces we define positive lookahead which tells regular expression engine to match
 `The` or `the` which are followed by the word `fat`. 
 
 <pre>
-"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
 ### 4.2 Negative Lookahead
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead 
 defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character 
-i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from 
+i.e. `(?!...)`. Let's take a look at the following regular expression `(T|t)he(?!\sfat)` which means: get all `The` or `the` words from 
 input string that are not followed by the word `fat` precedes by a space character.
 
 <pre>
-"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
 ### 4.3 Positive Lookbehind
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by 
-`(?<=...)`. For example the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
+`(?<=...)`. For example the regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
 are after the word `The` or `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 ### 4.4 Negative Lookbehind
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
-`(?<!...)`. For example the regular expression `(?&lt;![T|t]he\s)(cat)` means: get all `cat` words from input string that 
+`(?<!...)`. For example the regular expression `(?&lt;!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
 are after not after the word `The` or `the`.
 
 <pre>
-"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 ## 5. Flags
