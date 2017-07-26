@@ -197,7 +197,7 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 ## 2.5 Character Group
 
 Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
-if we put quantifier after character than it will repeats the preceding character. But if we put quantifier after a character group than 
+if we put quantifier after character then it will repeat the preceding character. But if we put quantifier after a character group than 
 it repeats the whole character group. For example the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
 We can also use the alternation `|` meta character inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
