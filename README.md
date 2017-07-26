@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Logo">
+<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
 ## What is Regular Expression?
@@ -19,7 +19,7 @@ We use the following regular expression to validate a username:
 <img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
 </p>
 
-Above regular expression can accepts the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
+Above regular expression can accept the strings `john_doe`, `jo-hn\_doe` and `john12\_as`. It does not match `Jo` because that string 
 contains uppercase letter and also it is too short.  
 
 ## Table of Contents 
@@ -41,7 +41,7 @@ contains uppercase letter and also it is too short.
     - [Caret](#281-caret)
     - [Dollar](#282-dollar)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
-- [Lookaround](#4-ookaround)
+- [Lookaround](#4-lookaround)
   - [Positive Lookahead](#41-positive-lookahead)
   - [Negative Lookahead](#42-negative-lookahead)
   - [Positive Lookbehind](#43-positive-lookbehind)
@@ -110,10 +110,17 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
+<<<<<<< HEAD
 Just like above example the regular expression `ge[.]` means: a lowercase character `g`, followed by letter `e`, followed by `.` character.
 
 <pre>
 "ge[.]" => The car parked in the gara<a href="#learn-regex"><strong>ge.</strong></a>
+=======
+A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period.
+
+<pre>
+"ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
+>>>>>>> 7cac291415345a24a7bf1db02b6612576aab0446
 </pre>
 
 ### 2.2.1 Negated character set
@@ -139,7 +146,7 @@ of preceding lowercase character `a`. But if it appears after a character set or
 character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
-"[a-z]*" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
+"[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
@@ -180,7 +187,7 @@ character can be repeated. For example the regular expression `[0-9]{2,3}` means
 characters in the range of 0 to 9).
 
 <pre>
-"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+"[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
 We can leave out the second number. For example the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
@@ -232,7 +239,7 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 ## 2.8 Anchors
 
-In regular expression to check if the matching symbol is the starting symbol or endnig symbol of the input string for this purpose
+In regular expression to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
 we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
 input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
 
@@ -342,7 +349,7 @@ are after not after the word `The` or `the`.
 
 ## 5. Flags
 
-Flags are also called modifiers because they modifies the output of a regular expression. These flags can be used in any order or 
+Flags are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or 
 combination, and are an integral part of the RegExp.
 
 |Flag|Description|
@@ -387,9 +394,9 @@ string.
 ### 5.3 Multiline
 
 The `m` modifier is used to perform a multi line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
-the beginning of the input or end fo the input string. But if we want that anchors works on each line we use `m` flag. For example the
+the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example the
 regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new 
-line. And beacause of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -407,15 +414,15 @@ line. And beacause of `m` flag now regular expression engine matches pattern at 
 
 * *Positive Integers*: `^\d+$`
 * *Negative Integers*: `^-\d+$`
-* *Phone Number*: `^+?[\d\s]{3,}$`
-* *Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
+* *US Phone Number*: `^+?[\d\s]{3,}$`
+* *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
 * *Integers*: `^-?\d+$`
 * *Username*: `^[\w\d_.]{4,16}$`
 * *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
 * *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
 * *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
 * *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$`
-* *IP address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
+* *IPv4 address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
 * *Lowercase letters only*: `^([a-z])*$`
 * *Uppercase letters only*: `^([A-Z])*$`
 * *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
