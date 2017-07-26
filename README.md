@@ -407,15 +407,15 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 
 * *Positive Integers*: `^\d+$`
 * *Negative Integers*: `^-\d+$`
-* *Phone Number*: `^+?[\d\s]{3,}$`
-* *Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
+* *US Phone Number*: `^+?[\d\s]{3,}$`
+* *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
 * *Integers*: `^-?\d+$`
 * *Username*: `^[\w\d_.]{4,16}$`
 * *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
 * *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
 * *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
 * *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$`
-* *IP address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
+* *IPv4 address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
 * *Lowercase letters only*: `^([a-z])*$`
 * *Uppercase letters only*: `^([A-Z])*$`
 * *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
