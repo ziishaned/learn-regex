@@ -54,7 +54,7 @@ contains uppercase letter and also it is too short.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example the regular expression 
+A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example, the regular expression 
 `cat` means: the letter `c`, followed by the letter `a`, followed by the letter `t`. 
 
 <pre>
@@ -97,7 +97,7 @@ The meta characters are as follows:
 ## 2.1 Full stop
 
 Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return 
-or new line characters. For example the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
+or new line characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
 letter `r`.
 
 <pre>
@@ -108,8 +108,8 @@ letter `r`.
 
 ## 2.2 Character set
 
-Character sets are also called character class. Square brackets are used to specify character sets. Use hyphen inside character set to 
-specify the characters range. The order of the character range inside square brackets doesn't matter. For example the regular 
+Character sets are also called character class. Square brackets are used to specify character sets. Use a hyphen inside a character set to 
+specify the characters' range. The order of the character range inside square brackets doesn't matter. For example, the regular 
 expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
 
 <pre>
@@ -128,8 +128,8 @@ A period inside a character set, however, means a literal period. The regular ex
 
 ### 2.2.1 Negated character set
 
-In general the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the 
-character set. For example the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by 
+In general, the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the 
+character set. For example, the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by 
 the letter `r`.
 
 <pre>
@@ -147,7 +147,7 @@ differently in different situations.
 
 The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions 
 of preceding lowercase character `a`. But if it appears after a character set or class that it finds the repetitions of the whole 
-character set. For example the regular expression `[a-z]*` means: any number of lowercase letters in a row.
+character set. For example, the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -156,7 +156,7 @@ character set. For example the regular expression `[a-z]*` means: any number of 
 [Test the regular expression](https://regex101.com/r/7m8me5/1)
 
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
-whitespace character `\s` to match a string of whitespace characters. For example the expression `\s*cat\s*` means: zero or more 
+whitespace character `\s` to match a string of whitespace characters. For example, the expression `\s*cat\s*` means: zero or more 
 spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by 
 zero or more spaces.
 
@@ -168,7 +168,7 @@ zero or more spaces.
 
 ### 2.3.2 The Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For example the regular expression `c.+t` means: lowercase 
+The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase 
 letter `c`, followed by any number of character, followed by the lowercase character `t`.
 
 <pre>
@@ -180,7 +180,7 @@ letter `c`, followed by any number of character, followed by the lowercase chara
 ### 2.3.3 The Question Mark
 
 In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of 
-the preceding character. For example the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase 
+the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase 
 character `h`, followed by the lowercase character `e`.
 
 <pre>
@@ -198,7 +198,7 @@ character `h`, followed by the lowercase character `e`.
 ## 2.4 Braces
 
 In  regular expression braces that are also called quantifiers are used to specify the number of times that a 
-character or a group of characters can be repeated. For example the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
+character or a group of characters can be repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
 characters in the range of 0 to 9).
 
 <pre>
@@ -207,7 +207,7 @@ characters in the range of 0 to 9).
 
 [Test the regular expression](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
+We can leave out the second number. For example, the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
 the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 
 <pre>
@@ -226,8 +226,8 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 
 Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
 if we put a quantifier after a character than it will repeat the preceding character. But if we put quantifier after a character group then 
-it repeats the whole character group. For example the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
-We can also use the alternation `|` meta character inside character group. For example the regular expression `(c|g|p)ar` means: lowercase character `c`, 
+it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
+We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
 
 <pre>
@@ -239,8 +239,8 @@ We can also use the alternation `|` meta character inside character group. For e
 ## 2.6 Alternation
 
 In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now, 
-you maybe thinking that character set and alternation works the same way. But the big difference between character set and alternation 
-is that character set works on character level but alternation works on expression level. For example the regular expression 
+you may be thinking that character set and alternation works the same way. But the big difference between character set and alternation 
+is that character set works on character level but alternation works on expression level. For example, the regular expression 
 `(T|t)he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e` 
 or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
 
@@ -254,7 +254,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
-For example the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
+For example, the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
 expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
 `t`, followed by optional `.` character.
 
@@ -292,7 +292,7 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 
 ### 2.8.2 Dollar
 
-Dollar `$` symbol is used to check if matching character is the last character of the input string. For example regular expression 
+Dollar `$` symbol is used to check if matching character is the last character of the input string. For example, regular expression 
 `(at\.)$` means: a lowercase character `a`, followed by lowercase character `t`, followed by a `.` character and the matcher 
 must be end of the string.
 
@@ -327,7 +327,7 @@ regular expressions. The shorthand character sets are as follows:
 
 Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not 
 included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain 
-pattern. For example we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`. 
+pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`. 
 We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contains `.` character and preceded 
 by `$` character. Following are the lookarounds that are used in regular expressions:
 
@@ -343,7 +343,7 @@ by `$` character. Following are the lookarounds that are used in regular express
 The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
 only contains the text that is matched by the first part of the expression. To define a positive lookahead braces are used and within 
 those braces question mark with equal sign is used like this `(?=...)`. Lookahead expression is written after the equal sign inside 
-braces. For example the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
+braces. For example, the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
 followed by letter `h`, followed by letter `e`. In braces we define positive lookahead which tells regular expression engine to match
 `The` or `the` which are followed by the word `fat`. 
 
@@ -369,7 +369,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 ### 4.3 Positive Lookbehind
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by 
-`(?<=...)`. For example the regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
+`(?<=...)`. For example, the regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
 are after the word `The` or `the`.
 
 <pre>
@@ -381,8 +381,8 @@ are after the word `The` or `the`.
 ### 4.4 Negative Lookbehind
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
-`(?<!...)`. For example the regular expression `(?&lt;!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
-are after not after the word `The` or `the`.
+`(?<!...)`. For example, the regular expression `(?&lt;!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
+are not after the word `The` or `the`.
 
 <pre>
 "(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
@@ -403,7 +403,7 @@ combination, and are an integral part of the RegExp.
 
 ### 5.1 Case Insensitive
 
-The `i` modifier is used to perform case-insensitive matching. For example the regular expression `/The/gi` means: uppercase letter 
+The `i` modifier is used to perform case-insensitive matching. For example, the regular expression `/The/gi` means: uppercase letter 
 `T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the 
 regular expression engine to ignore the case. As you can see we also provided `g` flag because we want to search for the pattern in 
 the whole input string.
@@ -422,7 +422,7 @@ the whole input string.
 
 ### 5.2 Global search
 
-The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example the 
+The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the 
 regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase 
 character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input 
 string.
@@ -441,8 +441,8 @@ string.
 
 ### 5.3 Multiline
 
-The `m` modifier is used to perform a multi line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
-the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example the
+The `m` modifier is used to perform a multi-line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is 
+the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example, the
 regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new 
 line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
 
