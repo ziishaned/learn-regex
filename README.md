@@ -341,10 +341,10 @@ by `$` character. Following are the lookarounds that are used in regular express
 ### 4.1 Positive Lookahead
 
 The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
-only contains the text that is matched by the first part of the expression. To define a positive lookahead braces are used and within 
-those braces question mark with equal sign is used like this `(?=...)`. Lookahead expression is written after the equal sign inside 
-braces. For example, the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
-followed by letter `h`, followed by letter `e`. In braces we define positive lookahead which tells regular expression engine to match
+only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within 
+those parentheses, a question mark with equal sign is used like this: `(?=...)`. Lookahead expression is written after the equal sign inside 
+parentheses. For example, the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
+followed by letter `h`, followed by letter `e`. In parentheses we define positive lookahead which tells regular expression engine to match
 `The` or `the` which are followed by the word `fat`. 
 
 <pre>
