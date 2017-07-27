@@ -61,6 +61,8 @@ A regular expression is just a pattern of letters and digits that we use to perf
 "cat" => The <a href="#learn-regex"><strong>cat</strong></a> sat on the mat
 </pre>
 
+[Test the regular expression](https://regex101.com/r/FOq5Nb/1)
+
 The regular expression `123` matches the string "123". The regular expression is matched against an input string by comparing each 
 character in the regular expression to each character in the input string, one after another. Regular expressions are normally
 case-sensitive so the regular expression `Cat` would not match the string "cat".
@@ -68,6 +70,8 @@ case-sensitive so the regular expression `Cat` would not match the string "cat".
 <pre>
 "Cat" => The cat sat on the <a href="#learn-regex"><strong>Cat</strong></a>
 </pre>
+
+[Test the regular expression](https://regex101.com/r/jw4Vi6/1)
 
 ## 2. Meta Characters
 
@@ -100,6 +104,8 @@ letter `r`.
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+
 ## 2.2 Character set
 
 Character sets are also called character class. Square brackets are used to specify character sets. Use hyphen inside character set to 
@@ -110,11 +116,15 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+
 A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
+
+[Test the regular expression](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 Negated character set
 
@@ -126,6 +136,7 @@ the letter `r`.
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 Repetitions
 
@@ -142,6 +153,8 @@ character set. For example the regular expression `[a-z]*` means: any number of 
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/7m8me5/1)
+
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the 
 whitespace character `\s` to match a string of whitespace characters. For example the expression `\s*cat\s*` means: zero or more 
 spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by 
@@ -150,6 +163,8 @@ zero or more spaces.
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 The Plus
 
@@ -160,6 +175,8 @@ letter `c`, followed by any number of character, followed by the lowercase chara
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+
 ### 2.3.3 The Question Mark
 
 In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of 
@@ -169,9 +186,14 @@ character `h`, followed by the lowercase character `e`.
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 Braces
 
@@ -183,6 +205,8 @@ characters in the range of 0 to 9).
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/juM86s/1)
+
 We can leave out the second number. For example the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
 the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 
@@ -190,9 +214,13 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+
 <pre>
 "[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/gqajq8/1)
 
 ## 2.5 Character Group
 
@@ -206,6 +234,8 @@ We can also use the alternation `|` meta character inside character group. For e
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+
 ## 2.6 Alternation
 
 In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now, 
@@ -218,6 +248,8 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+
 ## 2.7 Escaping special character
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
@@ -229,6 +261,8 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
+
+[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Anchors
 
@@ -248,9 +282,13 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/jXrKne/1)
 
 ### 2.8.2 Dollar
 
@@ -262,9 +300,13 @@ must be end of the string.
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
+[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+
 <pre>
-"(at\.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
+"(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
+
+[Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
 ##  3. Shorthand Character Sets
 
@@ -309,6 +351,8 @@ followed by letter `h`, followed by letter `e`. In braces we define positive loo
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/apqJZq/1)
+
 ### 4.2 Negative Lookahead
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead 
@@ -320,6 +364,8 @@ input string that are not followed by the word `fat` precedes by a space charact
 "(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/sswCvQ/1)
+
 ### 4.3 Positive Lookbehind
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by 
@@ -330,6 +376,8 @@ are after the word `The` or `the`.
 "(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/TZ8DOX/1/)
+
 ### 4.4 Negative Lookbehind
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
@@ -339,6 +387,8 @@ are after not after the word `The` or `the`.
 <pre>
 "(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/gleYg9/1)
 
 ## 5. Flags
 
@@ -362,27 +412,32 @@ the whole input string.
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
+[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-### 5.2 Global search
+[Test the regular expression](https://regex101.com/r/ahfiuh/1)
 
+### 5.2 Global search
 
 The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example the 
 regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase 
 character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input 
 string.
 
-
-
 <pre>
-".(at)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
+"/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
+
+[Test the regular expression](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 Multiline
 
@@ -397,11 +452,15 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
+[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
                   cat <a href="#learn-regex"><strong>sat</strong></a>
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
+
+[Test the regular expression](https://regex101.com/r/E88WE2/1)
 
 ## Bonus
 
