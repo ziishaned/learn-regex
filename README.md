@@ -140,13 +140,13 @@ the letter `r`.
 
 ## 2.3 Repetitions
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occurs. These meta characters act 
+Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act 
 differently in different situations. 
 
 ### 2.3.1 The Star
 
 The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions 
-of preceding lowercase character `a`. But if it appears after a character set or class that it finds the repetitions of the whole 
+of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole 
 character set. For example, the regular expression `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
@@ -224,7 +224,7 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 
 ## 2.5 Character Group
 
-Character group is a group of sub-pattern that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
+Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
 if we put a quantifier after a character than it will repeat the preceding character. But if we put quantifier after a character group then 
 it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
 We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`, 
@@ -274,7 +274,7 @@ input and the second type is Dollar `$` that checks if matching character is the
 
 Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular 
 expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above 
-input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look on another 
+input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look at another 
 regular expression `^(T|t)he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string, 
 followed by lowercase character `h`, followed by lowercase character `e`.
 
