@@ -14,9 +14,9 @@ a string, validating form, extract a substring from a string based upon a patter
 Imagine you are writing an application and you want to set the rules when user choosing their username. We want the username can 
 contains letter, number, underscore and hyphen. We also want to limit the number of characters in username so it does not look ugly. 
 We use the following regular expression to validate a username:
-
+<br/><br/>
 <p align="center">
-<img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
+<img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
 </p>
 
 Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string 
