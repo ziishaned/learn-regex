@@ -208,7 +208,7 @@ characters in the range of 0 to 9).
 [Test the regular expression](https://regex101.com/r/juM86s/1)
 
 We can leave out the second number. For example, the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove 
-the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
+the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -217,7 +217,7 @@ the comma the regular expression `[0-9]{2}` means: Match exactly 2 digits.
 [Test the regular expression](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
-"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+"[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/gqajq8/1)
