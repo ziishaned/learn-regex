@@ -482,7 +482,8 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 * *Date (MM/DD/YYYY)*: `^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$`
 * *Date (YYYY/MM/DD)*: `^(19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$`
 * *MasterCard credit card numbers*: `^(5[1-5][0-9]{14})*$`
-
+* *Hashtags*: Including hashtags with preceding text (abc123#xyz456) or containing white spaces within square brackets (#[foo bar]) : `\S*#(?:\[[^\]]+\]|\S+)`
+* *@mentions*: `\B@[a-z0-9_-]+`
 ## Contribution
 
 * Report issues
