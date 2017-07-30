@@ -55,23 +55,23 @@ contains uppercase letter and also it is too short.
 ## 1. Basic Matchers
 
 A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example, the regular expression 
-`cat` means: the letter `c`, followed by the letter `a`, followed by the letter `t`. 
+`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`. 
 
 <pre>
-"cat" => The <a href="#learn-regex"><strong>cat</strong></a> sat on the mat
+"the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/FOq5Nb/1)
+[Test the regular expression](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string "123". The regular expression is matched against an input string by comparing each 
+The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each 
 character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `Cat` would not match the string "cat".
+case-sensitive so the regular expression `The` would not match the string `the`.
 
 <pre>
-"Cat" => The cat sat on the <a href="#learn-regex"><strong>Cat</strong></a>
+"The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jw4Vi6/1)
+[Test the regular expression](https://regex101.com/r/1paXsy/1)
 
 ## 2. Meta Characters
 
@@ -220,7 +220,7 @@ the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gqajq8/1)
+[Test the regular expression](https://regex101.com/r/Sivu30/1)
 
 ## 2.5 Character Group
 
@@ -343,40 +343,40 @@ by `$` character. Following are the lookarounds that are used in regular express
 The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
 only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within 
 those parentheses, a question mark with equal sign is used like this: `(?=...)`. Lookahead expression is written after the equal sign inside 
-parentheses. For example, the regular expression `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
+parentheses. For example, the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`, 
 followed by letter `h`, followed by letter `e`. In parentheses we define positive lookahead which tells regular expression engine to match
 `The` or `the` which are followed by the word `fat`. 
 
 <pre>
-"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/apqJZq/1)
+[Test the regular expression](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Negative Lookahead
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead 
 defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character 
-i.e. `(?!...)`. Let's take a look at the following regular expression `(T|t)he(?!\sfat)` which means: get all `The` or `the` words from 
+i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from 
 input string that are not followed by the word `fat` precedes by a space character.
 
 <pre>
-"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/sswCvQ/1)
+[Test the regular expression](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Positive Lookbehind
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by 
-`(?<=...)`. For example, the regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
+`(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that 
 are after the word `The` or `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/TZ8DOX/1/)
+[Test the regular expression](https://regex101.com/r/avH165/1)
 
 ### 4.4 Negative Lookbehind
 
@@ -385,10 +385,10 @@ Negative lookbehind is used to get all the matches that are not preceded by a sp
 are not after the word `The` or `the`.
 
 <pre>
-"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gleYg9/1)
+[Test the regular expression](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Flags
 
