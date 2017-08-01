@@ -225,7 +225,7 @@ the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 ## 2.5 Character Group
 
 Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
-if we put a quantifier after a character than it will repeat the preceding character. But if we put quantifier after a character group then 
+if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then 
 it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
 We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
@@ -328,7 +328,7 @@ regular expressions. The shorthand character sets are as follows:
 Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not 
 included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain 
 pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`. 
-We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contains `.` character and preceded 
+We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contain `.` character and  are preceded 
 by `$` character. Following are the lookarounds that are used in regular expressions:
 
 |Symbol|Description|
