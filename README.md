@@ -3,6 +3,9 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
+
+[中文版](README-zh-simple.md)
+
 ## What is Regular Expression?
 
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text. 
