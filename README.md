@@ -3,8 +3,10 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
+## Translations:
 
-[中文版](README-zh-simple.md)
+* [English](README.md)
+* [中文版](README-cn.md)
 
 ## What is Regular Expression?
 

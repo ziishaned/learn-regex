@@ -3,6 +3,11 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
+## 翻译:
+
+* [English](README.md)
+* [中文版](README-cn.md)
+
 ## 什么是正则表达式?
  
 > 正则表达式是一组由字母和符号组成的特殊文本, 它可以用来从文本中找出满足你想要的格式的句子.
