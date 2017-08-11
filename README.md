@@ -474,7 +474,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 * *US Phone Number*: `^+?[\d\s]{3,}$`
 * *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
 * *Integers*: `^-?\d+$`
-* *Username*: `^[\w\d_.]{4,16}$`
+* *Username*: `^[\w.]{4,16}$`
 * *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
 * *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
 * *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
