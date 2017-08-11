@@ -381,7 +381,7 @@ are after the word `The` or `the`.
 ### 4.4 Negative Lookbehind
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
-`(?<!...)`. For example, the regular expression `(?&lt;!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
+`(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
 are not after the word `The` or `the`.
 
 <pre>
