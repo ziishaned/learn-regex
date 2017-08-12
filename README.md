@@ -173,8 +173,8 @@ zero or more spaces.
 
 ### 2.3.2 The Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase 
-letter `c`, followed by any number of character, followed by the lowercase character `t`.
+The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
+letter `c`, followed by at least one character, followed by the lowercase character `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
