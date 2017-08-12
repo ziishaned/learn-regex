@@ -484,6 +484,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 * *Uppercase letters only*: `^([A-Z])*$`
 * *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
 * *VISA credit card numbers*: `^(4[0-9]{12}(?:[0-9]{3})?)*$`
+* *Date (DD/MM/YYYY)*: `^(0?[1-9]|[12][0-9]|3[01])[- /.](0?[1-9]|1[012])[- /.](19|20)?[0-9]{2}$`
 * *Date (MM/DD/YYYY)*: `^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$`
 * *Date (YYYY/MM/DD)*: `^(19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$`
 * *MasterCard credit card numbers*: `^(5[1-5][0-9]{14})*$`
