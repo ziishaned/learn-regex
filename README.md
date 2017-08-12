@@ -16,9 +16,9 @@ A regular expression is a pattern that is matched against a subject string from 
 mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within 
 a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
 
-Imagine you are writing an application and you want to set the rules when user choosing their username. We want the username can 
-contains letter, number, underscore and hyphen. We also want to limit the number of characters in username so it does not look ugly. 
-We use the following regular expression to validate a username:
+Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to 
+allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of 
+characters in username so it does not look ugly. We use the following regular expression to validate a username:
 <br/><br/>
 <p align="center">
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
@@ -59,7 +59,7 @@ contains uppercase letter and also it is too short.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example, the regular expression 
+A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression 
 `the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`. 
 
 <pre>
@@ -81,7 +81,7 @@ case-sensitive so the regular expression `The` would not match the string `the`.
 ## 2. Meta Characters
 
 Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are 
-interpreted in some special way. Some meta characters have a special meaning that are written inside the square brackets. 
+interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets. 
 The meta characters are as follows:
 
 |Meta character|Description|
@@ -271,9 +271,10 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 ## 2.8 Anchors
 
-In regular expressions, to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
-we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
-input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
+In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the 
+input string. Anchors are of two types: First type is Caret `^` that check if the matching character is the start 
+character of the input and the second type is Dollar `$` that checks if matching character is the last character of the 
+input string.
 
 ### 2.8.1 Caret
 
