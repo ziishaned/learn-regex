@@ -470,7 +470,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 
 ## Bonus
 
-* *Positive Integers*: `^\d+$`
+* *Positive Integers*: `^[1-9]\d*$`
 * *Negative Integers*: `^-\d+$`
 * *US Phone Number*: `^+?[\d\s]{3,}$`
 * *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
