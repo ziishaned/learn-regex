@@ -7,267 +7,228 @@
 
 * [English](README.md)
 * [中文版](README-cn.md)
+* [Español](README-es.md)
 
 ## What is Regular Expression?
+> Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
 
-> Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
+Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular", puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utiliza para remplazar un texto, dentro de un *string* (o cadena de caracteres), validar el formato, extraer un substring de un string completo basado en la coincidencia de una patrón, y muchas cosas más.
 
-A regular expression is a pattern that is matched against a subject string from left to right. The word "Regular expression" is a
-mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within
-a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
+Imagina que estas escribiendo una aplicación y quieres agregar reglas para cuando el usuario elija su nombre de usuario. Nosotros vamos a querer que el nombre de usuario contenga letras, números, guión bajo, y guíon medio. También vamos a querer limitar el número de caracteres en el nombre de usuario para que no se vea feo. Para ello usamos la siguiente expresión regular para validar el nombre de usuario
 
-Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to
-allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of
-characters in username so it does not look ugly. We use the following regular expression to validate a username:
+
 <br/><br/>
 <p align="center">
-<img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
+<img src="http://imgur.com/EtlKH14.png" alt="Regular expression">
 </p>
 
-Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
-contains uppercase letter and also it is too short.  
+De la expresión regular anterior, se puede aceptar las cadenas 'john_doe', 'jo-hn_doe' y 'john12_as'. La expresión no coincide con el nombre de usuario 'Jo', porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.
 
-## Table of Contents
+## Tabla de contenido
 
-- [Basic Matchers](#1-basic-matchers)
-- [Meta character](#2-meta-characters)
+- [Introducción](#1-introduccion)
+- [Meta caracteres](#2-meta-caracteres)
   - [Full stop](#21-full-stop)
-  - [Character set](#22-character-set)
-    - [Negated character set](#221-negated-character-set)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
-  - [Character Group](#25-character-group)
-  - [Alternation](#26-alternation)
-  - [Escaping special character](#27-escaping-special-character)
-  - [Anchors](#28-anchors)
-    - [Caret](#281-caret)
-    - [Dollar](#282-dollar)
-- [Shorthand Character Sets](#3-shorthand-character-sets)
-- [Lookaround](#4-lookaround)
-  - [Positive Lookahead](#41-positive-lookahead)
-  - [Negative Lookahead](#42-negative-lookahead)
-  - [Positive Lookbehind](#43-positive-lookbehind)
-  - [Negative Lookbehind](#44-negative-lookbehind)
-- [Flags](#5-flags)
-  - [Case Insensitive](#51-case-insensitive)
-  - [Global search](#52-global-search)
-  - [Multiline](#53-multiline)
+  - [Conjunto de caracteres](#22-conjunto-de-caracteres)
+    - [Conjunto de caracteres negados](#221-conjunto-de-caracteres-negado)
+  - [Repeticiones](#23-repeticiones)
+    - [Asterísco](#231-asterisco)
+    - [Signo más](#232-signo-mas)
+    - [Signo de pregunta](#233-signo-de-pregunta)
+  - [Llaves](#24-llaves)
+  - [Grupo de caracteres](#25-grupo-de-caracteres)
+  - [Alternancia](#26-alternacia)
+  - [Caracteres especiales de escape](#27-caracteres-especiales-de-escape)
+  - [Anclas](#28-anclas)
+    - [Símbolo de intercalación](#281-simbolo-de-intercalacion)
+    - [Símbolo dolar](#282-simbolo-dolar)
+- [Conjunto de caracteres abreviados](#3-conjunto-de-caracteres-abreviados)
+- [Mirar alrededor](#4-mirar-alrededor)
+  - [Mirar hacia delante positivo](#41-mirar-hacia-delante-positivo)
+  - [Mirar hacia delante negativo](#41-mirar-hacia-delaten-negativo)
+  - [Mirar hacia atrás positivo](#41-mirar-hacia-atras-positivo)
+  - [Mirar hacia atrás negativo](#41-mirar-hacia-atras-negativo)
+- [Banderas](#5-banderas)
+  - [mayúsculas y minúsculas](#51-mayusculas-y-minusculas)
+  - [Búsqueda global](#52-busqueda-global)
+  - [Multilinea](#53-multilinea)
 - [Bonus](#bonus)
 
-## 1. Basic Matchers
+## 1. Introducción
 
-A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression
-`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`.
+Una expresión regular es sólo un patrón de caracteres que utilizamos para realizar búsquedas en un texto. Por ejemplo, la expresión regular «the» significa: la letra `t` seguida de la letra `h` seguida de la letra `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Prueba la expresión regular](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each
-character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `The` would not match the string `the`.
+La expresión regular `123` coincide con la cadena `123`. La expresión regular se compara con una cadena de entrada al comparar cada carácter de la expresión regular con cada carácter de la cadena de entrada, uno tras otro. Las expresiones regulares son normalmente sensibles a mayúsculas y minúsculas, por lo que la expresión regular `The` no coincide con la cadena `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Prueba la expresión regular](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Meta caracteres
 
-Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are
-interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets.
-The meta characters are as follows:
+Los caracteres meta son los bloques de construcción de las expresiones regulares. Los meta caracteres no se sostienen a sí mismos, sino que se interpretan de alguna manera especial. Algunos meta caracteres tienen un significado especial y se escriben entre corchetes. Los meta caracteres son los siguientes:
 
 |Meta character|Description|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Periodo. Coincide con cualquier caracter excepto un salto de línea.|
+|[ ]|Clase caracter. Coincide con cualquier caracter contenido entre corchetes.|
+|[^ ]|Clase caracter negado. Coincide con cualquier caracter que no está contenido dentro de los corchetes.|
+|*|Corresponde con 0 o más repeticiones del símbolo precedente.|
+|+|Corresponde con 1 o más repeticiones del símbolo precedente.|
+|?|Hace que el símbolo precedente sea opcional.|
+|{n,m}|Llaves.Corresponde al menos "n" pero no más de "m" repeticiones del símbolo precedente.|
+|(xyz)|Grupo caracter. Hace coincidir los caracteres xyz en ese orden exacto.|
+|&#124;|Alternancia. Corresponde a los caracteres anteriores o los caracteres después del símbolo.|
+|&#92;|Escapa el siguiente caracter. Esto le permite hacer coincidir los caracteres reservados <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Hace coincidir el principio de la entrada.|
+|$|Corresponde al final de la entrada.|
 
 ## 2.1 Full stop
 
-Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
-or new line characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
-letter `r`.
+Full stop `.` es el ejemplo más simple del meta-caracter. El caracter meta "." coincide con cualquier carácter. No coincidirá con el retorno o nuevos caracteres de línea. Por ejemplo, la expresión regular `.ar` significa: cualquier caracter, seguido de la letra`a`, seguido de la letra "r".
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Prueba la expresión regular](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Character set
+## 2.2 Conjunto de caracteres
 
-Character sets are also called character class. Square brackets are used to specify character sets. Use a hyphen inside a character set to
-specify the characters' range. The order of the character range inside square brackets doesn't matter. For example, the regular
-expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Los conjuntos de caracteres también se llaman clase de caracteres. Los corchetes se utilizan para especificar conjuntos de caracteres. Utilice un guión dentro de un conjunto de caracteres para especificar el rango de los caracteres. El orden del rango de caracteres dentro de corchetes no importa. Por ejemplo, la expresión regular "[Tt] he" significa: una letra mayúscula "T" o <minúscula> t, seguida de la letra "h" seguida de la letra "e"
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[Prueba la expresión regular](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
+Sin embargo, un período dentro de un conjunto de caracteres significa un período literal. La expresión regular `ar [.]` Significa: un carácter minúsculo `a`, seguido de la letra` r`, seguido de un carácter `.`.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[Prueba la expresión regular](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated character set
+### 2.2.1 Conjunto de caracteres negados
 
-In general, the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the
-character set. For example, the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by
-the letter `r`.
+En general, el símbolo de intercalación representa el comienzo de la cadena, pero cuando se escribe después del corchete de apertura niega el conjunto de caracteres. Por ejemplo, la expresión regular `[^c] ar` significa: cualquier carácter, excepto `c`, seguido del carácter `a`, seguido de la letra `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[Prueba la expresión regular](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Repeticiones
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act
-differently in different situations.
+Siguiendo los caracteres meta +, * o ?, se utilizan para especificar cuántas veces puede producirse un subpatrón. Estos meta-caracteres actúan de manera diferente en diferentes situaciones.
 
-### 2.3.1 The Star
+### 2.3.1 Asterísco
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions
-of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole
-character set. For example, the regular expression `[a-z]*` means: any number of lowercase letters in a row.
+El símbolo `*` coincide con cero o más repeticiones del marcador anterior. La expresión regular `a*` significa: cero o más repeticiones del carácter en minúscula precedente `a`. Pero si aparece después de un conjunto de caracteres o una clase, entonces encuentra las repeticiones de todo el conjunto de caracteres. Por ejemplo, la expresión regular `[a-z]*` significa: cualquier número de letras minúsculas en una fila.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[Prueba la expresión regular](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the
-whitespace character `\s` to match a string of whitespace characters. For example, the expression `\s*cat\s*` means: zero or more
-spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by
-zero or more spaces.
+El símbolo `*` se puede utilizar con el meta-caracter `.` para que coincida con cualquier cadena de caracteres `.*`. El símbolo `*` se lo puede utilizar con el caracter de espacio en blanco `\s` para que coincida con una cadena de caracteres de espacio en blanco. Por ejemplo, la expresión "\s*cat\s*" significa: cero o más espacios, seguido por el carácter en minúscula `c`, seguido del carácter en minúscula `a`, seguido del carácter en minúscula `t`, seguido de cero o más espacios.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[Prueba la expresión regular](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Signo más
 
-The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
-letter `c`, followed by at least one character, followed by the lowercase character `t`.
+El símbolo `+` coincide con una o más repeticiones del carácter anterior. Por ejemplo, la expresión regular `c.+T` significa: letra  en minúscula `c`, seguida por al menos uno del mismo carácter, luego el carácter en minúscula `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[Prueba la expresión regular](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Signo de pregunta
 
-In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of
-the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase
-character `h`, followed by the lowercase character `e`.
+En expresiones regulares el meta-caracter `?` hace que el caracter precedente sea opcional. Este símnbolo coincide con cero o una instancia del caracter precedente. Por ejemplo, la expresión regular  `[T]?he` significa: El caracteropcional predecesor `T` seguido por la letra en minúscula `h`, seguido del caracter en minúscula `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[Prueba la expresión regular](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[Prueba la expresión regular](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Llaves
 
-In  regular expression braces that are also called quantifiers are used to specify the number of times that a
-character or a group of characters can be repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
-characters in the range of 0 to 9).
+En la expresión regular, las llaves que también se denominan cuantificadores se utilizan para especificar el número de veces que se puede repetir un carácter o un grupo de caracteres. Por ejemplo, la expresión regular `[0-9]{2,3}` significa: Combina al menos 2 dígitos pero no más de 3 (caracteres del rango de 0 a 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[Prueba la expresión regular](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove
-the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
+Podemos dejar fuera el segundo número. Por ejemplo, la expresión regular `[0-9] {2,}` significa: Combina 2 o más dígitos. Si también eliminamos la coma, la expresión regular `[0-9]{3}` significa: coincidir exactamente con 3 dígitos.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[Prueba la expresión regular](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[Prueba la expresión regular](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Character Group
+## 2.5 Grupos de caracteres
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression
-if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then
-it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
-We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
-
+Grupo de caracteres es un grupo de sub-patrones que se escribe dentro de paréntesis `(...)`. Como hemos discutido antes en la expresión regular si ponemos un cuantificador después de un caracter, repetiremos el caracter anterior. Pero si ponemos cuantificador después de un grupo de caracteres, entonces repetimos todo el grupo de caracteres. Por ejemplo, la expresión regular `(ab)*` coincide con cero o más repeticiones del caracter "ab". También podemos usar el caracter de alternancia `|` meta dentro del grupo de caracteres. Por ejemplo, la expresión regular `(c|g|p)ar` significa: caracter en minúscula `c`, `g` o `p`, seguido del caracter `a`, seguido del caracter `r`.
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[Prueba la expresión regular](https://regex101.com/r/tUxrBG/1)
 
-## 2.6 Alternation
+## 2.6 Alternancia
 
-In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now,
-you may be thinking that character set and alternation works the same way. But the big difference between character set and alternation
-is that character set works on character level but alternation works on expression level. For example, the regular expression
-`(T|t)he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e`
-or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
+En la expresión regular se usa la barra vertical `|` para definir la alternancia. La alternancia es como una condición entre múltiples expresiones. Ahora, puedes estar pensando que el conjunto de caracteres y la alternancia funciona de la misma manera. Pero la gran diferencia entre el conjunto de caracteres y la alternancia es que el conjunto de caracteres funciona a nivel de caracter pero la alternancia funciona a nivel de expresión. Por ejemplo, la expresión regular `(T|t)he|car` significa: el carcter en mayúscula `T` o en minúscula `t`, seguido del caracter en minúscula `h`, seguido del caracter en minúscula `e` o del caracter en minúscula `c`, seguido de un caracter en minúscula `a`, seguido del carácter en minúscula `r`.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[Prueba la expresión regular](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escaping special character
+## 2.7 Caracteres especiales de escape
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
-For example, the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
-`t`, followed by optional `.` character.
+La barra invertida `\` se utiliza en la expresión regular para escapar del carácter siguiente. Esto permite especificar un símbolo como un caracter coincidente incluyendo caracteres reservados `{}[]/\+*.^|?`. Por ejemplo, la expresión regular `.` se utiliza para coincidir con cualquier caracter, excepto la nueva línea. Ahora, para emparejar `.` en una cadena de entrada, la expresión regular `(f|c|m)at\.?` significa: la letra minúscula `f`, `c` o `m`, seguida del caracter en minúscula `a`, seguido de la letra minúscula `t`, seguida del caracter opcional `.`.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[Prueba la expresión regular](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Anchors
 
