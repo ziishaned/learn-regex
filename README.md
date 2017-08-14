@@ -7,6 +7,7 @@
 
 * [English](README.md)
 * [中文版](README-cn.md)
+* [日本語版](README-ja.md)
 
 ## What is Regular Expression?
 
