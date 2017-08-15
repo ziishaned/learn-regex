@@ -57,24 +57,21 @@ A expressão regular acima aceita as strings `john_doe`, `jo-hn_doe` e `john12_a
 
 ## 1. Combinações Básicas
 
-A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression
-`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`.
+Uma expressão regular é apenas um padrão de caracteres que usamos para fazer busca em um texto. Por exemplo, a expressão regular `the` significa: a letra `t`, seguida da letra `h`, seguida da letra `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Teste a RegExp](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each
-character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `The` would not match the string `the`.
+A expressão regular `123` corresponde a string `123`. A expressão regular é comparada com uma string de entrada, comparando cada caractere da expressão regular para cada caractere da string de entrada, um após o outro. Expressões regulares são normalmente case-sensitive (sensíveis à maiúsculas), então a expressão regular `The` não vai bater com a string `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Teste a RegExp](https://regex101.com/r/1paXsy/1)
 
 ## 2. Metacaracteres
 
@@ -107,7 +104,7 @@ letter `r`.
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Teste a RegExp](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 Conjunto de caracteres
 
@@ -119,7 +116,7 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[Teste a RegExp](https://regex101.com/r/2ITLQ4/1)
 
 A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
 
@@ -127,7 +124,7 @@ A period inside a character set, however, means a literal period. The regular ex
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[Teste a RegExp](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 Conjunto de caracteres negados
 
@@ -139,7 +136,7 @@ the letter `r`.
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[Teste a RegExp](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 Repetições
 
@@ -156,7 +153,7 @@ character set. For example, the regular expression `[a-z]*` means: any number of
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[Teste a RegExp](https://regex101.com/r/7m8me5/1)
 
 The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the
 whitespace character `\s` to match a string of whitespace characters. For example, the expression `\s*cat\s*` means: zero or more
@@ -167,7 +164,7 @@ zero or more spaces.
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[Teste a RegExp](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 O Sinal de Adição
 
@@ -178,7 +175,7 @@ letter `c`, followed by at least one character, followed by the lowercase charac
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[Teste a RegExp](https://regex101.com/r/Dzf9Aa/1)
 
 ### 2.3.3 O Ponto de Interrogação
 
@@ -190,13 +187,13 @@ character `h`, followed by the lowercase character `e`.
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[Teste a RegExp](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[Teste a RegExp](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 Chaves
 
@@ -208,7 +205,7 @@ characters in the range of 0 to 9).
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[Teste a RegExp](https://regex101.com/r/juM86s/1)
 
 We can leave out the second number. For example, the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove
 the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
@@ -217,13 +214,13 @@ the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[Teste a RegExp](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[Teste a RegExp](https://regex101.com/r/Sivu30/1)
 
 ## 2.5 Grupo de Caracteres
 
@@ -237,7 +234,7 @@ We can also use the alternation `|` meta character inside character group. For e
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[Teste a RegExp](https://regex101.com/r/tUxrBG/1)
 
 ## 2.6 Alternância
 
@@ -251,7 +248,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[Teste a RegExp](https://regex101.com/r/fBXyX0/1)
 
 ## 2.7 Escapando Caracteres Especiais
 
@@ -265,7 +262,7 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[Teste a RegExp](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Âncoras
 
@@ -286,13 +283,13 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[Teste a RegExp](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[Teste a RegExp](https://regex101.com/r/jXrKne/1)
 
 ### 2.8.2 Sinal de Dólar
 
@@ -304,13 +301,13 @@ must be end of the string.
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[Teste a RegExp](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[Teste a RegExp](https://regex101.com/r/t0AkOd/1)
 
 ##  3. Forma Abreviada de Conjunto de Caracteres
 
@@ -355,7 +352,7 @@ followed by letter `h`, followed by letter `e`. In parentheses we define positiv
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[Teste a RegExp](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Lookahead Negativo
 
@@ -368,7 +365,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[Teste a RegExp](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Lookbehind Positivo
 
@@ -380,7 +377,7 @@ are after the word `The` or `the`.
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[Teste a RegExp](https://regex101.com/r/avH165/1)
 
 ### 4.4 Lookbehind Negativo
 
@@ -392,7 +389,7 @@ are not after the word `The` or `the`.
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[Teste a RegExp](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Flags
 
@@ -416,13 +413,13 @@ the whole input string.
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[Teste a RegExp](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[Teste a RegExp](https://regex101.com/r/ahfiuh/1)
 
 ### 5.2 Busca Global
 
@@ -435,13 +432,13 @@ string.
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jnk6gM/1)
+[Teste a RegExp](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[Teste a RegExp](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 Multilinhas
 
@@ -456,7 +453,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[Teste a RegExp](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -464,7 +461,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[Teste a RegExp](https://regex101.com/r/E88WE2/1)
 
 ## Bônus
 
