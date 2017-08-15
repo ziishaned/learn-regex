@@ -8,6 +8,7 @@
 * [English](README.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
+* [Português do Brasil](README-pt_BR.md)
 
 ## What is Regular Expression?
 
