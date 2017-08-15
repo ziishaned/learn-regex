@@ -3,8 +3,16 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
+<<<<<<< HEAD
 
 [中文版](README-zh-simple.md)
+=======
+## Translations:
+
+* [English](README.md)
+* [中文版](README-cn.md)
+* [日本語](README-ja.md)
+>>>>>>> zeeshanu/master
 
 ## What is Regular Expression?
 
@@ -14,9 +22,9 @@ A regular expression is a pattern that is matched against a subject string from 
 mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within 
 a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
 
-Imagine you are writing an application and you want to set the rules when user choosing their username. We want the username can 
-contains letter, number, underscore and hyphen. We also want to limit the number of characters in username so it does not look ugly. 
-We use the following regular expression to validate a username:
+Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to 
+allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of 
+characters in username so it does not look ugly. We use the following regular expression to validate a username:
 <br/><br/>
 <p align="center">
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
@@ -57,7 +65,7 @@ contains uppercase letter and also it is too short.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of letters and digits that we use to perform search in a text.  For example, the regular expression 
+A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression 
 `the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`. 
 
 <pre>
@@ -79,7 +87,7 @@ case-sensitive so the regular expression `The` would not match the string `the`.
 ## 2. Meta Characters
 
 Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are 
-interpreted in some special way. Some meta characters have a special meaning that are written inside the square brackets. 
+interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets. 
 The meta characters are as follows:
 
 |Meta character|Description|
@@ -100,7 +108,7 @@ The meta characters are as follows:
 ## 2.1 Full stop
 
 Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return 
-or new line characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
+or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
 letter `r`.
 
 <pre>
@@ -171,8 +179,8 @@ zero or more spaces.
 
 ### 2.3.2 The Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase 
-letter `c`, followed by any number of character, followed by the lowercase character `t`.
+The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
+letter `c`, followed by at least one character, followed by the lowercase character `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -228,7 +236,7 @@ the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 ## 2.5 Character Group
 
 Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression 
-if we put a quantifier after a character than it will repeat the preceding character. But if we put quantifier after a character group then 
+if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then 
 it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
 We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`, 
 `g` or `p`, followed by character `a`, followed by character `r`.
@@ -257,7 +265,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
-For example, the regular expression `.` is used to match any character except new line. Now to match `.` in an input string the regular
+For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
 expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
 `t`, followed by optional `.` character.
 
@@ -269,9 +277,10 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 ## 2.8 Anchors
 
-In regular expressions, to check if the matching symbol is the starting symbol or ending symbol of the input string for this purpose
-we use anchors. Anchors are of two types: First type is Caret `^` that check if the matching character is the start character of the 
-input and the second type is Dollar `$` that checks if matching character is the last character of the input string.
+In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the 
+input string. Anchors are of two types: First type is Caret `^` that check if the matching character is the start 
+character of the input and the second type is Dollar `$` that checks if matching character is the last character of the 
+input string.
 
 ### 2.8.1 Caret
 
@@ -331,7 +340,7 @@ regular expressions. The shorthand character sets are as follows:
 Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not 
 included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain 
 pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`. 
-We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contains `.` character and preceded 
+We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contain `.` character and  are preceded 
 by `$` character. Following are the lookarounds that are used in regular expressions:
 
 |Symbol|Description|
@@ -384,7 +393,7 @@ are after the word `The` or `the`.
 ### 4.4 Negative Lookbehind
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by 
-`(?<!...)`. For example, the regular expression `(?&lt;!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
+`(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that 
 are not after the word `The` or `the`.
 
 <pre>
@@ -472,20 +481,22 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 * *US Phone Number*: `^+?[\d\s]{3,}$`
 * *US Phone with code*: `^+?[\d\s]+(?[\d\s]{10,}$`
 * *Integers*: `^-?\d+$`
-* *Username*: `^[\w\d_.]{4,16}$`
+* *Username*: `^[\w.]{4,16}$`
 * *Alpha-numeric characters*: `^[a-zA-Z0-9]*$`
 * *Alpha-numeric characters with spaces*: `^[a-zA-Z0-9 ]*$`
 * *Password*: `^(?=^.{6,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$`
-* *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$`
+* *email*: `^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})*$`
 * *IPv4 address*: `^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$`
 * *Lowercase letters only*: `^([a-z])*$`
 * *Uppercase letters only*: `^([A-Z])*$`
 * *URL*: `^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\/+=%&_\.~?\-]*))*$`
 * *VISA credit card numbers*: `^(4[0-9]{12}(?:[0-9]{3})?)*$`
+* *Date (DD/MM/YYYY)*: `^(0?[1-9]|[12][0-9]|3[01])[- /.](0?[1-9]|1[012])[- /.](19|20)?[0-9]{2}$`
 * *Date (MM/DD/YYYY)*: `^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$`
 * *Date (YYYY/MM/DD)*: `^(19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$`
 * *MasterCard credit card numbers*: `^(5[1-5][0-9]{14})*$`
-
+* *Hashtags*: Including hashtags with preceding text (abc123#xyz456) or containing white spaces within square brackets (#[foo bar]) : `\S*#(?:\[[^\]]+\]|\S+)`
+* *@mentions*: `\B@[a-z0-9_-]+`
 ## Contribution
 
 * Report issues
