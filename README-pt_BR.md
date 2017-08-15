@@ -16,16 +16,14 @@
 
 Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. A expressão "Expressão regular" é longa e difícil de falar, você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
 
-Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to
-allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of
-characters in username so it does not look ugly. We use the following regular expression to validate a username:
+Imagine que você está escrevendo uma aplicação e quer colocar regras para quando um usuário escolher seu username. Nós queremos permitir que o username contenha letras, números, underlines e hífens. Nós também queremos limitar o número de caracteres para não ficar muito feio. Então usamos a seguinte expressão regular para validar o username:
+
 <br/><br/>
 <p align="center">
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
 </p>
 
-Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
-contains uppercase letter and also it is too short.  
+A expressão regular acima aceita as strings `john_doe`, `jo-hn_doe` e `john12_as`. Ela não aceita `Jo` porque essa string contém letras maiúsculas e também é muito curta.
 
 ## Table of Contents
 
