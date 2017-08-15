@@ -12,11 +12,9 @@
 
 ## O que é uma Expressão Regular?
 
-> Expressão Regular é um grupo de caracteres ou símbolos que é usado para encontrar um padrão específico a partir de um texto.
+> Expressão Regular é um grupo de caracteres ou símbolos utilizado para encontrar um padrão específico a partir de um texto.
 
-A regular expression is a pattern that is matched against a subject string from left to right. The word "Regular expression" is a
-mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within
-a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
+Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. A expressão "Expressão regular" é longa e difícil de falar, você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
 
 Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to
 allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of
