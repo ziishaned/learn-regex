@@ -75,24 +75,23 @@ A expressão regular `123` corresponde a string `123`. A expressão regular é c
 
 ## 2. Metacaracteres
 
-Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are
-interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets.
-The meta characters are as follows:
+Metacaracteres são elementos fundamentais das expressões regulares. Metacaracteres não representam a si mesmos mas, ao invés disso, são interpretados de uma forma especial. Alguns metacaracteres tem um significado especial e são escritos dentro de colchetes.
+Os metacaracteres são os seguintes:
 
-|Meta character|Description|
+|Metacaracter|Descrição|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.
-|?|Makes the preceding symbol optional.|
-|{n,m}|Chaves. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternância. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Corresponde a qualquer caractere, exceto uma quebra de linha|
+|[ ]|Classe de caracteres. Corresponde a qualquer caractere contido dentro dos colchetes.|
+|[^ ]|Classe de caracteres negada. Corresponde a qualquer caractere que não está contido dentro dos colchetes.|
+|*|Corresponde à 0 ou mais repetições do símbolo anterior.|
+|+|Corresponde à 1 ou mais repetições do símbolo anterior.|
+|?|Faz com que o símbolo anterior seja opcional.|
+|{n,m}|Chaves. Corresponde à no mínimo "n" mas não mais que "m" repetições do símbolo anterior.|
+|(xyz)|Grupo de caracteres. Corresponde aos caracteres xyz nesta exata ordem.|
+|&#124;|Alternância. Corresponde os caracteres antes ou os caracteres depois do símbolo|
+|&#92;|Escapa o próximo caractere. Isso permite você utilizar os caracteres reservados <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Corresponde ao início da entrada.|
+|$|Corresponde ao final da entrada.|
 
 ## 2.1 Ponto final
 
