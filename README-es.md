@@ -230,73 +230,70 @@ La barra invertida `\` se utiliza en la expresión regular para escapar del car�
 
 [Prueba la expresión regular](https://regex101.com/r/DOc5Nu/1)
 
-## 2.8 Anchors
+## 2.8 Anclas
 
-In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the
-input string. Anchors are of two types: First type is Caret `^` that check if the matching character is the start
-character of the input and the second type is Dollar `$` that checks if matching character is the last character of the
-input string.
+En expresiones regulares, usamos anclas para comprobar si el símbolo de coincidencia es el símbolo inicial o el símbolo final de la cadena de entrada. Los anclajes son de dos tipos: El primer tipo es el símbolo `^` que comprueba si el caracter coincidente es el caracter inicial de la entrada y el segundo tipo es Dollar `$` que comprueba si el caracter coincidente es el último caracter de la cadena de entrada.
 
-### 2.8.1 Caret
+### 2.8.1 Simbolo de intercalación
 
-Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular
-expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above
-input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look at another
-regular expression `^(T|t)he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string,
-followed by lowercase character `h`, followed by lowercase character `e`.
+El símbolo de intercalación `^` se usa para verificar si el caracter coincidente es el primer caracter de la cadena de entrada. Si aplicamos la siguiente expresión regular `^a` (si a es el símbolo inicial) a la cadena de entrada `abc` coincide con `a`. Pero si aplicamos la expresión regular `^b` en la cadena de entrada anterior, no coincide con nada. Porque en la cadena de entrada `abc` "b" no es el símbolo inicial. Vamos a echar un vistazo a otra expresión regular `^(T|t)he`, significa: mayúsculas `T` o la letra minúscula `t` es el símbolo inicial de la cadena de entrada, seguido del caracter minúscula `h` y seguido del caracter en minúscula `e`.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[Prueba la expresión regular](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[Prueba la expresión regular](https://regex101.com/r/jXrKne/1)
 
-### 2.8.2 Dollar
+### 2.8.2 Símbolo dolar
 
-Dollar `$` symbol is used to check if matching character is the last character of the input string. For example, regular expression
-`(at\.)$` means: a lowercase character `a`, followed by lowercase character `t`, followed by a `.` character and the matcher
-must be end of the string.
+El símbolo de dólar `$` se utiliza para comprobar si el caracter coincidente es el último carácter de la cadena de entrada. Por ejemplo, la expresión regular `(at\.)$` significa: un caracter en minúscula `a`, seguido del caracter en minúscula `t` seguido de un carácter `.` y el marcador debe ser el final de la cadena.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[Prueba la expresión regular](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[Pueba la expresión regular](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+##  3. Conjunto de caracteres abreviados
 
-Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used
-regular expressions. The shorthand character sets are as follows:
+La expresión regular proporciona abreviaturas para los conjuntos de caracteres
+comúnmente utilizados, que ofrecen abreviaturas convenientes para expresiones
+regulares de uso común. Los conjuntos de caracteres abreviados son los siguientes:
 
 |Shorthand|Description|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+|.|Cualquier caracter excepto la nueva línea|
+|\w|Coincide con los caracteres alfanuméricos: `[a-zA-Z0-9_]`|
+|\W|Coincide con los caracteres no alfanuméricos: `[^\w]`|
+|\d|Coincide con dígitos: `[0-9]`|
+|\D|Coincide con no dígitos: `[^\d]`|
+|\s|Coincide con caracteres espaciales: `[\t\n\f\r\p{Z}]`|
+|\S|Coincide con caracteres no espaciales: `[^\s]`|
 
-## 4. Lookaround
+## 4. Mirar alrededor
 
-Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not
-included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain
-pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`.
-We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contain `.` character and  are preceded
-by `$` character. Following are the lookarounds that are used in regular expressions:
+Mirar hacia delante (lookaheds) y mirar hacia atrás (Lookbehind) a veces conocidos
+como lookaround son tipo específico de ***grupo que no captura*** (Utilice para
+coincidir con el patrón pero no se incluye en la lista correspondiente). Los
+lookaheads se usan cuando tenemos la condición de que este patrón es precedido o
+seguido por otro patrón determinado. Por ejemplo, queremos obtener todos los números
+que están precedidos por el carácter `$` de la siguiente cadena de entrada
+`$4.44 y $10.88`. Usaremos la siguiente expresión regular `(?<=\$)[0-9\.] *`,
+esto significa: obtener todos los números que contienen el carácter `.` y
+están precedidos del carácter `$`. A continuación se muestran los lookarounds
+que se utilizan en expresiones regulares:
 
 |Symbol|Description|
 |:----:|----|
@@ -305,113 +302,135 @@ by `$` character. Following are the lookarounds that are used in regular express
 |?<=|Positive Lookbehind|
 |?<!|Negative Lookbehind|
 
-### 4.1 Positive Lookahead
+### 4.1 Mirar hacia adelate positiva
 
-The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
-only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within
-those parentheses, a question mark with equal sign is used like this: `(?=...)`. Lookahead expression is written after the equal sign inside
-parentheses. For example, the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`,
-followed by letter `h`, followed by letter `e`. In parentheses we define positive lookahead which tells regular expression engine to match
-`The` or `the` which are followed by the word `fat`.
+El lookahead positivo afirma que la primera parte de la expresión debe ser
+seguida por la expresión lookahead. El matchonly devuelto contiene el texto que
+coincide con la primera parte de la expresión. Para definir un lookahead positivo,
+se utilizan paréntesis. Dentro de esos paréntesis, un signo de interrogación con
+signo igual se utiliza de esta manera: `(?= ...)`. La expresión de Lookahead se
+escribe después del signo igual dentro de los paréntesis. Por ejemplo, la
+expresión regular `[T|t]he (?=\Sfat) significa: opcionalmente emparejar
+la letra minúscula `t` o la letra mayúscula `T`, seguida de la letra `h`, seguida
+de la letra `e`. Entre paréntesis definimos lookahead positivo que indica al motor
+de expresión regular que coincida con `The` o` the` seguido de la palabra `fat`.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[Prueba la expresión regular](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negative Lookahead
+### 4.2 Mirar hacia adelate negativa
 
-Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead
-defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character
-i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from
-input string that are not followed by the word `fat` precedes by a space character.
+El lookahead negativo se usa cuando necesitamos obtener todas las coincidencias
+de la cadena de entrada que no son seguidas por un patrón. El aspecto negativo se
+define de la misma manera que definimos el aspecto positivo, pero la única diferencia
+es que en lugar del caracter igual `=` utilizamos la negción  `!` , es decir,
+`(?! ...)`. Vamos a echar un vistazo a la siguiente expresión regular `[T|t]he(?!\Sfat)`
+que significa: obtener todas las `The` o `the`  seguidos por la palabra `fat` precedido por un carácter de espacio.
+
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[Prueba la expresión](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positive Lookbehind
+### 4.3 Mirar hacia atras positiva
 
-Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by
-`(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that
-are after the word `The` or `the`.
+Positivo lookbehind se utiliza para obtener todos los caracteres que están precedidos
+por un patrón específico. La apariencia positiva se denomina `(?<=...)`.
+Por ejemplo, la expresión regular `(? <= [T|t]he\s)(fat|mat)` significa: obtener todas las palabras
+`fat` o `mat` de la cadena de entrada después de la palabra `The` o `the`.
 
 <pre>
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[Prueba la expresión regular](https://regex101.com/r/avH165/1)
 
-### 4.4 Negative Lookbehind
+### 4.4 Mirar hacia atras negativa
 
-Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by
-`(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that
-are not after the word `The` or `the`.
+El lookbehind negativo se utiliza para obtener todas las coincidencias que no
+están precedidas por un patrón específico. El lookbehind negativo se denota por
+`(? <! ...)`. Por ejemplo, la expresión regular `(?<!(T|t)he(s)(cat)` significa:
+obtener todas las palabras `cat` de la cadena de entrada que no están después de
+la palabra` The` o `the`.
 
 <pre>
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[Prueba la expresión regular](https://regex101.com/r/8Efx5G/1)
 
-## 5. Flags
+## 5. Banderas
 
-Flags are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or
-combination, and are an integral part of the RegExp.
+Los indicadores también se llaman modificadores porque modifican la salida
+de una expresión regular. Estos indicadores se pueden utilizar en cualquier orden
+o combinación, y son una parte integral de RegExp.
 
-|Flag|Description|
+
+|Bandera|Descripción|
 |:----:|----|
-|i|Case insensitive: Sets matching to be case-insensitive.|
-|g|Global Search: Search for a pattern throughout the input string.|
-|m|Multiline: Anchor meta character works on each line.|
+|i|Insensible a mayúsculas y minúsculas: ajusta la coincidencia para que no distinga mayúsculas y minúsculas.|
+|g|Búsqueda global: busque un patrón en toda la cadena de entrada.|
+|m|Multilinea: Ancla meta caracter trabaja en cada linea.|
 
-### 5.1 Case Insensitive
+### 5.1 Mayúscula y minúscula
 
-The `i` modifier is used to perform case-insensitive matching. For example, the regular expression `/The/gi` means: uppercase letter
-`T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the
-regular expression engine to ignore the case. As you can see we also provided `g` flag because we want to search for the pattern in
-the whole input string.
+El modificador `i` se utiliza para realizar la coincidencia entre mayúsculas y
+minúsculas. Por ejemplo, la expresión regular `/The/gi` significa: letra mayúscula
+`T`, seguido del caracter en minúscula `h`, seguido del carácter `e`. Y al final
+de la expresión regular, el indicador `i` indica al motor de expresiones
+regulares que ignore el caso. Como puede ver, también ofrecemos el indicador
+`g` porque queremos buscar el patrón en toda la cadena de entrada.
+
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[Prueba la expresión regularn](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[Prueba la expresión regular](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Global search
+### 5.2 Búsqueda global
 
-The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the
-regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase
-character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input
-string.
+El modificador `g` se utiliza para realizar una coincidencia global
+(encontrar todos las coincidencias en lugar de detenerse después de la primera coincidencia).
+Por ejemplo, la expresión regular `/.(At)/g` significa: cualquier carácter,
+excepto la nueva línea, seguido del caracter minúsculo `a`, seguido del caracter
+en minúscula `t`. Debido a que siempre `g` prevee la bandera al final de la expresión
+regular ahora encontrará todas las coincidencias de toda la cadena de entrada.
+
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jnk6gM/1)
+[Prueba la expresión regular](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[Prueba la expresión regular](https://regex101.com/r/dO1nef/1)
 
-### 5.3 Multiline
+### 5.3 Multilinea
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is
-the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example, the
-regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new
-line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+El modificador `m` se utiliza para realizar una coincidencia de varias líneas.
+Como analizamos anteriormente, las anclas `(^,$)` se utilizan para comprobar si
+el patrón es el comienzo de la entrada o el final de la cadena de entrada. Pero
+si queremos que las anclas funcionen en cada línea usamos la bandera `m`.
+Por ejemplo, la expresión regular `/at(.)?$/Gm`
+significa: caracter en minúscula` a`, seguido del caracter minúsculo `t`,
+opcionalmente cualquier cosa menos la nueva línea. Y debido a `m` bandera ahora
+el motor de expresión regular coincide con el patrón al final de cada línea de una cadena.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -419,7 +438,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[Prueba la expresión regular](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -427,7 +446,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[Prueba la expresión regular](https://regex101.com/r/E88WE2/1)
 
 ## Bonus
 
