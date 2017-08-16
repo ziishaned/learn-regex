@@ -261,7 +261,7 @@
 
 反斜线 `\` 在表达式中用于转码紧跟其后的字符. 用于指定 `{ } [ ] / \ + * . $ ^ | ?` 这些特殊字符. 如果想要匹配这些特殊字符则要在其前面加上反斜线 `\`.
 
-例如 `.` 是用来匹配除换行符外的所有字符的. 如果想要匹配句子中的 `.` 则要写成 `\.`.
+例如 `.` 是用来匹配除换行符外的所有字符的. 如果想要匹配句子中的 `.` 则要写成 `\.` 以下这个例子 `\.?`是选择性匹配`.`
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
