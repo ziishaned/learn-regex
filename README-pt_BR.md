@@ -95,9 +95,7 @@ Os metacaracteres são os seguintes:
 
 ## 2.1 Ponto final
 
-Ponto final `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
-or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
-letter `r`.
+O ponto final `.` é um simples exemplo de metacaracteres. O metacaractere `.` corresponde à qualquer caractere sozinho. Ele não se iguala ao Enter e à quebra de linha. Por exemplo, a expressão regular `.ar` significa: qualquer caractere, seguido da letra `a`, seguida da letra `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -107,9 +105,7 @@ letter `r`.
 
 ## 2.2 Conjunto de caracteres
 
-Character sets are also called character class. Square brackets are used to specify character sets. Use a hyphen inside a character set to
-specify the characters' range. The order of the character range inside square brackets doesn't matter. For example, the regular
-expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Conjuntos de caracteres também são chamados de classes de caracteres. Utilizamos colchetes para especificar conjuntos de caracteres. Use um hífen dentro de um conjunto de caracteres para especificar o intervalo de caracteres. A ordem dos caracteres dentro dos colchetes não faz diferença. Por exemplo, a expressão regular `[Tt]he` significa: um caractere maiúsculo `T` ou minúsculo `t`, seguido da letra `h`, seguida da letra `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -117,7 +113,7 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 
 [Teste a RegExp](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
+No entanto, um ponto final dentro de um conjunto de caracteres, significa apenas um ponto final. A expressão regular `ar[.]` significa: o caractere minúsculo `a`, seguido da letra `r`, seguida pelo caractere de ponto final `.`.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -127,9 +123,7 @@ A period inside a character set, however, means a literal period. The regular ex
 
 ### 2.2.1 Conjunto de caracteres negados
 
-In general, the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the
-character set. For example, the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by
-the letter `r`.
+No geral, o símbolo do circunflexo representa o início da string, mas quando está logo após o colchete de abertura, ele faz a negação do conjunto de caracteres. Por exemplo, a expressão regular `[^c]ar` significa: qualquer caractere com exceção do `c`, seguido pelo caractere `a`, seguido da letra `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
