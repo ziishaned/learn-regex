@@ -6,6 +6,7 @@
 ## 翻訳
 
 * [English](README.md)
+* [Español](README-es.md) 
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
 
