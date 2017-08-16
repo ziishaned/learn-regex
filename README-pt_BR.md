@@ -133,25 +133,19 @@ No geral, o símbolo do circunflexo representa o início da string, mas quando e
 
 ## 2.3 Repetições
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act
-differently in different situations.
+Seguindo os metacaracteres `+`, `*` ou `?` são utilizados para especificar quantas vezes um sub-padrão pode ocorrer. Esses metacaracteres atuam de formas diferentes em diferentes situações.
 
 ### 2.3.1 O Asterisco
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions
-of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole
-character set. For example, the regular expression `[a-z]*` means: any number of lowercase letters in a row.
+O símbolo `*` corresponde à zero ou mais repetições do padrão antecedente. A expressão regular `a*` significa: zero ou mais repetições do caractere minúsculo precedente `a`. Mas se o asterisco aparecer depois de um conjunto de caracteres, ou classe de caracteres, ele irá procurar as repetições de todo o conjunto. Por exemplo, a expressão regular `[a-z]*` significa: qualquer quantidade de letras minúsculas numa linha.
 
 <pre>
-"[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
+"[a-z]&ast;" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
 [Teste a RegExp](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the
-whitespace character `\s` to match a string of whitespace characters. For example, the expression `\s*cat\s*` means: zero or more
-spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by
-zero or more spaces.
+O símbolo `*` pode ser usado junto do metacaractere `.` para encontrar qualquer string de caracteres `.*`. O símbolo `*` pode ser usado com o caractere de espaço em branco `\s` para encontrar uma string de caracteres em branco. Por exemplo, a expressão `\s*cat\s*` significa: zero ou mais espaços, seguidos do caractere minúsculo `c`, seguido do caractere minúsculo `a`, seguido do caractere minúsculo `t`, seguido de zero ou mais espaços.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
@@ -161,8 +155,7 @@ zero or more spaces.
 
 ### 2.3.2 O Sinal de Adição
 
-The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
-letter `c`, followed by at least one character, followed by the lowercase character `t`.
+O símbolo `+` corresponde à uma ou mais repetições do caractere anterior. Por exemplo, a expressão regular `c.+t` significa: a letra minúscula `c`, seguida por pelo menos um caractere, seguido do caractere minúsculo `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -172,9 +165,7 @@ letter `c`, followed by at least one character, followed by the lowercase charac
 
 ### 2.3.3 O Ponto de Interrogação
 
-In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of
-the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase
-character `h`, followed by the lowercase character `e`.
+Em expressões regulares, o metacaractere `?` faz o caractere anterior ser opcional. Esse símbolo corresponde à zero ou uma ocorrência do caractere anterior. Por exemplo, a expressão regular `[T]?he` significa: A letra maiúsculo `T` opcional, seguida do caractere minúsculo `h`, seguido do caractere minúsculo `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
