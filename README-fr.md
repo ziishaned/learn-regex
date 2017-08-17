@@ -57,7 +57,7 @@ cette string contient une lettre majuscule et elle est trop courte.
 - [Drapeaux](#5-drapeaux)
   - [Insensible à la casse](#51-insensible-à-la-casse)
   - [Recherche globale](#52-recherche-globale)
-  - [Multilignes](#53-multiligne)
+  - [Multilignes](#53-multilignes)
 - [Bonus](#bonus)
 
 ## 1. Introduction
