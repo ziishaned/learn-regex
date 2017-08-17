@@ -262,18 +262,17 @@ l'expression régulière `(f|c|m)at\.?` signifie: la lettre `f` minuscule, `c` o
 
 ## 2.8 Ancres
 
-In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the
-input string. Anchors are of two types: First type is Caret `^` that check if the matching character is the start
-character of the input and the second type is Dollar `$` that checks if matching character is the last character of the
-input string.
+Dans les expressions régulières, nous utilisons des ancres pour vérifier si le symbole trouvé est le premier ou dernier symbole de la
+string. Il y a 2 types d'ancre: Le premier type est le circonflexe `^` qui cherche si le caractère est le premier
+caractère de la string et le deuxième type est le Dollar `$` qui vérifie si le caractère est le dernier caractère de la string.
 
 ### 2.8.1 Circonflexe
 
-Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular
-expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above
-input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look at another
-regular expression `^(T|t)he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string,
-followed by lowercase character `h`, followed by lowercase character `e`.
+Le symbole circonflexe `^` est utilisé pour vérifier si un caractère est le premier caractère de la string. Si nous appliquons l'expression régulière
+suivante `^a` (si a est le premier symbole) à la string `abc`, ça coïncide. Mais si nous appliquons l'expression régulière `^b` sur cette même string,
+ça ne coïncide pas. Parce que dans la string `abc` "b" n'est pas le premier symbole. Regardons une autre expression régulière
+`^(T|t)he` qui signifie: le caractère `T` majuscule ou le caractère `t` minuscule est le premier symbole de la string,
+suivi par le caractère `h` minuscule, suivit par le caractère `e` minuscule.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
