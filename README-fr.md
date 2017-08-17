@@ -288,9 +288,9 @@ suivi par le caractère `h` minuscule, suivit par le caractère `e` minuscule.
 
 ### 2.8.2 Dollar
 
-Dollar `$` symbol is used to check if matching character is the last character of the input string. For example, regular expression
-`(at\.)$` means: a lowercase character `a`, followed by lowercase character `t`, followed by a `.` character and the matcher
-must be end of the string.
+Le symbole Dollar `$` est utilisé pour vérifier si un caractère est le dernier caractère d'une string. Par exemple, l'expression régulière
+`(at\.)$` signifie: un caractère `a` minuscule, suivit par un caractère `t` minuscule, suivit par un caractère `.` et tout cela doit être
+à la fin de la string.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
@@ -306,42 +306,42 @@ must be end of the string.
 
 ##  3. Liste de caractères abrégés
 
-Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used
-regular expressions. The shorthand character sets are as follows:
+Les expression régulières fournissent des abréviations pour les listes de caractères, ce qui offres des raccourcis pratiques pour
+les expressions régulières souvent utilisées. Ces abréviations sont les suivantes:
 
-|Shorthand|Description|
+|Abréviation|Description|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+|.|N'importe quel caractère à part le retour de ligne|
+|\w|Caractères alphanumériques: `[a-zA-Z0-9_]`|
+|\W|Caractères non-alphanumériques: `[^\w]`|
+|\d|Chiffres: `[0-9]`|
+|\D|Non-numériques: `[^\d]`|
+|\s|Espace vide: `[\t\n\f\r\p{Z}]`|
+|\S|Tout sauf espace vide: `[^\s]`|
 
 ## 4. Recherche
 
-Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not
-included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain
-pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`.
-We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contain `.` character and  are preceded
-by `$` character. Following are the lookarounds that are used in regular expressions:
+La recherche en avant et en arrière sont un type spécifique appelé *** groupe non-capturant *** (Utilisés pour trouver un paterne mais pas
+pour l'inclure dans la liste de correspondance). Les recherches en avant sont utilisées quand nous avons la condition qu'un modèle est précédé ou suivi
+par un autre modèle. Par exemple, nous voulons tous les chiffres qui sont précédés par le caractère `$` dans la string suivante `$4.44 and $10.88`.
+Nous allons utiliser l'expression régulière suivante `(?<=\$)[0-9\.]*` qui signifie: Trouver tous les nombre qui contiennent le caractère `.` et sont précédées
+par le caractère `$`. Les recherches que nous trouvons dans les expressions régulières sont les suivantes:
 
-|Symbol|Description|
+|Symbole|Description|
 |:----:|----|
-|?=|Positive Lookahead|
-|?!|Negative Lookahead|
-|?<=|Positive Lookbehind|
-|?<!|Negative Lookbehind|
+|?=|Recherche en avant positive|
+|?!|Recherche en avant négative|
+|?<=|Recherche en arrière positive|
+|?<!|Recherche en arrière négative|
 
-### 4.1 Recherche avant positive
+### 4.1 Recherche en avant positive
 
-The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
-only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within
-those parentheses, a question mark with equal sign is used like this: `(?=...)`. Lookahead expression is written after the equal sign inside
-parentheses. For example, the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`,
-followed by letter `h`, followed by letter `e`. In parentheses we define positive lookahead which tells regular expression engine to match
-`The` or `the` which are followed by the word `fat`.
+La recherche en avant assure que la première partie de l'expression soit suivie par l'expression recherchée. La valeur retournée
+contient uniquement le texte qui correspond à la première partie de l'expression. Pour définir une recherche en avant positive, on utilise
+des parenthèses. Entre ces parenthèses, un point d'interrogation avec un signe égual est utilisé comme ça: `(?=...)`. L'expression de recherche
+est écrite après le signe égual dans les parenthèses. Par exemple, l'expression régulière `[T|t]he(?=\sfat)` signifie: trouve optionnellement
+la lettre `t` minuscule ou la lettre `T` majuscule, suivie par la lettre `h` minuscule, suivie par la lettre `e`. Entre parenthèses nous définissons
+la recherche en avant positive qui dit quelle est l'expression à chercher. `The` ou `the` qui sont suivies par le mot `fat`.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -349,7 +349,7 @@ followed by letter `h`, followed by letter `e`. In parentheses we define positiv
 
 [Essayer l'expression régulière](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Recherche avant négative
+### 4.2 Recherche en avant négative
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead
 defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character
@@ -362,7 +362,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 
 [Essayer l'expression régulière](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Recherche arrière positive
+### 4.3 Recherche en arrière positive
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by
 `(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that
@@ -374,7 +374,7 @@ are after the word `The` or `the`.
 
 [Essayer l'expression régulière](https://regex101.com/r/avH165/1)
 
-### 4.4 Recherche arrière négative
+### 4.4 Recherche en arrière négative
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by
 `(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that
