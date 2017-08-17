@@ -38,7 +38,7 @@ cette string contient une lettre majuscule et elle est trop courte.
   - [Inclusion de caractères](#22-inclusion-de-caractères)
     - [Exclusion de caractères](#221-exclusion-de-caractères)
   - [Répétitions](#23-répétitions)
-    - [L'étoile](#231-l'étoile)
+    - [Asterisque](#231-Asterisque)
     - [Le Plus](#232-le-plus)
     - [Le Point d'Interrogation](#233-le-point-d'interrogation)
   - [Accolades](#24-accolades)
