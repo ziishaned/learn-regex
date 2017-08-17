@@ -128,9 +128,7 @@ L'utilisation du point dans une inclusion de caractère signifie toutefois un `.
 
 ### 2.2.1 Negated character set
 
-In general, the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the
-character set. For example, the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by
-the letter `r`.
+En règle générale, le caractère circonflexe représente le début d'une chaîne de caractère. Néanmoins, lorsqu'il est utilisé après le crochet ouvrant, il permet d'inverser la gamme de caractère (exclusion). Par exemple, l'expression régulière `[^c]ar` signifie: n'importe quel caractère sauf `c`, suivi par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
