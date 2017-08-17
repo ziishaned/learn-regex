@@ -94,7 +94,7 @@ Significations des meta-caractères:
 |{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition du caractère précédent.|
 |(xyz)|Groupe de caractères. Coïncide avec les caractères "xyz" dans l'ordre exact.|
 |&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
-|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservéstels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservés tels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|Coïncide avec le début de la chaîne de caractère.|
 |$|Coïncide avec le fin de la chaîne de caractère.|
 
@@ -110,7 +110,7 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 
 ## 2.2 Inclusion de caractères
 
-Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
+Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivi par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -247,11 +247,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 ## 2.7 Caractère d'échappement
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
-For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
-`t`, followed by optional `.` character.
+L'antislash `\` est utilisé pour echapé le prochain caractère. Cela permet de spécifier un symbole comme un caractère correspondant en incluant les caractères réservés tels que `{ } [ ] / \ + * . $ ^ | ?`. Pour utiliser un caractère réservé comme caractère correspondant, le prefixer de `\`. Par exemple, le `.` dans une expresison régulière est utilisé pour faire coïncider n'importe caractère, retour de ligne excepté. Afin de faire coïncider le `.` dans une châine de caractère, on utilise par exemple `(f|c|m)at\.?` signifiant: la lettre `f` minuscule, `c` ou `m`, suivi par la lettre `a` minuscule, fsuivi par la lettre `t` minuscule, suivi par un `.` optionel.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
