@@ -110,9 +110,7 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 
 ## 2.2 Character set
 
-Character sets are also called character class. Square brackets are used to specify character sets. Use a hyphen inside a character set to
-specify the characters' range. The order of the character range inside square brackets doesn't matter. For example, the regular
-expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -120,7 +118,7 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 
 [Test the regular expression](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
+L'utilisation du point dans une inclusion de caractère signifie toutefois un `.` littéral. L'expression régulière `ar[.]` signifie: un `a` minuscule, suivi par la lettre `r`, suvie par un `.` (point)).
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
