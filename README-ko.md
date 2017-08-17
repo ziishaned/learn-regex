@@ -3,14 +3,15 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
-## Translations:
+## 번역:
 
 * [English](README.md)
 * [Español](README-es.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
+* [한국어](README-ko.md)
 
-## What is Regular Expression?
+## 정규식(Regular Expression)이란 무엇인가?
 
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
 
