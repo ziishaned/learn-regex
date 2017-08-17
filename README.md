@@ -6,7 +6,8 @@
 ## Translations:
 
 * [English](README.md)
-* [Español](README-es.md) 
+* [Español](README-es.md)
+* [Français](README-fr.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
 
@@ -260,6 +261,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 Backslash `\` is used in regular expression to escape the next character. This allows us to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
+
 For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
 expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
 `t`, followed by optional `.` character.
