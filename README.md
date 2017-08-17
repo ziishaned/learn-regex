@@ -259,7 +259,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 ## 2.7 Escaping special character
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character 
+Backslash `\` is used in regular expression to escape the next character. This allows us to specify a symbol as a matching character 
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
 For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
 expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
