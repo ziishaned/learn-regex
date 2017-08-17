@@ -38,7 +38,7 @@ cette string contient une lettre majuscule et elle est trop courte.
   - [Inclusion de caractères](#22-inclusion-de-caractères)
     - [Exclusion de caractères](#221-exclusion-de-caractères)
   - [Répétitions](#23-répétitions)
-    - [Asterisque](#231-Asterisque)
+    - [Astérisque](#231-Asterisque)
     - [Le Plus](#232-le-plus)
     - [Le Point d'Interrogation](#233-le-point-d'interrogation)
   - [Accolades](#24-accolades)
@@ -140,31 +140,31 @@ the letter `r`.
 
 ## 2.3 Répétitions
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act
-differently in different situations.
+Les meta-caractères suivants `+`, `*` ou `?` sont utilisés pour spécifier combien de fois un sous-modèle peut apparaître. Ces meta-caractères agissent
+différemment selon la situation dans laquelle ils sont utilisés.
 
-### 2.3.1 Asterisque
+### 2.3.1 Astérisque
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions
-of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole
-character set. For example, the regular expression `[a-z]*` means: any number of lowercase letters in a row.
+Le symbole `*` correspond à zéro ou plus de répétitions du modèle précédent. L'expression régulière `a*` signifie: zéro ou plus de répétitions
+du précédent `a` minuscule. Mais si il se trouve après une liste de caractères alors il s'agit de la répétition de la liste entière.
+Par exemple, l'expression régulière `[a-z]*` signifie: n'importe combien de lettres minuscules.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[Essayer l'expression régulière](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of characters `.*`. The `*` symbol can be used with the
-whitespace character `\s` to match a string of whitespace characters. For example, the expression `\s*cat\s*` means: zero or more
-spaces, followed by lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `t`, followed by
-zero or more spaces.
+Le symbole `*` peut être utilisé avec le meta-caractère `.` pour correspondre à n'importe quel chaîne de caractères `.*`. Le symbole `*` peut être utilisé avec le
+caractère espace vide `\s` pour correspondre à une chaîne d'espaces vides. Par exemple, l'expression `\s*cat\s*` signifie: zéro ou plus
+d'espaces, suivits du caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit par le caractère `t` minuscule, suivit par
+zéro ou plus d'espaces.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[Essayer l'expression régulière](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 Le Plus
 
