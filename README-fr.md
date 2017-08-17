@@ -166,7 +166,7 @@ zero or more spaces.
 
 ### 2.3.2 Le Plus
 
-Le caractère `+` coïncide à une ou plusieurs répétitions du caractère précédent. Par exemple, l'expression régulière `c.+t` signifie: la lettre `c` minuscule, suivie par au moins un caractère, suivi par la lettre `t` minuscule. Le `t` coïncide par conséquent avec le dernier `t` de la phrase.
+Le meta-caractère `+` coïncide à une ou plusieurs répétitions du caractère précédent. Par exemple, l'expression régulière `c.+t` signifie: la lettre `c` minuscule, suivie par au moins un caractère, suivi par la lettre `t` minuscule. Le `t` coïncide par conséquent avec le dernier `t` de la phrase.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -176,9 +176,7 @@ Le caractère `+` coïncide à une ou plusieurs répétitions du caractère pré
 
 ### 2.3.3 Le point d'interrogation
 
-In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of
-the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase
-character `h`, followed by the lowercase character `e`.
+Le meta-caractère `?` rend le caractère précédent optionel. Ce symbol permet de faire coïncider 0 ou une instance du caractère précédent. Par exemple, l'expression régulière `[T]?he` signifie: lettre `T` majuscule optionelle, suivie par la lettre `h` minuscule, suivie par la lettre `e` minuscule.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -194,7 +192,7 @@ character `h`, followed by the lowercase character `e`.
 
 ## 2.4 Accolades
 
-In  regular expression braces that are also called quantifiers are used to specify the number of times that a
+In regular expression braces that are also called quantifiers are used to specify the number of times that a
 character or a group of characters can be repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
 characters in the range of 0 to 9).
 
