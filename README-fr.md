@@ -62,8 +62,7 @@ cette string contient une lettre majuscule et elle est trop courte.
 
 ## 1. Introduction
 
-A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression
-`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`.
+Une expression régulière est un motif de caractères utilisés pour opérer une recherche dans un text. Par exemple, l'expression régulère `the` signifie: la lettre `t`, suivie de la lettre `h`, suivie de la lettre `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -71,9 +70,7 @@ A regular expression is just a pattern of characters that we use to perform sear
 
 [Test the regular expression](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each
-character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `The` would not match the string `the`.
+L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère de l'expression régulière est comparée à la chaine passée en entrée, caractère par caractère. Les expressions régulières sont normalement sensibles à la casse, donc l'expression régulière `The` ne va pas coïncider à la chaîne de caractère `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -83,30 +80,27 @@ case-sensitive so the regular expression `The` would not match the string `the`.
 
 ## 2. Meta caractères
 
-Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are
-interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets.
-The meta characters are as follows:
+Les meta-caractères sont les bloques de construction des expressions régulières. Les meta-caractères sont interprétés de manière particulière. Certains meta-caractères ont des significations spéciales et sont écrits entre crochets.
+Significations des meta-caractères:
 
-|Meta character|Description|
+|Meta-caractère|Description|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Un point coïncide avec n'importe quel caractère unique à part le retour à la ligne.|
+|[ ]|Classe de caractères. Coïncide avec n'importe quels caractères entre crochets.|
+|[^ ]|Négation de classe de caractère. Coïncide avec n'importe quels caractères qui n'est pas entre les crochets.|
+|*|Coïncide avec 0 ou plus répétitions du caractère précédent.|
+|+|Coïncide avec 1 ou plus répétitions du caractère précédent.|
+|?|Rend le caractère précédent optionel.|
+|{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition du caractère précédent.|
+|(xyz)|Groupe de caractères. Coïncide avec les caractères "xyz" dans l'ordre exact.|
+|&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
+|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservéstels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Coïncide avec le début de la chaîne de caractère.|
+|$|Coïncide avec le fin de la chaîne de caractère.|
 
 ## 2.1 Full stop
 
-Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
-or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
-letter `r`.
+Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide avec n'importe caractère unique, mais ne coïcide pas avec les caractères de retour ou de nouvelle ligne. Par exemple, l'expression régulière `.ar` signifie: n'importe quel caractère suvit par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -116,9 +110,7 @@ letter `r`.
 
 ## 2.2 Inclusion de caractères
 
-Character sets are also called character class. Square brackets are used to specify character sets. Use a hyphen inside a character set to
-specify the characters' range. The order of the character range inside square brackets doesn't matter. For example, the regular
-expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -126,7 +118,7 @@ expression `[Tt]he` means: an uppercase `T` or lowercase `t`, followed by the le
 
 [Test the regular expression](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular expression `ar[.]` means: a lowercase character `a`, followed by letter `r`, followed by a period `.` character.
+L'utilisation du point dans une inclusion de caractère signifie toutefois un `.` littéral. L'expression régulière `ar[.]` signifie: un `a` minuscule, suivi par la lettre `r`, suvie par un `.` (point)).
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
