@@ -6,8 +6,7 @@
 ## Translations:
 
 * [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
+* [Español](README-es.md) 
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
 
@@ -58,7 +57,6 @@ contains uppercase letter and also it is too short.
   - [Case Insensitive](#51-case-insensitive)
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
-- [Bonus](#bonus)
 
 ## 1. Basic Matchers
 
@@ -104,8 +102,8 @@ The meta characters are as follows:
 
 ## 2.1 Full stop
 
-Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
-or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
+Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return 
+or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
 letter `r`.
 
 <pre>
@@ -260,10 +258,10 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 ## 2.7 Escaping special character
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
+Backslash `\` is used in regular expression to escape the next character. This allows us to specify a symbol as a matching character 
+including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
 For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
+expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
 `t`, followed by optional `.` character.
 
 <pre>
