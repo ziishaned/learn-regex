@@ -94,7 +94,7 @@ Significations des meta-caractères:
 |{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition du caractère précédent.|
 |(xyz)|Groupe de caractères. Coïncide avec les caractères "xyz" dans l'ordre exact.|
 |&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
-|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservéstels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservés tels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|Coïncide avec le début de la chaîne de caractère.|
 |$|Coïncide avec le fin de la chaîne de caractère.|
 
@@ -109,6 +109,7 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 [Essayer l'expression régulière](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 Inclusions de caractères
+
 
 Les inclusions de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
 
@@ -128,9 +129,7 @@ L'utilisation du point dans une inclusion de caractère signifie toutefois un `.
 
 ### 2.2.1 Exclusion de caractères
 
-In general, the caret symbol represents the start of the string, but when it is typed after the opening square bracket it negates the
-character set. For example, the regular expression `[^c]ar` means: any character except `c`, followed by the character `a`, followed by
-the letter `r`.
+En règle générale, le caractère circonflexe représente le début d'une chaîne de caractère. Néanmoins, lorsqu'il est utilisé après le crochet ouvrant, il permet d'inverser la gamme de caractère (exclusion). Par exemple, l'expression régulière `[^c]ar` signifie: n'importe quel caractère sauf `c`, suivi par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -168,8 +167,7 @@ zéro ou plus d'espaces.
 
 ### 2.3.2 Le Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
-letter `c`, followed by at least one character, followed by the lowercase character `t`. It needs to be clarified that `t` is the last `t` in the sentence.
+Le meta-caractère `+` coïncide à une ou plusieurs répétitions du caractère précédent. Par exemple, l'expression régulière `c.+t` signifie: la lettre `c` minuscule, suivie par au moins un caractère, suivi par la lettre `t` minuscule. Le `t` coïncide par conséquent avec le dernier `t` de la phrase.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -179,9 +177,7 @@ letter `c`, followed by at least one character, followed by the lowercase charac
 
 ### 2.3.3 Le point d'interrogation
 
-In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of
-the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase
-character `h`, followed by the lowercase character `e`.
+Le meta-caractère `?` rend le caractère précédent optionel. Ce symbol permet de faire coïncider 0 ou une instance du caractère précédent. Par exemple, l'expression régulière `[T]?he` signifie: lettre `T` majuscule optionelle, suivie par la lettre `h` minuscule, suivie par la lettre `e` minuscule.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -252,7 +248,7 @@ ou le caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit p
 
 ## 2.7 Caractère d'échappement
 
-Le backslash `\` est utilisé dans les expression régulières pour échapper (ignorer) le caractère suivant. Cela permet de spécifier un symbole comme caractère à trouver
+L'antislash `\` est utilisé dans les expression régulières pour échapper (ignorer) le caractère suivant. Cela permet de spécifier un symbole comme caractère à trouver
 y compris les caractères réservés `{ } [ ] / \ + * . $ ^ | ?`. Pour utiliser un caractère spécial comme caractère à trouver, préfixer `\` avant celui-ci.
 Par exemple, l'expression régulière `.` est utilisée pour trouver n'importe quel caractère sauf le retour de ligne. Donc pour trouver `.` dans une string
 l'expression régulière `(f|c|m)at\.?` signifie: la lettre `f` minuscule, `c` or `m`, suivit par le caractère `a` minuscule, suivit par la lettre
