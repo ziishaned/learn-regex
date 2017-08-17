@@ -151,7 +151,7 @@ the letter `r`.
 Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act
 differently in different situations.
 
-### 2.3.1 L'étoile
+### 2.3.1 Asterisque
 
 The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions
 of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole
