@@ -7,19 +7,19 @@
 
 * [English](README.md)
 * [Español](README-es.md)
+* [Français](README-fr.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
-* [French](README-fr.md)
 
-## Qu'est-ce qu'une expression rationnelle?
+## Qu'est-ce qu'une expression régulière?
 
-> Une expression rationnelle est un groupement de caractères ou symboles utilisés pour trouver un paterne spécifique dans un texte.
+> Une expression régulière est un groupement de caractères ou symboles utilisés pour trouver un modèle spécifique dans un texte.
 
-Une expression rationnelle est un paterne qui est comparée à une string de gauche à droite. Le mot "Expression rationnelle" est un
-terme entier, souvent abrégé par "regex" ou "regexp". Une expression rationnelle est utilisée pour remplacer un texte à l'intérieur
-d'une string, valider un formulaire, extraire une portion de string basée sur un paterne, et bien plus encore.
+Une expression régulière est un modèle qui est comparée à une chaîne de caractères de gauche à droite. Le mot "Expression régulière"
+est un terme entier, souvent abrégé par "regex" ou "regexp". Une expression régulière est utilisée pour remplacer un texte à l'intérieur
+d'une *string* (une chaîne de caractères), valider un formulaire, extraire une portion de string basée sur un modèle, et bien plus encore.
 
-Imagine que tu écris une application et que tu veux définir des règles pour le choix du pseudonyme. Nous voulons autoriser
+Imaginons que nous écrivons une application et que nous voulons définir des règles pour le choix du pseudonyme. Nous voulons autoriser
 le pseudonyme à contenir des lettres, des nombres, des underscores et des traits d'union. Nous voulons aussi limiter le nombre
 de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
@@ -27,40 +27,40 @@ de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utiliso
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
 </p>
 
-L'expression rationnelle ci-dessus peut accepter les strings `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car
+L'expression régulière ci-dessus peut accepter les strings `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car
 cette string contient une lettre majuscule et elle est trop courte.
 
-## Table of Contents
+## Table des matières
 
-- [Basic Matchers](#1-basic-matchers)
-- [Meta character](#2-meta-characters)
+- [Introduction](#1-introduction)
+- [Meta caractères](#2-meta-caractères)
   - [Full stop](#21-full-stop)
-  - [Character set](#22-character-set)
-    - [Negated character set](#221-negated-character-set)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
-  - [Character Group](#25-character-group)
+  - [Inclusion de caractères](#22-inclusion-de-caractères)
+    - [Exclusion de caractères](#221-exclusion-de-caractères)
+  - [Répétitions](#23-répétitions)
+    - [Asterisque](#231-Asterisque)
+    - [Le Plus](#232-le-plus)
+    - [Le Point d'Interrogation](#233-le-point-d'interrogation)
+  - [Accolades](#24-accolades)
+  - [Groupement de caractères](#25-groupement-de-caractères)
   - [Alternation](#26-alternation)
-  - [Escaping special character](#27-escaping-special-character)
-  - [Anchors](#28-anchors)
-    - [Caret](#281-caret)
+  - [Caractère d'échappement](#27-caractère-d'échappement)
+  - [Ancres](#28-ancres)
+    - [Circonflexe](#281-circonflexe)
     - [Dollar](#282-dollar)
-- [Shorthand Character Sets](#3-shorthand-character-sets)
-- [Lookaround](#4-lookaround)
-  - [Positive Lookahead](#41-positive-lookahead)
-  - [Negative Lookahead](#42-negative-lookahead)
-  - [Positive Lookbehind](#43-positive-lookbehind)
-  - [Negative Lookbehind](#44-negative-lookbehind)
-- [Flags](#5-flags)
-  - [Case Insensitive](#51-case-insensitive)
-  - [Global search](#52-global-search)
-  - [Multiline](#53-multiline)
+- [Liste de caractères abrégés](#3-liste-de-caractères-abrégés)
+- [Recherche](#4-recherche)
+  - [Recherche avant positive](#41-recherche-avant-positive)
+  - [Recherche avant négative](#42-recherche-avant-négative)
+  - [Recherche arrière positive](#43-recherche-arrière-positive)
+  - [Recherche arrière négative](#44-recherche-arrière-négative)
+- [Drapeaux](#5-drapeaux)
+  - [Insensible à la casse](#51-insensible-à-la-casse)
+  - [Recherche globale](#52-recherche-globale)
+  - [Multilignes](#53-multilignes)
 - [Bonus](#bonus)
 
-## 1. Basic Matchers
+## 1. Introduction
 
 Une expression régulière est un motif de caractères utilisés pour opérer une recherche dans un text. Par exemple, l'expression régulère `the` signifie: la lettre `t`, suivie de la lettre `h`, suivie de la lettre `e`.
 
@@ -78,7 +78,7 @@ L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère 
 
 [Test the regular expression](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Meta caractères
 
 Les meta-caractères sont les bloques de construction des expressions régulières. Les meta-caractères sont interprétés de manière particulière. Certains meta-caractères ont des significations spéciales et sont écrits entre crochets.
 Significations des meta-caractères:
@@ -108,7 +108,7 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 
 [Test the regular expression](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Character set
+## 2.2 Inclusion de caractères
 
 Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
 
@@ -126,7 +126,7 @@ L'utilisation du point dans une inclusion de caractère signifie toutefois un `.
 
 [Test the regular expression](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated character set
+### 2.2.1 Exclusion de caractères
 
 En règle générale, le caractère circonflexe représente le début d'une chaîne de caractère. Néanmoins, lorsqu'il est utilisé après le crochet ouvrant, il permet d'inverser la gamme de caractère (exclusion). Par exemple, l'expression régulière `[^c]ar` signifie: n'importe quel caractère sauf `c`, suivi par la lettre `a`, suivie par la lettre `r`.
 
@@ -136,12 +136,12 @@ En règle générale, le caractère circonflexe représente le début d'une cha�
 
 [Test the regular expression](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Répétitions
 
 Following meta characters `+`, `*` or `?` are used to specify how many times a subpattern can occur. These meta characters act
 differently in different situations.
 
-### 2.3.1 The Star
+### 2.3.1 Asterisque
 
 The symbol `*` matches zero or more repetitions of the preceding matcher. The regular expression `a*` means: zero or more repetitions
 of preceding lowercase character `a`. But if it appears after a character set or class then it finds the repetitions of the whole
@@ -164,7 +164,7 @@ zero or more spaces.
 
 [Test the regular expression](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Le Plus
 
 The symbol `+` matches one or more repetitions of the preceding character. For example, the regular expression `c.+t` means: lowercase
 letter `c`, followed by at least one character, followed by the lowercase character `t`. It needs to be clarified that `t` is the last `t` in the sentence.
@@ -175,7 +175,7 @@ letter `c`, followed by at least one character, followed by the lowercase charac
 
 [Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Le point d'interrogation
 
 In regular expression the meta character `?` makes the preceding character optional. This symbol matches zero or one instance of
 the preceding character. For example, the regular expression `[T]?he` means: Optional the uppercase letter `T`, followed by the lowercase
@@ -193,7 +193,7 @@ character `h`, followed by the lowercase character `e`.
 
 [Test the regular expression](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Accolades
 
 In  regular expression braces that are also called quantifiers are used to specify the number of times that a
 character or a group of characters can be repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
@@ -220,7 +220,7 @@ the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 [Test the regular expression](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Character Group
+## 2.5 Groupement de carctères
 
 Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression
 if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then
@@ -248,7 +248,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 [Test the regular expression](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escaping special character
+## 2.7 Caractère d'échappement
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
@@ -262,14 +262,14 @@ expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by l
 
 [Test the regular expression](https://regex101.com/r/DOc5Nu/1)
 
-## 2.8 Anchors
+## 2.8 Ancres
 
 In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the
 input string. Anchors are of two types: First type is Caret `^` that check if the matching character is the start
 character of the input and the second type is Dollar `$` that checks if matching character is the last character of the
 input string.
 
-### 2.8.1 Caret
+### 2.8.1 Circonflexe
 
 Caret `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular
 expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above
@@ -307,7 +307,7 @@ must be end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+##  3. Liste de caractères abrégés
 
 Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used
 regular expressions. The shorthand character sets are as follows:
@@ -322,7 +322,7 @@ regular expressions. The shorthand character sets are as follows:
 |\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace character: `[^\s]`|
 
-## 4. Lookaround
+## 4. Recherche
 
 Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not
 included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain
@@ -337,7 +337,7 @@ by `$` character. Following are the lookarounds that are used in regular express
 |?<=|Positive Lookbehind|
 |?<!|Negative Lookbehind|
 
-### 4.1 Positive Lookahead
+### 4.1 Recherche avant positive
 
 The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
 only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within
@@ -352,7 +352,7 @@ followed by letter `h`, followed by letter `e`. In parentheses we define positiv
 
 [Test the regular expression](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negative Lookahead
+### 4.2 Recherche avant négative
 
 Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead
 defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character
@@ -365,7 +365,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 
 [Test the regular expression](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positive Lookbehind
+### 4.3 Recherche arrière positive
 
 Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by
 `(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that
@@ -377,7 +377,7 @@ are after the word `The` or `the`.
 
 [Test the regular expression](https://regex101.com/r/avH165/1)
 
-### 4.4 Negative Lookbehind
+### 4.4 Recherche arrière négative
 
 Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by
 `(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that
@@ -389,7 +389,7 @@ are not after the word `The` or `the`.
 
 [Test the regular expression](https://regex101.com/r/8Efx5G/1)
 
-## 5. Flags
+## 5. Drapeaux
 
 Flags are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or
 combination, and are an integral part of the RegExp.
@@ -400,7 +400,7 @@ combination, and are an integral part of the RegExp.
 |g|Global Search: Search for a pattern throughout the input string.|
 |m|Multiline: Anchor meta character works on each line.|
 
-### 5.1 Case Insensitive
+### 5.1 Insensible à la casse
 
 The `i` modifier is used to perform case-insensitive matching. For example, the regular expression `/The/gi` means: uppercase letter
 `T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the
@@ -419,7 +419,7 @@ the whole input string.
 
 [Test the regular expression](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Global search
+### 5.2 Recherche globale
 
 The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the
 regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase
@@ -438,7 +438,7 @@ string.
 
 [Test the regular expression](https://regex101.com/r/dO1nef/1)
 
-### 5.3 Multiline
+### 5.3 Multilignes
 
 The `m` modifier is used to perform a multi-line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is
 the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example, the

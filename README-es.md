@@ -7,9 +7,9 @@
 
 * [English](README.md)
 * [Español](README-es.md)
+* [Français](README-fr.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
-* [French](README-fr.md)
 
 ## What is Regular Expression?
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
