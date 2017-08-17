@@ -58,7 +58,6 @@ contains uppercase letter and also it is too short.
   - [Case Insensitive](#51-case-insensitive)
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
-- [Bonus](#bonus)
 
 ## 1. Basic Matchers
 
@@ -262,6 +261,7 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
 including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
+
 For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
 expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
 `t`, followed by optional `.` character.
