@@ -205,11 +205,7 @@ Nós podemos retirar o segundo número. Por exemplo, a expressão regular `[0-9]
 
 ## 2.5 Grupo de Caracteres
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression
-if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then
-it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
-We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
+Grupo de caracteres é um grupo de sub-padrão que é escrito dentro de parênteses `(...)`. Como falamos antes, se colocaramos um quantificador depois de um caractere, ele irá repetir o caractere anterior. Mas se colocarmos um quantificador depois de um grupo de caracteres, ele irá repetir todo o conjunto. Por exemplo, a expressão regular `(ab)*` corresponde à zero ou mais repetições dos caracteres "ab". Nós também podemos usar o metacaractere de alternância `|` dentro de um grupo de caracteres. Por exemplo, a expressão regular `(c|g|p)ar` significa: caractere minúsculo `c`, `g` ou `p`, seguido do caractere `a`, seguido do caractere `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
