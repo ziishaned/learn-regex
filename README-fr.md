@@ -62,8 +62,7 @@ cette string contient une lettre majuscule et elle est trop courte.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression
-`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`.
+Une expression régulière est un motif de caractères utilisés pour opérer une recherche dans un text. Par exemple, l'expression régulère `the` signifie: la lettre `t`, suivie de la lettre `h`, suivie de la lettre `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -71,9 +70,7 @@ A regular expression is just a pattern of characters that we use to perform sear
 
 [Test the regular expression](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each
-character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `The` would not match the string `the`.
+L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère de l'expression régulière est comparée à la chaine passée en entrée, caractère par caractère. Les expressions régulières sont normalement sensibles à la casse, donc l'expression régulière `The` ne va pas coïncider à la chaîne de caractère `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
