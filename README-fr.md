@@ -13,22 +13,20 @@
 
 ## Qu'est-ce qu'une expression rationnelle?
 
-> Une expression rationnelle est un groupement de caractères ou symboles utilisés pour trouver un paterne spécifique dans un text.
+> Une expression rationnelle est un groupement de caractères ou symboles utilisés pour trouver un paterne spécifique dans un texte.
 
-Une expression rationnelle est un paterne qui est comparé à une string de gauche à droite. Le mot "Expression rationnelle" est un
-terme entier, souvent abbrégé par "regex" ou "regexp". Une expression rationnelle est utilisée pour remplacer un texte à l'intérieur
+Une expression rationnelle est un paterne qui est comparée à une string de gauche à droite. Le mot "Expression rationnelle" est un
+terme entier, souvent abrégé par "regex" ou "regexp". Une expression rationnelle est utilisée pour remplacer un texte à l'intérieur
 d'une string, valider un formulaire, extraire une portion de string basée sur un paterne, et bien plus encore.
 
 Imagine que tu écris une application et que tu veux définir des règles pour le choix du pseudonyme. Nous voulons autoriser
-le pseudonyme à contenir des lettres, des nombres, des underscores et des traits d'union. Nous voulons aussi limiter le nombres
-de caractères dans le pseudonyme pour pas qu'il ait l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
+le pseudonyme à contenir des lettres, des nombres, des underscores et des traits d'union. Nous voulons aussi limiter le nombre
+de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
 <p align="center">
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
 </p>
 
-Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
-contains uppercase letter and also it is too short.  
 L'expression rationnelle ci-dessus peut accepter les strings `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car
 cette string contient une lettre majuscule et elle est trop courte.
 
