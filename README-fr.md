@@ -33,7 +33,7 @@ cette string contient une lettre majuscule et elle est trop courte.
 ## Table des matières
 
 - [Introduction](#1-introduction)
-- [Meta caractères](#2-meta-caractères)
+- [Meta-caractères](#2-meta-caractères)
   - [Full stop](#21-full-stop)
   - [Inclusion de caractères](#22-inclusion-de-caractères)
     - [Exclusion de caractères](#221-exclusion-de-caractères)
@@ -68,7 +68,7 @@ Une expression régulière est un motif de caractères utilisés pour opérer un
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Essayer l'expression régulière](https://regex101.com/r/dmRygT/1)
 
 L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère de l'expression régulière est comparée à la chaine passée en entrée, caractère par caractère. Les expressions régulières sont normalement sensibles à la casse, donc l'expression régulière `The` ne va pas coïncider à la chaîne de caractère `the`.
 
@@ -76,9 +76,9 @@ L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère 
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Essayer l'expression régulière](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta caractères
+## 2. Meta-caractères
 
 Les meta-caractères sont les bloques de construction des expressions régulières. Les meta-caractères sont interprétés de manière particulière. Certains meta-caractères ont des significations spéciales et sont écrits entre crochets.
 Significations des meta-caractères:
@@ -106,17 +106,17 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Essayer l'expression régulière](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Inclusion de caractères
+## 2.2 Inclusions de caractères
 
-Inclusion de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractès. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
+Les inclusions de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[Essayer l'expression régulière](https://regex101.com/r/2ITLQ4/1)
 
 L'utilisation du point dans une inclusion de caractère signifie toutefois un `.` littéral. L'expression régulière `ar[.]` signifie: un `a` minuscule, suivi par la lettre `r`, suvie par un `.` (point)).
 
@@ -124,7 +124,7 @@ L'utilisation du point dans une inclusion de caractère signifie toutefois un `.
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[Essayer l'expression régulière](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 Exclusion de caractères
 
@@ -136,7 +136,7 @@ the letter `r`.
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[Essayer l'expression régulière](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 Répétitions
 
@@ -175,7 +175,7 @@ letter `c`, followed by at least one character, followed by the lowercase charac
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[Essayer l'expression régulière](https://regex101.com/r/Dzf9Aa/1)
 
 ### 2.3.3 Le point d'interrogation
 
@@ -187,82 +187,82 @@ character `h`, followed by the lowercase character `e`.
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[Essayer l'expression régulière](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[Essayer l'expression régulière](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 Accolades
 
-In  regular expression braces that are also called quantifiers are used to specify the number of times that a
-character or a group of characters can be repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least 2 digits but not more than 3 (
-characters in the range of 0 to 9).
+Dans une expression régulière, les accolades, qui sont aussi appelée quantifieurs, sont utilisés pour spécifier le nombre de fois qu'un
+caractère ou un groupe de caractères peut être répété. Par exemple, l'expression régulière `[0-9]{2,3}` signifie: Trouve au moins 2 chiffres mais pas plus de 3 (
+caractères dans la gamme de 0 à 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[Essayer l'expression régulière](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression `[0-9]{2,}` means: Match 2 or more digits. If we also remove
-the comma the regular expression `[0-9]{3}` means: Match exactly 3 digits.
+Nous pouvons ommettre le second nombre. Par exemple, l'expression régulière `[0-9]{2,}` signifie: Trouve 2 chiffres ou plus. Si nous supprimons aussi
+la virgule l'expression régulière `[0-9]{3}` signifie: Trouve exactement 3 chiffres.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[Essayer l'expression régulière](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[Essayer l'expression régulière](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Groupement de carctères
+## 2.5 Groupement de caractères
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`. As we discussed before that in regular expression
-if we put a quantifier after a character then it will repeat the preceding character. But if we put quantifier after a character group then
-it repeats the whole character group. For example, the regular expression `(ab)*` matches zero or more repetitions of the character "ab".
-We can also use the alternation `|` meta character inside character group. For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
+Un groupement de caractères est un groupe de sous-modèles qui sont écris dans des parenthèses `(...)`. Nous avions mentionné plus tôt que dans une expression régulière
+si nous mettons un quantifieur après un caractère alors le caractère précédent sera répété. Mais si nous mettons un quantifieur après un groupement de caractères alors
+il répète le groupement de caractères entier. Par exemple, l'expression régulière `(ab)*` trouve zéro ou plus de répétitions du caractère "ab".
+Nous pouvons aussi utiliser le meta-caractère d'alternation `|` à l'intérieur d'un groupement. Par exemple, l'expression régulière `(c|g|p)ar` signifie: caractère `c` minuscule,
+`g` ou `p`, suivit par le caractère `a`, suivit par le caractère `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[Essayer l'expression régulière](https://regex101.com/r/tUxrBG/1)
 
 ## 2.6 Alternation
 
-In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now,
-you may be thinking that character set and alternation works the same way. But the big difference between character set and alternation
-is that character set works on character level but alternation works on expression level. For example, the regular expression
-`(T|t)he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e`
-or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
+Dans une expression régulière, la barre verticale `|` est utilisée pour définir une alternation. l'alternation est comme une condition entre plusieurs expression. Maintenant,
+nous pourrions penser que la liste de caractère et l'alternation sont la même chose. Mais la grande différence entre une liste de caractère et l'alternation
+est que la liste de caractère fonctionne au niveau des caractères mais l'alternation fonctionne au niveau de l'expression. Par exemple, l'expression régulière
+`(T|t)he|car` signifie: le caractère `T` majuscule ou `t` minuscule, suivit par le caractère `h` minuscule, suivit par le caractère `e` minuscule
+ou le caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit par le caractère `r` minuscule.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[Essayer l'expression régulière](https://regex101.com/r/fBXyX0/1)
 
 ## 2.7 Caractère d'échappement
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
-For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
-`t`, followed by optional `.` character.
+Le backslash `\` est utilisé dans les expression régulières pour échapper (ignorer) le caractère suivant. Cela permet de spécifier un symbole comme caractère à trouver
+y compris les caractères réservés `{ } [ ] / \ + * . $ ^ | ?`. Pour utiliser un caractère spécial comme caractère à trouver, préfixer `\` avant celui-ci.
+Par exemple, l'expression régulière `.` est utilisée pour trouver n'importe quel caractère sauf le retour de ligne. Donc pour trouver `.` dans une string
+l'expression régulière `(f|c|m)at\.?` signifie: la lettre `f` minuscule, `c` or `m`, suivit par le caractère `a` minuscule, suivit par la lettre
+`t` minuscule, suivit par le caractère optionnel `.`.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[Essayer l'expression régulière](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Ancres
 
@@ -283,13 +283,13 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[Essayer l'expression régulière](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[Essayer l'expression régulière](https://regex101.com/r/jXrKne/1)
 
 ### 2.8.2 Dollar
 
@@ -301,13 +301,13 @@ must be end of the string.
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[Essayer l'expression régulière](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[Essayer l'expression régulière](https://regex101.com/r/t0AkOd/1)
 
 ##  3. Liste de caractères abrégés
 
@@ -352,7 +352,7 @@ followed by letter `h`, followed by letter `e`. In parentheses we define positiv
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[Essayer l'expression régulière](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Recherche avant négative
 
@@ -365,7 +365,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[Essayer l'expression régulière](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Recherche arrière positive
 
@@ -377,7 +377,7 @@ are after the word `The` or `the`.
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[Essayer l'expression régulière](https://regex101.com/r/avH165/1)
 
 ### 4.4 Recherche arrière négative
 
@@ -389,7 +389,7 @@ are not after the word `The` or `the`.
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[Essayer l'expression régulière](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Drapeaux
 
@@ -413,13 +413,13 @@ the whole input string.
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[Essayer l'expression régulière](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[Essayer l'expression régulière](https://regex101.com/r/ahfiuh/1)
 
 ### 5.2 Recherche globale
 
@@ -432,13 +432,13 @@ string.
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jnk6gM/1)
+[Essayer l'expression régulière](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[Essayer l'expression régulière](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 Multilignes
 
@@ -453,7 +453,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[Essayer l'expression régulière](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -461,7 +461,7 @@ line. And because of `m` flag now regular expression engine matches pattern at t
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[Essayer l'expression régulière](https://regex101.com/r/E88WE2/1)
 
 ## Contribution
 
