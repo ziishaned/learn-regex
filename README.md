@@ -57,7 +57,6 @@ contains uppercase letter and also it is too short.
   - [Case Insensitive](#51-case-insensitive)
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
-- [Bonus](#bonus)
 
 ## 1. Basic Matchers
 
