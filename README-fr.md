@@ -80,24 +80,23 @@ L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère 
 
 ## 2. Meta Characters
 
-Meta characters are the building blocks of the regular expressions.  Meta characters do not stand for themselves but instead are
-interpreted in some special way. Some meta characters have a special meaning and are written inside square brackets.
-The meta characters are as follows:
+Les meta-caractères sont les bloques de construction des expressions régulières. Les meta-caractères sont interprétés de manière particulière. Certains meta-caractères ont des significations spéciales et sont écrits entre crochets.
+Significations des meta-caractères:
 
-|Meta character|Description|
+|Meta-caractère|Description|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Un point coïncide avec n'importe quel caractère unique à part le retour à la ligne.|
+|[ ]|Classe de caractères. Coïncide avec n'importe quels caractères entre crochets.|
+|[^ ]|Négation de classe de caractère. Coïncide avec n'importe quels caractères qui n'est pas entre les crochets.|
+|*|Coïncide avec 0 ou plus répétitions du caractère précédent.|
+|+|Coïncide avec 1 ou plus répétitions du caractère précédent.|
+|?|Rend le caractère précédent optionel.|
+|{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition du caractère précédent.|
+|(xyz)|Groupe de caractères. Coïncide avec les caractères "xyz" dans l'ordre exact.|
+|&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
+|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservéstels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Coïncide avec le début de la chaîne de caractère.|
+|$|Coïncide avec le fin de la chaîne de caractère.|
 
 ## 2.1 Full stop
 
