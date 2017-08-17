@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
-## Translations:
+## Traductions:
 
 * [English](README.md)
 * [Español](README-es.md)
@@ -11,17 +11,17 @@
 * [日本語](README-ja.md)
 * [French](README-fr.md)
 
-## What is Regular Expression?
+## Qu'est-ce qu'une expression rationnelle?
 
-> Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
+> Une expression rationnelle est un groupement de caractères ou symboles utilisés pour trouver un paterne spécifique dans un text.
 
-A regular expression is a pattern that is matched against a subject string from left to right. The word "Regular expression" is a
-mouthful, you will usually find the term abbreviated as "regex" or "regexp". Regular expression is used for replacing a text within
-a string, validating form, extract a substring from a string based upon a pattern match, and so much more.
+Une expression rationnelle est un paterne qui est comparé à une string de gauche à droite. Le mot "Expression rationnelle" est un
+terme entier, souvent abbrégé par "regex" ou "regexp". Une expression rationnelle est utilisée pour remplacer un texte à l'intérieur
+d'une string, valider un formulaire, extraire une portion de string basée sur un paterne, et bien plus encore.
 
-Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to
-allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of
-characters in username so it does not look ugly. We use the following regular expression to validate a username:
+Imagine que tu écris une application et que tu veux définir des règles pour le choix du pseudonyme. Nous voulons autoriser
+le pseudonyme à contenir des lettres, des nombres, des underscores et des traits d'union. Nous voulons aussi limiter le nombres
+de caractères dans le pseudonyme pour pas qu'il ait l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
 <p align="center">
 <img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
@@ -29,6 +29,8 @@ characters in username so it does not look ugly. We use the following regular ex
 
 Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
 contains uppercase letter and also it is too short.  
+L'expression rationnelle ci-dessus peut accepter les strings `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car
+cette string contient une lettre majuscule et elle est trop courte.
 
 ## Table of Contents
 
