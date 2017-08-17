@@ -100,9 +100,7 @@ Significations des meta-caractères:
 
 ## 2.1 Full stop
 
-Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
-or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
-letter `r`.
+Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide avec n'importe caractère unique, mais ne coïcide pas avec les caractères de retour ou de nouvelle ligne. Par exemple, l'expression régulière `.ar` signifie: n'importe quel caractère suvit par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
