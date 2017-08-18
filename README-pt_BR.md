@@ -225,11 +225,7 @@ Em expressões regulares, a barra vertical `|` é usada para definir alternânci
 
 ## 2.7 Escapando Caracteres Especiais
 
-Backslash `\` is used in regular expression to escape the next character. This allows to to specify a symbol as a matching character
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
-For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
-`t`, followed by optional `.` character.
+Em expressões regulares, a contrabarra `\` é usada para escapar o próximo caractere. Isso possibilita especificar um símbolo como um caractere correspondente, incluindo os caracteres reservados `{ } [ ] / \ + * . $ ^ | ?`. Para usar um caractere especial como um caractere correspondente, utilize `\` antes dele. Por exemplo, a expressão regular `.` é usada para encontrar qualquer caractere, exceto nova linha. Agora, para encontrar `.` em uma string de entrada, a expressão regular `(f|c|m)at\.?` significa: letra minúscula `f`, `c` ou `m`, seguida do caractere minúsculo `a`, seguido da letra minúscula `t`, seguida do caractere `.` opcional.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
