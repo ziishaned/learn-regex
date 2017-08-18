@@ -280,18 +280,17 @@ must be end of the string.
 
 ##  3. Forma Abreviada de Conjunto de Caracteres
 
-Regular expression provides shorthands for the commonly used character sets, which offer convenient shorthands for commonly used
-regular expressions. The shorthand character sets are as follows:
+As expressões regulares fornecem abreviações para conjuntos de caracteres comumente usados, que oferecem atalhos convenientes para expressões regulares comumente usadas. As abreviações são as seguintes:
 
-|Shorthand|Description|
+|Abreviação|Descrição|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+|.|Qualquer caractere, exceto nova linha|
+|\w|Corresponde à caracteres alfanuméricos: `[a-zA-Z0-9_]`|
+|\W|Corresponde à caracteres não alfanuméricos: `[^\w]`|
+|\d|Corresponde à dígitos: `[0-9]`|
+|\D|Corresponde à não dígitos: `[^\d]`|
+|\s|Corresponde à caracteres de espaços em branco: `[\t\n\f\r\p{Z}]`|
+|\S|Corresponde à caracteres de espaços não em branco: `[^\s]`|
 
 ## 4. Olhar ao Redor
 
