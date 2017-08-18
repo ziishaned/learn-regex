@@ -388,14 +388,14 @@ ne se trouvent pas après le mot `The` ou `the`.
 
 ## 5. Drapeaux
 
-Flags are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or
-combination, and are an integral part of the RegExp.
+Les drapeaux sont aussi appelés modifieurs car ils modifient la sortie d'une expression régulière. Ces drapeaux peuvent être utilisé
+dans n'import quel ordre et combinaison et font partie intégrante de la RegExp.
 
-|Flag|Description|
+|Drapeau|Description|
 |:----:|----|
-|i|Case insensitive: Sets matching to be case-insensitive.|
-|g|Global Search: Search for a pattern throughout the input string.|
-|m|Multiline: Anchor meta character works on each line.|
+|i|Insensible à la casse: Défini que la correspondance sera insensible à la casse.|
+|g|Recherche globale: Recherche la correspondance dans la string entière.|
+|m|Multiligne: Meta-caractère ancre qui agit sur toutes les lignes.|
 
 ### 5.1 Insensible à la casse
 
