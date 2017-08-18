@@ -19,7 +19,7 @@ Une expression régulière est un modèle qui est comparée à une chaîne de ca
 est un terme entier, souvent abrégé par "regex" ou "regexp". Une expression régulière est utilisée pour remplacer un texte à l'intérieur
 d'une *string* (une chaîne de caractères), valider un formulaire, extraire une portion de string basée sur un modèle, et bien plus encore.
 
-Imaginons que nous écrivons une application et que nous voulons définir des règles pour le choix du pseudonyme. Nous voulons autoriser
+Imaginons que nous écrivons une application et que nous voulons définir des règles pour le choix d'un pseudonyme. Nous voulons autoriser
 le pseudonyme à contenir des lettres, des nombres, des underscores et des traits d'union. Nous voulons aussi limiter le nombre
 de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
@@ -58,11 +58,11 @@ cette string contient une lettre majuscule et elle est trop courte.
   - [Insensible à la casse](#51-insensible-à-la-casse)
   - [Correspondance globale](#52-recherche-globale)
   - [Multilignes](#53-multilignes)
-- [Bonus](#bonus)
 
 ## 1. Introduction
 
-Une expression régulière est un motif de caractères utilisés pour opérer une recherche dans un text. Par exemple, l'expression régulère `the` signifie: la lettre `t`, suivie de la lettre `h`, suivie de la lettre `e`.
+Une expression régulière est un modèle de caractères utilisés pour effectuer une recherche dans un text.
+Par exemple, l'expression régulière `the` signifie: la lettre `t`, suivie de la lettre `h`, suivie de la lettre `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -70,7 +70,7 @@ Une expression régulière est un motif de caractères utilisés pour opérer un
 
 [Essayer l'expression régulière](https://regex101.com/r/dmRygT/1)
 
-L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère de l'expression régulière est comparée à la chaine passée en entrée, caractère par caractère. Les expressions régulières sont normalement sensibles à la casse, donc l'expression régulière `The` ne va pas coïncider à la chaîne de caractère `the`.
+L'expression régulière `123` coïncide à la chaîne `123`. Chaque caractère de l'expression régulière est comparée à la chaine passée en entrée, caractère par caractère. Les expressions régulières sont normalement sensibles à la casse, donc l'expression régulière `The` ne va pas coïncider à la chaine de caractère `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -90,17 +90,17 @@ Significations des meta-caractères:
 |[^ ]|Négation de classe de caractère. Coïncide avec n'importe quels caractères qui n'est pas entre les crochets.|
 |*|Coïncide avec 0 ou plus répétitions du caractère précédent.|
 |+|Coïncide avec 1 ou plus répétitions du caractère précédent.|
-|?|Rend le caractère précédent optionel.|
-|{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition du caractère précédent.|
+|?|Rend le caractère précédent optionnel.|
+|{n,m}|Accolades. Coïncide avec au moins "n" mais pas plus que "m" répétition(s) du caractère précédent.|
 |(xyz)|Groupe de caractères. Coïncide avec les caractères "xyz" dans l'ordre exact.|
 |&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
-|&#92;|Echappe le prochain caractère. Cela permet de faire coïncider des caractères réservés tels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Coïncide avec le début de la chaîne de caractère.|
-|$|Coïncide avec le fin de la chaîne de caractère.|
+|&#92;|Échappe le prochain caractère. Cela permet de faire coïncider des caractères réservés tels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Coïncide avec le début de la chaîne de caractères.|
+|$|Coïncide avec le fin de la chaîne de caractères.|
 
 ## 2.1 Full stop
 
-Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide avec n'importe caractère unique, mais ne coïcide pas avec les caractères de retour ou de nouvelle ligne. Par exemple, l'expression régulière `.ar` signifie: n'importe quel caractère suvit par la lettre `a`, suivie par la lettre `r`.
+Le full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide avec n'importe caractère unique, mais ne coïncide pas avec les caractères de retour ou de nouvelle ligne. Par exemple, l'expression régulière `.ar` signifie: n'importe quel(s) caractère(s) suivi(s) par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -110,8 +110,7 @@ Full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïncide
 
 ## 2.2 Inclusions de caractères
 
-
-Les inclusions de caractères sont également appelés classe de caractères. Les crochets sont utilisé pour spécifier les inclusion de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivit par la lettre `h`, suivie par la lettre `e`.
+Les inclusions de caractères sont également appelés classe de caractères. Les crochets sont utilisés pour spécifier les inclusions de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivi par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -119,7 +118,7 @@ Les inclusions de caractères sont également appelés classe de caractères. Le
 
 [Essayer l'expression régulière](https://regex101.com/r/2ITLQ4/1)
 
-L'utilisation du point dans une inclusion de caractère signifie toutefois un `.` littéral. L'expression régulière `ar[.]` signifie: un `a` minuscule, suivi par la lettre `r`, suvie par un `.` (point)).
+L'utilisation du point dans une inclusion de caractère signifie toutefois un `.` littéral. L'expression régulière `ar[.]` signifie: un `a` minuscule, suivi par la lettre `r` minuscule, suvie par un `.` (point).
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -129,7 +128,7 @@ L'utilisation du point dans une inclusion de caractère signifie toutefois un `.
 
 ### 2.2.1 Exclusion de caractères
 
-En règle générale, le caractère circonflexe représente le début d'une chaîne de caractère. Néanmoins, lorsqu'il est utilisé après le crochet ouvrant, il permet d'inverser la gamme de caractère (exclusion). Par exemple, l'expression régulière `[^c]ar` signifie: n'importe quel caractère sauf `c`, suivi par la lettre `a`, suivie par la lettre `r`.
+En règle générale, le caractère circonflexe représente le début d'une chaîne de caractères. Néanmoins, lorsqu'il est utilisé après le crochet ouvrant, il permet d'exclure la gamme de caractère(s). Par exemple, l'expression régulière `[^c]ar` signifie: n'importe quel caractère sauf `c`, suivi par la lettre `a`, suivie par la lettre `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -154,9 +153,9 @@ Par exemple, l'expression régulière `[a-z]*` signifie: n'importe combien de le
 
 [Essayer l'expression régulière](https://regex101.com/r/7m8me5/1)
 
-Le symbole `*` peut être utilisé avec le meta-caractère `.` pour correspondre à n'importe quel chaîne de caractères `.*`. Le symbole `*` peut être utilisé avec le
+Le symbole `*` peut être utilisé avec le meta-caractère `.` pour correspondre à n'importe quelle chaîne de caractères `.*`. Le symbole `*` peut être utilisé avec le
 caractère espace vide `\s` pour correspondre à une chaîne d'espaces vides. Par exemple, l'expression `\s*cat\s*` signifie: zéro ou plus
-d'espaces, suivits du caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit par le caractère `t` minuscule, suivit par
+d'espaces, suivis du caractère `c` minuscule, suivi par le caractère `a` minuscule, suivi par le caractère `t` minuscule, suivi par
 zéro ou plus d'espaces.
 
 <pre>
@@ -177,7 +176,7 @@ Le meta-caractère `+` coïncide à une ou plusieurs répétitions du caractère
 
 ### 2.3.3 Le point d'interrogation
 
-Le meta-caractère `?` rend le caractère précédent optionel. Ce symbol permet de faire coïncider 0 ou une instance du caractère précédent. Par exemple, l'expression régulière `[T]?he` signifie: lettre `T` majuscule optionelle, suivie par la lettre `h` minuscule, suivie par la lettre `e` minuscule.
+Le meta-caractère `?` rend le caractère précédent optionel. Ce symbole permet de faire coïncider 0 ou une instance du caractère précédent. Par exemple, l'expression régulière `[T]?he` signifie: la lettre `T` majuscule optionelle, suivie par la lettre `h` minuscule, suivie par la lettre `e` minuscule.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -194,8 +193,8 @@ Le meta-caractère `?` rend le caractère précédent optionel. Ce symbol permet
 ## 2.4 Accolades
 
 Dans une expression régulière, les accolades, qui sont aussi appelée quantifieurs, sont utilisés pour spécifier le nombre de fois qu'un
-caractère ou un groupe de caractères peut être répété. Par exemple, l'expression régulière `[0-9]{2,3}` signifie: Trouve au moins 2 chiffres mais pas plus de 3 (
-caractères dans la gamme de 0 à 9).
+caractère ou un groupe de caractères peut être répété. Par exemple, l'expression régulière `[0-9]{2,3}` signifie: Trouve au moins 2 chiffres mais pas plus de 3
+(caractères dans la gamme de 0 à 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -203,7 +202,7 @@ caractères dans la gamme de 0 à 9).
 
 [Essayer l'expression régulière](https://regex101.com/r/juM86s/1)
 
-Nous pouvons ommettre le second nombre. Par exemple, l'expression régulière `[0-9]{2,}` signifie: Trouve 2 chiffres ou plus. Si nous supprimons aussi
+Nous pouvons omettre le second nombre. Par exemple, l'expression régulière `[0-9]{2,}` signifie: Trouve 2 chiffres ou plus. Si nous supprimons aussi
 la virgule l'expression régulière `[0-9]{3}` signifie: Trouve exactement 3 chiffres.
 
 <pre>
@@ -220,11 +219,11 @@ la virgule l'expression régulière `[0-9]{3}` signifie: Trouve exactement 3 chi
 
 ## 2.5 Groupement de caractères
 
-Un groupement de caractères est un groupe de sous-modèles qui sont écris dans des parenthèses `(...)`. Nous avions mentionné plus tôt que dans une expression régulière
+Un groupement de caractères est un groupe de sous-modèles qui sont écris dans des parenthèses `(...)`. Nous avions mentionné plus tôt que, dans une expression régulière,
 si nous mettons un quantifieur après un caractère alors le caractère précédent sera répété. Mais si nous mettons un quantifieur après un groupement de caractères alors
-il répète le groupement de caractères entier. Par exemple, l'expression régulière `(ab)*` trouve zéro ou plus de répétitions du caractère "ab".
+il répète le groupement de caractères entier. Par exemple, l'expression régulière `(ab)*` trouve zéro ou plus de répétitions des caractères "ab".
 Nous pouvons aussi utiliser le meta-caractère d'alternation `|` à l'intérieur d'un groupement. Par exemple, l'expression régulière `(c|g|p)ar` signifie: caractère `c` minuscule,
-`g` ou `p`, suivit par le caractère `a`, suivit par le caractère `r`.
+`g` ou `p`, suivi par le caractère `a`, suivi par le caractère `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -234,11 +233,11 @@ Nous pouvons aussi utiliser le meta-caractère d'alternation `|` à l'intérieur
 
 ## 2.6 Alternation
 
-Dans une expression régulière, la barre verticale `|` est utilisée pour définir une alternation. l'alternation est comme une condition entre plusieurs expression. Maintenant,
-nous pourrions penser que la liste de caractère et l'alternation sont la même chose. Mais la grande différence entre une liste de caractère et l'alternation
-est que la liste de caractère fonctionne au niveau des caractères mais l'alternation fonctionne au niveau de l'expression. Par exemple, l'expression régulière
-`(T|t)he|car` signifie: le caractère `T` majuscule ou `t` minuscule, suivit par le caractère `h` minuscule, suivit par le caractère `e` minuscule
-ou le caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit par le caractère `r` minuscule.
+Dans une expression régulière, la barre verticale `|` est utilisée pour définir une alternation. L'alternation est comme une condition entre plusieurs expression. Maintenant,
+nous pourrions penser que la liste de caractères et l'alternation sont la même chose. Mais la grande différence entre une liste de caractères et l'alternation
+est que la liste de caractères fonctionne au niveau des caractères mais l'alternation fonctionne au niveau de l'expression. Par exemple, l'expression régulière
+`(T|t)he|car` signifie: le caractère `T` majuscule ou `t` minuscule, suivi par le caractère `h` minuscule, suivi par le caractère `e` minuscule
+ou le caractère `c` minuscule, suivi par le caractère `a` minuscule, suivit par le caractère `r` minuscule.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -248,11 +247,11 @@ ou le caractère `c` minuscule, suivit par le caractère `a` minuscule, suivit p
 
 ## 2.7 Caractère d'échappement
 
-L'antislash `\` est utilisé dans les expression régulières pour échapper (ignorer) le caractère suivant. Cela permet de spécifier un symbole comme caractère à trouver
+L'antislash `\` est utilisé dans les expressions régulières pour échapper (ignorer) le caractère suivant. Cela permet de spécifier un symbole comme caractère à trouver
 y compris les caractères réservés `{ } [ ] / \ + * . $ ^ | ?`. Pour utiliser un caractère spécial comme caractère à trouver, préfixer `\` avant celui-ci.
 Par exemple, l'expression régulière `.` est utilisée pour trouver n'importe quel caractère sauf le retour de ligne. Donc pour trouver `.` dans une string
-l'expression régulière `(f|c|m)at\.?` signifie: la lettre `f` minuscule, `c` or `m`, suivit par le caractère `a` minuscule, suivit par la lettre
-`t` minuscule, suivit par le caractère optionnel `.`.
+l'expression régulière `(f|c|m)at\.?` signifie: la lettre minuscule `f`, `c` ou `m`, suivie par le caractère `a` minuscule, suivi par la lettre
+`t` minuscule, suivie par le caractère optionnel `.`.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
@@ -263,7 +262,7 @@ l'expression régulière `(f|c|m)at\.?` signifie: la lettre `f` minuscule, `c` o
 ## 2.8 Ancres
 
 Dans les expressions régulières, nous utilisons des ancres pour vérifier si le symbole trouvé est le premier ou dernier symbole de la
-string. Il y a 2 types d'ancre: Le premier type est le circonflexe `^` qui cherche si le caractère est le premier
+string. Il y a 2 types d'ancres: Le premier type est le circonflexe `^` qui cherche si le caractère est le premier
 caractère de la string et le deuxième type est le Dollar `$` qui vérifie si le caractère est le dernier caractère de la string.
 
 ### 2.8.1 Circonflexe
@@ -272,7 +271,7 @@ Le symbole circonflexe `^` est utilisé pour vérifier si un caractère est le p
 suivante `^a` (si a est le premier symbole) à la string `abc`, ça coïncide. Mais si nous appliquons l'expression régulière `^b` sur cette même string,
 ça ne coïncide pas. Parce que dans la string `abc` "b" n'est pas le premier symbole. Regardons une autre expression régulière
 `^(T|t)he` qui signifie: le caractère `T` majuscule ou le caractère `t` minuscule est le premier symbole de la string,
-suivi par le caractère `h` minuscule, suivit par le caractère `e` minuscule.
+suivi par le caractère `h` minuscule, suivi par le caractère `e` minuscule.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -289,7 +288,7 @@ suivi par le caractère `h` minuscule, suivit par le caractère `e` minuscule.
 ### 2.8.2 Dollar
 
 Le symbole Dollar `$` est utilisé pour vérifier si un caractère est le dernier caractère d'une string. Par exemple, l'expression régulière
-`(at\.)$` signifie: un caractère `a` minuscule, suivit par un caractère `t` minuscule, suivit par un caractère `.` et tout cela doit être
+`(at\.)$` signifie: un caractère `a` minuscule, suivi par un caractère `t` minuscule, suivi par un caractère `.` et tout cela doit être
 à la fin de la string.
 
 <pre>
@@ -306,7 +305,7 @@ Le symbole Dollar `$` est utilisé pour vérifier si un caractère est le dernie
 
 ##  3. Liste de caractères abrégés
 
-Les expression régulières fournissent des abréviations pour les listes de caractères, ce qui offres des raccourcis pratiques pour
+Les expressions régulières fournissent des abréviations pour les listes de caractères, ce qui offres des raccourcis pratiques pour
 les expressions régulières souvent utilisées. Ces abréviations sont les suivantes:
 
 |Abréviation|Description|
@@ -321,10 +320,10 @@ les expressions régulières souvent utilisées. Ces abréviations sont les suiv
 
 ## 4. Recherche
 
-La recherche en avant et en arrière sont un type spécifique appelé *** groupe non-capturant *** (Utilisés pour trouver un paterne mais pas
-pour l'inclure dans la liste de correspondance). Les recherches en avant sont utilisées quand nous avons la condition qu'un modèle est précédé ou suivi
+La recherche en avant et en arrière sont un type spécifique appelé *** groupe non-capturant *** (Utilisés pour trouver un modèle mais pas
+pour l'inclure dans la liste de correspondance). Les recherches positives sont utilisées quand nous avons la condition qu'un modèle doit être précédé ou suivi
 par un autre modèle. Par exemple, nous voulons tous les chiffres qui sont précédés par le caractère `$` dans la string suivante `$4.44 and $10.88`.
-Nous allons utiliser l'expression régulière suivante `(?<=\$)[0-9\.]*` qui signifie: Trouver tous les nombre qui contiennent le caractère `.` et sont précédées
+Nous allons utiliser l'expression régulière suivante `(?<=\$)[0-9\.]*` qui signifie: Trouver tous les nombres qui contiennent le caractère `.` et sont précédées
 par le caractère `$`. Les recherches que nous trouvons dans les expressions régulières sont les suivantes:
 
 |Symbole|Description|
@@ -341,7 +340,7 @@ contient uniquement le texte qui correspond à la première partie de l'expressi
 des parenthèses. Entre ces parenthèses, un point d'interrogation avec un signe égual est utilisé comme ça: `(?=...)`. L'expression de recherche
 est écrite après le signe égual dans les parenthèses. Par exemple, l'expression régulière `[T|t]he(?=\sfat)` signifie: trouve optionnellement
 la lettre `t` minuscule ou la lettre `T` majuscule, suivie par la lettre `h` minuscule, suivie par la lettre `e`. Entre parenthèses nous définissons
-la recherche en avant positive qui dit quelle est l'expression à chercher. `The` ou `the` qui sont suivies par le mot `fat`.
+la recherche en avant positive qui dit quelle est l'expression à chercher. `The` ou `the` qui sont suivies par le mot `fat` précédé d'un espace.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -352,9 +351,9 @@ la recherche en avant positive qui dit quelle est l'expression à chercher. `The
 ### 4.2 Recherche en avant négative
 
 La recherche en avant négative est utilisée quand nous avons besoin de trouver une string qui n'est pas suivie d'un modèle. La recherche en avant négative
-est définie de la même manière que la recherche en avant positive mais la seule différence est qu'à la place du signe égual `=` nous utilisons le carctère de négation `!`
+est définie de la même manière que la recherche en avant positive mais la seule différence est qu'à la place du signe égual `=` nous utilisons le caractère de négation `!`
 i.e. `(?!...)`. Regardons l'expression régulière suivante `[T|t]he(?!\sfat)` qui signifie: trouve tous les mots `The` ou `the` de la string
-qui ne sont pas suivis du mot `fat` précédé par un espace.
+qui ne sont pas suivis du mot `fat` précédé d'un espace.
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -364,9 +363,9 @@ qui ne sont pas suivis du mot `fat` précédé par un espace.
 
 ### 4.3 Recherche en arrière positive
 
-La recherche en arrière positive est utilisée pour trouver un string précédée d'un modèle. La recherche en arrière positive se note
+La recherche en arrière positive est utilisée pour trouver une string précédée d'un modèle. La recherche en arrière positive se note
 `(?<=...)`. Par exemple, l'expression régulière `(?<=[T|t]he\s)(fat|mat)` signifie: trouve tous les mots `fat` ou `mat` de la string qui
-se trouvent après le mot `The` ou `the`.
+se trouve après le mot `The` ou `the`.
 
 <pre>
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
@@ -388,12 +387,12 @@ ne se trouvent pas après le mot `The` ou `the`.
 
 ## 5. Drapeaux
 
-Les drapeaux sont aussi appelés modifieurs car ils modifient la sortie d'une expression régulière. Ces drapeaux peuvent être utilisé
-dans n'import quel ordre et combinaison et font partie intégrante de la RegExp.
+Les drapeaux sont aussi appelés modifieurs car ils modifient la sortie d'une expression régulière. Ces drapeaux peuvent être utilisés
+dans n'importe quel ordre et combinaison et font partie intégrante de la RegExp.
 
 |Drapeau|Description|
 |:----:|----|
-|i|Insensible à la casse: Défini que la correspondance sera insensible à la casse.|
+|i|Insensible à la casse: Définit que la correspondance sera insensible à la casse.|
 |g|Recherche globale: Recherche la correspondance dans la string entière.|
 |m|Multiligne: Meta-caractère ancre qui agit sur toutes les lignes.|
 
@@ -418,9 +417,9 @@ la string entière.
 
 ### 5.2 Correspondance globale
 
-Le modifieur `g` est utilisé pour faire une recherche globale (Trouver toutes les strings plutôt que de s'arrêter à la première correspondance ). Par exemple,
+Le modifieur `g` est utilisé pour faire une recherche globale (trouver toutes les strings plutôt que de s'arrêter à la première correspondance ). Par exemple,
 l'expression régulière `/.(at)/g` signifie: n'importe quel caractère sauf le retour de ligne, suivi par le caractère `a` minuscule, suivi par le caractère
-`t` minuscule. Parce que nous avons mis le drapeau `g` à la fin de l'expression régulière maintenant il trouvera toutes les correspondance de toute la string.
+`t` minuscule. Grâce au drapeau `g` à la fin de l'expression régulière maintenant il trouvera toutes les correspondances de toute la string.
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -438,7 +437,7 @@ l'expression régulière `/.(at)/g` signifie: n'importe quel caractère sauf le 
 
 Le modifieur `m` est utilisé pour trouver une correspondance multiligne. Comme mentionné plus tôt, les ancres `(^, $)` sont utilisés pour vérifier si le modèle
 se trouve au début ou à la fin de la string. Mais si nous voulons que l'ancre soit sur chaque ligne nous utilisons le drapeau `m`. Par exemple, l'expression régulière
-`/at(.)?$/gm` signifie: le caractère `a` minuscule, suivi par le caractère `t` minuscule, optionnellement n'importe quoi à part retour de ligne.
+`/at(.)?$/gm` signifie: le caractère `a` minuscule, suivi par le caractère `t` minuscule, suivi par optionnellement n'importe quel caractère à part le retour de ligne.
 Grâce au drapeau `m` maintenant le moteur d'expression régulière trouve le modèle à chaque début de ligne dans la string.
 
 <pre>
