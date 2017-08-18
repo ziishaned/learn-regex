@@ -215,11 +215,7 @@ Grupo de caracteres é um grupo de sub-padrão que é escrito dentro de parênte
 
 ## 2.6 Alternância
 
-In regular expression Vertical bar `|` is used to define alternation. Alternation is like a condition between multiple expressions. Now,
-you may be thinking that character set and alternation works the same way. But the big difference between character set and alternation
-is that character set works on character level but alternation works on expression level. For example, the regular expression
-`(T|t)he|car` means: uppercase character `T` or lowercase `t`, followed by lowercase character `h`, followed by lowercase character `e`
-or lowercase character `c`, followed by lowercase character `a`, followed by lowercase character `r`.
+Em expressões regulares, a barra vertical `|` é usada para definir alternância. Alternância é como uma condição entre múltiplas expressões. Agora, você pode estar pensando que um conjunto de caracteres e a alternância funcionam da mesma forma. Mas a grande diferença entre eles é que o conjunto de caracteres trabalha no nível de caracteres, enquanto a alternância trabalha no nível das expressões. Por exemplo, a expressão regular `(T|t)he|car` significa: o caractere maiúsculo `T` ou minúsculo `t`, seguido do caractere minúsculo `h`, seguido do caractere minúsculo `e` ou o caractere minúsculo `c`, seguido do caractere minúsculo `a`, seguido do caractere minúsculo `r`.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
