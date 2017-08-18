@@ -96,7 +96,7 @@ Significations des meta-caractères:
 |&#124;|Alternation (ou). Coïncide soit avec le caractère avant ou après le symbol.|
 |&#92;|Échappe le prochain caractère. Cela permet de faire coïncider des caractères réservés tels que <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|Coïncide avec le début de la chaîne de caractères.|
-|$|Coïncide avec le fin de la chaîne de caractères.|
+|$|Coïncide avec la fin de la chaîne de caractères.|
 
 ## 2.1 Full stop
 
