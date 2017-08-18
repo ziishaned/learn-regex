@@ -235,18 +235,11 @@ Em expressões regulares, a contrabarra `\` é usada para escapar o próximo car
 
 ## 2.8 Âncoras
 
-In regular expressions, we use anchors to check if the matching symbol is the starting symbol or ending symbol of the
-input string. Âncoras are of two types: First type is Acento Circunflexo `^` that check if the matching character is the start
-character of the input and the second type is Sinal de Dólar `$` that checks if matching character is the last character of the
-input string.
+Em empressões regulares, usamos âncoras para verificar se o caractere encontrado está no início ou no final da string de entrada. As âncoras podem ser de dois tipos: O primeiro tipo é o Acento Circunflexo `^`, que verifica se o caractere encontrado está no início da string de entrada, e o segundo tipo é o Sinal de Dólar `$`, que verifica se o caractere encontrado é o último caractere da string.
 
 ### 2.8.1 Acento Circunflexo
 
-Acento Circunflexo `^` symbol is used to check if matching character is the first character of the input string. If we apply the following regular
-expression `^a` (if a is the starting symbol) to input string `abc` it matches `a`. But if we apply regular expression `^b` on above
-input string it does not match anything. Because in input string `abc` "b" is not the starting symbol. Let's take a look at another
-regular expression `^(T|t)he` which means: uppercase character `T` or lowercase character `t` is the start symbol of the input string,
-followed by lowercase character `h`, followed by lowercase character `e`.
+O símbolo do Acento Circunflexo `^` é usado para verificar se o caractere encontrado é o primeiro caractere da string de entrada. Se aplicarmos a seguinte expressão regular `^a` (se a é o primeiro caractere) à string de entrada `abc`, ela encontra o `a`. Mas se nós aplicarmos a expressão regular `^b` na mesma string, ela não encontrará nada. Isso acontece porque, na string `abc`, "b" não é o caractere inicial. Vamos dar uma olhada em outra expressão regular, `^(T|t)he` que significa: o caractere maiúsculo `T` ou o caractere minúsculo `t` que é o primeiro símbolo da string de entrada, seguido do caractere minúsculo `h`, seguido do caractere minúsculo `e`.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -262,9 +255,7 @@ followed by lowercase character `h`, followed by lowercase character `e`.
 
 ### 2.8.2 Sinal de Dólar
 
-Sinal de Dólar `$` symbol is used to check if matching character is the last character of the input string. For example, regular expression
-`(at\.)$` means: a lowercase character `a`, followed by lowercase character `t`, followed by a `.` character and the matcher
-must be end of the string.
+O símbolo do Sinal de Dólar `$` é usado para verificar se o caractere encontrado é o último caractere da string de entrada. Por exemplo, a expressão regular `(at\.)$` significa: um caractere minúsculo `a`, seguido do caractere minúsculo `t`, seguido de um ponto final `.` e o grupo deve estar no final da string.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
