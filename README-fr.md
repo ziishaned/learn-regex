@@ -436,10 +436,10 @@ l'expression régulière `/.(at)/g` signifie: n'importe quel caractère sauf le 
 
 ### 5.3 Multilignes
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is
-the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example, the
-regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new
-line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+Le modifieur `m` est utilisé pour trouver une correspondance multiligne. Comme mentionné plus tôt, les ancres `(^, $)` sont utilisés pour vérifier si le modèle
+se trouve au début ou à la fin de la string. Mais si nous voulons que l'ancre soit sur chaque ligne nous utilisons le drapeau `m`. Par exemple, l'expression régulière
+`/at(.)?$/gm` signifie: le caractère `a` minuscule, suivi par le caractère `t` minuscule, optionnellement n'importe quoi à part retour de ligne.
+Grâce au drapeau `m` maintenant le moteur d'expression régulière trouve le modèle à chaque début de ligne dans la string.
 
 <pre>
 "/.at(.)?$/" => The fat
