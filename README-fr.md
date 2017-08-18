@@ -233,7 +233,7 @@ Nous pouvons aussi utiliser le meta-caractère d'alternation `|` à l'intérieur
 
 ## 2.6 Alternation
 
-Dans une expression régulière, la barre verticale `|` est utilisée pour définir une alternation. L'alternation est comme une condition entre plusieurs expression. Maintenant,
+Dans une expression régulière, la barre verticale `|` est utilisée pour définir une alternation. L'alternation est comme une condition entre plusieurs expressions. Maintenant,
 nous pourrions penser que la liste de caractères et l'alternation sont la même chose. Mais la grande différence entre une liste de caractères et l'alternation
 est que la liste de caractères fonctionne au niveau des caractères mais l'alternation fonctionne au niveau de l'expression. Par exemple, l'expression régulière
 `(T|t)he|car` signifie: le caractère `T` majuscule ou `t` minuscule, suivi par le caractère `h` minuscule, suivi par le caractère `e` minuscule
