@@ -320,7 +320,7 @@ les expressions régulières souvent utilisées. Ces abréviations sont les suiv
 
 ## 4. Recherche
 
-La recherche en avant et en arrière sont un type spécifique appelé *** groupe non-capturant *** (Utilisés pour trouver un schéma mais pas
+La recherche en avant et en arrière sont un type spécifique appelé ***groupe non-capturant*** (Utilisés pour trouver un schéma mais pas
 pour l'inclure dans la liste de correspondance). Les recherches positives sont utilisées quand nous avons la condition qu'un schéma doit être précédé ou suivi
 par un autre schéma. Par exemple, nous voulons tous les chiffres qui sont précédés par le caractère `$` dans la string suivante `$4.44 and $10.88`.
 Nous allons utiliser l'expression régulière suivante `(?<=\$)[0-9\.]*` qui signifie: Trouver tous les nombres qui contiennent le caractère `.` et sont précédées
