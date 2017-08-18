@@ -110,7 +110,7 @@ Le full stop `.` est l'exemple le plus simple d'un meta-caratère. Le `.` coïnc
 
 ## 2.2 Inclusions de caractères
 
-Les inclusions de caractères sont également appelés classe de caractères. Les crochets sont utilisés pour spécifier les inclusions de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivi par la lettre `h`, suivie par la lettre `e`.
+Les inclusions de caractères sont également appelées classes de caractères. Les crochets sont utilisés pour spécifier les inclusions de caractères. Un trait d'union utilisé dans une inclusion de caractères permet de définir une gamme de caractères. L'ordre utilisé dans la gamme de caractère n'a pas d'importance. Par exemple, l'expression régulière `[Tt]he` signifie: un `T` majuscule ou `t` minucule, suivi par la lettre `h`, suivie par la lettre `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
