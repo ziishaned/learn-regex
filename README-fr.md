@@ -56,7 +56,7 @@ cette string contient une lettre majuscule et elle est trop courte.
   - [Recherche arrière négative](#44-recherche-arrière-négative)
 - [Drapeaux](#5-drapeaux)
   - [Insensible à la casse](#51-insensible-à-la-casse)
-  - [Recherche globale](#52-recherche-globale)
+  - [Correspondance globale](#52-recherche-globale)
   - [Multilignes](#53-multilignes)
 - [Bonus](#bonus)
 
@@ -416,7 +416,7 @@ the whole input string.
 
 [Essayer l'expression régulière](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Recherche globale
+### 5.2 Correspondance globale
 
 The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the
 regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase
