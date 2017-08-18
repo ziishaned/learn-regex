@@ -192,7 +192,7 @@ Le meta-caractère `?` rend le caractère précédent optionel. Ce symbole perme
 
 ## 2.4 Accolades
 
-Dans une expression régulière, les accolades, qui sont aussi appelée quantifieurs, sont utilisés pour spécifier le nombre de fois qu'un
+Dans une expression régulière, les accolades, qui sont aussi appelée quantifieurs, sont utilisées pour spécifier le nombre de fois qu'un
 caractère ou un groupe de caractères peut être répété. Par exemple, l'expression régulière `[0-9]{2,3}` signifie: Trouve au moins 2 chiffres mais pas plus de 3
 (caractères dans la gamme de 0 à 9).
 
