@@ -351,10 +351,10 @@ la recherche en avant positive qui dit quelle est l'expression à chercher. `The
 
 ### 4.2 Recherche en avant négative
 
-Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead
-defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character
-i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from
-input string that are not followed by the word `fat` precedes by a space character.
+La recherche en avant négative est utilisée quand nous avons besoin de trouver une string qui n'est pas suivie d'un modèle. La recherche en avant négative
+est définie de la même manière que la recherche en avant positive mais la seule différence est qu'à la place du signe égual `=` nous utilisons le carctère de négation `!`
+i.e. `(?!...)`. Regardons l'expression régulière suivante `[T|t]he(?!\sfat)` qui signifie: trouve tous les mots `The` ou `the` de la string
+qui ne sont pas suivis du mot `fat` précédé par un espace.
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -364,9 +364,9 @@ input string that are not followed by the word `fat` precedes by a space charact
 
 ### 4.3 Recherche en arrière positive
 
-Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by
-`(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that
-are after the word `The` or `the`.
+La recherche en arrière positive est utilisée pour trouver un string précédée d'un modèle. La recherche en arrière positive se note
+`(?<=...)`. Par exemple, l'expression régulière `(?<=[T|t]he\s)(fat|mat)` signifie: trouve tous les mots `fat` ou `mat` de la string qui
+se trouvent après le mot `The` ou `the`.
 
 <pre>
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
