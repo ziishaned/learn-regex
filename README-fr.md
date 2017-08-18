@@ -399,10 +399,10 @@ combination, and are an integral part of the RegExp.
 
 ### 5.1 Insensible à la casse
 
-The `i` modifier is used to perform case-insensitive matching. For example, the regular expression `/The/gi` means: uppercase letter
-`T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the
-regular expression engine to ignore the case. As you can see we also provided `g` flag because we want to search for the pattern in
-the whole input string.
+Le modifieur `i` est utilisé pour faire une correspondance insensible à la casse. Par exemple, l'expression régulière `/The/gi` signifie: la lettre
+`T` majuscule, suivie par le caractère `h` minscule, suivi par le caractère `e` minuscule. Et à la fin de l'expression régulière, le drapeau `i` dit au
+moteur d'expression régulière d'ignorer la casse. Comme vous pouvez le voir, nous mettons aussi un drapeau `g` parce que nous voulons chercher le modèle dans
+la string entière.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
