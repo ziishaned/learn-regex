@@ -166,7 +166,7 @@ zéro ou plus d'espaces.
 
 ### 2.3.2 Le Plus
 
-Le meta-caractère `+` coïncide à une ou plusieurs répétitions du caractère précédent. Par exemple, l'expression régulière `c.+t` signifie: la lettre `c` minuscule, suivie par au moins un caractère, suivi par la lettre `t` minuscule. Le `t` coïncide par conséquent avec le dernier `t` de la phrase.
+Le meta-caractère `+` correspond à une ou plusieurs répétitions du caractère précédent. Par exemple, l'expression régulière `c.+t` signifie: la lettre `c` minuscule, suivie par au moins un caractère, suivi par la lettre `t` minuscule. Le `t` coïncide par conséquent avec le dernier `t` de la phrase.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
