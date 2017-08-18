@@ -418,10 +418,9 @@ la string entière.
 
 ### 5.2 Correspondance globale
 
-The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the
-regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase
-character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input
-string.
+Le modifieur `g` est utilisé pour faire une recherche globale (Trouver toutes les strings plutôt que de s'arrêter à la première correspondance ). Par exemple,
+l'expression régulière `/.(at)/g` signifie: n'importe quel caractère sauf le retour de ligne, suivi par le caractère `a` minuscule, suivi par le caractère
+`t` minuscule. Parce que nous avons mis le drapeau `g` à la fin de l'expression régulière maintenant il trouvera toutes les correspondance de toute la string.
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
