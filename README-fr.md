@@ -459,10 +459,10 @@ Grâce au drapeau `m` maintenant le moteur d'expression régulière trouve le mo
 
 ## Contribution
 
-* Report issues
-* Open pull request with improvements
-* Spread the word
-* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Signaler les problèmes (issues)
+* Ouvrir des "pull requests" pour les améliorations
+* Parlez-en autour de vous !
+* Contactez moi en anglais à ziishaned@gmail.com ou [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
 ## License
 
