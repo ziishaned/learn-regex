@@ -376,9 +376,9 @@ se trouvent après le mot `The` ou `the`.
 
 ### 4.4 Recherche en arrière négative
 
-Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by
-`(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that
-are not after the word `The` or `the`.
+La recherche en arrière négative est utilisée pour trouver une string qui n'est pas précédée d'un modèle. La recherche en arrière négative se note
+`(?<!...)`. Par exemple, l'expression régulière `(?<!(T|t)he\s)(cat)` signifie: trouve tous les mots `cat` de la string qui
+ne se trouvent pas après le mot `The` ou `the`.
 
 <pre>
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
