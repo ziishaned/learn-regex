@@ -21,7 +21,7 @@ Imagina que estas escribiendo una aplicación y quieres agregar reglas para cuan
 
 <br/><br/>
 <p align="center">
-<img src="http://imgur.com/EtlKH14.png" alt="Regular expression">
+  <img src="./img/regexp-es.png" alt="Expresión regular">
 </p>
 
 De la expresión regular anterior, se puede aceptar las cadenas 'john_doe', 'jo-hn_doe' y 'john12_as'. La expresión no coincide con el nombre de usuario 'Jo', porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.

@@ -24,11 +24,11 @@ allow the username to contain letters, numbers, underscores and hyphens. We also
 characters in username so it does not look ugly. We use the following regular expression to validate a username:
 <br/><br/>
 <p align="center">
-<img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
+  <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
 
 Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
-contains uppercase letter and also it is too short.  
+contains uppercase letter and also it is too short.
 
 ## Table of Contents
 
@@ -103,8 +103,8 @@ The meta characters are as follows:
 
 ## 2.1 Full stop
 
-Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return 
-or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the 
+Full stop `.` is the simplest example of meta character. The meta character `.` matches any single character. It will not match return
+or newline characters. For example, the regular expression `.ar` means: any character, followed by the letter `a`, followed by the
 letter `r`.
 
 <pre>
@@ -259,11 +259,11 @@ or lowercase character `c`, followed by lowercase character `a`, followed by low
 
 ## 2.7 Escaping special character
 
-Backslash `\` is used in regular expression to escape the next character. This allows us to specify a symbol as a matching character 
-including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it. 
+Backslash `\` is used in regular expression to escape the next character. This allows us to specify a symbol as a matching character
+including reserved characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching character prepend `\` before it.
 
 For example, the regular expression `.` is used to match any character except newline. Now to match `.` in an input string the regular
-expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter 
+expression `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase character `a`, followed by lowercase letter
 `t`, followed by optional `.` character.
 
 <pre>
