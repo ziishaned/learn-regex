@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="regexp.svg"
-   inkscape:export-filename="/home/nbo/dev/learn-regex/img/regexp-fr.png"
+   inkscape:export-filename="/home/nbo/dev/learn-regex/img/regexp-es.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <title
@@ -31,21 +31,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.27730769"
-     inkscape:cx="426.08699"
-     inkscape:cy="-608.88934"
+     inkscape:zoom="1.4353497"
+     inkscape:cx="327.38248"
+     inkscape:cy="120.91182"
      inkscape:document-units="px"
-     inkscape:current-layer="g4321"
+     inkscape:current-layer="g4270"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="939"
-     inkscape:window-height="848"
-     inkscape:window-x="661"
+     inkscape:window-width="1555"
+     inkscape:window-height="876"
+     inkscape:window-x="45"
      inkscape:window-y="24"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -216,7 +216,7 @@
                id="tspan4268"
                x="171.65625"
                y="204.00377"
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30.00000191px;font-family:monospace;-inkscape-font-specification:'monospace Bold'">^[a-z0-9_-]{3,15]$</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30.00000191px;font-family:monospace;-inkscape-font-specification:'monospace Bold'">^[a-z0-9_-]{3,15}$</tspan></text>
         </g>
       </g>
     </g>
@@ -304,7 +304,7 @@
                y="204.00377"
                x="171.65625"
                id="tspan4253"
-               sodipodi:role="line">^[a-z0-9_-]{3,15]$</tspan></text>
+               sodipodi:role="line">^[a-z0-9_-]{3,15}$</tspan></text>
         </g>
       </g>
     </g>
@@ -390,7 +390,7 @@
              y="204.00377"
              x="171.65625"
              id="tspan4302"
-             sodipodi:role="line">^[a-z0-9_-]{3,15]$</tspan></text>
+             sodipodi:role="line">^[a-z0-9_-]{3,15}$</tspan></text>
       </g>
     </g>
   </g>
