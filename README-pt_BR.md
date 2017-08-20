@@ -7,9 +7,11 @@
 
 * [English](README.md)
 * [Español](README-es.md)
+* [Français](README-fr.md)
+* [Português do Brasil](README-pt_BR.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
-* [Português do Brasil](README-pt_BR.md)
+* [한국어](README-ko.md)
 
 ## O que é uma Expressão Regular?
 
