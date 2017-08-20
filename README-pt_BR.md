@@ -424,11 +424,11 @@ line. And because of `m` flag now regular expression engine matches pattern at t
 
 ## Contribution
 
-* Report issues
-* Open pull request with improvements
-* Spread the word
-* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Reporte bugs
+* Abra pull request com melhorias
+* Espalhe a palavra
+* Me encontre diretamente em ziishaned@gmail.com ou [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
-## License
+## Licença
 
 MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
