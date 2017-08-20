@@ -285,13 +285,9 @@ As expressões regulares fornecem abreviações para conjuntos de caracteres com
 
 ## 4. Olhar ao Redor
 
-Lookbehind and lookahead sometimes known as lookaround are specific type of ***non-capturing group*** (Use to match the pattern but not
-included in matching list). Lookaheads are used when we have the condition that this pattern is preceded or followed by another certain
-pattern. For example, we want to get all numbers that are preceded by `$` character from the following input string `$4.44 and $10.88`.
-We will use following regular expression `(?<=\$)[0-9\.]*` which means: get all the numbers which contain `.` character and  are preceded
-by `$` character. Following are the lookarounds that are used in regular expressions:
+Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos como lookarounds (olhar ao redor), são tipos específicos de ***grupo de não captura*** (utilizado para encontrar um padrão, mas não incluí-lo na lista de ocorrêncoas). Lookarounds são usados quando temos a condição de que determinado padrão seja precedido ou seguido de outro padrão. Por exemplo, queremos capturar todos os números precedidos do caractere `$` da seguinte string de entrada: `$4.44 and $10.88`. Vamos usar a seguinte expressão regular `(?<=\$)[0-9\.]*` que significa: procure todos os números que contêm o caractere `.` e são precedidos pelo caractere `$`. À seguir estão os lookarounds que são utilizados em expressões regulares:
 
-|Symbol|Description|
+|Símbolo|Descrição|
 |:----:|----|
 |?=|Lookahead Positivo|
 |?!|Lookahead Negativo|
@@ -300,12 +296,7 @@ by `$` character. Following are the lookarounds that are used in regular express
 
 ### 4.1 Lookahead Positivo
 
-The positive lookahead asserts that the first part of the expression must be followed by the lookahead expression. The returned match
-only contains the text that is matched by the first part of the expression. To define a positive lookahead, parentheses are used. Within
-those parentheses, a question mark with equal sign is used like this: `(?=...)`. Lookahead expression is written after the equal sign inside
-parentheses. For example, the regular expression `[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase letter `T`,
-followed by letter `h`, followed by letter `e`. In parentheses we define positive lookahead which tells regular expression engine to match
-`The` or `the` which are followed by the word `fat`.
+O lookahead positivo impõe que a primeira parte da expressão deve ser seguida pela expressão lookahead. A combinação retornada contém apenas o texto que encontrado pela primeira parte da expressão. Para definir um lookahead positivo, deve-se usar parênteses. Dentro desses parênteses, é usado um ponto de interrogação seguido de um sinal de igual, dessa forma: `(?=...)`. Expressões lookahead são escritas depois do sinal de igual dentro do parênteses. Por exemplo, a expressão regular `[T|t]he(?=\sfat)` significa: encontre a letra minúscula `t` ou a letra maiúscula `T`, seguida da letra `h`, seguida da letra `e`. Entre parênteses, nós definimos o lookahead positivo que diz para o motor de expressões regulares para encontrar `The` ou `the` que são seguidos pela palavra `fat`.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -315,10 +306,7 @@ followed by letter `h`, followed by letter `e`. In parentheses we define positiv
 
 ### 4.2 Lookahead Negativo
 
-Negative lookahead is used when we need to get all matches from input string that are not followed by a pattern. Negative lookahead
-defined same as we define positive lookahead but the only difference is instead of equal `=` character we use negation `!` character
-i.e. `(?!...)`. Let's take a look at the following regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words from
-input string that are not followed by the word `fat` precedes by a space character.
+O lookahead negativo é usado quando nós precisamos encontrar todas as ocorrências da string de entrada que não são seguidas por um determinado padrão. O lookahead negativo é definido da mesma forma que definimos o lookahead positivo, mas a única diferença é que, no lugar do sinal de igual `=`, usamos o caractere de negação `!`, ex.: `(?!...)`. Vamos dar uma olhada na seguinte expressão regular `[T|t]he(?!\sfat)`, que significa: obtenha as palavras `The` ou `the` da string de entrada que não são seguidas pela palavra `fat`, precedida de um caractere de espaço.
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -328,9 +316,7 @@ input string that are not followed by the word `fat` precedes by a space charact
 
 ### 4.3 Lookbehind Positivo
 
-Positive lookbehind is used to get all the matches that are preceded by a specific pattern. Positive lookbehind is denoted by
-`(?<=...)`. For example, the regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words from input string that
-are after the word `The` or `the`.
+Lookbehind positivo é usado para encontrar todas as ocorrências que são precedidas por um padrão específico. O lookbehind positivo é indicado por `(?<=...)`. Por exemplo, a expressão regular `(?<=[T|t]he\s)(fat|mat)` significa: obtenha todas as palavras `fat` ou `mat` da string de entrada, que estão depois das palavras `The` ou `the`.
 
 <pre>
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
@@ -340,9 +326,7 @@ are after the word `The` or `the`.
 
 ### 4.4 Lookbehind Negativo
 
-Negative lookbehind is used to get all the matches that are not preceded by a specific pattern. Negative lookbehind is denoted by
-`(?<!...)`. For example, the regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input string that
-are not after the word `The` or `the`.
+Lookbehind negativo é usado para encontrar todas as ocorrências que não são precedidas por um padrão específico. O lookbehind negativo é indicado por `(?<!...)`. Por exemplo, a expressão regular `(?<!(T|t)he\s)(cat)` significa: obtenha todas as palavras `cat` da string de entrada, que não estão depois das palavras `The` ou `the`.
 
 <pre>
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
