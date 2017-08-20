@@ -95,7 +95,7 @@ Meta karakterler aşağıdaki gibidir:
 |(xyz)|Verilen sırayla `xyz` karakterleriyle eşleşir.|
 |&#124;|`&#124;` karakterinden önce veya sonra verilen ifadelerin herhangi biriyle eşleşir. Or anlamı verir.|
 |&#92;|Sonraki karakteri kaçırır. Bu, ayrılmış karakterleri eşleştirmenizi sağlar <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Girilen verinin başlangını ifade eder.|
+|^|Girilen verinin başlangıcını ifade eder.|
 |$|Girilen veririnin sonunu ifade eder.|
 
 ## 2.1 Full stop
