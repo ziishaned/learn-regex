@@ -72,7 +72,7 @@ Ausdruch `der` bedeutet: der Buchstabe `d`, gefolgt vom Buchstaben `e`, gefolgt 
 
 [Teste den regulären Ausdruck](https://regex101.com/r/yCh6LN/1)
 
-Der reguläre Ausdruck `123` passt zu der Zeichenkette `123`. Der reguläre Ausdurck wird dabei mit dabei mit der Eingabe abgeglichen, indem jedes Zeichen mit jedem Zeichen aus dem Ausdruck einzeln verglichen wird. Reguläre Ausdrucke beachten für gewöhnlich Groß- und Kleinschreibung, weshalb der reguläre Ausdruck `Der` die Zeichenkette `der` nicht erkennt. 
+Der reguläre Ausdruck `123` passt zu der Zeichenkette `123`. Der reguläre Ausdurck wird dabei mit der Eingabe abgeglichen, indem jedes Zeichen mit jedem Zeichen aus dem Ausdruck einzeln verglichen wird. Reguläre Ausdrucke beachten für gewöhnlich Groß- und Kleinschreibung, weshalb der reguläre Ausdruck `Der` die Zeichenkette `der` nicht erkennt. 
 
 <pre>
 "Der" => <a href="#learn-regex"><strong>Der</strong></a> fette Kater saß auf der Matter.
