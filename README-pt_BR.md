@@ -23,7 +23,7 @@ Imagine que você está escrevendo uma aplicação e quer colocar regras para qu
 
 <br/><br/>
 <p align="center">
-<img src="https://i.imgur.com/ekFpQUg.png" alt="Regular expression">
+<img src="http://i.imgur.com/8UaOzpq.png" alt="Regular expression">
 </p>
 
 A expressão regular acima aceita as strings `john_doe`, `jo-hn_doe` e `john12_as`. Ela não aceita `Jo` porque essa string contém letras maiúsculas e também é muito curta.
