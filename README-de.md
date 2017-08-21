@@ -32,55 +32,53 @@ den Benutzernamen zu überprüfen:
 Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird
 nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
 
-## Table of Contents
+## Inhaltsverzeichnis
 
-- [Basic Matchers](#1-basic-matchers)
-- [Meta character](#2-meta-characters)
-  - [Full stop](#21-full-stop)
-  - [Character set](#22-character-set)
-    - [Negated character set](#221-negated-character-set)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
-  - [Character Group](#25-character-group)
+- [Einfache Vergleiche](#1-basic-matchers)
+- [Besondere Zeichen](#2-meta-characters)
+  - [Punkt](#21-full-stop)
+  - [Zeichensätze](#22-character-set)
+    - [Invertierter Zeichensatz](#221-negated-character-set)
+  - [Wiederholungen](#23-repetitions)
+    - [Sternchen](#231-the-star)
+    - [Plus](#232-the-plus)
+    - [Fragezeichen](#233-the-question-mark)
+  - [Klammern](#24-braces)
+  - [Zeichengruppen](#25-character-group)
   - [Alternation](#26-alternation)
-  - [Escaping special character](#27-escaping-special-character)
-  - [Anchors](#28-anchors)
+  - [Sonderzeichen auswerten](#27-escaping-special-character)
+  - [Anker](#28-anchors)
     - [Caret](#281-caret)
     - [Dollar](#282-dollar)
-- [Shorthand Character Sets](#3-shorthand-character-sets)
-- [Lookaround](#4-lookaround)
-  - [Positive Lookahead](#41-positive-lookahead)
-  - [Negative Lookahead](#42-negative-lookahead)
-  - [Positive Lookbehind](#43-positive-lookbehind)
-  - [Negative Lookbehind](#44-negative-lookbehind)
-- [Flags](#5-flags)
-  - [Case Insensitive](#51-case-insensitive)
-  - [Global search](#52-global-search)
-  - [Multiline](#53-multiline)
+- [Kurzschreibweisen](#3-shorthand-character-sets)
+- [Umschauen](#4-lookaround)
+  - [Positives Vorausschauen](#41-positive-lookahead)
+  - [Negatives Vorausschauen](#42-negative-lookahead)
+  - [Positives Zurückschauen](#43-positive-lookbehind)
+  - [Negatives Zurückschauen](#44-negative-lookbehind)
+- [Steuerparameter](#5-flags)
+  - [Groß-/Kleinschreibung](#51-case-insensitive)
+  - [Globale Surche](#52-global-search)
+  - [Mehrzeilig](#53-multiline)
 
-## 1. Basic Matchers
+## 1. Einfache Vergleiche
 
-A regular expression is just a pattern of characters that we use to perform search in a text.  For example, the regular expression
-`the` means: the letter `t`, followed by the letter `h`, followed by the letter `e`.
-
-<pre>
-"the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
-</pre>
-
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
-
-The regular expression `123` matches the string `123`. The regular expression is matched against an input string by comparing each
-character in the regular expression to each character in the input string, one after another. Regular expressions are normally
-case-sensitive so the regular expression `The` would not match the string `the`.
+Ein regulärer Ausdruck ist ein Zeichenmuster, das benutzt wird um innerhalb eines Textes zu suchen. Zum Beispiel der reguläre
+Ausdruch `der` bedeutet: der Buchstabe `d`, gefolgt vom Buchstaben `e`, gefolgt vom Buchstaben `r`.
 
 <pre>
-"The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"der" => Der fette Kater saß auf <a href="#learn-regex"><strong>der</strong></a> Matter.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/yCh6LN/1)
+
+Der reguläre Ausdruck `123` passt zu der Zeichenkette `123`. Der reguläre Ausdurck wird dabei mit dabei mit der Eingabe abgeglichen, indem jedes Zeichen mit jedem Zeichen aus dem Ausdruck einzeln verglichen wird. Reguläre Ausdrucke beachten für gewöhnlich Groß- und Kleinschreibung, weshalb der reguläre Ausdruck `Der` die Zeichenkette `der` nicht erkennt. 
+
+<pre>
+"Der" => <a href="#learn-regex"><strong>Der</strong></a> fette Kater saß auf der Matter.
+</pre>
+
+[Teste den regulären Ausdruck](https://regex101.com/r/yCh6LN/2)
 
 ## 2. Meta Characters
 
