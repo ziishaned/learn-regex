@@ -338,21 +338,17 @@ Lookbehind negativo é usado para encontrar todas as ocorrências que não são 
 
 ## 5. Flags
 
-Flags (sinalizadores) are also called modifiers because they modify the output of a regular expression. These flags can be used in any order or
-combination, and are an integral part of the RegExp.
+Flags (sinalizadores) também são chamados de modificadores, porque eles modificam o resultado da expressão regular. Essas flags podem ser usadas em qualquer ordem ou combinação, e são uma parte integrante da RegExp.
 
-|Flag|Description|
+|Flag|Descrição|
 |:----:|----|
-|i|Case insensitive: Sets matching to be case-insensitive.|
-|g|Global Search: Search for a pattern throughout the input string.|
-|m|Multilinhas: Anchor meta character works on each line.|
+|i|Case insensitive: Define que o padrão será case-insensitive.|
+|g|Busca global: Procura o padrão em toda a string de entrada.|
+|m|Multilinhas: Os metacaracteres de âncora funcionam em cada linha.|
 
 ### 5.1 Indiferente à Maiúsculas
 
-The `i` modifier is used to perform case-insensitive matching. For example, the regular expression `/The/gi` means: uppercase letter
-`T`, followed by lowercase character `h`, followed by character `e`. And at the end of regular expression the `i` flag tells the
-regular expression engine to ignore the case. As you can see we also provided `g` flag because we want to search for the pattern in
-the whole input string.
+O modificador `i` é usado para tornar o padrão case-insensitive. Por exemplo, a expressão regular `/The/gi` significa: a letra maiúscula `T`, seguida do caractere minúsculo `h`, seguido do caractere `e`. E ao final da expressão regular, a flag `i` diz ao motor de expressões regulares para ignorar maiúsculas e minúsculas. Como você pode ver, nós também determinamos a flag `g` porque queremos procurar o padrão em toda a string de entrada.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -368,10 +364,7 @@ the whole input string.
 
 ### 5.2 Busca Global
 
-The `g` modifier is used to perform a global match (find all matches rather than stopping after the first match). For example, the
-regular expression`/.(at)/g` means: any character except new line, followed by lowercase character `a`, followed by lowercase
-character `t`. Because we provided `g` flag at the end of the regular expression now it will find every matches from whole input
-string.
+O modificador `g` é usado para realizar uma busca global (encontrar todas as ocorrências sem parar na primeira encontrada). Por exemplo, a expressão regular `/.(at)/g` significa: qualquer caractere, exceto nova linha, seguido do caractere minúsculo `a`, seguido do caractere minúsculo `t`. Por causa da flag `g` no final da expressão regular, agora ela vai encontrar todas as ocorrências em toda a string de entrada.
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -387,10 +380,7 @@ string.
 
 ### 5.3 Multilinhas
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier anchors `(^, $)` are used to check if pattern is
-the beginning of the input or end of the input string. But if we want that anchors works on each line we use `m` flag. For example, the
-regular expression `/at(.)?$/gm` means: lowercase character `a`, followed by lowercase character `t`, optionally anything except new
-line. And because of `m` flag now regular expression engine matches pattern at the end of each line in a string.
+O modificador `m` é usado para realizar uma busca em várias linhas. Como falamos antes, as âncoras `(^, $)` são usadas para verificar se o padrão está no início ou no final da string de entrada. Mas se queremos que as âncoras funcionem em cada uma das linhas, usamos a flag `m`. Por exemplo, a expressão regular `/at(.)?$/gm` significa: o caractere minúsculo `a`, seguido do caractere minúsculo `t`, opcionalmente seguido por qualquer caractere, exceto nova linha. E por causa da flag `m`, agora o motor de expressões regulares encontra o padrão no final de cada uma das linhas da string.
 
 <pre>
 "/.at(.)?$/" => The fat
