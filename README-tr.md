@@ -37,8 +37,8 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
   - [Karakter takımı](#22-character-set)
     - [Negatiflenmiş karakter seti](#221-negated-character-set)
   - [Tekrarlar](#23-repetitions)
-    - [Yıldız](#231-the-star)
-    - [Artı](#232-the-plus)
+    - [Yıldız İşareti](#231-the-star)
+    - [Artı İşareti](#232-the-plus)
     - [Soru İşareti](#233-the-question-mark)
   - [Süslü Parantez](#24-braces)
   - [Karakter Grubu](#25-character-group)
@@ -98,152 +98,140 @@ Meta karakterler aşağıdaki gibidir:
 |^|Girilen verinin başlangıcını ifade eder.|
 |$|Girilen veririnin sonunu ifade eder.|
 
-## 2.1 Full stop
+## 2.1 Nokta
 
-Full stop `.` is the simplest example of meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+Nokta `.` meta karakterin en basit örneğidir. `.` meta karakteri satır başlangıcı hariç herhangi bir karakterle eşleşir.
+Örneğin, `.ar` düzenli ifadesinin anlamı: herhangi bir karakterin ardından `a` harfi ve `r` harfi gelir.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Character set
+## 2.2 Karakter Takımı
 
-Character sets are also called character class. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Karakter takımları aryıca Karakter sınıfı olarak bilinir. Karakter takımlarını belirtmek için köşeli ayraçlar kullanılır.
+Karakterin aralığını belirtmek için bir karakter takımında tire kullanın. Köşeli parantezlerdeki karakter aralığının sıralaması önemli değildir. 
+
+Örneğin, `[Tt]he` düzenli ifadesinin anlamı: bir büyük `T` veya küçük `t` harflerinin ardından sırasıyla `h` ve `e` harfi gelir.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by letter `r`,
-followed by a period `.` character.
+Bununla birlikte, bir karakter takımı içerisindeki bir periyot bir tam periyot demektir.
+
+`ar[.]` düzenli ifadesinin anlamı: Küçük `a` karakteri ardından `r` harfi gelir, ardından bir `.` karakteri gelir.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated character set
+### 2.2.1 Negatiflenmiş karakter seti
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+Genellikle, şapka `^` sembolü harf öbeğinin başlangıcını temsil eder, ama köşeli parantez içinde kullanıldığında verilen karakter takımını hariç tutar.
+
+Örneğin, `[^c]ar` ifadesinin anlamı: `c` harfinden hariç herhangi bir harfin ardından `a`, ardından `r` gelir.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Tekrarlar
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+`+`, `*` ya da `?` meta karakterlerinden sonra bir alt desenin kaç defa tekrar edebileceğini belirtmek için kullanılır. Bu meta karakterler farklı durumlarda farklı davranırlar.
 
-### 2.3.1 The Star
+### 2.3.1 Yıldız İşareti
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
-`[a-z]*` means: any number of lowercase letters in a row.
+`*` sembolü, kendinden önce girilen eşlemenin sıfır veya daha fazla tekrarıyla eşleşir. Ama bir karakter seti ya da sınıf sonrasına girildiğinde, tüm karakter setinin tekrarlarını bulur.
+
+`a*` düzenli ifadesinin anlamı: `a` karakterinin sıfır veya daha fazla tekrarı. 
+`[a-z]*` düzenli ifadesinin anlamı: bir satırdaki herhangi bir sayıdaki küçük harfler.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by lowercase character `c`,
-followed by lowercase character `a`, followed by lowercase character `t`,
-followed by zero or more spaces.
+`*` sembolü `.` meta karakteri ile `.*` karakterinin herhangi harf öbeğine eşleştirmek için kullanılabilir. `*` sembolü boşluk karakteriyle `\s` bir harf öbeğinde boşluk karakterlerini eşleştirmek için kullanılabilir.
+
+Örneğin, `\s*cat\s*` düzenli ifadesinin anlamı: sıfır veya daha fazla boşluk ardından küçük `c` karakteri gelir, ardından küçük `a` karakteri gelir, ardından küçük `t` karakteri gelir, ardından sıfır veya daha fazla boşluk gelir.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Artı İşareti
 
-The symbol `+` matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: lowercase letter `c`, followed by
-at least one character, followed by the lowercase character `t`. It needs to be
-clarified that `t` is the last `t` in the sentence.
+`+` sembolü, kendinden önce girilen eşlemenin bir veya daha fazla tekrarıyla eşleşir.
+
+Örneğin, `c.+t` ifadesinin anlamı: küçük `c` harfi, ardından en az bir karakter gelir, ardından küçük `t` karakteri gelir.
+Örnekte açıklamak gereken önemli nokta: `t` harfi cümledeki son `t` harfi olacaktır. `c` ve `t` harfi arasında en az bir karakter vardır.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Soru İşareti
 
-In regular expression the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional the uppercase
-letter `T`, followed by the lowercase character `h`, followed by the lowercase
-character `e`.
+Düzenli ifadelerde `?` meta karakterinden önce girilen karakteri opsiyonel olarak tanımlar. Bu sembol önce gelen karakterin sıfır veya bir örbeğiyle eşleşir.
+
+Örneğin, `[T]?he` ifadesinin anlamı: opsiyonel büyük `T` harfi, ardından küçük `h` karakteri gelir, ardından küçük `e` karakteri gelir.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Süslü Parantez
 
-In regular expression braces that are also called quantifiers are used to
-specify the number of times that a character or a group of characters can be
-repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
-2 digits but not more than 3 ( characters in the range of 0 to 9).
+Düzenli ifadelerde miktar belirliyiciler olarakda bilinen süslü parantezler, bir karakterin veya karakter grubunun kaç defa tekrar edebileceğini belirtmek için kullanılırlar.
+
+Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 0 aralığındaki karakterlerden, en az 2 en fazla 3 defa ile eşleş.
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression
-`[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma the
-regular expression `[0-9]{3}` means: Match exactly 3 digits.
+İkinci numarayı boş bırakabiliriz.
+
+Örneğin, `[0-9]{2,}` ifadesinin anlamı: En az 2 veya daha fazla defa eşleş.
+Düzenli ifadeden virgülü kaldırırsak `[0-9]{3}`: doğrudan 3 defa eşleşir.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Character Group
+## 2.5 Karakter Grubu
 
 Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
 As we discussed before that in regular expression if we put a quantifier after a
