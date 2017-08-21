@@ -26,7 +26,7 @@
 
 <br/><br/>
 <p align="center">
-<img src="https://i.imgur.com/Pq5Llat.png" alt="Regular expression">
+  <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
 
 以上的正则表达式可以接受 `john_doe`, `jo-hn_doe`, `john12_as`.
@@ -88,7 +88,7 @@
 
 ## 2. 元字符
 
-正则表达式主要依赖于元字符.  
+正则表达式主要依赖于元字符.
 元字符不代表他们本身的字面意思, 他们都有特殊的含义. 一些元字符写在方括号中的时候有一些特殊的意思. 以下是一些元字符的介绍:
 
 |元字符|描述|
