@@ -42,7 +42,7 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
     - [Soru İşareti](#233-the-question-mark)
   - [Süslü Parantez](#24-braces)
   - [Karakter Grubu](#25-character-group)
-  - [Birbirini İzleme](#26-alternation)
+  - [Değişim](#26-alternation)
   - [Özel Karakter Hariç Tutma](#27-escaping-special-character)
   - [Sabitleyiciler](#28-anchors)
     - [Ters v işareti](#281-caret)
@@ -233,247 +233,204 @@ Düzenli ifadeden virgülü kaldırırsak `[0-9]{3}`: doğrudan 3 defa eşleşir
 
 ## 2.5 Karakter Grubu
 
+Karakter grubu parantezler içine yazılmış alt desenler grubudur. Daha önce tasarım deseninde değindiğimiz gibi, bir karakterden önce bir miktar belirleyici koyarsak önceki karakteri tekrar eder. Fakat miktar belirleyiciyi bir karakter grubundan sonra koyarsak tüm karakter grubunu tekrarlar.
 
-------TODO
+Örneğin: `(ab)*` düzenli ifadesi "ab" karakterinin sıfır veya daha fazla tekrarıyla eşleşir.
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
-As we discussed before that in regular expression if we put a quantifier after a
-character then it will repeat the preceding character. But if we put quantifier
-after a character group then it repeats the whole character group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside character group.
-For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
+Ayrıca karakter grubu içinde `|` meta karakterini kullanabiliriz.
+
+Örneğin, `(c|g|p)ar` düzenli ifadesinin anlamı: küçük `c`, `g` veya `p` karakteri, ardından `a` karakteri, ardından `r` karakteri gelir.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/tUxrBG/1)
 
-## 2.6 Alternation
+## 2.6 Değişim
 
-In regular expression Vertical bar `|` is used to define alternation.
-Alternation is like a condition between multiple expressions. Now, you may be
-thinking that character set and alternation works the same way. But the big
-difference between character set and alternation is that character set works on
-character level but alternation works on expression level. For example, the
-regular expression `(T|t)he|car` means: uppercase character `T` or lowercase
-`t`, followed by lowercase character `h`, followed by lowercase character `e` or
-lowercase character `c`, followed by lowercase character `a`, followed by
-lowercase character `r`.
+Düzenli ifadede dik çizgi alternasyon(değişim, dönüşüm) tanımlamak için kullanılır. Alternasyon birden fazla ifade arasındaki bir koşul gibidir. Şu an, karakter grubu ve alternasyonun aynı şekilde çalıştığını düşünüyor olabilirsiniz. Ama, Karakter grubu ve alternasyon arasındaki büyük fark karakter grubu karakter düzeyinde çalışır ama alternasyon ifade düzeyinde çalışır. 
+
+Örneğin, `(T|t)he|car` düzenli ifadesinin anlamı: Büyük `T` ya da küçük `t` karakteri, ardından küçük `h` karakteri, ardından küçük `e` ya da `c` karakteri, ardından küçük `a`, ardından küçük `r` karakteri gelir.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escaping special character
+## 2.7 Özel Karakter Hariç Tutma
 
-Backslash `\` is used in regular expression to escape the next character. This
-allows us to specify a symbol as a matching character including reserved
-characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching
-character prepend `\` before it.
+`\` işareti sonraki karakteri hariç tutmak için kullanılır. Bu bir semboülü ayrılmış karakterlerde `{ } [ ] / \ + * . $ ^ | ?` dahil olmak üzere eşleşen bir karakter olarak belirtmemizi sağlar. Bir özel karakteri eşleşen bir karakter olarak kullanmak için önüne `\` işareti getirin.
 
-For example, the regular expression `.` is used to match any character except
-newline. Now to match `.` in an input string the regular expression
-`(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase
-character `a`, followed by lowercase letter `t`, followed by optional `.`
-character.
+Örneğin, `.` düzenli ifadesi yeni satır hariç herhangi bir karakteri eşleştirmek için kullanılır. 
+Bir harf öbeği içinde nokta `.` karakterini yakalamak için `.` ayrılmış karakterini hariç tutmamız gerekir. Bunun için nokta önüne `\` işaretini koymamız gereklidir.
+
+`(f|c|m)at\.?` düzenli ifadesinin anlamı: küçük `f`, `c`ya da `m` harfi, ardından küçük `a` harfi, ardından küçük `t` harfi, ardından opsiyonel `.` karakteri gelir.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/DOc5Nu/1)
 
-## 2.8 Anchors
+## 2.8 Sabitleyiciler
 
-In regular expressions, we use anchors to check if the matching symbol is the
-starting symbol or ending symbol of the input string. Anchors are of two types:
-First type is Caret `^` that check if the matching character is the start
-character of the input and the second type is Dollar `$` that checks if matching
-character is the last character of the input string.
+Düzenli ifadelerde, eşleşen sembolün girilen harf öbeğinin başlangıç sembolü veya bitiş sembolü olup olmadığını kontrol etmek için sabitleyicileri kullanırız. 
+Sabitleyiciler iki çeşittir: İlk çeşit eşleşen karakterin girişin ilk karakteri olup olmadığını kontrol eden şapka `^` karakteri, ve ikinci çeşit eşleşen karakterin girişin son karakteri olup olmadığını kontrol eden dolar `$` karakteridir.
 
-### 2.8.1 Caret
+### 2.8.1 Şapka İşareti
 
-Caret `^` symbol is used to check if matching character is the first character
-of the input string. If we apply the following regular expression `^a` (if a is
-the starting symbol) to input string `abc` it matches `a`. But if we apply
-regular expression `^b` on above input string it does not match anything.
-Because in input string `abc` "b" is not the starting symbol. Let's take a look
-at another regular expression `^(T|t)he` which means: uppercase character `T` or
-lowercase character `t` is the start symbol of the input string, followed by
-lowercase character `h`, followed by lowercase character `e`.
+Şapka `^` işareti eşleşen karakterin giriş harf öbeğinin ilk karakteri olup olmadığını kontrol etmek için kullanılır.
+Eğer `^a` düzenli ifadesini `abc` harf öbeğine uygularsak `a` ile eşleşir. Ama `^b` ifadesini uygularsak bir eşleşme bulamayız. Bunun nedeni `abc` harf öbeğinde `b` karakterinin başlangıç karakteri olmamasıdır.
+
+Bir başka örnek üzerinden ilerlersek, 
+
+`^(T|t)he` düzenli ifadesinin anlamı: büyük `T` ya da `t` karakteri giriş harf öbeğinin ilk karakteri olmak üzere, ardından küçük `h`, ardından küçük `e` karakteri gelir.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/jXrKne/1)
 
-### 2.8.2 Dollar
+### 2.8.2 Dolar İşareti
 
-Dollar `$` symbol is used to check if matching character is the last character
-of the input string. For example, regular expression `(at\.)$` means: a
-lowercase character `a`, followed by lowercase character `t`, followed by a `.`
-character and the matcher must be end of the string.
+Dolar `$` işareti eşleşen karakterin giriş harf öbeğinin son karakteri olup olmadığını kontrol etmek için kullanılır.
+
+Örneğin, `(at\.)$` ifadesinin anlamı: küçük bir `a` karakteri, ardından küçük bir `t` karakteri, ardıdan nokta `.` karakteri gelir ve bu eşleşme harf öbeğinin sonunda olmalıdır.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+##  3. Kısaltma Karakter Takımları
 
-Regular expression provides shorthands for the commonly used character sets,
-which offer convenient shorthands for commonly used regular expressions. The
-shorthand character sets are as follows:
+Regex, yaygın olarak kullanılan düzenli ifadeler için uygun kısaltmalar sunan sık kullanılan karakter setleri için kısaltmalar sağlar.
 
-|Shorthand|Description|
+Kullanılan karakter setleri kısaltmaları aşağıdaki gibidir:
+
+|Kısaltma|Açıklama|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+|.|Satır başı hariç herhangi bir karakter|
+|\w|Alfanumerik karakterlerle eşleşir: `[a-zA-Z0-9_]`|
+|\W|Alfanumerik olmayan karakterlerle eşleşir: `[^\w]`|
+|\d|Rakamlarla eşlelir: `[0-9]`|
+|\D|Rakam olmayan karakterlerle eşleşir: `[^\d]`|
+|\s|Boşluk karakteri ile eşleşir: `[\t\n\f\r\p{Z}]`|
+|\S|Boşluk karakteri olmayan karakterlerle eşleşir: `[^\s]`|
 
-## 4. Lookaround
+## 4. Bakınmak
 
-Lookbehind and lookahead sometimes known as lookaround are specific type of
-***non-capturing group*** (Use to match the pattern but not included in matching
-list). Lookaheads are used when we have the condition that this pattern is
-preceded or followed by another certain pattern. For example, we want to get all
-numbers that are preceded by `$` character from the following input string
-`$4.44 and $10.88`. We will use following regular expression `(?<=\$)[0-9\.]*`
-which means: get all the numbers which contain `.` character and  are preceded
-by `$` character. Following are the lookarounds that are used in regular
-expressions:
+Bakınma sembolleri, bir ifade öncesinde veya sonrasında başka bir ifademiz olduğunda kullanılırlar.
 
-|Symbol|Description|
+Örneğin, `$4.44 ve $10.88` girişlerinden `$` karakteri önündeki tüm sayıları almak istiyoruz, bu durumda `(?<=\$)[0-9\.]*` ifadesini kullanırız.
+
+`(?<=\$)[0-9\.]*` ifadesinin anlamı: `.` karakterini içeren ve `$` karakteriyle devam eden tüm sayıları al.
+
+Düzenli ifadelerde kullanılan bakınma sembolleri aşağıdadır:
+
+|Sembol|Açıklama|
 |:----:|----|
-|?=|Positive Lookahead|
-|?!|Negative Lookahead|
-|?<=|Positive Lookbehind|
-|?<!|Negative Lookbehind|
+|?=|Positive Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme varsa` sonuç döndürür.)|
+|?!|Negative Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme yoksa` sonuç döndürür.)|
+|?<=|Positive Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme varsa` sonuç döndürür.)|
+|?<-!-|Negative Lookbehind Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.|
 
 ### 4.1 Positive Lookahead
 
-The positive lookahead asserts that the first part of the expression must be
-followed by the lookahead expression. The returned match only contains the text
-that is matched by the first part of the expression. To define a positive
-lookahead, parentheses are used. Within those parentheses, a question mark with
-equal sign is used like this: `(?=...)`. Lookahead expression is written after
-the equal sign inside parentheses. For example, the regular expression
-`[T|t]he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase
-letter `T`, followed by letter `h`, followed by letter `e`. In parentheses we
-define positive lookahead which tells regular expression engine to match `The`
-or `the` which are followed by the word `fat`.
+Positive Lookahead, ifadenin ilk bölümü bakınma ifadesiyle devam etmesi gerektiğini savunur. Bulunan eşleşme yalnızca ifadenin ilk bölümüyle eşleşen metin içerir. Olumlu bir bakınma tanımlamak için, içinde eşittir işareti yer alan parantezler `(?=...)` şeklinde kullanılır. Bakınma ifadesi parantezler içinde eşittir işaretinden sonra yazılır.
+
+Örneğin, `[T|t]he(?=\sfat)` ifadesinin anlamı: opsiyonel küçük bir `t` ya da büyük `T` harfi, ardından `h` harfi gelir, ardından `e` harfi gelir. Parantez içinde ise bu dizilimin bir boşluk karakterinden sonra `fat` öbeğiyle devam edeceğini tanımlıyoruz.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Negative Lookahead
 
-Negative lookahead is used when we need to get all matches from input string
-that are not followed by a pattern. Negative lookahead defined same as we define
-positive lookahead but the only difference is instead of equal `=` character we
-use negation `!` character i.e. `(?!...)`. Let's take a look at the following
-regular expression `[T|t]he(?!\sfat)` which means: get all `The` or `the` words
-from input string that are not followed by the word `fat` precedes by a space
-character.
+Negative Lookahead sembolü positive lookahead tersine, verdiğimiz desenle devam etmemesi durumunda eşleşir. Bu sembol positive lookahead gibi tanımlanır ama `=` işareti yerine `!` kullanılır.
+
+`[T|t]he(?!\sfat)` ifadesinin anlamı: opsiyonel küçük bir `t` ya da büyük `T` harfi, ardından `h` harfi gelir, ardından `e` harfi gelir, ardından öncesinde boşluk olan bir `fat` öbeği olmamalıdır.
+
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Positive Lookbehind
 
-Positive lookbehind is used to get all the matches that are preceded by a
-specific pattern. Positive lookbehind is denoted by `(?<=...)`. For example, the
-regular expression `(?<=[T|t]he\s)(fat|mat)` means: get all `fat` or `mat` words
-from input string that are after the word `The` or `the`.
+Positive Lookbehind, belirli bir desenden önceki eşleşmeleri almak için kullanılır. `(?<=...)` ile gösterilir.
+
+Örneğin, `(?<=[T|t]he\s)(fat|mat)` ifadesinin anlamı: Öncesinde `The` veya `the` öbekleri olan tüm `fat` veya `mat` öbeklerini getir.
 
 <pre>
 "(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/avH165/1)
 
 ### 4.4 Negative Lookbehind
 
-Negative lookbehind is used to get all the matches that are not preceded by a
-specific pattern. Negative lookbehind is denoted by `(?<!...)`. For example, the
-regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from input
-string that are not after the word `The` or `the`.
+Negative Lookbehind, belirli bir desenden önce olmayan eşleşmeleri almak için kullanılır. `(?<=!..)` ile gösterilir.
+
+Örneğin, `(?<!(T|t)he\s)(cat)` ifadesinin anlamı: Öncesinde `The` veya `the` öbekleri yer almayan tüm `cat` öbeklerini getir.
 
 <pre>
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/8Efx5G/1)
 
-## 5. Flags
+## 5. İşaretler
 
-Flags are also called modifiers because they modify the output of a regular
-expression. These flags can be used in any order or combination, and are an
-integral part of the RegExp.
+İşaretler ayrıca düzenleyiciler olarak bilinirler, çünkü onlar bir düzenli ifadenin çıktısını düzenlerler. Bu işaretler herhangi bir sırada veya kombinasyonda kullanılabilirler, ve bunlar Düzenli İfadelerin ayrılmaz bir parçasıdırlar.
 
-|Flag|Description|
+|İşaret|Açıklama|
 |:----:|----|
-|i|Case insensitive: Sets matching to be case-insensitive.|
-|g|Global Search: Search for a pattern throughout the input string.|
-|m|Multiline: Anchor meta character works on each line.|
+|i|Büyük küçük harf duyarlılık: Eşleştirmeleri küçük/büyük harfe karşı duyarsız yapar.|
+|g|Genel Arama: Girilen harf öbeği boyunca bir desen arar.|
+|m|Çok satırlı: Sabitleyici meta karakteri her satırda çalışır.|
 
-### 5.1 Case Insensitive
+### 5.1 Büyük/Küçük harf duyarlılığı
 
-The `i` modifier is used to perform case-insensitive matching. For example, the
-regular expression `/The/gi` means: uppercase letter `T`, followed by lowercase
-character `h`, followed by character `e`. And at the end of regular expression
-the `i` flag tells the regular expression engine to ignore the case. As you can
-see we also provided `g` flag because we want to search for the pattern in the
-whole input string.
+`ì` işaretleyicisi büyük/küçük harfe duyarsız eşleştirme yapmak için kullanılır.
+
+Örneğin, `/The/gi` ifadesi: büyük `T` harfi, ardından küçük `h` harfi, ardından küçük `e` harfi gelir. ifadenin sonunda yer alan `i` işareti büyük-küçük harfe karşı duyarsız olması gerektiğini belirtir. Ayrıca `g` işaretinide kullandığımızı görebilirsiniz, tüm text içinde bu aramayı yapmak istediğimiz için `g` işaretini ayrıca belirtiyoruz.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Global search
+### 5.2 Genel Arama
 
-The `g` modifier is used to perform a global match (find all matches rather than
-stopping after the first match). For example, the regular expression`/.(at)/g`
-means: any character except new line, followed by lowercase character `a`,
-followed by lowercase character `t`. Because we provided `g` flag at the end of
-the regular expression now it will find every matches from whole input string.
+`g` işareti bir giriş içinde eşleşen tüm varsayonları bulmak için kullanılır. `g` işareti kullanılmazsa ilk eşleşme bulunduktan sonra arama sona erer.
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -485,17 +442,13 @@ the regular expression now it will find every matches from whole input string.
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/dO1nef/1)
 
-### 5.3 Multiline
+### 5.3 Çok Satırlı
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier
-anchors `(^, $)` are used to check if pattern is the beginning of the input or
-end of the input string. But if we want that anchors works on each line we use
-`m` flag. For example, the regular expression `/at(.)?$/gm` means: lowercase
-character `a`, followed by lowercase character `t`, optionally anything except
-new line. And because of `m` flag now regular expression engine matches pattern
-at the end of each line in a string.
+`m` işareti çok satırlı bir eşleşme sağlamak için kullanılır. Daha önce sabitleyicilerde gördüğümüz gibi `(^, $)` sembolleri aradığımız desenin harf öbeğinin başında veya sonunda olup olmadığını kontrol etmemiz için kullanılır. Bu sabitleyicilerin tüm satırlarda çalışması için `m` işaretini kullanırız.
+
+Örneğin, `/at(.)?$/gm` ifadesinin anlamı: küçük `a` harfi, ardından küçük `t` harfi gelir, ardından opsiyonel olarak yeni satır hariç herhangi birşey gelebilir. `m` işaretini kullandığımız için bir girişin her satırının sonunda eşleştirir.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -503,7 +456,7 @@ at the end of each line in a string.
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -511,7 +464,7 @@ at the end of each line in a string.
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[Düzenli ifadeyi test edin](https://regex101.com/r/E88WE2/1)
 
 ## Contribution
 
