@@ -93,7 +93,7 @@ Meta karakterler aşağıdaki gibidir:
 |?|Kendisinden önce yazılan karakterin varlık durumunu opsiyonel kılar.|
 |{n,m}|Kendisinden önce yazılan karakterin en az `n` en fazla `m` değeri kadar olmasını ifade eder.|
 |(xyz)|Verilen sırayla `xyz` karakterleriyle eşleşir.|
-|&#124;|`&#124;` karakterinden önce veya sonra verilen ifadelerin herhangi biriyle eşleşir. Or anlamı verir.|
+|&#124;|`|` karakterinden önce veya sonra verilen ifadelerin herhangi biriyle eşleşir. Or anlamı verir.|
 |&#92;|Sonraki karakteri kaçırır. Bu, ayrılmış karakterleri eşleştirmenizi sağlar <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|Girilen verinin başlangıcını ifade eder.|
 |$|Girilen veririnin sonunu ifade eder.|
