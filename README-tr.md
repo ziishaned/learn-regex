@@ -233,6 +233,9 @@ Düzenli ifadeden virgülü kaldırırsak `[0-9]{3}`: doğrudan 3 defa eşleşir
 
 ## 2.5 Karakter Grubu
 
+
+------TODO
+
 Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
 As we discussed before that in regular expression if we put a quantifier after a
 character then it will repeat the preceding character. But if we put quantifier
