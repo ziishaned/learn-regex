@@ -380,8 +380,8 @@ shorthand character sets are as follows:
 
 ## 4. Lookaround
 
-Lookbehind and lookahead sometimes known as lookaround are specific type of
-***non-capturing group*** (Use to match the pattern but not included in matching
+Lookbehind and lookahead (also called lookaround) are specific types of
+***non-capturing groups*** (Used to match the pattern but not included in matching
 list). Lookaheads are used when we have the condition that this pattern is
 preceded or followed by another certain pattern. For example, we want to get all
 numbers that are preceded by `$` character from the following input string
