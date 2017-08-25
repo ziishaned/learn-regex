@@ -498,7 +498,7 @@ The `g` modifier is used to perform a global match (find all matches rather than
 stopping after the first match). For example, the regular expression`/.(at)/g`
 means: any character except new line, followed by lowercase character `a`,
 followed by lowercase character `t`. Because we provided `g` flag at the end of
-the regular expression now it will find every matches from whole input string.
+the regular expression now it will find all matches in the input string, not just the first one (which is the default behavior).
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
