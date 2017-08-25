@@ -358,10 +358,10 @@
 定义一个前置约束(存在)要使用 `()`. 在括号内部使用一个问号和等号: `(?=...)`.
 
 前置约束的内容写在括号中的等号后面.
-例如, 表达式 `[T|t]he(?=\sfat)` 匹配 `The` 和 `the`, 在括号中我们又定义了前置约束(存在) `(?=\sfat)` ,即 `The` 和 `the` 后面紧跟着 `(空格)fat`.
+例如, 表达式 `(T|t)he(?=\sfat)` 匹配 `The` 和 `the`, 在括号中我们又定义了前置约束(存在) `(?=\sfat)` ,即 `The` 和 `the` 后面紧跟着 `(空格)fat`.
 
 <pre>
-"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
 [在线练习](https://regex101.com/r/IDDARt/1)
@@ -371,10 +371,10 @@
 前置约束-排除 `?!` 用于筛选所有匹配结果, 筛选条件为 其后不跟随着定义的格式
 `前置约束-排除`  定义和 `前置约束(存在)` 一样, 区别就是 `=` 替换成 `!` 也就是 `(?!...)`.
 
-表达式 `[T|t]he(?!\sfat)` 匹配 `The` 和 `the`, 且其后不跟着 `(空格)fat`.
+表达式 `(T|t)he(?!\sfat)` 匹配 `The` 和 `the`, 且其后不跟着 `(空格)fat`.
 
 <pre>
-"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
 [在线练习](https://regex101.com/r/V32Npg/1)
@@ -382,10 +382,10 @@
 ### 4.3 `?<= ...` 后置约束-存在
 
 后置约束-存在 记作`(?<=...)` 用于筛选所有匹配结果, 筛选条件为 其前跟随着定义的格式.
-例如, 表达式 `(?<=[T|t]he\s)(fat|mat)` 匹配 `fat` 和 `mat`, 且其前跟着 `The` 或 `the`.
+例如, 表达式 `(?<=(T|t)he\s)(fat|mat)` 匹配 `fat` 和 `mat`, 且其前跟着 `The` 或 `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [在线练习](https://regex101.com/r/avH165/1)
@@ -396,7 +396,7 @@
 例如, 表达式 `(?<!(T|t)he\s)(cat)` 匹配 `cat`, 且其前不跟着 `The` 或 `the`.
 
 <pre>
-"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 [在线练习](https://regex101.com/r/8Efx5G/1)
