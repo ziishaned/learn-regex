@@ -384,12 +384,12 @@
 肯定的な先読みを定義するには括弧を使用します。
 その括弧の中で疑問符と等号を合わせて `(?=...)` のようにします。
 先読みのパターンは括弧の中の等号の後に記述します。
-例えば `[T|t]he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`, `e` が続きます。
+例えば `(T|t)he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`, `e` が続きます。
 括弧内で肯定的な先読みを定義していますが、これは `The` または `the` の後に
 `fat` が続くことを表しています。
 
 <pre>
-"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/IDDARt/1)
@@ -399,11 +399,11 @@
 否定的な先読みはあるパターンが後続しない全てのマッチング文字列を取得するために使用します。
 否定的な先読みは肯定的な先読みと同じように定義しますが、 `=` の代わりに
 `!` を使うところが唯一の違いで、`(?!...)` と記述します。
-次の正規表現 `[T|t]he(?!\sfat)` について考えてみます。
+次の正規表現 `(T|t)he(?!\sfat)` について考えてみます。
 これはスペースを挟んで `fat` が後続することがない全ての `The` または `the` を得ることができます。
 
 <pre>
-"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/V32Npg/1)
@@ -412,11 +412,11 @@
 
 肯定的な後読みは特定のパターンが先行するような文字列を得るために使用します。
 定義の仕方は `(?<=...)` とします。
-例えば `(?<=[T|t]he\s)(fat|mat)` という正規表現は
+例えば `(?<=(T|t)he\s)(fat|mat)` という正規表現は
 `The` または `the` の後に続く全ての `fat` または `mat` が取得できます。
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/avH165/1)
@@ -428,7 +428,7 @@
 例えば `(?<!(T|t)he\s)(cat)` は `The` または `the` に続いていない全ての `cat` が取得できます。
 
 <pre>
-"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/8Efx5G/1)
