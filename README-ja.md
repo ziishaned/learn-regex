@@ -193,6 +193,7 @@
 シンボル `+` は直前の文字が 1 個以上続くパターンにマッチします。
 例えば `c.+t` という正規表現は小文字の `c` の後に
 任意の 1 文字以上が続き、さらに `t` が続くことを意味します。
+この `t` は、その文における最後の `t` がマッチします。
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -220,6 +221,7 @@
 [正規表現の動作確認をする](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 括弧
+この`t`は、その文における最後の`t`であることが明確である必要があります。
 
 正規表現における括弧は数量子とも呼ばれますが、文字列がいくつ現れるかを示すために使用されます。
 例えば、`[0-9]{2,3}` という正規表現は 2 桁以上 3 桁以下の数字
@@ -359,7 +361,7 @@
 
 ## 4. 前後参照
 
-しばしば前後参照とも呼ばれる先読みと後読みは **非キャプチャグループ**
+先読みと後読み（前後参照とも呼ばれます）は **非キャプチャグループ**
 （パターンのマッチングはするがマッチングリストには含まれない）という
 特殊な扱いがなされる機能です。
 前後参照はあるパターンが別のあるパターンよりも先行または後続して現れることを示すために使用されます。
@@ -382,12 +384,12 @@
 肯定的な先読みを定義するには括弧を使用します。
 その括弧の中で疑問符と等号を合わせて `(?=...)` のようにします。
 先読みのパターンは括弧の中の等号の後に記述します。
-例えば `[T|t]he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`, `e` が続きます。
+例えば `(T|t)he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`, `e` が続きます。
 括弧内で肯定的な先読みを定義していますが、これは `The` または `the` の後に
 `fat` が続くことを表しています。
 
 <pre>
-"[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/IDDARt/1)
@@ -397,11 +399,11 @@
 否定的な先読みはあるパターンが後続しない全てのマッチング文字列を取得するために使用します。
 否定的な先読みは肯定的な先読みと同じように定義しますが、 `=` の代わりに
 `!` を使うところが唯一の違いで、`(?!...)` と記述します。
-次の正規表現 `[T|t]he(?!\sfat)` について考えてみます。
+次の正規表現 `(T|t)he(?!\sfat)` について考えてみます。
 これはスペースを挟んで `fat` が後続することがない全ての `The` または `the` を得ることができます。
 
 <pre>
-"[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/V32Npg/1)
@@ -410,11 +412,11 @@
 
 肯定的な後読みは特定のパターンが先行するような文字列を得るために使用します。
 定義の仕方は `(?<=...)` とします。
-例えば `(?<=[T|t]he\s)(fat|mat)` という正規表現は
+例えば `(?<=(T|t)he\s)(fat|mat)` という正規表現は
 `The` または `the` の後に続く全ての `fat` または `mat` が取得できます。
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/avH165/1)
@@ -426,7 +428,7 @@
 例えば `(?<!(T|t)he\s)(cat)` は `The` または `the` に続いていない全ての `cat` が取得できます。
 
 <pre>
-"(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/8Efx5G/1)
@@ -466,8 +468,8 @@
 修飾子 `g` はグローバル検索（最初のマッチ列を検索する代わりに全マッチ列を検索する）を
 行うために使用します。
 例えば `/.(at)/g` という正規表現は、改行を除く任意の文字列の後に
-小文字の `a`, `t` が続きます。正規表現の最後にフラグ `g` を渡すことで
-入力文字列内の全マッチ列を検索するようにしています。
+小文字の `a`, `t` が続きます。正規表現の最後にフラグ `g` を渡すことで、
+最初のマッチだけではなく（これがデフォルトの動作です）、入力文字列内の全マッチ列を検索するようにしています。
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
