@@ -3,10 +3,6 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
-<<<<<<< HEAD
-
-[中文版](README-zh-simple.md)
-=======
 ## Translations:
 
 * [English](README.md)
@@ -15,12 +11,8 @@
 * [Português do Brasil](README-pt_BR.md)
 * [中文版](README-cn.md)
 * [日本語](README-ja.md)
-<<<<<<< HEAD
->>>>>>> zeeshanu/master
-=======
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
->>>>>>> zeeshanu/master
 
 ## What is Regular Expression?
 
