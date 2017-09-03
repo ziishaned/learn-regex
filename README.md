@@ -16,7 +16,7 @@
 
 ## What is Regular Expression?
 
-> Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
+> Regular expression is a group of characters or symbols which are used to find a specific pattern from a text.
 
 A regular expression is a pattern that is matched against a subject string from
 left to right. The word "Regular expression" is a mouthful, you will usually
@@ -261,7 +261,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 ## 2.5 Character Group
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
+Character group is a group of subpatterns that is written inside Parentheses `(...)`.
 As we discussed before that in regular expression if we put a quantifier after a
 character then it will repeat the preceding character. But if we put quantifier
 after a character group then it repeats the whole character group. For example,
@@ -317,7 +317,7 @@ character.
 
 In regular expressions, we use anchors to check if the matching symbol is the
 starting symbol or ending symbol of the input string. Anchors are of two types:
-First type is Caret `^` that check if the matching character is the start
+First type is Caret `^` that checks if the matching character is the start
 character of the input and the second type is Dollar `$` that checks if matching
 character is the last character of the input string.
 
@@ -409,7 +409,7 @@ the equal sign inside parentheses. For example, the regular expression
 `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase
 letter `T`, followed by letter `h`, followed by letter `e`. In parentheses we
 define positive lookahead which tells regular expression engine to match `The`
-or `the` which are followed by the word `fat`.
+or `the` which is followed by the word `fat`.
 
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -516,10 +516,10 @@ the regular expression now it will find all matches in the input string, not jus
 
 The `m` modifier is used to perform a multi-line match. As we discussed earlier
 anchors `(^, $)` are used to check if pattern is the beginning of the input or
-end of the input string. But if we want that anchors works on each line we use
+end of the input string. But if we want that anchors work on each line we use
 `m` flag. For example, the regular expression `/at(.)?$/gm` means: lowercase
 character `a`, followed by lowercase character `t`, optionally anything except
-new line. And because of `m` flag now regular expression engine matches pattern
+new line. And because of `m` flag now regular expression engine matches the pattern
 at the end of each line in a string.
 
 <pre>
