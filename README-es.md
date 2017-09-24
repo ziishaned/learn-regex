@@ -18,7 +18,7 @@
 ## Qué es una expresión regular?
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
 
-Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular", puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para remplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
+Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para remplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
 
 Imagina que estás escribiendo una aplicación y quieres agregar reglas para cuando el usuario elija su nombre de usuario. Nosotros queremos permitir que el nombre de usuario contenga letras, números, guión bajo (raya), y guión medio. También queremos limitar el número de caracteres en el nombre de usuario para que no se vea feo. Para ello usamos la siguiente expresión regular para validar el nombre de usuario.
 
@@ -28,7 +28,7 @@ Imagina que estás escribiendo una aplicación y quieres agregar reglas para cua
   <img src="./img/regexp-es.png" alt="Expresión regular">
 </p>
 
-La expresión regular anterior puede aceptar las cadenas 'john_doe', 'jo-hn_doe' y 'john12_as'. Sin embargo, la expresión no coincide con el nombre de usuario 'Jo' porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.
+La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe` y `john12_as`. Sin embargo, la expresión no coincide con el nombre de usuario `Jo` porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.
 
 ## Tabla de contenido
 
@@ -82,7 +82,7 @@ La expresión regular `123` coincide con la cadena `123`. La expresión regular 
 
 Los meta-caracteres son los bloques de construcción de las expresiones regulares. Los meta-caracteres no se sostienen a sí mismos, sino que se interpretan de alguna manera especial. Algunos meta-caracteres tienen un significado especial y se escriben entre corchetes. Los meta-caracteres son los siguientes:
 
-|Meta-carácter|DescripFDEsción|
+|Meta-carácter|Descripción|
 |:----:|----|
 |.|Período. Coincide con cualquier carácter excepto un salto de línea.|
 |[ ]|Clase de caracteres. Coincide con cualquier carácter contenido entre corchetes.|
@@ -242,7 +242,7 @@ Por ejemplo, la expresión regular `.` se utiliza para coincidir con cualquier c
 
 En expresiones regulares, usamos anclas para comprobar si el símbolo coincidente es el símbolo inicial o el símbolo final de la cadena de entrada. Los anclajes son de dos tipos: El primer tipo es el símbolo de intercalación `^` que comprueba si el carácter coincidente es el carácter inicial de la entrada y el segundo tipo es el símbolo del dólar `$` que comprueba si el carácter coincidente es el último carácter de la cadena de entrada.
 
-### 2.8.1 Simbolo de intercalación
+### 2.8.1 Símbolo de intercalación
 
 El símbolo de intercalación `^` se usa para verificar si el carácter coincidente es el primer carácter de la cadena de entrada. Si aplicamos la siguiente expresión regular `^a` (si `a` es el símbolo inicial) a la cadena de entrada, `abc` coincide con `a`. Pero si aplicamos la expresión regular `^b` en la cadena de entrada anterior, no coincide con nada. Porque en la cadena de entrada `abc`, `b` no es el símbolo inicial. Vamos a echar un vistazo a la expresión regular `^(T|t)he` que significa: carácter en mayúscula `T` o carácter en minúscula `t` es el símbolo inicial de la cadena de entrada, seguido del carácter minúscula `h` y seguido del carácter en minúscula `e`.
 
@@ -436,7 +436,7 @@ El modificador `m` se utiliza para realizar una coincidencia de varias líneas.
 Como analizamos anteriormente, las anclas `(^,$)` se utilizan para comprobar si
 el patrón es el comienzo de la entrada o el final de la cadena de entrada. Pero
 si queremos que las anclas funcionen en cada línea usamos el indicador `m`.
-Por ejemplo, la expresión regular `/at(.)?$/Gm` significa: carácter en minúscula` a`, seguido del carácter en minúscula `t`,
+Por ejemplo, la expresión regular `/at(.)?$/Gm` significa: carácter en minúscula `a`, seguido del carácter en minúscula `t`,
 opcionalmente cualquier cosa menos la nueva línea. Y debido al indicador `m`, ahora
 el motor de expresión regular coincide con el patrón al final de cada línea de una cadena.
 
