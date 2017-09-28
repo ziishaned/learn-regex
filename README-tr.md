@@ -12,6 +12,7 @@
 * [日本語](README-ja.md)
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
+* [Greek](README-gr.md)
 
 ## Düzenli İfade Nedir?
 

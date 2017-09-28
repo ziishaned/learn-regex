@@ -13,6 +13,7 @@
 * [日本語](README-ja.md)
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
+* [Greek](README-gr.md)
 
 ## What is Regular Expression?
 
@@ -420,7 +421,7 @@ or `the` which are followed by the word `fat`.
 ### 4.2 Negative Lookahead
 
 Negative lookahead is used when we need to get all matches from input string
-that are not followed by a pattern. Negative lookahead defined same as we define
+that are not followed by a pattern. Negative lookahead is defined same as we define
 positive lookahead but the only difference is instead of equal `=` character we
 use negation `!` character i.e. `(?!...)`. Let's take a look at the following
 regular expression `(T|t)he(?!\sfat)` which means: get all `The` or `the` words
