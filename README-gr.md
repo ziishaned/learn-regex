@@ -9,7 +9,7 @@
 * [Español](README-es.md)
 * [Français](README-fr.md)
 * [Português do Brasil](README-pt_BR.md)
-* [中文版](README-cn.md)
+* [中文（简体）版](README-cn.md)
 * [日本語](README-ja.md)
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)

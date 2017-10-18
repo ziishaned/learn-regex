@@ -8,7 +8,8 @@
 * [English](README.md)
 * [Español](README-es.md)
 * [Français](README-fr.md)
-* [中文版](README-cn.md)
+* [Português do Brasil](README-pt_BR.md)
+* [中文（简体）版](README-cn.md)
 * [日本語](README-ja.md)
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
@@ -113,7 +114,7 @@ Nokta `.` meta karakterin en basit örneğidir. `.` meta karakteri satır başla
 ## 2.2 Karakter Takımı
 
 Karakter takımları aryıca Karakter sınıfı olarak bilinir. Karakter takımlarını belirtmek için köşeli ayraçlar kullanılır.
-Karakterin aralığını belirtmek için bir karakter takımında tire kullanın. Köşeli parantezlerdeki karakter aralığının sıralaması önemli değildir. 
+Karakterin aralığını belirtmek için bir karakter takımında tire kullanın. Köşeli parantezlerdeki karakter aralığının sıralaması önemli değildir.
 
 Örneğin, `[Tt]he` düzenli ifadesinin anlamı: bir büyük `T` veya küçük `t` harflerinin ardından sırasıyla `h` ve `e` harfi gelir.
 
@@ -153,7 +154,7 @@ Genellikle, şapka `^` sembolü harf öbeğinin başlangıcını temsil eder, am
 
 `*` sembolü, kendinden önce girilen eşlemenin sıfır veya daha fazla tekrarıyla eşleşir. Ama bir karakter seti ya da sınıf sonrasına girildiğinde, tüm karakter setinin tekrarlarını bulur.
 
-`a*` düzenli ifadesinin anlamı: `a` karakterinin sıfır veya daha fazla tekrarı. 
+`a*` düzenli ifadesinin anlamı: `a` karakterinin sıfır veya daha fazla tekrarı.
 `[a-z]*` düzenli ifadesinin anlamı: bir satırdaki herhangi bir sayıdaki küçük harfler.
 
 <pre>
@@ -250,7 +251,7 @@ Ayrıca karakter grubu içinde `|` meta karakterini kullanabiliriz.
 
 ## 2.6 Değişim
 
-Düzenli ifadede dik çizgi alternasyon(değişim, dönüşüm) tanımlamak için kullanılır. Alternasyon birden fazla ifade arasındaki bir koşul gibidir. Şu an, karakter grubu ve alternasyonun aynı şekilde çalıştığını düşünüyor olabilirsiniz. Ama, Karakter grubu ve alternasyon arasındaki büyük fark karakter grubu karakter düzeyinde çalışır ama alternasyon ifade düzeyinde çalışır. 
+Düzenli ifadede dik çizgi alternasyon(değişim, dönüşüm) tanımlamak için kullanılır. Alternasyon birden fazla ifade arasındaki bir koşul gibidir. Şu an, karakter grubu ve alternasyonun aynı şekilde çalıştığını düşünüyor olabilirsiniz. Ama, Karakter grubu ve alternasyon arasındaki büyük fark karakter grubu karakter düzeyinde çalışır ama alternasyon ifade düzeyinde çalışır.
 
 Örneğin, `(T|t)he|car` düzenli ifadesinin anlamı: Büyük `T` ya da küçük `t` karakteri, ardından küçük `h` karakteri, ardından küçük `e` ya da `c` karakteri, ardından küçük `a`, ardından küçük `r` karakteri gelir.
 
@@ -264,7 +265,7 @@ Düzenli ifadede dik çizgi alternasyon(değişim, dönüşüm) tanımlamak içi
 
 `\` işareti sonraki karakteri hariç tutmak için kullanılır. Bu bir semboülü ayrılmış karakterlerde `{ } [ ] / \ + * . $ ^ | ?` dahil olmak üzere eşleşen bir karakter olarak belirtmemizi sağlar. Bir özel karakteri eşleşen bir karakter olarak kullanmak için önüne `\` işareti getirin.
 
-Örneğin, `.` düzenli ifadesi yeni satır hariç herhangi bir karakteri eşleştirmek için kullanılır. 
+Örneğin, `.` düzenli ifadesi yeni satır hariç herhangi bir karakteri eşleştirmek için kullanılır.
 Bir harf öbeği içinde nokta `.` karakterini yakalamak için `.` ayrılmış karakterini hariç tutmamız gerekir. Bunun için nokta önüne `\` işaretini koymamız gereklidir.
 
 `(f|c|m)at\.?` düzenli ifadesinin anlamı: küçük `f`, `c`ya da `m` harfi, ardından küçük `a` harfi, ardından küçük `t` harfi, ardından opsiyonel `.` karakteri gelir.
@@ -277,7 +278,7 @@ Bir harf öbeği içinde nokta `.` karakterini yakalamak için `.` ayrılmış k
 
 ## 2.8 Sabitleyiciler
 
-Düzenli ifadelerde, eşleşen sembolün girilen harf öbeğinin başlangıç sembolü veya bitiş sembolü olup olmadığını kontrol etmek için sabitleyicileri kullanırız. 
+Düzenli ifadelerde, eşleşen sembolün girilen harf öbeğinin başlangıç sembolü veya bitiş sembolü olup olmadığını kontrol etmek için sabitleyicileri kullanırız.
 Sabitleyiciler iki çeşittir: İlk çeşit eşleşen karakterin girişin ilk karakteri olup olmadığını kontrol eden şapka `^` karakteri, ve ikinci çeşit eşleşen karakterin girişin son karakteri olup olmadığını kontrol eden dolar `$` karakteridir.
 
 ### 2.8.1 Şapka İşareti
@@ -285,7 +286,7 @@ Sabitleyiciler iki çeşittir: İlk çeşit eşleşen karakterin girişin ilk ka
 Şapka `^` işareti eşleşen karakterin giriş harf öbeğinin ilk karakteri olup olmadığını kontrol etmek için kullanılır.
 Eğer `^a` düzenli ifadesini `abc` harf öbeğine uygularsak `a` ile eşleşir. Ama `^b` ifadesini uygularsak bir eşleşme bulamayız. Bunun nedeni `abc` harf öbeğinde `b` karakterinin başlangıç karakteri olmamasıdır.
 
-Bir başka örnek üzerinden ilerlersek, 
+Bir başka örnek üzerinden ilerlersek,
 
 `^(T|t)he` düzenli ifadesinin anlamı: büyük `T` ya da `t` karakteri giriş harf öbeğinin ilk karakteri olmak üzere, ardından küçük `h`, ardından küçük `e` karakteri gelir.
 
