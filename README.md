@@ -106,7 +106,7 @@ square brackets. The meta characters are as follows:
 |[ ]|Character class. Matches any character contained between the square brackets.|
 |[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
 |*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.
+|+|Matches 1 or more repetitions of the preceding symbol.|
 |?|Makes the preceding symbol optional.|
 |{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
 |(xyz)|Character group. Matches the characters xyz in that exact order.|
