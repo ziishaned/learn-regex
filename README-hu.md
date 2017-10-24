@@ -30,7 +30,7 @@ replacing a text within a string, validating form, extract a substring from a
 string based upon a pattern match, and so much more.
 
 A reguláris kifejezés egy olyan minta, amely illeszkedik egy adott karakterláncra
-balról jobbra. Maga a "Regular expression" kifejezést általában rövidítve lehet
+balról jobbra. Magát a "Regular expression" kifejezést általában rövidítve lehet
 megtalálni, mint "regex" vagy "regexp". A reguláris kifejezést használják szövegrészek
 lecserélésére egy szövegben, űrlapok validálására, szövegrészek kiválasztására
 mintaegyezés alapján egy hosszabb szövegből és így tovább.
@@ -193,8 +193,8 @@ szögletes zárójelek közé vannak téve. A meta karakterek a következők:
 |(xyz)|Karakter csoport. Illeszkedik az xyz karakterekre pontosan ilyen sorrendben.|
 |&#124;|Alternáció. Illeszkedik a szimbólum előtt és után álló karakterekre is.|
 |&#92;|Escape-li a következő karaktert. A segítségével lefoglalt karakterekre is lehet illeszkedni <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|A bevitel elejére illeszkedik.|
-|$|A bevitel végére illeszkedik.|
+|^|A karakterlánc elejére illeszkedik.|
+|$|A karakterlánc végére illeszkedik.|
 
 ## 2.1 Full stop
 ## 2.1 Full stop
@@ -620,7 +620,7 @@ by `$` character. Following are the lookarounds that are used in regular
 expressions:
 
 A lookbehind (hátranézés) és a lookahead (előrenézés) speciális típusai a
-***nem tárolt csoport***oknak, amiket illeszkedésre használnak, de nincsenek
+***nem tárolt csoport*** oknak, amiket illeszkedésre használnak, de nincsenek
 benne az illeszkedési listában. Az előrenézést akkor használjuk, ha feltételezzük,
 hogy ezt a mintát egy másik minta előzi meg, vagy követi. Például kell nekünk
 az összes szám ami előtt `$` karakter áll a következő karakterláncból: `$4.44 and $10.88`.
