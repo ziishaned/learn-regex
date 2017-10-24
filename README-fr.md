@@ -13,6 +13,7 @@
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
+* [Magyar](README-hu.md)
 
 ## Qu'est-ce qu'une expression régulière?
 
