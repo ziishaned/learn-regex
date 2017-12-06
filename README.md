@@ -539,6 +539,23 @@ at the end of each line in a string.
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
+## 6. Greedy vs lazy matching
+By default regex will do greedy matching , means it will match as long as
+possible. we can use `?` to match in lazy way means as short as possible
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat.</strong></a> </pre>
+
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+
+
 ## Contribution
 
 * Report issues
