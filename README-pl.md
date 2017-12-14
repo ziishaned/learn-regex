@@ -44,9 +44,9 @@ i jest za krótki.
 
 ## Spis treści
 
-- [Basic Matchers](#1-basic-matchers)
-- [Znaki meta](#2-meta-characters)
-  - [Full stop](#21-full-stop)
+- [Najprostsze wyrażenie](#1-najprostsze-wyrażenie)
+- [Metaznaki](#2-metaznaki)
+  - [Kropka](#21-kropka)
   - [Character set](#22-character-set)
     - [Negated character set](#221-negated-character-set)
   - [Repetitions](#23-repetitions)
@@ -71,7 +71,7 @@ i jest za krótki.
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
 
-## 1. Basic Matchers podstawowe zadanie
+## 1. Najprostsze wyrażenie
 
 Wyrażenie regularne to ciąg znaków, których używamy do przeszukania tekstu.
 Na przykład, wyrażenie `the` oznacza: literę `t`, następującą
@@ -94,34 +94,33 @@ na wielkość znaków, więc wyrażenie `The` nie pasuje do łańcucha `the`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/1paXsy/1)
 
-## 2. Znaki meta
+## 2. Metaznaki
 
-Znaki meta to składowe elementy wyrażeń regularnych. Znaki te, nie oznaczają
+Metaznaki to składowe elementy wyrażeń regularnych. Znaki te, nie oznaczają
 siebie samych, są natomiast interpretowane w specjalny sposób.
 Niektóre znaki mają specjalne znaczenie i są zapisywane w kwadratowych nawiasach.
-Znaki meta to:
+Metaznaki to:
 
-|Znak meta|Opis|
+|Metaznaki|Opis|
 |:----:|----|
-|.|Dowolny znak z wyjątkiem końca linii.|
-|[ ]|Zakres. Dopasowuje każdy znak zapisany w kwadratowym nawiasie.|
-|[^ ]|Odwrócony zakres. Dopasowuje każdy znak, który nie znajduje się w kwadratowym nawiasie.|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Dowolny znak z wyjątkiem nowej linii.|
+|[ ]|Zakres. Każdy znak zapisany w kwadratowym nawiasie.|
+|[^ ]|Odwrócony zakres. Każdy znak, który nie znajduje się w kwadratowym nawiasie.|
+|*|0 lub więcej poprzedzających znaków.|
+|+|1 lub więcej poprzedzających znaków.|
+|?|0 lub 1 poprzedzających znaków.|
+|{n,m}|Minimum "n" ale nie więcej niż "m" poprzedzających znaków.|
+|(xyz)|Grupowanie znaków. Znaki xyz dokładnie w tej kolejności.|
+|&#124;|Alternatywa. Znaki przed symbolem lub za symbolem.|
+|&#92;|Znak ucieczki. Umożliwa używanie zarezerwowanych znaków <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Oznacza początek wzorca.|
+|$|Oznacza koniec wzorca.|
 
-## 2.1 Full stop
+## 2.1 Kropka
 
-Full stop `.` is the simplest example of meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+Kropka `.` jest najprostrzym przykładem metaznaku. Oznacza dowonlny znak z wyłączeniem entera
+i znaków nowej linii. Na przykład, wyrażenie regularne `.ar` oznacza: dowolny znak, następującą
+po niej literę `a`, następującą po niej literę `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -129,13 +128,12 @@ letter `a`, followed by the letter `r`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Character set
+## 2.2 Zestaw znaków
 
-Character sets are also called character class. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Zestawy znaków nazywane też klasami znaków. Nawiasy kwadratowe służą do określenia zestawów znaków.
+Użycie myślnika wewnątrz zestawu, określa jego zakres. Kolejność znaków w nawiasach kwadratowych
+nie ma znaczenia. Na przykład wyrażenie `[Tt]he` oznacza: dużą literę `T` lub małą `t`,
+następującą po niej literę `h`, następującą po niej literę `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -143,9 +141,9 @@ doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
 
 [Przetestuj wyrażenie](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by letter `r`,
-followed by a period `.` character.
+Jednak kropka w zestawie znaków, oznacza dosłownie kropkę. Wyrażenie regularne
+`ar[.]` oznacza: małą literę `a`, następującą po niej literę `r`,
+następującą po niej `.` kropkę.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -153,12 +151,12 @@ followed by a period `.` character.
 
 [Przetestuj wyrażenie](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated character set
+### 2.2.1 Odwrócony zestaw znaków
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+Generalnie znak karety oznacza początek wyrażenia, ale gdy zostanie użyty zaraz
+za otwierającym nawiasem kwadratowym, odwraca zestaw znaków. Na przykład
+wyrażenie `[^c]ar` oznacza: każdy znak z wyjątkiem `c`,
+następującą po niej literę `a`, następującą po niej literę `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -166,19 +164,18 @@ followed by the character `a`, followed by the letter `r`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Powtórzenia
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+Następujące metaznaki `+`, `*` czy `?` określają ile razy wzorzec może się powtórzyć.
+Te metaznaki zachowują się różnie, w zależności od sytuacji.
 
-### 2.3.1 The Star
+### 2.3.1 Gwiazdka
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
-`[a-z]*` means: any number of lowercase letters in a row.
+Symbol `*` oznacza zero lub więcej powtórzeń poprzedzających znaków. Wyrażenie
+regularne `a*` oznacza: zero lub więcej powtórzeń poprzedzającej małej
+litery `a`. Ale jeśli występuje po zestawie znaków lub klasie, to oznacza
+powtórzenia całego zestawu lub klasy. Na przykład, wyrażenie regularne
+`[a-z]*` oznacza: każdy ciąg znaków pisany małymi literami.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -186,12 +183,12 @@ the repetitions of the whole character set. For example, the regular expression
 
 [Przetestuj wyrażenie](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by lowercase character `c`,
-followed by lowercase character `a`, followed by lowercase character `t`,
-followed by zero or more spaces.
+Symbol `*` może być użyty z metaznakiem `.` by oznaczyć każdy łańcuch
+znaków `.*`. Symbol `*` może być użyty ze znakiem `\s`
+by znaleźć wyrażenie zawierające spacje. Na przykład, wyrażenie
+`\s*cat\s*` oznacza: zero lub więcej spacji, następującą po niej małą literę `c`,
+następującą po niej małą literę `a`, następującą po niej małą literę `t`,
+następujące po niej zero lub więcej spacji.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
@@ -199,12 +196,12 @@ followed by zero or more spaces.
 
 [Przetestuj wyrażenie](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: lowercase letter `c`, followed by
-at least one character, followed by the lowercase character `t`. It needs to be
-clarified that `t` is the last `t` in the sentence.
+Symbol `+` oznacza jeden lub więcej powtórzeń poprzedzających znaków. Na przykład,
+wyrażenie `c.+t` oznacza: małą literę `c`, następujący po niej przynajmniej jeden
+znak, następującą po nim małą literę `t`. W tym wypadku, `t` jest ostatnim `t`
+w zdaniu.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -212,13 +209,12 @@ clarified that `t` is the last `t` in the sentence.
 
 [Przetestuj wyrażenie](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Znak zapytania
 
-In regular expression the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional the uppercase
-letter `T`, followed by the lowercase character `h`, followed by the lowercase
-character `e`.
+W wyrażeniach regularnych znak `?` sprawia, że poprzedzający znak jest opcjonalny.
+Ten symbol oznacza zero lub jedno wystąpienie poprzedzającego znaku. Na przykład,
+regularne wyrażenie `[T]?he` oznacza: Opcjonalną dużą literę `T`, następującą
+po niej małą literę `h`, następującą po niej małą literę `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -232,7 +228,7 @@ character `e`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Nawiasy
 
 In regular expression braces that are also called quantifiers are used to
 specify the number of times that a character or a group of characters can be
