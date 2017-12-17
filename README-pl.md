@@ -47,19 +47,19 @@ i jest za krótki.
 - [Najprostsze wyrażenie](#1-najprostsze-wyrażenie)
 - [Metaznaki](#2-metaznaki)
   - [Kropka](#21-kropka)
-  - [Character set](#22-character-set)
-    - [Negated character set](#221-negated-character-set)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
+  - [Zestaw znaków](#22-zestaw-znaków)
+    - [Odwrócony zestaw znaków](#221-odwrócony-zestaw-znaków)
+  - [Powtórzenia](#23-powtórzenia)
+    - [Gwiazdka](#231-gwiazdka)
+    - [Plus](#232-plus)
+    - [Znak zapytania](#233-znak-zapytania)
+  - [Klamry](#24-klamry)
   - [Character Group](#25-character-group)
-  - [Alternation](#26-alternation)
-  - [Escaping special character](#27-escaping-special-character)
-  - [Anchors](#28-anchors)
-    - [Caret](#281-caret)
-    - [Dollar](#282-dollar)
+  - [Alternatywa](#26-alternatywa)
+  - [Znak ucieczki](#27-znak-ucieczki)
+  - [Kotwice](#28-kotwice)
+    - [Kareta](#281-kareta)
+    - [Dolar](#282-dolar)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
 - [Lookaround](#4-lookaround)
   - [Positive Lookahead](#41-positive-lookahead)
@@ -112,7 +112,7 @@ Metaznaki to:
 |{n,m}|Minimum "n" ale nie więcej niż "m" poprzedzających znaków.|
 |(xyz)|Grupowanie znaków. Znaki xyz dokładnie w tej kolejności.|
 |&#124;|Alternatywa. Znaki przed symbolem lub za symbolem.|
-|&#92;|Znak ucieczki. Umożliwa używanie zarezerwowanych znaków <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|&#92;|Znak ucieczki. Umożliwa używanie zarezerwowanych znaków <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>.|
 |^|Oznacza początek wzorca.|
 |$|Oznacza koniec wzorca.|
 
@@ -228,12 +228,12 @@ po niej małą literę `h`, następującą po niej małą literę `e`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Nawiasy
+## 2.4 Klamry
 
-In regular expression braces that are also called quantifiers are used to
-specify the number of times that a character or a group of characters can be
-repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
-2 digits but not more than 3 ( characters in the range of 0 to 9).
+W wyrażeniach regularnych, klamry zwane również kwantyfikatorami, używane są
+do określenia, ile razy znak lub grupa znaków może się powtórzyć.
+Na przykład wyrażenie regularne `[0-9]{2,3}` oznacza: Przynajmniej
+2 znaki, ale nie więcej niż 3 (znaki z zakresu od 0 do 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -241,9 +241,9 @@ repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
 
 [Przetestuj wyrażenie](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression
-`[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma the
-regular expression `[0-9]{3}` means: Match exactly 3 digits.
+Możemy opuścić drugą liczbę. Na przykład regularne wyrażenie `[0-9]{2,}`
+oznacza: 2 lub więcej znaków. Jeżeli dodatkowo usuniemy przecinek,
+to wyrażenie `[0-9]{3}` oznacza: Dokładnie 3 znaki.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -257,16 +257,15 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 [Przetestuj wyrażenie](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Character Group
+## 2.5 Grupa znaków
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
-As we discussed before that in regular expression if we put a quantifier after a
-character then it will repeat the preceding character. But if we put quantifier
-after a character group then it repeats the whole character group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside character group.
-For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
+Grupa znaków to grupa podwzorców, które zapisywane są w nawiasach `(...)`.
+Jak wspominaliśmy wyżej, jeśli w wyrażeniu regularnym wstawimy kwantyfikator po
+znaku, wtedy powtórzy on ten znak. Ale gdy wstawimy kwantyfikator po grupie znaków,
+wtedy cała grupa zostanie powtórzona. Na przykład wyrażenie regularne `(ab)*`
+oznacza zero lub więcej powtórzeń grupy "ab". Możemy także użyć metaznaku
+alternatywy `|` wewnątrz grupy. Na przykład wyrażenie `(c|g|p)ar` oznacza: małą literę `c`,
+`g` lub `p`, następującą po niej literę `a`, następującą po niej literę `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -274,17 +273,15 @@ For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
 
 [Przetestuj wyrażenie](https://regex101.com/r/tUxrBG/1)
 
-## 2.6 Alternation
+## 2.6 Alternatywa
 
-In regular expression Vertical bar `|` is used to define alternation.
-Alternation is like a condition between multiple expressions. Now, you may be
-thinking that character set and alternation works the same way. But the big
-difference between character set and alternation is that character set works on
-character level but alternation works on expression level. For example, the
-regular expression `(T|t)he|car` means: uppercase character `T` or lowercase
-`t`, followed by lowercase character `h`, followed by lowercase character `e` or
-lowercase character `c`, followed by lowercase character `a`, followed by
-lowercase character `r`.
+W wyrażeniach regularnych pionowa kreska `|` oznacza alternatywę.
+Działa jak warunek pomiędzy różnymi wyrażeniami. Teraz możesz pomyśleć, że
+to działa tak samo jak zestaw znaków. Różnica polega na tym, że zestaw znaków
+działa na poziomie znaków, natomiast alternatywa na poziomie wyrażenia. Na przykład
+wyrażenie regularne `(T|t)he|car` oznacza: dużą literę `T` lub małą `t`,
+następującą po niej literę `h`, następującą po niej literę `e` lub `c`, następującą
+po niej literę `a`, następującą po niej literę `r`.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -292,18 +289,17 @@ lowercase character `r`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escaping special character
+## 2.7 Znak ucieczki
 
-Backslash `\` is used in regular expression to escape the next character. This
-allows us to specify a symbol as a matching character including reserved
-characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching
-character prepend `\` before it.
+Ukośnik `\` w wyrażeniach regularnych jest znakiem ucieczki. Pozwala on
+używać w wyrażeniu zarezerwowanych znaków takich jak `{ } [ ] / \ + * . $ ^ | ?`.
+Aby użyć znaku specjalnego w wyrażeniu, postaw `\` przed nim.
 
-For example, the regular expression `.` is used to match any character except
-newline. Now to match `.` in an input string the regular expression
-`(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase
-character `a`, followed by lowercase letter `t`, followed by optional `.`
-character.
+Na przykład wyrażenie `.` dopasowuje każdy znak z wyjątkiem nowej linii.
+Żeby dopasować kropkę `.` w wyrażeniu regularnym, trzeba wstawić przed nią ukośnik. 
+Wyrażenie `(f|c|m)at\.?` oznacza: małe litery `f`, `c` lub `m`, następującą po niej
+literę `a`, następującą po niej literę `t`, następującą kropkę `.`, która jest opcjonalna.
+
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
@@ -311,24 +307,22 @@ character.
 
 [Przetestuj wyrażenie](https://regex101.com/r/DOc5Nu/1)
 
-## 2.8 Anchors
+## 2.8 Kotwice
 
-In regular expressions, we use anchors to check if the matching symbol is the
-starting symbol or ending symbol of the input string. Anchors are of two types:
-First type is Caret `^` that check if the matching character is the start
-character of the input and the second type is Dollar `$` that checks if matching
-character is the last character of the input string.
+W wyrażeniach regularnych używamy kotwic aby sprawdzić czy dopasowywany symbol
+jest pierwszym lub ostatnim symbolem w łańcuchu. Są dwa typy: pierwszy to
+kareta `^`, który sprawdza czy znak jest początkiem łańcucha, drugi to dolar `$`,
+który sprawdza czy znak jest ostatnim elementem łańcucha.
 
-### 2.8.1 Caret
+### 2.8.1 Kareta
 
-Caret `^` symbol is used to check if matching character is the first character
-of the input string. If we apply the following regular expression `^a` (if a is
-the starting symbol) to input string `abc` it matches `a`. But if we apply
-regular expression `^b` on above input string it does not match anything.
-Because in input string `abc` "b" is not the starting symbol. Let's take a look
-at another regular expression `^(T|t)he` which means: uppercase character `T` or
-lowercase character `t` is the start symbol of the input string, followed by
-lowercase character `h`, followed by lowercase character `e`.
+Kareta `^` sprawdza czy znak jest początkiem łańcucha. Jeżeli użyjemy takiego
+wyrażenia `^a` (jeśli a jest pierwszym znakiem) na łańcuchu `abc` to dopasuje
+nam `a`. Ale jeśli użyjemytakiego wyrażenia `^b` na tym samym łańcuchu, to nie
+zwróci nam nic. Ponieważ w łańcuchu `abc` "b" nie jest pierwszym symbolem.
+Spójrzmy teraz na wyrażenie `^(T|t)he` które oznacza: dużą literę `T` lub małą
+`t`, która jest początkiem łańcucha, następującą po niej literę `h`, następującą
+po niej literę `e`.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -342,7 +336,7 @@ lowercase character `h`, followed by lowercase character `e`.
 
 [Przetestuj wyrażenie](https://regex101.com/r/jXrKne/1)
 
-### 2.8.2 Dollar
+### 2.8.2 Dolar
 
 Dollar `$` symbol is used to check if matching character is the last character
 of the input string. For example, regular expression `(at\.)$` means: a
