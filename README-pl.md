@@ -338,10 +338,10 @@ po niej literę `e`.
 
 ### 2.8.2 Dolar
 
-Dollar `$` symbol is used to check if matching character is the last character
-of the input string. For example, regular expression `(at\.)$` means: a
-lowercase character `a`, followed by lowercase character `t`, followed by a `.`
-character and the matcher must be end of the string.
+Symbol dolara `$` używany jest do sprawdzenia czy dopasowywany znak jest ostatni
+w łańcuchu. Na przykład, wyrażenie regularne `(at\.)$` oznacza: małą literę `a`,
+następującą po niej literę `t`, następującą po niej kropkę `.` i na dodatek
+dopasowanie musi być końcem łańcucha.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
@@ -355,21 +355,20 @@ character and the matcher must be end of the string.
 
 [Przetestuj wyrażenie](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+##  3. Skróty
 
-Regular expression provides shorthands for the commonly used character sets,
-which offer convenient shorthands for commonly used regular expressions. The
-shorthand character sets are as follows:
+W wyrażeniach regularnych znajdziemy także skróty dla popularnych zestawów znaków,
+które ułatwiają pracę z wyrażeniami regularnymi. Skróty wyglądają następująco:
 
-|Shorthand|Description|
+|Skrót|Opis|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+|.|Każdy znak z wyjątkiem nowej linii|
+|\w|Znaki alfanumeryczne: `[a-zA-Z0-9_]`|
+|\W|Znaki nie alfanumeryczne: `[^\w]`|
+|\d|Cyfry: `[0-9]`|
+|\D|Nie cyfry: `[^\d]`|
+|\s|Dowolny biały znak: `[\t\n\f\r\p{Z}]`|
+|\S|Każdy znak oprócz białych: `[^\s]`|
 
 ## 4. Lookaround
 
@@ -383,7 +382,7 @@ which means: get all the numbers which contain `.` character and  are preceded
 by `$` character. Following are the lookarounds that are used in regular
 expressions:
 
-|Symbol|Description|
+|Symbol|Opis|
 |:----:|----|
 |?=|Positive Lookahead|
 |?!|Negative Lookahead|
