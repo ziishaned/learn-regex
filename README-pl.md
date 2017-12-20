@@ -476,7 +476,7 @@ cały łańcuch.
 
 [Przetestuj wyrażenie](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Przeszukanie globalne
+### 5.2 Przeszukiwanie globalne
 
 Modyfikator `g` używany jest do przeszukiwania całego łańcucha (znajdź wszystko,
 a nie tylko zatrzymuj się na pierwszym). Na przykład wyrażenie `/.(at)/g`
