@@ -195,7 +195,7 @@ followed by lowercase character `a`, followed by lowercase character `t`,
 followed by zero or more spaces.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/gGrwuz/1)
