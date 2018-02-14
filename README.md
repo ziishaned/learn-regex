@@ -564,7 +564,11 @@ possible. we can use `?` to match in lazy way means as short as possible
 * Open pull request with improvements
 * Spread the word
 * Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzeeshanu%2Flearn-regex.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzeeshanu%2Flearn-regex?ref=badge_shield)
 
 ## License
 
 MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzeeshanu%2Flearn-regex.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzeeshanu%2Flearn-regex?ref=badge_large)
