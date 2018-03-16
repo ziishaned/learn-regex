@@ -59,6 +59,7 @@
   - [대소문자 구분없음](#51-대소문자-구분없음)
   - [전체 검색](#52-전체-검색)
   - [멀티 라인](#53-멀티-라인)
+ - [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른 매칭)
 
 ## 1. 기본 매쳐
 
@@ -400,6 +401,22 @@
 </pre>
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
+
+## 6. 탐욕적 vs 게으른 매칭
+기본적으로 정규 표현식은 탐욕적(greedy) 매칭을 수행하는데, 이는 가능한 한 길게 매칭하는 것을 의미한다. 
+우리는 `?`를 사용하여 게으른(lazy) 방법 매칭할 수 있으며, 가능한 한 짧게 매칭하는 것을 의미한다.
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. 
+</pre>
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. 
+</pre>
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
 ## 기여 방법
 
