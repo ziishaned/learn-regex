@@ -15,6 +15,7 @@
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
 * [Magyar](README-hu.md)
+* [Polish](README-pl.md)
 
 ## Τι είναι μια Κανονική Έκφραση (Regular Expression);
 

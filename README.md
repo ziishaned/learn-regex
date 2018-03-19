@@ -15,6 +15,7 @@
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
 * [Magyar](README-hu.md)
+* [Polish](README-pl.md)
 
 ## What is Regular Expression?
 
@@ -69,6 +70,7 @@ letter and also it is too short.
   - [Case Insensitive](#51-case-insensitive)
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
+- [Greedy vs lazy matching](#6-greedy-vs-lazy-matching)
 
 ## 1. Basic Matchers
 
@@ -194,7 +196,7 @@ followed by lowercase character `a`, followed by lowercase character `t`,
 followed by zero or more spaces.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/gGrwuz/1)
@@ -539,6 +541,23 @@ at the end of each line in a string.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
+
+## 6. Greedy vs lazy matching
+By default regex will do greedy matching , means it will match as long as
+possible. we can use `?` to match in lazy way means as short as possible
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+
 
 ## Contribution
 

@@ -14,6 +14,7 @@
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
 * [Magyar](README-hu.md)
+* [Polish](README-pl.md)
 
 ## 正規表現とは
 

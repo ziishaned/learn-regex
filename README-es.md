@@ -15,6 +15,7 @@
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
 * [Magyar](README-hu.md)
+* [Polish](README-pl.md)
 
 ## Qué es una expresión regular?
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
