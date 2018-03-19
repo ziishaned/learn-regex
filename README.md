@@ -14,6 +14,7 @@
 * [한국어](README-ko.md)
 * [Turkish](README-tr.md)
 * [Greek](README-gr.md)
+* [Magyar](README-hu.md)
 * [Polish](README-pl.md)
 
 ## What is Regular Expression?
