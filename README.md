@@ -367,6 +367,30 @@ character and the matcher must be end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
+### 2.8.3 Word Boundary
+
+`\b` Matches, without consuming any characters, immediately between a character matched by \w and a character not matched by \w (in either order). It cannot be used to separate non words from words.. For example, regular expression `\bfat\b` means: a
+lowercase character `f`, followed by lowercase character `a`, followed by a `t` character and the matcher must be a word on the string.
+
+<pre>
+"\bfat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/y4Au4D/8)
+
+<pre>
+"\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the <a href="#learn-regex"><strong>fat</strong>ty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/OXYjxn/1)
+
+
+<pre>
+"fat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/nAOq0x/1)
+
 ##  3. Shorthand Character Sets
 
 Regular expression provides shorthands for the commonly used character sets,
