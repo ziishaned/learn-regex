@@ -384,6 +384,13 @@ lowercase character `f`, followed by lowercase character `a`, followed by a `t` 
 
 [Test the regular expression](https://regex101.com/r/nAOq0x/1)
 
+<pre>
+"\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the <a href="#learn-regex"><strong>fat</strong></a>ty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/nAOq0x/1)
+
+
 ##  3. Shorthand Character Sets
 
 Regular expression provides shorthands for the commonly used character sets,
