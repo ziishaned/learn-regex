@@ -382,7 +382,7 @@ lowercase character `f`, followed by lowercase character `a`, followed by a `t` 
 "fat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nAOq0x/1)
+[Test the regular expression](https://regex101.com/r/nAOq0x/2)
 
 <pre>
 "\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the <a href="#learn-regex"><strong>fat</strong></a>ty cat.
