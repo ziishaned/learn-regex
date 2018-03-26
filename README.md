@@ -379,13 +379,6 @@ lowercase character `f`, followed by lowercase character `a`, followed by a `t` 
 [Test the regular expression](https://regex101.com/r/y4Au4D/8)
 
 <pre>
-"\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the<a href="#learn-regex<strong>fat</strong></a>ty cat.
-</pre>
-
-[Test the regular expression](https://regex101.com/r/OXYjxn/1)
-
-
-<pre>
 "fat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
 </pre>
 
