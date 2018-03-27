@@ -263,14 +263,14 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 [Test the regular expression](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Character Group
+## 2.5 Capturing Group
 
-Character group is a group of sub-patterns that is written inside Parentheses `(...)`.
-As we discussed before that in regular expression if we put a quantifier after a
-character then it will repeat the preceding character. But if we put quantifier
-after a character group then it repeats the whole character group. For example,
+A capturing group is a group of sub-patterns that is written inside Parentheses 
+`(...)`. Like As we discussed before that in regular expression if we put a quantifier 
+after a character then it will repeat the preceding character. But if we put quantifier
+after a capturing group then it repeats the whole capturing group. For example,
 the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside character group.
+"ab". We can also use the alternation `|` meta character inside capturing group.
 For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
 `g` or `p`, followed by character `a`, followed by character `r`.
 
@@ -279,6 +279,27 @@ For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
 </pre>
 
 [Test the regular expression](https://regex101.com/r/tUxrBG/1)
+
+Note that capturing groups do not only match but also capture the characters for use in 
+the parent language. The parent language could be python or javascript or virtually any
+language that implements regular expressions in a function definition.
+
+### 2.5.1 Non-capturing group
+
+A non-capturing group is a capturing group that only matches the characters, but 
+does not capture the group. A non-capturing group is denoted by a `?` followed by a `:` 
+within parenthesis `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
+`(c|g|p)ar` in that it matches the same characters but will not create a capture group.
+
+<pre>
+"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/Rm7Me8/1)
+
+Non-capturing groups can come in handy when used in find-and-replace functionality or 
+when mixed with capturing groups to keep the overview when producing any other kind of output. 
+See also [4. Lookaround](# 4. Lookaround).
 
 ## 2.6 Alternation
 
