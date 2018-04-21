@@ -31,16 +31,16 @@ letter and also it is too short.
 
 ## 10 Reasons to Learn and Use Regular Expressions
 
-10. **Regular expressions are everywhere**
-9. Regular expression mastery can help you stand out from the crowd
-8. Wielding regular expressions can make you feel like a mighty wizard
-7. If your search is simple, regular expression syntax is simple
-6. Regular expressions are portable
-5. Regular expressions can help you write short code
-4. Regular expressions save time
-3. Regular expressions are fast
-2. Regular expressions can match just about anything
-1. **Regular expressions are fun**
+1. **Regular expressions are everywhere**
+2. Regular expression mastery can help you stand out from the crowd
+3. Wielding regular expressions can make you feel like a mighty wizard
+4. If your search is simple, regular expression syntax is simple
+5. Regular expressions are portable
+6. Regular expressions can help you write short code
+7. Regular expressions save time
+8. Regular expressions are fast
+9. Regular expressions can match just about anything
+10. **Regular expressions are fun**
 
 Details: http://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions
 
