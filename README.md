@@ -303,15 +303,16 @@ See also [4. Lookaround](# 4. Lookaround).
 
 ## 2.6 Alternation
 
-In regular expression Vertical bar `|` is used to define alternation.
-Alternation is like a condition between multiple expressions. Now, you may be
+In a regular expression, the vertical bar `|` is used to define alternation.
+Alternation is like an OR statement between multiple expressions. Now, you may be
 thinking that character set and alternation works the same way. But the big
 difference between character set and alternation is that character set works on
 character level but alternation works on expression level. For example, the
-regular expression `(T|t)he|car` means: uppercase character `T` or lowercase
-`t`, followed by lowercase character `h`, followed by lowercase character `e` or
-lowercase character `c`, followed by lowercase character `a`, followed by
-lowercase character `r`.
+regular expression `(T|t)he|car` means: either (uppercase character `T` or lowercase
+`t`, followed by lowercase character `h`, followed by lowercase character `e`) OR
+(lowercase character `c`, followed by lowercase character `a`, followed by
+lowercase character `r`). Note that I put the parentheses for clarity, to show that either expression
+in parentheses can be met and it will match.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
