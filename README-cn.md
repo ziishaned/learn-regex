@@ -473,6 +473,21 @@
 
 [在线练习](https://regex101.com/r/E88WE2/1)
 
+### 6. 贪婪匹配与惰性匹配 (Greedy vs lazy matching)
+
+正则表达式默认采用贪婪匹配模式，在该模式下意味着会匹配尽可能长的子串。我们可以使用 `?` 将贪婪匹配模式转化为惰性匹配模式。
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+[在线练习](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[在线练习](https://regex101.com/r/AyAdgJ/2)
+
 ## 贡献
 
 * 报告问题
