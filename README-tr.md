@@ -478,4 +478,4 @@ Negative Lookbehind, belirli bir desenden önce olmayan eşleşmeleri almak içi
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

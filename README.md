@@ -590,4 +590,4 @@ possible. we can use `?` to match in lazy way means as short as possible
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

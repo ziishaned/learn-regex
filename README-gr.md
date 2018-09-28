@@ -551,4 +551,4 @@ string με βάση κάποιου μοτίβου αναζήτησης και �
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
