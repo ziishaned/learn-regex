@@ -530,4 +530,4 @@ I ponieważ użyliśmy flagi `m` dopasowywane będą wzorce na końcu każdej li
 
 ## Licencja
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

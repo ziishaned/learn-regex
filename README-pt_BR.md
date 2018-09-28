@@ -410,4 +410,4 @@ O modificador `m` é usado para realizar uma busca em várias linhas. Como falam
 
 ## Licença
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

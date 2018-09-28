@@ -467,4 +467,4 @@ el motor de expresión regular coincide con el patrón al final de cada línea d
 
 ## Licencia
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

@@ -468,4 +468,4 @@ Grâce au drapeau `m` maintenant le moteur d'expression régulière trouve le sc
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
