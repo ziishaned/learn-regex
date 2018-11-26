@@ -409,7 +409,7 @@ shorthand character sets are as follows:
 
 Lookbehind and lookahead (also called lookaround) are specific types of
 ***non-capturing groups*** (Used to match the pattern but not included in matching
-list). Lookaheads are used when we have the condition that this pattern is
+list). Lookarounds are used when we have the condition that this pattern is
 preceded or followed by another certain pattern. For example, we want to get all
 numbers that are preceded by `$` character from the following input string
 `$4.44 and $10.88`. We will use following regular expression `(?<=\$)[0-9\.]*`
