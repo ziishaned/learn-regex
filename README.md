@@ -3,20 +3,6 @@
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
 </p><br/>
 
-## Translations:
-
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
-* [Magyar](README-hu.md)
-* [Polish](README-pl.md)
-
 ## What is Regular Expression?
 
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
@@ -41,6 +27,24 @@ validate a username:
 Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and
 `john12_as`. It does not match `Jo` because that string contains uppercase
 letter and also it is too short.
+
+
+## 10 Reasons to Learn and Use Regular Expressions
+
+1. **Regular expressions are everywhere**
+2. Regular expression mastery can help you stand out from the crowd
+3. Wielding regular expressions can make you feel like a mighty wizard
+4. If your search is simple, regular expression syntax is simple
+5. Regular expressions are portable
+6. Regular expressions can help you write short code
+7. Regular expressions save time
+8. Regular expressions are fast
+9. Regular expressions can match just about anything
+10. **Regular expressions are fun**
+
+Details: http://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions
+
+
 
 ## Table of Contents
 
@@ -389,6 +393,30 @@ character and the matcher must be end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
+### 2.8.3 Word Boundary
+
+`\b` Matches, without consuming any characters, immediately between a character matched by \w and a character not matched by \w (in either order). It cannot be used to separate non words from words.. For example, regular expression `\bfat\b` means: a
+lowercase character `f`, followed by lowercase character `a`, followed by a `t` character and the matcher must be a word on the string.
+
+<pre>
+"\bfat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/y4Au4D/8)
+
+<pre>
+"fat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/nAOq0x/2)
+
+<pre>
+"\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the <a href="#learn-regex"><strong>fat</strong></a>ty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/nAOq0x/1)
+
+
 ##  3. Shorthand Character Sets
 
 Regular expression provides shorthands for the commonly used character sets,
@@ -580,6 +608,8 @@ possible. we can use `?` to match in lazy way means as short as possible
 
 [Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
+
+**Official Site** : https://www.regular-expressions.info/refflavors.html
 
 ## Contribution
 
