@@ -16,17 +16,17 @@
 
 ## Translations:
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
-* [Magyar](README-hu.md)
-* [Polish](README-pl.md)
+* [English](translations/README.md)
+* [Español](translations/README-es.md)
+* [Français](translations/README-fr.md)
+* [Português do Brasil](translations/README-pt_BR.md)
+* [中文版](translations/README-cn.md)
+* [日本語](translations/README-ja.md)
+* [한국어](translations/README-ko.md)
+* [Turkish](translations/README-tr.md)
+* [Greek](translations/README-gr.md)
+* [Magyar](translations/README-hu.md)
+* [Polish](translations/README-pl.md)
 
 ## What is Regular Expression?
 
