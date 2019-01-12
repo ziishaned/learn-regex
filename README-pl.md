@@ -1,7 +1,19 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## Tłumaczenia:
 
