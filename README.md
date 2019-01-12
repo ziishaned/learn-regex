@@ -594,10 +594,10 @@ possible. we can use `?` to match in lazy way means as short as possible
 
 ## Contribution
 
-* Report issues
 * Open pull request with improvements
+* Discuss ideas in issues
 * Spread the word
-* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
 ## License
 
