@@ -33,11 +33,12 @@
 
 > Expressão Regular é um grupo de caracteres ou símbolos utilizado para encontrar um padrão específico a partir de um texto.
 
-Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. A expressão "Expressão regular" é longa e difícil de falar, você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
+Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. A expressão "Expressão regular" é longa e difícil de falar; você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
 
 Imagine que você está escrevendo uma aplicação e quer colocar regras para quando um usuário escolher seu username. Nós queremos permitir que o username contenha letras, números, underlines e hífens. Nós também queremos limitar o número de caracteres para não ficar muito feio. Então usamos a seguinte expressão regular para validar o username:
 
 <br/><br/>
+
 <p align="center">
 <img src="http://i.imgur.com/8UaOzpq.png" alt="Regular expression">
 </p>
@@ -83,7 +84,7 @@ Uma expressão regular é apenas um padrão de caracteres que usamos para fazer 
 
 [Teste a RegExp](https://regex101.com/r/dmRygT/1)
 
-A expressão regular `123` corresponde a string `123`. A expressão regular é comparada com uma string de entrada, comparando cada caractere da expressão regular para cada caractere da string de entrada, um após o outro. Expressões regulares são normalmente case-sensitive (sensíveis à maiúsculas), então a expressão regular `The` não vai bater com a string `the`.
+A expressão regular `123` corresponde à string `123`. A expressão regular é comparada com uma string de entrada, comparando cada caractere da expressão regular para cada caractere da string de entrada, um após o outro. Expressões regulares são normalmente case-sensitive (sensíveis a maiúsculas), então a expressão regular `The` não vai bater com a string `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -101,19 +102,19 @@ Os metacaracteres são os seguintes:
 |.|Corresponde a qualquer caractere, exceto uma quebra de linha|
 |[ ]|Classe de caracteres. Corresponde a qualquer caractere contido dentro dos colchetes.|
 |[^ ]|Classe de caracteres negada. Corresponde a qualquer caractere que não está contido dentro dos colchetes.|
-|*|Corresponde à 0 ou mais repetições do símbolo anterior.|
-|+|Corresponde à 1 ou mais repetições do símbolo anterior.|
+|*|Corresponde a 0 ou mais repetições do símbolo anterior.|
+|+|Corresponde a 1 ou mais repetições do símbolo anterior.|
 |?|Faz com que o símbolo anterior seja opcional.|
-|{n,m}|Chaves. Corresponde à no mínimo "n" mas não mais que "m" repetições do símbolo anterior.|
+|{n,m}|Chaves. Corresponde a no mínimo "n" mas não mais que "m" repetições do símbolo anterior.|
 |(xyz)|Grupo de caracteres. Corresponde aos caracteres xyz nesta exata ordem.|
-|&#124;|Alternância. Corresponde os caracteres antes ou os caracteres depois do símbolo|
+|&#124;|Alternância. Corresponde aos caracteres antes ou os caracteres depois do símbolo|
 |&#92;|Escapa o próximo caractere. Isso permite você utilizar os caracteres reservados <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|Corresponde ao início da entrada.|
 |$|Corresponde ao final da entrada.|
 
 ## 2.1 Ponto final
 
-O ponto final `.` é um simples exemplo de metacaracteres. O metacaractere `.` corresponde à qualquer caractere sozinho. Ele não se iguala ao Enter e à quebra de linha. Por exemplo, a expressão regular `.ar` significa: qualquer caractere, seguido da letra `a`, seguida da letra `r`.
+O ponto final `.` é um simples exemplo de metacaracteres. O metacaractere `.` corresponde a qualquer caractere sozinho. Ele não se iguala ao Enter e à quebra de linha. Por exemplo, a expressão regular `.ar` significa: qualquer caractere, seguido da letra `a`, seguida da letra `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -155,7 +156,7 @@ Seguindo os metacaracteres `+`, `*` ou `?` são utilizados para especificar quan
 
 ### 2.3.1 O Asterisco
 
-O símbolo `*` corresponde à zero ou mais repetições do padrão antecedente. A expressão regular `a*` significa: zero ou mais repetições do caractere minúsculo precedente `a`. Mas se o asterisco aparecer depois de um conjunto de caracteres, ou classe de caracteres, ele irá procurar as repetições de todo o conjunto. Por exemplo, a expressão regular `[a-z]*` significa: qualquer quantidade de letras minúsculas numa linha.
+O símbolo `*` corresponde a zero ou mais repetições do padrão antecedente. A expressão regular `a*` significa: zero ou mais repetições do caractere minúsculo precedente `a`. Mas se o asterisco aparecer depois de um conjunto de caracteres, ou classe de caracteres, ele irá procurar as repetições de todo o conjunto. Por exemplo, a expressão regular `[a-z]*` significa: qualquer quantidade de letras minúsculas numa linha.
 
 <pre>
 "[a-z]&ast;" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -173,7 +174,7 @@ O símbolo `*` pode ser usado junto do metacaractere `.` para encontrar qualquer
 
 ### 2.3.2 O Sinal de Adição
 
-O símbolo `+` corresponde à uma ou mais repetições do caractere anterior. Por exemplo, a expressão regular `c.+t` significa: a letra minúscula `c`, seguida por pelo menos um caractere, seguido do caractere minúsculo `t`.
+O símbolo `+` corresponde a uma ou mais repetições do caractere anterior. Por exemplo, a expressão regular `c.+t` significa: a letra minúscula `c`, seguida por pelo menos um caractere, seguido do caractere minúsculo `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -183,7 +184,7 @@ O símbolo `+` corresponde à uma ou mais repetições do caractere anterior. Po
 
 ### 2.3.3 O Ponto de Interrogação
 
-Em expressões regulares, o metacaractere `?` faz o caractere anterior ser opcional. Esse símbolo corresponde à zero ou uma ocorrência do caractere anterior. Por exemplo, a expressão regular `[T]?he` significa: A letra maiúsculo `T` opcional, seguida do caractere minúsculo `h`, seguido do caractere minúsculo `e`.
+Em expressões regulares, o metacaractere `?` faz o caractere anterior ser opcional. Esse símbolo corresponde a zero ou uma ocorrência do caractere anterior. Por exemplo, a expressão regular `[T]?he` significa: A letra maiúsculo `T` opcional, seguida do caractere minúsculo `h`, seguido do caractere minúsculo `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -199,7 +200,7 @@ Em expressões regulares, o metacaractere `?` faz o caractere anterior ser opcio
 
 ## 2.4 Chaves
 
-Em expressões regulares, chaves, que também são chamadas de quantificadores, são utilizadas para especificar o número de vezes que o caractere, ou um grupo de caracteres, pode se repetir. Por exemplo, a expressão regular `[0-9]{2,3}` significa: Encontre no mínimo 2 dígitos, mas não mais que 3 (caracteres no intervalo de 0 à 9).
+Em expressões regulares, chaves, que também são chamadas de quantificadores, são utilizadas para especificar o número de vezes que o caractere, ou um grupo de caracteres, pode se repetir. Por exemplo, a expressão regular `[0-9]{2,3}` significa: Encontre no mínimo 2 dígitos, mas não mais que 3 (caracteres no intervalo de 0 a 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -223,7 +224,7 @@ Nós podemos retirar o segundo número. Por exemplo, a expressão regular `[0-9]
 
 ## 2.5 Grupo de Caracteres
 
-Grupo de caracteres é um grupo de sub-padrão que é escrito dentro de parênteses `(...)`. Como falamos antes, se colocaramos um quantificador depois de um caractere, ele irá repetir o caractere anterior. Mas se colocarmos um quantificador depois de um grupo de caracteres, ele irá repetir todo o conjunto. Por exemplo, a expressão regular `(ab)*` corresponde à zero ou mais repetições dos caracteres "ab". Nós também podemos usar o metacaractere de alternância `|` dentro de um grupo de caracteres. Por exemplo, a expressão regular `(c|g|p)ar` significa: caractere minúsculo `c`, `g` ou `p`, seguido do caractere `a`, seguido do caractere `r`.
+Grupo de caracteres é um grupo de sub-padrão que é escrito dentro de parênteses `(...)`. Como falamos antes, se colocaramos um quantificador depois de um caractere, ele irá repetir o caractere anterior. Mas se colocarmos um quantificador depois de um grupo de caracteres, ele irá repetir todo o conjunto. Por exemplo, a expressão regular `(ab)*` corresponde a zero ou mais repetições dos caracteres "ab". Nós também podemos usar o metacaractere de alternância `|` dentro de um grupo de caracteres. Por exemplo, a expressão regular `(c|g|p)ar` significa: caractere minúsculo `c`, `g` ou `p`, seguido do caractere `a`, seguido do caractere `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -294,16 +295,16 @@ As expressões regulares fornecem abreviações para conjuntos de caracteres com
 |Abreviação|Descrição|
 |:----:|----|
 |.|Qualquer caractere, exceto nova linha|
-|\w|Corresponde à caracteres alfanuméricos: `[a-zA-Z0-9_]`|
-|\W|Corresponde à caracteres não alfanuméricos: `[^\w]`|
-|\d|Corresponde à dígitos: `[0-9]`|
-|\D|Corresponde à não dígitos: `[^\d]`|
-|\s|Corresponde à caracteres de espaços em branco: `[\t\n\f\r\p{Z}]`|
-|\S|Corresponde à caracteres de espaços não em branco: `[^\s]`|
+|\w|Corresponde a caracteres alfanuméricos: `[a-zA-Z0-9_]`|
+|\W|Corresponde a caracteres não alfanuméricos: `[^\w]`|
+|\d|Corresponde a dígitos: `[0-9]`|
+|\D|Corresponde a não dígitos: `[^\d]`|
+|\s|Corresponde a caracteres de espaços em branco: `[\t\n\f\r\p{Z}]`|
+|\S|Corresponde a caracteres de espaços não em branco: `[^\s]`|
 
 ## 4. Olhar ao Redor
 
-Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos como lookarounds (olhar ao redor), são tipos específicos de ***grupo de não captura*** (utilizado para encontrar um padrão, mas não incluí-lo na lista de ocorrêncoas). Lookarounds são usados quando temos a condição de que determinado padrão seja precedido ou seguido de outro padrão. Por exemplo, queremos capturar todos os números precedidos do caractere `$` da seguinte string de entrada: `$4.44 and $10.88`. Vamos usar a seguinte expressão regular `(?<=\$)[0-9\.]*` que significa: procure todos os números que contêm o caractere `.` e são precedidos pelo caractere `$`. À seguir estão os lookarounds que são utilizados em expressões regulares:
+Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos como lookarounds (olhar ao redor), são tipos específicos de ***grupo de não captura*** (utilizado para encontrar um padrão, mas não incluí-lo na lista de ocorrêncoas). Lookarounds são usados quando temos a condição de que determinado padrão seja precedido ou seguido de outro padrão. Por exemplo, queremos capturar todos os números precedidos do caractere `$` da seguinte string de entrada: `$4.44 and $10.88`. Vamos usar a seguinte expressão regular `(?<=\$)[0-9\.]*` que significa: procure todos os números que contêm o caractere `.` e são precedidos pelo caractere `$`. A seguir estão os lookarounds que são utilizados em expressões regulares:
 
 |Símbolo|Descrição|
 |:----:|----|
@@ -362,7 +363,7 @@ Flags (sinalizadores) também são chamados de modificadores, porque eles modifi
 |g|Busca global: Procura o padrão em toda a string de entrada.|
 |m|Multilinhas: Os metacaracteres de âncora funcionam em cada linha.|
 
-### 5.1 Indiferente à Maiúsculas
+### 5.1 Indiferente a Maiúsculas
 
 O modificador `i` é usado para tornar o padrão case-insensitive. Por exemplo, a expressão regular `/The/gi` significa: a letra maiúscula `T`, seguida do caractere minúsculo `h`, seguido do caractere `e`. E ao final da expressão regular, a flag `i` diz ao motor de expressões regulares para ignorar maiúsculas e minúsculas. Como você pode ver, nós também determinamos a flag `g` porque queremos procurar o padrão em toda a string de entrada.
 
