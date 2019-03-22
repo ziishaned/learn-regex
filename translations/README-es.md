@@ -39,7 +39,7 @@ Imagina que estás escribiendo una aplicación y quieres agregar reglas para cua
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-es.png" alt="Expresión regular">
+  <img src="../img/regexp-es.png" alt="Expresión regular">
 </p>
 
 La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe` y `john12_as`. Sin embargo, la expresión no coincide con el nombre de usuario `Jo` porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.

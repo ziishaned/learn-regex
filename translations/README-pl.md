@@ -48,7 +48,7 @@ regularne, aby sprawdzić poprawność nazwy:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-pl.png" alt="Wyrażenie regularne">
+  <img src="../img/regexp-pl.png" alt="Wyrażenie regularne">
 </p>
 
 Powyższe wyrażenie akceptuje łańcuchy `john_doe`, `jo-hn_doe`

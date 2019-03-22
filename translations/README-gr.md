@@ -47,7 +47,7 @@ string με βάση κάποιου μοτίβου αναζήτησης και �
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 Η παραπάνω κανονική έκφραση θα δεχτεί ως σωστά τα ονόματα χρήστη `john_doe`, `jo-hn_doe` και

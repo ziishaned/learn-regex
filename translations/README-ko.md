@@ -39,7 +39,7 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 위의 정규 표현식은 `john_doe`, `jo-hn_doe`, 그리고 `john12_as` 문자열을 받아들일 수 있다. `Jo`는 대문자를 포함하고 있고 길이가 너무 짧기 때문에 위의 정규표현식과 매칭되지 않는다.
