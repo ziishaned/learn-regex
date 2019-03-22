@@ -49,7 +49,7 @@ kullanıyoruz:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-tr.png" alt="Regular expression">
+  <img src="../img/regexp-tr.png" alt="Regular expression">
 </p>
 
 Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri kabul edebilir.

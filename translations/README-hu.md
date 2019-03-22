@@ -47,7 +47,7 @@ használjuk:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-hu.png" alt="Regular expression">
+  <img src="../img/regexp-hu.png" alt="Regular expression">
 </p>
 
 A feljebbi reguláris kifejezés elfogadja a `john_doe`, `jo-hn_doe` és a

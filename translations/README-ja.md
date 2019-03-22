@@ -45,7 +45,7 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 この正規表現によって `john_doe, jo-hn_doe, john12_as` などは許容されることになります。

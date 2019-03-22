@@ -42,7 +42,7 @@ le pseudonyme à contenir des lettres, des nombres, des underscores et des trait
 de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-fr.png" alt="Expressions régulières">
+  <img src="../img/regexp-fr.png" alt="Expressions régulières">
 </p>
 
 L'expression régulière ci-dessus peut accepter les chaines de caractères (string) `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car cette chaine de caractères (string) contient une lettre majuscule et elle est trop courte.
