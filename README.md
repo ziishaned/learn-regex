@@ -310,7 +310,7 @@ within parenthesis `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
-See also [4. Lookaround](# 4. Lookaround).
+See also [4. Lookaround](#4-lookaround).
 
 ## 2.6 Alternation
 
