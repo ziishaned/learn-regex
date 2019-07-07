@@ -28,6 +28,7 @@
 * [Greek](../translations/README-gr.md)
 * [Magyar](../translations/README-hu.md)
 * [Polish](../translations/README-pl.md)
+* [Русский](translations/README-ru.md)
 
 ## Qu'est-ce qu'une expression régulière?
 
