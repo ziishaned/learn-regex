@@ -44,7 +44,7 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-ru.png" alt="Regular expression">
+  <img src="../img/regexp-ru.png" alt="Regular expression">
 </p>
 
 Регулярное выражения выше может принимать строки `john_doe`,` jo-hn_doe` и `john12_as`. 
