@@ -236,14 +236,14 @@
 我们可以省略第二个参数.
 例如, `[0-9]{2,}` 匹配至少两位 0~9 的数字.
 
-如果逗号也省略掉则表示重复固定的次数.
-例如, `[0-9]{3}` 匹配3位数字
-
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
 [在线练习](https://regex101.com/r/Gdy4w5/1)
+
+如果逗号也省略掉则表示重复固定的次数.
+例如, `[0-9]{3}` 匹配3位数字
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
