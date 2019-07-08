@@ -28,6 +28,7 @@
 * [Greek](../translations/README-gr.md)
 * [Magyar](../translations/README-hu.md)
 * [Polish](../translations/README-pl.md)
+* [Русский](translations/README-ru.md)
 
 ## Τι είναι μια Κανονική Έκφραση (Regular Expression);
 

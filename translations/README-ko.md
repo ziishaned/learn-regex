@@ -28,6 +28,7 @@
 * [Greek](../translations/README-gr.md)
 * [Magyar](../translations/README-hu.md)
 * [Polish](../translations/README-pl.md)
+* [Русский](translations/README-ru.md)
 
 ## 정규표현식이란 무엇인가?
 
