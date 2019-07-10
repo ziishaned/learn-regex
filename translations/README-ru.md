@@ -126,8 +126,7 @@
 
 Точка `.` это простейший пример метасимвола. Метасимвол `.`
 находит любой отдельный символ. Точка не будет находить символы перехода или перевода строки.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`. Например, регулярное выражение '.ar' обозначает: любой символ, за которым следуют буквы ` a` и `r`.
+Например, регулярное выражение '.ar' обозначает: любой символ, за которым следуют буквы ` a` и `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
