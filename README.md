@@ -278,7 +278,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 ## 2.5 Capturing Group
 
 A capturing group is a group of sub-patterns that is written inside Parentheses 
-`(...)`. Like As we discussed before that in regular expression if we put a quantifier 
+`(...)`. Like as we discussed before that in regular expression if we put a quantifier 
 after a character then it will repeat the preceding character. But if we put quantifier
 after a capturing group then it repeats the whole capturing group. For example,
 the regular expression `(ab)*` matches zero or more repetitions of the character
