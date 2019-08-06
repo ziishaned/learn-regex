@@ -42,10 +42,13 @@ Biểu thức chính quy là một khuôn mẫu được khớp với chuỗi c�
 Hãy tưởng tượng bạn đang viết một ứng dụng và bạn muốn đặt quy tắc khi người dùng chọn tên người dùng của họ. Chúng tôi muốn cho phép tên người dùng chứa các chữ cái, số, dấu gạch dưới và dấu gạch nối. Chúng tôi cũng muốn giới hạn số lượng ký tự trong tên người dùng để nó trông không xấu. Chúng tôi sử dụng biểu thức chính quy sau để xác thực tên người dùng:
 
 
+
 <br/><br/>
 <p align="center">
   <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
+
+
 
 Trên biểu thức chính quy có thể chấp nhận các chuỗi `john_doe`, `jo-hn_doe` và `john12_as`. Nó không khớp với `Jo` vì chuỗi đó chứa chữ hoa và nó quá ngắn.
 
