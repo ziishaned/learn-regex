@@ -85,10 +85,6 @@ Trên biểu thức chính quy có thể chấp nhận các chuỗi `john_doe`, 
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of characters that we use to perform
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-
 
 Biểu thức chính quy chỉ là một mẫu các ký tự mà chúng ta sử dụng để thực hiện tìm kiếm trong văn bản. Ví dụ, biểu thức chính quy `the` có nghĩa là: chữ `t`, tiếp theo là chữ `h`, tiếp theo là chữ `e`.
 
@@ -204,10 +200,11 @@ Ví dụ: biểu thức `\s*cat\s*` có nghĩa là: không hoặc nhiều khoả
 
 ### 2.3.2 The Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: lowercase letter `c`, followed by
-at least one character, followed by the lowercase character `t`. It needs to be
-clarified that `t` is the last `t` in the sentence.
+
+Biểu tượng `+` khớp với một hoặc nhiều lần lặp lại của ký tự trước. 
+
+Ví dụ: biểu thức chính quy `c.+t` có nghĩa là: chữ thường chữ `c`, theo sau là ít nhất một ký tự, tiếp theo là ký tự chữ thường `t`. Nó cần phải được làm rõ rằng `t` là `t` cuối cùng trong câu.
+
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -262,16 +259,6 @@ Chúng ta có thể bỏ qua số thứ hai. Ví dụ: biểu thức chính quy 
 
 ## 2.5 Capturing Group
 
-A capturing group is a group of sub-patterns that is written inside Parentheses 
-`(...)`. Like As we discussed before that in regular expression if we put a quantifier 
-after a character then it will repeat the preceding character. But if we put quantifier
-after a capturing group then it repeats the whole capturing group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside capturing group.
-For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
-`g` or `p`, followed by character `a`, followed by character `r`.
-
-
 Một nhóm capturing là một nhóm các mẫu con được viết bên trong Dấu ngoặc đơn `(...)`. Giống như chúng ta đã thảo luận trước đó trong biểu thức chính quy nếu chúng ta đặt một bộ định lượng sau một ký tự thì nó sẽ lặp lại ký tự trước. Nhưng nếu chúng ta đặt bộ định lượng sau một nhóm capturing thì nó lặp lại toàn bộ nhóm capturing. Ví dụ: biểu thức chính quy `(ab)*` khớp với 0 hoặc nhiều lần lặp lại của ký tự "ab". Chúng ta cũng có thể sử dụng luân phiên `|` kí tự meta trong nhóm capturing. Ví dụ: biểu thức chính quy `(c|g|p)ar` có nghĩa là: ký tự chữ thường `c`, `g` hoặc `p`, theo sau là ký tự `a`, tiếp theo là ký tự `r`.
 
 
@@ -282,22 +269,11 @@ Một nhóm capturing là một nhóm các mẫu con được viết bên trong 
 
 [Test the regular expression](https://regex101.com/r/tUxrBG/1)
 
-Note that capturing groups do not only match but also capture the characters for use in 
-the parent language. The parent language could be python or javascript or virtually any
-language that implements regular expressions in a function definition.
-
 
 Lưu ý rằng các nhóm capturing không chỉ khớp mà còn capturing các ký tự để sử dụng trong ngôn ngữ gốc. Ngôn ngữ gốc có thể là python hoặc javascript hoặc hầu như bất kỳ ngôn ngữ nào thực hiện các biểu thức chính quy trong định nghĩa hàm.
 
 
 ### 2.5.1 Non-capturing group
-
-A non-capturing group is a capturing group that only matches the characters, but 
-does not capture the group. A non-capturing group is denoted by a `?` followed by a `:` 
-within parenthesis `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
-`(c|g|p)ar` in that it matches the same characters but will not create a capture group.
-
-
 
 Nhóm không capturing là nhóm capturing chỉ khớp với các ký tự, nhưng không capturing được nhóm. Một nhóm không capturing được ký hiệu là `?` theo sau là `:` trong ngoặc đơn `(...)`. 
 
@@ -325,17 +301,6 @@ Ví dụ: biểu thức chính quy `(T|t)he|car` có nghĩa là: hoặc (ký t�
 [Test the regular expression](https://regex101.com/r/fBXyX0/1)
 
 ## 2.7 Escaping special character
-
-Backslash `\` is used in regular expression to escape the next character. This
-allows us to specify a symbol as a matching character including reserved
-characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching
-character prepend `\` before it.
-
-For example, the regular expression `.` is used to match any character except
-newline. Now to match `.` in an input string the regular expression
-`(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase
-character `a`, followed by lowercase letter `t`, followed by optional `.`
-character.
 
 
 Dấu gạch chéo ngược `\` được sử dụng trong biểu thức chính quy để thoát ký tự tiếp theo. Điều này cho phép chúng tôi chỉ định một biểu tượng là một ký tự phù hợp bao gồm các ký tự dành riêng `{} [] / \ *. $ ^ | ?` . Để sử dụng một ký tự đặc biệt, ta dùng `\` làm ký tự trùng khớp trước kí tự ta muốn dùng.
@@ -441,18 +406,6 @@ Ví dụ: biểu thức chính quy `(T|t)he(?=\Sfat)` có nghĩa là: tùy ý kh
 
 ### 4.2 Negative Lookahead
 
-Negative lookahead is used when we need to get all matches from input string
-that are not followed by a pattern. Negative lookahead is defined same as we define
-positive lookahead but the only difference is instead of equal `=` character we
-use negation `!` character i.e. `(?!...)`. Let's take a look at the following
-regular expression `(T|t)he(?!\sfat)` which means: get all `The` or `the` words
-from input string that are not followed by the word `fat` precedes by a space
-character.
-
-
-
-
-
 
 `Negative lookahead` được sử dụng khi chúng ta cần lấy tất cả các kết quả khớp từ chuỗi đầu vào không được theo sau bởi một mẫu. `Negative lookahead` được định nghĩa giống như chúng ta định nghĩa `positive lookahead` nhưng sự khác biệt duy nhất là thay vì bằng ký tự `=` chúng ta sử dụng kí tự phủ định `!`  tức là `(?! ...)`. 
 
@@ -493,10 +446,6 @@ Ví dụ: biểu thức chính quy `(?<!(T|t)he\s)(cat)` có nghĩa là: lấy t
 
 ## 5. Flags
 
-Flags are also called modifiers because they modify the output of a regular
-expression. These flags can be used in any order or combination, and are an
-integral part of the RegExp.
-
 
 Cờ (flags) cũng được gọi là bổ nghĩa (modifiers) vì chúng sửa đổi đầu ra của biểu thức chính quy. Các cờ này có thể được sử dụng theo bất kỳ thứ tự hoặc kết hợp nào và là một phần không thể thiếu của RegExp.
 
@@ -509,14 +458,6 @@ Cờ (flags) cũng được gọi là bổ nghĩa (modifiers) vì chúng sửa �
 |m|Multiline: ký tự Anchor meta hoạt động trên mỗi dòng.|
 
 ### 5.1 Case Insensitive
-
-The `i` modifier is used to perform case-insensitive matching. For example, the
-regular expression `/The/gi` means: uppercase letter `T`, followed by lowercase
-character `h`, followed by character `e`. And at the end of regular expression
-the `i` flag tells the regular expression engine to ignore the case. As you can
-see we also provided `g` flag because we want to search for the pattern in the
-whole input string.
-
 
 
 Công cụ sửa đổi `i` được sử dụng để thực hiện khớp không phân biệt chữ hoa chữ thường. 
@@ -582,8 +523,6 @@ Ví dụ: biểu thức chính quy `/at(.)?$/gm` có nghĩa là: ký tự chữ 
 
 
 ## 6. Greedy vs lazy matching
-By default regex will do greedy matching , means it will match as long as
-possible. we can use `?` to match in lazy way means as short as possible
 
 
 Theo mặc định, regex sẽ thực hiện greedy matching, có nghĩa là nó sẽ khớp càng lâu càng tốt. chúng ta có thể sử dụng `?` để khớp theo cách lười biếng có nghĩa là càng ngắn càng tốt
