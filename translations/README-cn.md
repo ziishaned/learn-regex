@@ -28,7 +28,8 @@
 * [Greek](../translations/README-gr.md)
 * [Magyar](../translations/README-hu.md)
 * [Polish](../translations/README-pl.md)
-* [Русский](translations/README-ru.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
 
 ## 什么是正则表达式?
 
