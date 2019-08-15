@@ -1,20 +1,35 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## 翻译:
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [中文版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
-* [Magyar](README-hu.md)
-* [Polish](README-pl.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
 
 ## 什么是正则表达式?
 
@@ -30,7 +45,7 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-cn.png" alt="Regular expression">
 </p>
 
 以上的正则表达式可以接受 `john_doe`, `jo-hn_doe`, `john12_as`.
@@ -46,7 +61,7 @@
 		* [2.2.1 否定字符集](#221-否定字符集)
 	* [2.3 重复次数](#23-重复次数)
 		* [2.3.1 * 号](#231--号)
-		* [2.3.2   号](#232--号)
+		* [2.3.2 + 号](#232--号)
 		* [2.3.3 ? 号](#233--号)
 	* [2.4 {} 号](#24--号)
 	* [2.5 (...) 特征标群](#25--特征标群)
@@ -56,11 +71,11 @@
 		* [2.8.1 ^ 号](#281--号)
 		* [2.8.2 $ 号](#282--号)
 * [3. 简写字符集](#3-简写字符集)
-* [4. 前后关联约束(前后预查)](#4-前后关联约束前后预查)
-	* [4.1 ?=... 前置约束(存在)](#41--前置约束存在)
-	* [4.2 ?!... 前置约束-排除](#42--前置约束-排除)
-	* [4.3 ?&lt;= ... 后置约束-存在](#43---后置约束-存在)
-	* [4.4 ?&lt;!... 后置约束-排除](#44--后置约束-排除)
+* [4. 零宽度断言(前后预查)](#4-零宽度断言前后预查)
+	* [4.1 ?=... 正先行断言](#41--正先行断言)
+	* [4.2 ?!... 负先行断言](#42--负先行断言)
+	* [4.3 ?&lt;= ... 正后发断言](#43---正后发断言)
+	* [4.4 ?&lt;!... 负后发断言](#44--负后发断言)
 * [5. 标志](#5-标志)
 	* [5.1 忽略大小写 (Case Insensitive)](#51-忽略大小写-case-insensitive)
 	* [5.2 全局搜索 (Global search)](#52-全局搜索-global-search)
@@ -176,7 +191,7 @@
 `*`和表示匹配空格的符号`\s`连起来用, 如表达式`\s*cat\s*`匹配0或更多个空格开头和0或更多个空格结尾的cat字符串.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [在线练习](https://regex101.com/r/gGrwuz/1)
@@ -223,14 +238,14 @@
 我们可以省略第二个参数.
 例如, `[0-9]{2,}` 匹配至少两位 0~9 的数字.
 
-如果逗号也省略掉则表示重复固定的次数.
-例如, `[0-9]{3}` 匹配3位数字
-
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
 [在线练习](https://regex101.com/r/Gdy4w5/1)
+
+如果逗号也省略掉则表示重复固定的次数.
+例如, `[0-9]{3}` 匹配3位数字
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
@@ -336,32 +351,32 @@
 |\v|匹配一个垂直制表符|
 |\p|匹配 CR/LF (等同于 `\r\n`)，用来匹配 DOS 行终止符|
 
-## 4. 前后关联约束(前后预查)
+## 4. 零宽度断言(前后预查)
 
-前置约束和后置约束都属于**非捕获簇**(用于匹配不在匹配列表中的格式).
-前置约束用于判断所匹配的格式是否在另一个确定的格式之后.
+先行断言和后发断言都属于**非捕获簇**(不捕获文本 ，也不针对组合计进行计数).
+先行断言用于判断所匹配的格式是否在另一个确定的格式之前, 匹配结果不包含该确定格式(仅作为约束).
 
-例如, 我们想要获得所有跟在 `$` 符号后的数字, 我们可以使用正向向后约束 `(?<=\$)[0-9\.]*`.
+例如, 我们想要获得所有跟在 `$` 符号后的数字, 我们可以使用正后发断言 `(?<=\$)[0-9\.]*`.
 这个表达式匹配 `$` 开头, 之后跟着 `0,1,2,3,4,5,6,7,8,9,.` 这些字符可以出现大于等于 0 次.
 
-前后关联约束如下:
+零宽度断言如下:
 
 |符号|描述|
 |:----:|----|
-|?=|前置约束-存在|
-|?!|前置约束-排除|
-|?<=|后置约束-存在|
-|?<!|后置约束-排除|
+|?=|正先行断言-存在|
+|?!|负先行断言-排除|
+|?<=|正后发断言-存在|
+|?<!|负后发断言-排除|
 
-### 4.1 `?=...` 前置约束(存在)
+### 4.1 `?=...` 正先行断言
 
-`?=...` 前置约束(存在), 表示第一部分表达式必须跟在 `?=...`定义的表达式之后.
+`?=...` 正先行断言, 表示第一部分表达式之后必须跟着 `?=...`定义的表达式.
 
-返回结果只满足第一部分表达式.
-定义一个前置约束(存在)要使用 `()`. 在括号内部使用一个问号和等号: `(?=...)`. 
+返回结果只包含满足匹配条件的第一部分表达式.
+定义一个正先行断言要使用 `()`. 在括号内部使用一个问号和等号: `(?=...)`. 
 
-前置约束的内容写在括号中的等号后面.
-例如, 表达式 `(T|t)he(?=\sfat)` 匹配 `The` 和 `the`, 在括号中我们又定义了前置约束(存在) `(?=\sfat)` ,即 `The` 和 `the` 后面紧跟着 `(空格)fat`.
+正先行断言的内容写在括号中的等号后面.
+例如, 表达式 `(T|t)he(?=\sfat)` 匹配 `The` 和 `the`, 在括号中我们又定义了正先行断言 `(?=\sfat)` ,即 `The` 和 `the` 后面紧跟着 `(空格)fat`.
 
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -369,10 +384,10 @@
 
 [在线练习](https://regex101.com/r/IDDARt/1)
 
-### 4.2 `?!...` 前置约束-排除
+### 4.2 `?!...` 负先行断言
 
-前置约束-排除 `?!` 用于筛选所有匹配结果, 筛选条件为 其后不跟随着定义的格式
-`前置约束-排除`  定义和 `前置约束(存在)` 一样, 区别就是 `=` 替换成 `!` 也就是 `(?!...)`.
+负先行断言 `?!` 用于筛选所有匹配结果, 筛选条件为 其后不跟随着断言中定义的格式.
+`正先行断言`  定义和 `负先行断言` 一样, 区别就是 `=` 替换成 `!` 也就是 `(?!...)`.
 
 表达式 `(T|t)he(?!\sfat)` 匹配 `The` 和 `the`, 且其后不跟着 `(空格)fat`.
 
@@ -382,9 +397,9 @@
 
 [在线练习](https://regex101.com/r/V32Npg/1)
 
-### 4.3 `?<= ...` 后置约束-存在
+### 4.3 `?<= ...` 正后发断言
 
-后置约束-存在 记作`(?<=...)` 用于筛选所有匹配结果, 筛选条件为 其前跟随着定义的格式.
+正后发断言 记作`(?<=...)` 用于筛选所有匹配结果, 筛选条件为 其前跟随着断言中定义的格式.
 例如, 表达式 `(?<=(T|t)he\s)(fat|mat)` 匹配 `fat` 和 `mat`, 且其前跟着 `The` 或 `the`.
 
 <pre>
@@ -393,9 +408,9 @@
 
 [在线练习](https://regex101.com/r/avH165/1)
 
-### 4.4 `?<!...` 后置约束-排除
+### 4.4 `?<!...` 负后发断言
 
-后置约束-排除 记作 `(?<!...)` 用于筛选所有匹配结果, 筛选条件为 其前不跟着定义的格式.
+负后发断言 记作 `(?<!...)` 用于筛选所有匹配结果, 筛选条件为 其前不跟随着断言中定义的格式.
 例如, 表达式 `(?<!(T|t)he\s)(cat)` 匹配 `cat`, 且其前不跟着 `The` 或 `the`.
 
 <pre>
@@ -406,7 +421,7 @@
 
 ## 5. 标志
 
-标志也叫修饰语, 因为它可以用来修改表达式的搜索结果.
+标志也叫模式修正符, 因为它可以用来修改表达式的搜索结果.
 这些标志可以任意的组合使用, 它也是整个正则表达式的一部分.
 
 |标志|描述|
@@ -434,7 +449,7 @@
 
 ### 5.2 全局搜索 (Global search)
 
-修饰符 `g` 常用语执行一个全局搜索匹配, 即(不仅仅返回第一个匹配的, 而是返回全部).
+修饰符 `g` 常用于执行一个全局搜索匹配, 即(不仅仅返回第一个匹配的, 而是返回全部).
 例如, 表达式 `/.(at)/g` 表示搜索 任意字符(除了换行) + `at`, 并返回全部结果.
 
 <pre>
@@ -451,7 +466,7 @@
 
 ### 5.3 多行修饰符 (Multiline)
 
-多行修饰符 `m` 常用语执行一个多行匹配.
+多行修饰符 `m` 常用于执行一个多行匹配.
 
 像之前介绍的 `(^,$)` 用于检查格式是否是在待检测字符串的开头或结尾. 但我们如果想要它在每行的开头和结尾生效, 我们需要用到多行修饰符 `m`.
 
@@ -473,6 +488,21 @@
 
 [在线练习](https://regex101.com/r/E88WE2/1)
 
+### 6. 贪婪匹配与惰性匹配 (Greedy vs lazy matching)
+
+正则表达式默认采用贪婪匹配模式，在该模式下意味着会匹配尽可能长的子串。我们可以使用 `?` 将贪婪匹配模式转化为惰性匹配模式。
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+[在线练习](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[在线练习](https://regex101.com/r/AyAdgJ/2)
+
 ## 贡献
 
 * 报告问题
@@ -482,4 +512,4 @@
 
 ## 许可证
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

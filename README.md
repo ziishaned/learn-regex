@@ -1,31 +1,44 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/twitter/follow/ziishaned.svg?style=social" />
+        </a>
+        <a href="https://github.com/ziishaned">
+            <img src="https://img.shields.io/github/followers/ziishaned.svg?label=Follow%20%40ziishaned&style=social" />
+        </a>
+    </p>
+</p>
 
 ## Translations:
 
 * [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
-* [Magyar](README-hu.md)
-* [Polish](README-pl.md)
+* [Español](translations/README-es.md)
+* [Français](translations/README-fr.md)
+* [Português do Brasil](translations/README-pt_BR.md)
+* [中文版](translations/README-cn.md)
+* [日本語](translations/README-ja.md)
+* [한국어](translations/README-ko.md)
+* [Turkish](translations/README-tr.md)
+* [Greek](translations/README-gr.md)
+* [Magyar](translations/README-hu.md)
+* [Polish](translations/README-pl.md)
+* [Русский](translations/README-ru.md)
+* [Tiếng Việt](translations/README-vn.md)
 
 ## What is Regular Expression?
 
 > Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
 
 A regular expression is a pattern that is matched against a subject string from
-left to right. The word "Regular expression" is a mouthful, you will usually
-find the term abbreviated as "regex" or "regexp". Regular expression is used for
-replacing a text within a string, validating form, extract a substring from a
-string based upon a pattern match, and so much more.
+left to right. Regular expression is used for replacing a text within a string, 
+validating form, extract a substring from a string based upon a pattern match, 
+and so much more. The word "Regular expression" is a mouthful, so you will usually
+find the term abbreviated as "regex" or "regexp". 
 
 Imagine you are writing an application and you want to set the rules for when a
 user chooses their username. We want to allow the username to contain letters,
@@ -266,7 +279,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 ## 2.5 Capturing Group
 
 A capturing group is a group of sub-patterns that is written inside Parentheses 
-`(...)`. Like As we discussed before that in regular expression if we put a quantifier 
+`(...)`. Like as we discussed before that in regular expression if we put a quantifier 
 after a character then it will repeat the preceding character. But if we put quantifier
 after a capturing group then it repeats the whole capturing group. For example,
 the regular expression `(ab)*` matches zero or more repetitions of the character
@@ -299,7 +312,7 @@ within parenthesis `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
-See also [4. Lookaround](# 4. Lookaround).
+See also [4. Lookaround](#4-lookaround).
 
 ## 2.6 Alternation
 
@@ -409,7 +422,7 @@ shorthand character sets are as follows:
 
 Lookbehind and lookahead (also called lookaround) are specific types of
 ***non-capturing groups*** (Used to match the pattern but not included in matching
-list). Lookaheads are used when we have the condition that this pattern is
+list). Lookarounds are used when we have the condition that this pattern is
 preceded or followed by another certain pattern. For example, we want to get all
 numbers that are preceded by `$` character from the following input string
 `$4.44 and $10.88`. We will use following regular expression `(?<=\$)[0-9\.]*`
@@ -583,11 +596,11 @@ possible. we can use `?` to match in lazy way means as short as possible
 
 ## Contribution
 
-* Report issues
 * Open pull request with improvements
+* Discuss ideas in issues
 * Spread the word
-* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

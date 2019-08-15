@@ -55,7 +55,7 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title>regexp</dc:title>
-        <dc:source>https://github.com/zeeshanu/learn-regex</dc:source>
+        <dc:source>https://github.com/ziishaned/learn-regex</dc:source>
         <dc:creator>
           <cc:Agent>
             <dc:title>ponsfrilus</dc:title>
