@@ -161,7 +161,7 @@ El símbolo `*` se puede utilizar con el meta-carácter `.` para que coincida co
 
 ### 2.3.2 Signo más
 
-El símbolo `+` coincide con una o más repeticiones del carácter anterior. Por ejemplo, la expresión regular `c.+T` significa: carácter en minúscula `c`, seguido por lo menos de un carácter, luego el carácter en minúscula `t`.
+El símbolo `+` coincide con una o más repeticiones del carácter anterior. Por ejemplo, la expresión regular `c.+t` significa: carácter en minúscula `c`, seguido por lo menos de un carácter, luego el carácter en minúscula `t`.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -320,7 +320,7 @@ coincide con la primera parte de la expresión. Para definir un lookahead positi
 se utilizan paréntesis. Dentro de esos paréntesis, un signo de interrogación con
 signo igual se utiliza de esta manera: `(?= ...)`. La expresión de Lookahead se
 escribe después del signo igual dentro de los paréntesis. Por ejemplo, la
-expresión regular `[T|t]he (?=\Sfat)` significa: opcionalmente emparejar
+expresión regular `[T|t]he (?=\sfat)` significa: opcionalmente emparejar
 el carácter en minúscula `t` o el carácter en mayúscula `T`, seguida del carácter `h`, seguida
 del carácter `e`. Entre paréntesis definimos el lookahead positivo que indica al motor
 de expresión regular que coincida con `The` o `the` seguido de la palabra `fat`.
@@ -337,8 +337,8 @@ El lookahead negativo se usa cuando necesitamos obtener todas las coincidencias
 de la cadena de entrada que no son seguidas por un patrón. El aspecto negativo se
 define de la misma manera que definimos el aspecto positivo, pero la única diferencia
 es que en lugar del carácter igual `=` utilizamos carácter negación  `!` , es decir,
-`(?! ...)`. Vamos a echar un vistazo a la siguiente expresión regular `[T|t]he(?!\Sfat)`
-que significa: obtener todas las `The` o `the` seguidos por la palabra `fat` precedido por un carácter de espacio.
+`(?! ...)`. Vamos a echar un vistazo a la siguiente expresión regular `[T|t]he(?!\sfat)`
+que significa: obtener todas las `The` o `the` no seguidos por la palabra `fat` precedido por un carácter de espacio.
 
 
 <pre>
@@ -351,7 +351,7 @@ que significa: obtener todas las `The` o `the` seguidos por la palabra `fat` pre
 
 Positivo lookbehind se utiliza para obtener todos los caracteres que están precedidos
 por un patrón específico. La apariencia positiva se denotar por `(?<=...)`.
-Por ejemplo, la expresión regular `(? <= [T|t]he\s)(fat|mat)` significa: obtener todas las palabras
+Por ejemplo, la expresión regular `(?<=[T|t]he\s)(fat|mat)` significa: obtener todas las palabras
 `fat` o `mat` de la cadena de entrada después de la palabra `The` o `the`.
 
 <pre>
@@ -364,7 +364,7 @@ Por ejemplo, la expresión regular `(? <= [T|t]he\s)(fat|mat)` significa: obtene
 
 El lookbehind negativo se utiliza para obtener todas las coincidencias que no
 están precedidas por un patrón específico. El lookbehind negativo se denota por
-`(? <! ...)`. Por ejemplo, la expresión regular `(?<!(T|t)he(s)(cat)` significa:
+`(?<!...)`. Por ejemplo, la expresión regular `(?<!(T|t)he(s)(cat)` significa:
 obtener todas las palabras `cat` de la cadena de entrada que no están después de
 la palabra` The` o `the`.
 
@@ -393,7 +393,7 @@ El modificador `i` se utiliza para realizar la coincidencia entre mayúsculas y
 minúsculas. Por ejemplo, la expresión regular `/The/gi` significa: carácter en mayúscula
 `T`, seguido del carácter en minúscula `h`, seguido del carácter `e`. Y al final
 de la expresión regular, el indicador `i` indica al motor de expresiones
-regulares que ignore el caso. Como puede ver, también proveimos el indicador
+regulares que no distinga entre mayúsculas y minúsculas. Como puede ver, también proveímos el indicador
 `g` porque queremos buscar el patrón en toda la cadena de entrada.
 
 
@@ -413,10 +413,10 @@ regulares que ignore el caso. Como puede ver, también proveimos el indicador
 
 El modificador `g` se utiliza para realizar una coincidencia global
 (encontrar todos las coincidencias en lugar de detenerse después de la primera coincidencia).
-Por ejemplo, la expresión regular `/.(At)/g` significa: cualquier carácter,
+Por ejemplo, la expresión regular `/.(at)/g` significa: cualquier carácter,
 excepto la nueva línea, seguido del carácter en minúscula `a`, seguido del carácter
 en minúscula `t`. Debido a que proveimos el indicador `g` al final de la expresión
-regular, ahora encontrará todas las coincidencias de toda la cadena de entrada, no sólo la 
+regular, ahora encontrará todas las coincidencias de toda la cadena de entrada, no sólo la
 primera instancia (el cual es el comportamiento normal).
 
 
@@ -438,7 +438,7 @@ El modificador `m` se utiliza para realizar una coincidencia de varias líneas.
 Como analizamos anteriormente, las anclas `(^,$)` se utilizan para comprobar si
 el patrón es el comienzo de la entrada o el final de la cadena de entrada. Pero
 si queremos que las anclas funcionen en cada línea usamos el indicador `m`.
-Por ejemplo, la expresión regular `/at(.)?$/Gm` significa: carácter en minúscula `a`, seguido del carácter en minúscula `t`,
+Por ejemplo, la expresión regular `/at(.)?$/gm` significa: carácter en minúscula `a`, seguido del carácter en minúscula `t`,
 opcionalmente cualquier cosa menos la nueva línea. Y debido al indicador `m`, ahora
 el motor de expresión regular coincide con el patrón al final de cada línea de una cadena.
 
