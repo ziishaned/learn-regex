@@ -8,7 +8,7 @@
 ## Translations:
 
 * [English](../README.md)
-* [German](Readme-de.md)
+* German
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
