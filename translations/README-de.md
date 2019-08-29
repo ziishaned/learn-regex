@@ -39,8 +39,7 @@ den Benutzernamen zu überprüfen:
   <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird
-nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
+Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
 
 ## Table of Contents
 
@@ -53,9 +52,9 @@ nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
     - [Stern *](#231-the-star)
     - [Plus +](#232-the-plus)
     - [Fragezeichen ?](#233-the-question-mark)
-  - [Klammern](#24-braces)
+  - [Klammern {}](#24-braces)
   - [Zeichengruppen](#25-character-group)
-  - [Alternation](#26-alternation)
+  - [Alternation |](#26-alternation)
   - [Auswertung von Sonderzeichen](#27-escaping-special-character)
   - [Anker](#28-anchors)
     - [Caret ^](#281-caret)
@@ -67,43 +66,34 @@ nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
   - [Positives Zurückschauen](#43-positive-lookbehind)
   - [Negatives Zurückschauen](#44-negative-lookbehind)
 - [Steuerparameter](#5-flags)
-  - [Groß-/kleinschreibung](#51-case-insensitive)
+  - [Groß-/Kleinschreibung](#51-case-insensitive)
   - [Globale Suche](#52-global-search)
   - [Mehrzeilig](#53-multiline)
 - [Gierige oder faule Übereinstimmung](#6-greedy-vs-lazy-matching)
 
 ## 1. Basis Vergleiche
 
-A regular expression is just a pattern of characters that we use to perform
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
+Ein regulärer Ausdruck ist ein einfaches Muster von Zeichen, welches für eine Suche in Text genutzt wird. Zum Beispiel, der reguläre Ausdruck `the` meint: der Buchstabe `t`, gefolgt durch den Buchstaben `h`, gefolgt durch den Buchstaben `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
+Der reguläre Ausdruck `123` entspricht der Zeichenkette `123`. Dieser reguläre Ausdruck kann mit einer Zeichenkette verglichen werden, in dem jedes Zeichen in dem regulären Ausdruck nacheinander verglichen wird. Reguläre Ausdrücke sind normalerweise case sensitiv, Beachtung von Groß-/Kleinschreibung, so dass der Ausdruck `The` nicht mit der Zeichenkette  `the` überein stimmen würde. 
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Sonderzeichen
 
-Meta characters are the building blocks of the regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
+Sonderzeichen sind Bausteine von regulären Ausdrücken. Sonderzeichen stehen nicht für sich selbst, sondern werden in speziellen Fällen interpretiert. Einige Sonderzeichen haben eine besondere Bedeutung und sind innerhalb eckiger Klammern `[]`. Folgende Sonderzeichen sind möglich:
 
-|Meta character|Description|
+|Sonderzeichen|Beschreibung|
 |:----:|----|
 |.|Period matches any single character except a line break.|
 |[ ]|Character class. Matches any character contained between the square brackets.|
