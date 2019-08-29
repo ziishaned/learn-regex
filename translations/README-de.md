@@ -8,7 +8,7 @@
 ## Translations:
 
 * [English](../README.md)
-* [German](../translations/Readme-de.md)
+* [German](Readme-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
@@ -36,7 +36,7 @@ wir die Anzahl der Zeichen limitieren, damit der Name nicht unlesbar wird. Dazu 
 den Benutzernamen zu überprüfen:
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird
