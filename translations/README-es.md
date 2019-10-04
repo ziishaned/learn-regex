@@ -74,6 +74,7 @@ La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe`
   - [Mayúsculas y minúsculas](#51-mayusculas-y-minusculas)
   - [Búsqueda global](#52-busqueda-global)
   - [Multilínea](#53-multilinea)
+- [Búsqueda codiciosa vs perezosa](#6-búsqueda-codiciosa-vs-perezosa)
 
 ## 1. Introducción
 
@@ -468,7 +469,7 @@ el motor de expresión regular coincide con el patrón al final de cada línea d
 
 [Prueba la expresión regular](https://regex101.com/r/E88WE2/1)
 
-## 6. Búsqueda codiciosa vs Perezosa
+## 6. Búsqueda codiciosa vs perezosa
 
 Por defecto las expresiones regulares hacen una búsqueda codiciosa, lo que significa que buscarán tantas coincidencias como sea posible. Podemos usar `?` para buscar de forma perezosa, es decir, lo mínimo posible.
 
