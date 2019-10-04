@@ -75,6 +75,7 @@ La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe`
   - [Búsqueda global](#52-busqueda-global)
   - [Multilínea](#53-multilinea)
 - [Búsqueda codiciosa vs perezosa](#6-búsqueda-codiciosa-vs-perezosa)
+- [Ejemplos útiles](#7-ejemplos-útiles)
 
 ## 1. Introducción
 
@@ -486,6 +487,51 @@ Por defecto las expresiones regulares hacen una búsqueda codiciosa, lo que sign
 [Prueba la expresión regular](https://regex101.com/r/AyAdgJ/2)
 
 
+
+## 7. Ejemplos útiles
+
+Estos ejemplos están escritos en JavaScript, por lo tanto, usted podrá hacer pruebas con ello en la consola de desarrollador (`Ctrl + Shift + I`).
+
+2. Eliminar palabras consecutivas repetidas:
+
+```javascript
+// (\b\w+) - Para palablas (en un grupo de captura)
+// \s+     - Uno o más caracteres en blanco
+// (?=\1)  - Lookahead con el primer grupo de captura
+// g(lobal)i(nsensible)
+let sentence = "This this regex matches repeated words words word";
+sentence.replace(/(\b\w+)\s+(?=\1)/gi, '');
+```
+
+3. Validar emails:
+
+```javascript
+// ^[\w.-]+ - Que empiece por un conjunto de caracteres de palabra, puntos y guiones
+// @[\w.]+  - Continua con una arroba y un conjunto de caracteres de palabra y puntos
+// .(com|net|...) - Termina por .com o .net o ...
+let regexp = /^[\w.-]+@[\w.]+\.(com|net|org|es)$/;
+
+sentence = "a.very-ValidEmail@gmail.es";
+regexp.test(sentence); // >> true
+
+sentence = "a.ve%r:y-inValid&Email@gmail.es";
+regexp.test(sentence); // >> false
+```
+
+4. Analizar HTML (o lo que sea):
+
+```javascript
+// <(\w+)> - Metiendo el nombre de la etiqueta en un grupo de captura
+// (.*?)   - 2do grupo de captura para el contenido
+// <\/\1>  - Termina con el mismo nombre (hace referencia al primer grupo de captura)
+regexp = /<(\w+)>(.*?)<\/\1>/;
+sentence = "A cool header Hello world";
+let matches = sentence.match(regexp);
+
+matches[0]; // >> "Hello world"
+matches[1]; // >> "h1"
+matches[2]; // >> "Hello world"
+```
 
 ## Contribución
 
