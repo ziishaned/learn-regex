@@ -47,6 +47,7 @@ in username so it does not look ugly. We use the following regular expression to
 validate a username:
 
 <br/><br/>
+
 <p align="center">
   <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
@@ -116,20 +117,20 @@ characters do not stand for themselves but instead are interpreted in some
 special way. Some meta characters have a special meaning and are written inside
 square brackets. The meta characters are as follows:
 
-|Meta character|Description|
-|:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+| Meta character | Description                                                                                                            |
+|:--------------:| ---------------------------------------------------------------------------------------------------------------------- |
+| .              | Period matches any single character except a line break.                                                               |
+| [ ]            | Character class. Matches any character contained between the square brackets.                                          |
+| [^ ]           | Negated character class. Matches any character that is not contained between the square brackets                       |
+| *              | Matches 0 or more repetitions of the preceding symbol.                                                                 |
+| +              | Matches 1 or more repetitions of the preceding symbol.                                                                 |
+| ?              | Makes the preceding symbol optional.                                                                                   |
+| {n,m}          | Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.                                |
+| (xyz)          | Character group. Matches the characters xyz in that exact order.                                                       |
+| &#124;         | Alternation. Matches either the characters before or the characters after the symbol.                                  |
+| &#92;          | Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code> |
+| ^              | Matches the beginning of the input.                                                                                    |
+| $              | Matches the end of the input.                                                                                          |
 
 ## 2.1 Full stop
 
@@ -402,21 +403,21 @@ character and the matcher must be end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+## 3. Shorthand Character Sets
 
 Regular expression provides shorthands for the commonly used character sets,
 which offer convenient shorthands for commonly used regular expressions. The
 shorthand character sets are as follows:
 
-|Shorthand|Description|
-|:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digit: `[0-9]`|
-|\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace character: `[^\s]`|
+| Shorthand | Description                                     |
+|:---------:| ----------------------------------------------- |
+| .         | Any character except new line                   |
+| \w        | Matches alphanumeric characters: `[a-zA-Z0-9_]` |
+| \W        | Matches non-alphanumeric characters: `[^\w]`    |
+| \d        | Matches digit: `[0-9]`                          |
+| \D        | Matches non-digit: `[^\d]`                      |
+| \s        | Matches whitespace character: `[\t\n\f\r\p{Z}]` |
+| \S        | Matches non-whitespace character: `[^\s]`       |
 
 ## 4. Lookaround
 
@@ -430,12 +431,12 @@ which means: get all the numbers which contain `.` character and  are preceded
 by `$` character. Following are the lookarounds that are used in regular
 expressions:
 
-|Symbol|Description|
-|:----:|----|
-|?=|Positive Lookahead|
-|?!|Negative Lookahead|
-|?<=|Positive Lookbehind|
-|?<!|Negative Lookbehind|
+| Symbol | Description         |
+|:------:| ------------------- |
+| ?=     | Positive Lookahead  |
+| ?!     | Negative Lookahead  |
+| ?<=    | Positive Lookbehind |
+| ?<!    | Negative Lookbehind |
 
 ### 4.1 Positive Lookahead
 
@@ -504,11 +505,11 @@ Flags are also called modifiers because they modify the output of a regular
 expression. These flags can be used in any order or combination, and are an
 integral part of the RegExp.
 
-|Flag|Description|
-|:----:|----|
-|i|Case insensitive: Sets matching to be case-insensitive.|
-|g|Global Search: Search for a pattern throughout the input string.|
-|m|Multiline: Anchor meta character works on each line.|
+| Flag | Description                                                      |
+|:----:| ---------------------------------------------------------------- |
+| i    | Case insensitive: Sets matching to be case-insensitive.          |
+| g    | Global Search: Search for a pattern throughout the input string. |
+| m    | Multiline: Anchor meta character works on each line.             |
 
 ### 5.1 Case Insensitive
 
@@ -578,21 +579,61 @@ at the end of each line in a string.
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
 ## 6. Greedy vs lazy matching
+
 By default regex will do greedy matching , means it will match as long as
 possible. we can use `?` to match in lazy way means as short as possible
 
 <pre>
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
 
-
 [Test the regular expression](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
 "/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
 
-
 [Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
+## 7. Useful examples
+
+These examples are written in JavaScript, so you can try it in the developer console (`Ctrl + Shift + I`).
+
+1. Remove repeated consecutive words:
+
+```javascript
+// (\b\w+) - For words (in capturing group)
+// \s+     - One or more whitespace characters
+// (?=\1)  - Lookahead with the 1st capturing group
+// g(lobal)i(nsensitive)
+let sentence = "This this regex matches repeated words words word";
+sentence.replace(/(\b\w+)\s+(?=\1)/gi, '');
+```
+
+2. Validate emails:
+
+```javascript
+// ^[\w.-]+ - Start with a set of word characters, dots and hyphens
+// @[\w.]+  - continue with an arroba and a set of word characters and dots
+// .(com|net|...) - Ends with .com or .net or ...
+let regexp = /^[\w.-]+@[\w.]+\.(com|net|org|es)$/;
+sentence = "a.very-ValidEmail@gmail.es";
+regexp.test(sentence); // >> true
+sentence = "a.ve%r:y-inValid&Email@gmail.es";
+regexp.test(sentence); // >> false
+```
+
+3. Parse HTML (or whatever)
+
+```javascript
+// <(\w+)> - Putting the tag name in a capture group
+// (.*?)   - 2nd capturing group for tag content
+// <\/\1>  - Ends with the same name (refers to 1st capturing group)
+regexp = /<(\w+)>(.*?)<\/\1>/;
+sentence = "A cool header <h1>Hello world</h1>";
+let matches = sentence.match(regexp);
+matches[0]; // >> "<h1>Hello world</h1>"
+matches[1]; // >> "h1"
+matches[2]; // >> "Hello world"
+```
 
 ## Contribution
 
