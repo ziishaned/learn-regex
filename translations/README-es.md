@@ -14,7 +14,6 @@
     </p>
 </p>
 
-
 ## Traducciones:
 
 * [English](../README.md)
@@ -32,14 +31,15 @@
 * [Tiếng Việt](../translations/README-vn.md)
 
 ## Qué es una expresión regular?
+
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
 
 Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para remplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
 
 Imagina que estás escribiendo una aplicación y quieres agregar reglas para cuando el usuario elija su nombre de usuario. Nosotros queremos permitir que el nombre de usuario contenga letras, números, guión bajo (raya), y guión medio. También queremos limitar el número de caracteres en el nombre de usuario para que no se vea feo. Para ello usamos la siguiente expresión regular para validar el nombre de usuario.
 
-
 <br/><br/>
+
 <p align="center">
   <img src="../img/regexp-es.png" alt="Expresión regular">
 </p>
@@ -75,7 +75,6 @@ La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe`
   - [Búsqueda global](#52-busqueda-global)
   - [Multilínea](#53-multilinea)
 
-
 ## 1. Introducción
 
 Una expresión regular es sólo un patrón de caracteres que utilizamos para realizar búsquedas en un texto. Por ejemplo, la expresión regular `the` significa: la letra `t`, seguida de la letra `h`, seguida de la letra `e`.
@@ -98,20 +97,20 @@ La expresión regular `123` coincide con la cadena `123`. La expresión regular 
 
 Los meta-caracteres son los bloques de construcción de las expresiones regulares. Los meta-caracteres no se sostienen a sí mismos, sino que se interpretan de alguna manera especial. Algunos meta-caracteres tienen un significado especial y se escriben entre corchetes. Los meta-caracteres son los siguientes:
 
-|Meta-carácter|Descripción|
-|:----:|----|
-|.|Período. Coincide con cualquier carácter excepto un salto de línea.|
-|[ ]|Clase de caracteres. Coincide con cualquier carácter contenido entre corchetes.|
-|[^ ]|Clase de caracteres negados. Coincide con cualquier carácter que no está contenido dentro de los corchetes.|
-|*|Corresponde con 0 o más repeticiones del símbolo precedente.|
-|+|Corresponde con 1 o más repeticiones del símbolo precedente.|
-|?|Hace que el símbolo precedente sea opcional.|
-|{n,m}|Llaves. Corresponde al menos "n" pero no más de "m" repeticiones del símbolo precedente.|
-|(xyz)|Grupo carácter. Hace coincidir los caracteres xyz en ese orden exacto.|
-|&#124;|Alternancia. Corresponde a los caracteres anteriores o los caracteres después del símbolo.|
-|&#92;|Escapa el siguiente carácter. Esto le permite hacer coincidir los caracteres reservados <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Hace coincidir el principio de la entrada.|
-|$|Corresponde al final de la entrada.|
+| Meta-carácter | Descripción                                                                                                                           |
+|:-------------:| ------------------------------------------------------------------------------------------------------------------------------------- |
+| .             | Período. Coincide con cualquier carácter excepto un salto de línea.                                                                   |
+| [ ]           | Clase de caracteres. Coincide con cualquier carácter contenido entre corchetes.                                                       |
+| [^ ]          | Clase de caracteres negados. Coincide con cualquier carácter que no está contenido dentro de los corchetes.                           |
+| *             | Corresponde con 0 o más repeticiones del símbolo precedente.                                                                          |
+| +             | Corresponde con 1 o más repeticiones del símbolo precedente.                                                                          |
+| ?             | Hace que el símbolo precedente sea opcional.                                                                                          |
+| {n,m}         | Llaves. Corresponde al menos "n" pero no más de "m" repeticiones del símbolo precedente.                                              |
+| (xyz)         | Grupo carácter. Hace coincidir los caracteres xyz en ese orden exacto.                                                                |
+| &#124;        | Alternancia. Corresponde a los caracteres anteriores o los caracteres después del símbolo.                                            |
+| &#92;         | Escapa el siguiente carácter. Esto le permite hacer coincidir los caracteres reservados <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code> |
+| ^             | Hace coincidir el principio de la entrada.                                                                                            |
+| $             | Corresponde al final de la entrada.                                                                                                   |
 
 ## 2.1 Full stop
 
@@ -226,6 +225,7 @@ Podemos dejar fuera el segundo número. Por ejemplo, la expresión regular `[0-9
 ## 2.5 Grupos de caracteres
 
 Un grupo de caracteres es un grupo de sub-patrones que se escribe dentro de paréntesis `(...)`. Como hemos discutido antes en la expresión regular, si ponemos un cuantificador después de un carácter, repetiremos el carácter anterior. Pero si ponemos un cuantificador después de un grupo de caracteres, entonces repetimos todo el grupo de caracteres. Por ejemplo, la expresión regular `(ab)*` coincide con cero o más repeticiones del caracter `ab`. También podemos usar el carácter de alternancia `|` meta dentro del grupo de caracteres. Por ejemplo, la expresión regular `(c|g|p)ar` significa: carácter en minúscula `c`, `g` o `p`, seguido del carácter `a`, seguido del carácter `r`.
+
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
@@ -290,21 +290,21 @@ El símbolo del dólar `$` se utiliza para comprobar si el carácter coincidente
 
 [Pueba la expresión regular](https://regex101.com/r/t0AkOd/1)
 
-##  3. Conjunto de caracteres abreviados
+## 3. Conjunto de caracteres abreviados
 
 La expresión regular proporciona abreviaturas para los conjuntos de caracteres
 comúnmente utilizados, que ofrecen abreviaturas convenientes para expresiones
 regulares de uso común. Los conjuntos de caracteres abreviados son los siguientes:
 
-|Abreviatura|Descripción|
-|:----:|----|
-|.|Cualquier carácter excepto nueva línea|
-|\w|Coincide con los caracteres alfanuméricos: `[a-zA-Z0-9_]`|
-|\W|Coincide con los caracteres no alfanuméricos: `[^\w]`|
-|\d|Coincide con dígitos: `[0-9]`|
-|\D|Coincide con no dígitos: `[^\d]`|
-|\s|Coincide con caracteres espaciales: `[\t\n\f\r\p{Z}]`|
-|\S|Coincide con caracteres no espaciales: `[^\s]`|
+| Abreviatura | Descripción                                               |
+|:-----------:| --------------------------------------------------------- |
+| .           | Cualquier carácter excepto nueva línea                    |
+| \w          | Coincide con los caracteres alfanuméricos: `[a-zA-Z0-9_]` |
+| \W          | Coincide con los caracteres no alfanuméricos: `[^\w]`     |
+| \d          | Coincide con dígitos: `[0-9]`                             |
+| \D          | Coincide con no dígitos: `[^\d]`                          |
+| \s          | Coincide con caracteres espaciales: `[\t\n\f\r\p{Z}]`     |
+| \S          | Coincide con caracteres no espaciales: `[^\s]`            |
 
 ## 4. Mirar alrededor
 
@@ -319,12 +319,12 @@ esto significa: obtener todos los números que contienen el carácter `.` y
 están precedidos del carácter `$`. A continuación se muestran los lookarounds
 que se utilizan en expresiones regulares:
 
-|Símbolo|Descripción|
-|:----:|----|
-|?=|Lookahead Positivo|
-|?!|Lookahead Negativo|
-|?<=|Lookbehind Positivo|
-|?<\!|Lookbehind Negativo|
+| Símbolo | Descripción         |
+|:-------:| ------------------- |
+| ?=      | Lookahead Positivo  |
+| ?!      | Lookahead Negativo  |
+| ?<=     | Lookbehind Positivo |
+| ?<\!    | Lookbehind Negativo |
 
 ## 4.1 Mirar hacia adelate positiva
 
@@ -353,7 +353,6 @@ define de la misma manera que definimos el aspecto positivo, pero la única dife
 es que en lugar del carácter igual `=` utilizamos carácter negación  `!` , es decir,
 `(?! ...)`. Vamos a echar un vistazo a la siguiente expresión regular `[T|t]he(?!\Sfat)`
 que significa: obtener todas las `The` o `the` seguidos por la palabra `fat` precedido por un carácter de espacio.
-
 
 <pre>
 "[T|t]he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -394,12 +393,11 @@ Los indicadores también se llaman modificadores porque modifican la salida
 de una expresión regular. Estos indicadores se pueden utilizar en cualquier orden
 o combinación, y son una parte integral de RegExp.
 
-
-|Indicador|Descripción|
-|:----:|----|
-|i|Insensible a mayúsculas y minúsculas: Ajusta la coincidencia para que no distinga mayúsculas y minúsculas.|
-|g|Búsqueda global: Busca un patrón en toda la cadena de entrada.|
-|m|Multilínea: Ancla meta carácter trabaja en cada línea.|
+| Indicador | Descripción                                                                                                |
+|:---------:| ---------------------------------------------------------------------------------------------------------- |
+| i         | Insensible a mayúsculas y minúsculas: Ajusta la coincidencia para que no distinga mayúsculas y minúsculas. |
+| g         | Búsqueda global: Busca un patrón en toda la cadena de entrada.                                             |
+| m         | Multilínea: Ancla meta carácter trabaja en cada línea.                                                     |
 
 ### 5.1 Mayúscula y minúscula
 
@@ -409,7 +407,6 @@ minúsculas. Por ejemplo, la expresión regular `/The/gi` significa: carácter e
 de la expresión regular, el indicador `i` indica al motor de expresiones
 regulares que ignore el caso. Como puede ver, también proveimos el indicador
 `g` porque queremos buscar el patrón en toda la cadena de entrada.
-
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -432,7 +429,6 @@ excepto la nueva línea, seguido del carácter en minúscula `a`, seguido del ca
 en minúscula `t`. Debido a que proveimos el indicador `g` al final de la expresión
 regular, ahora encontrará todas las coincidencias de toda la cadena de entrada, no sólo la 
 primera instancia (el cual es el comportamiento normal).
-
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -471,6 +467,24 @@ el motor de expresión regular coincide con el patrón al final de cada línea d
 </pre>
 
 [Prueba la expresión regular](https://regex101.com/r/E88WE2/1)
+
+## 6. Búsqueda codiciosa vs Perezosa
+
+Por defecto las expresiones regulares hacen una búsqueda codiciosa, lo que significa que buscarán tantas coincidencias como sea posible. Podemos usar `?` para buscar de forma perezosa, es decir, lo mínimo posible.
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>.
+</pre>
+
+[Prueba la expresión regular](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat.
+</pre>
+
+[Prueba la expresión regular](https://regex101.com/r/AyAdgJ/2)
+
+
 
 ## Contribución
 
