@@ -85,6 +85,7 @@ letter and also it is too short.
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
 - [Greedy vs lazy matching](#6-greedy-vs-lazy-matching)
+- [Useful examples](#7-useful-examples)
 
 ## 1. Basic Matchers
 
