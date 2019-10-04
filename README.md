@@ -615,8 +615,10 @@ sentence.replace(/(\b\w+)\s+(?=\1)/gi, '');
 // @[\w.]+  - continue with an arroba and a set of word characters and dots
 // .(com|net|...) - Ends with .com or .net or ...
 let regexp = /^[\w.-]+@[\w.]+\.(com|net|org|es)$/;
+
 sentence = "a.very-ValidEmail@gmail.es";
 regexp.test(sentence); // >> true
+
 sentence = "a.ve%r:y-inValid&Email@gmail.es";
 regexp.test(sentence); // >> false
 ```
@@ -630,6 +632,7 @@ regexp.test(sentence); // >> false
 regexp = /<(\w+)>(.*?)<\/\1>/;
 sentence = "A cool header <h1>Hello world</h1>";
 let matches = sentence.match(regexp);
+
 matches[0]; // >> "<h1>Hello world</h1>"
 matches[1]; // >> "h1"
 matches[2]; // >> "Hello world"
