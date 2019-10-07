@@ -179,7 +179,7 @@
 ### 2.3.1 `*` 号
 
 `*`号匹配 在`*`之前的字符出现`大于等于0`次.
-例如, 表达式 `a*` 匹配以0或更多个a开头的字符, 因为有0个这个条件, 其实也就匹配了所有的字符. 表达式`[a-z]*` 匹配一个行中所有以小写字母开头的字符串.
+例如, 表达式 `a*` 匹配0或更多个以a开头的字符. 表达式`[a-z]*` 匹配一个行中所有以小写字母开头的字符串.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -199,7 +199,7 @@
 ### 2.3.2 `+` 号
 
 `+`号匹配`+`号之前的字符出现 >=1 次.
-例如表达式`c.+t` 匹配以首字母`c`开头以`t`结尾,中间跟着任意个字符的字符串.
+例如表达式`c.+t` 匹配以首字母`c`开头以`t`结尾,中间跟着至少一个字符的字符串.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
