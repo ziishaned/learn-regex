@@ -252,7 +252,7 @@ character `e`.
 In regular expression braces that are also called quantifiers are used to
 specify the number of times that a character or a group of characters can be
 repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
-2 digits but not more than 3 ( characters in the range of 0 to 9).
+2 digits but not more than 3 (characters in the range of 0 to 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -421,7 +421,7 @@ shorthand character sets are as follows:
 ## 4. Lookaround
 
 Lookbehind and lookahead (also called lookaround) are specific types of
-***non-capturing groups*** (Used to match the pattern but not included in matching
+***non-capturing groups*** (used to match the pattern but not included in matching
 list). Lookarounds are used when we have the condition that this pattern is
 preceded or followed by another certain pattern. For example, we want to get all
 numbers that are preceded by `$` character from the following input string
@@ -578,8 +578,8 @@ at the end of each line in a string.
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
 ## 6. Greedy vs lazy matching
-By default regex will do greedy matching , means it will match as long as
-possible. we can use `?` to match in lazy way means as short as possible
+By default regex will do greedy matching which means it will match as long as
+possible. We can use `?` to match in lazy way which means as short as possible.
 
 <pre>
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
