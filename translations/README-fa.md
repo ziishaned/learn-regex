@@ -84,24 +84,23 @@
   - [Multiline](#53-multiline)
 - [Greedy vs lazy matching](#6-greedy-vs-lazy-matching)
 </div>
+<div dir="rtl">
 
-## 1. Basic Matchers
+## 1. پایه ای ترین همخوانی
 
-A regular expression is just a pattern of characters that we use to perform
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-
+یک عبارت منظم در واقع یک الگو برای جست و جو در یک متن است. برای مثال عبارت منظم  `the` به معنی : حرف
+`t`, پس از آن حرف `h`, پس از آن حرف  `e` است.
+</div>
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
+<div dir="rtl">
+[عبارت منظم را در عمل ببینید](https://regex101.com/r/dmRygT/1)
+
+عبارت منظم `123` با رشته `123` مطابقت دارد. عبارت منظم با مقایسه حرف به حرف و کارکتر به کارکترش با متن مورد نظر تطابق را می یابد. همچنین عبارت منظم حساس به اندازه (بزرگی یا کوچکی حروف) هستند. بنابر این واژه ی `The` با  `the` همخوان نیست.
+</div>
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
