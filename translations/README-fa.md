@@ -31,10 +31,12 @@
 * [Tiếng Việt](../translations/README-vn.md)
 * [قارسی](../translations/README-fa.md)
 
-<div rtl="ltr">
+<div dir="rtl">
 ## عبارت منظم چیست؟
 </div>
+<div dir="rtl">
 > عبارت منظم یک گروه از کارکترها یا نمادهاست که برای پیدا کردن یک الگوی مشخص در یک متن به کار گرفته می شود.
+</div>
 
 یک عبارت منظم یک الگو است که با رشته ای حاص مطابقت دارد. عبارت منظم در اعتبار سنجی داده های ورودی فرم ها، پیدا کردن یک زیر متن در یک متن بزرگتر بر اساس یک الگوی ویژ] و مواردی از این دست به کار گرفته می شود. عبارت "Regular expression" کمی ثقیل است، پس معمولا بیشتر مخفف آن  - "regex" یا "regexp" - را به کار می برند.
 
@@ -42,11 +44,11 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
-
+<div dir="rtl">
 عبارت منظم به کار رفته در اینجا رشته `john_doe` و `jo-hn_doe` و `john12_as` می پذیرد ولی `Jo` را به دلیل کوتاه بودن بیش از حد و همچنین به کار بردن حروف بزرگ نمی پذیرد.
-
+</div>
 ## Table of Contents
 
 - [Basic Matchers](#1-basic-matchers)
