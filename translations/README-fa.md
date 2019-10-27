@@ -29,7 +29,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
-* [قارسی](../translations/README-fa.md)
+* [فارسی](../translations/README-fa.md)
 
 <div dir="rtl">
 
@@ -56,7 +56,7 @@
 
 ## فهرست
 
-- [Basic Matchers](#1-basic-matchers)
+- [پایه ای ترین همخوانی](#1-basic-matchers)
 - [Meta character](#2-meta-characters)
   - [Full stop](#21-full-stop)
   - [Character set](#22-character-set)
@@ -95,8 +95,8 @@
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-
 <div dir="rtl">
+
 [عبارت منظم را در عمل ببینید](https://regex101.com/r/dmRygT/1)
 
 عبارت منظم `123` با رشته `123` مطابقت دارد. عبارت منظم با مقایسه حرف به حرف و کارکتر به کارکترش با متن مورد نظر تطابق را می یابد. همچنین عبارت منظم حساس به اندازه (بزرگی یا کوچکی حروف) هستند. بنابر این واژه ی `The` با  `the` همخوان نیست.
@@ -106,7 +106,10 @@
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+<div dir="rtl">
+
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/1paXsy/1)
+</div>
 
 ## 2. Meta Characters
 

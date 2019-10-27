@@ -29,7 +29,7 @@
 * [Polish](translations/README-pl.md)
 * [Русский](translations/README-ru.md)
 * [Tiếng Việt](translations/README-vn.md)
-* [قارسی](translations/README-fa.md)
+* [فارسی](translations/README-fa.md)
 
 ## What is Regular Expression?
 
