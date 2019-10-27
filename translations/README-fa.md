@@ -14,47 +14,38 @@
     </p>
 </p>
 
-## Translations:
+## برگردان ها:
 
-* [English](README.md)
-* [Español](translations/README-es.md)
-* [Français](translations/README-fr.md)
-* [Português do Brasil](translations/README-pt_BR.md)
-* [中文版](translations/README-cn.md)
-* [日本語](translations/README-ja.md)
-* [한국어](translations/README-ko.md)
-* [Turkish](translations/README-tr.md)
-* [Greek](translations/README-gr.md)
-* [Magyar](translations/README-hu.md)
-* [Polish](translations/README-pl.md)
-* [Русский](translations/README-ru.md)
-* [Tiếng Việt](translations/README-vn.md)
-* [قارسی](translations/README-fa.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [قارسی](../translations/README-fa.md)
 
-## What is Regular Expression?
+<div rtl="ltr">
+## عبارت منظم چیست؟
+</div>
+> عبارت منظم یک گروه از کارکترها یا نمادهاست که برای پیدا کردن یک الگوی مشخص در یک متن به کار گرفته می شود.
 
-> Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
+یک عبارت منظم یک الگو است که با رشته ای حاص مطابقت دارد. عبارت منظم در اعتبار سنجی داده های ورودی فرم ها، پیدا کردن یک زیر متن در یک متن بزرگتر بر اساس یک الگوی ویژ] و مواردی از این دست به کار گرفته می شود. عبارت "Regular expression" کمی ثقیل است، پس معمولا بیشتر مخفف آن  - "regex" یا "regexp" - را به کار می برند.
 
-A regular expression is a pattern that is matched against a subject string from
-left to right. Regular expression is used for replacing a text within a string, 
-validating form, extract a substring from a string based upon a pattern match, 
-and so much more. The word "Regular expression" is a mouthful, so you will usually
-find the term abbreviated as "regex" or "regexp". 
-
-Imagine you are writing an application and you want to set the rules for when a
-user chooses their username. We want to allow the username to contain letters,
-numbers, underscores and hyphens. We also want to limit the number of characters
-in username so it does not look ugly. We use the following regular expression to
-validate a username:
+فرض کنید یه برنامه نوشته اید و می خواهید قوانینی برای گزینش نام کاربری برا کاربران بگزارید.  می خواهیم اجازه دهی که نام کاربری شامل حروف، اعداد، خط زیر و خط فاصله باشد. همچنین می خواهیم تعداد مشخصه ها یا همان کارکترها در نام کاربری محدود کنیم . ما از چنین عبارت منظمی برای اعتبار سنجی نام کاربری استفاده می کنیم:
 
 <br/><br/>
 <p align="center">
   <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
 
-Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and
-`john12_as`. It does not match `Jo` because that string contains uppercase
-letter and also it is too short.
+عبارت منظم به کار رفته در اینجا رشته `john_doe` و `jo-hn_doe` و `john12_as` می پذیرد ولی `Jo` را به دلیل کوتاه بودن بیش از حد و همچنین به کار بردن حروف بزرگ نمی پذیرد.
 
 ## Table of Contents
 
