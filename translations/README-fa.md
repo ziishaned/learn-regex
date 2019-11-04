@@ -14,51 +14,49 @@
     </p>
 </p>
 
-## Translations:
+## برگردان ها:
 
-* [English](README.md)
-* [Español](translations/README-es.md)
-* [Français](translations/README-fr.md)
-* [Português do Brasil](translations/README-pt_BR.md)
-* [中文版](translations/README-cn.md)
-* [日本語](translations/README-ja.md)
-* [한국어](translations/README-ko.md)
-* [Turkish](translations/README-tr.md)
-* [Greek](translations/README-gr.md)
-* [Magyar](translations/README-hu.md)
-* [Polish](translations/README-pl.md)
-* [Русский](translations/README-ru.md)
-* [Tiếng Việt](translations/README-vn.md)
-* [فارسی](translations/README-fa.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
-## What is Regular Expression?
+<div dir="rtl">
 
-> Regular expression is a group of characters or symbols which is used to find a specific pattern from a text.
+## عبارت منظم چیست؟
+</div>
+<div dir="rtl">
 
-A regular expression is a pattern that is matched against a subject string from
-left to right. Regular expression is used for replacing a text within a string, 
-validating form, extract a substring from a string based upon a pattern match, 
-and so much more. The word "Regular expression" is a mouthful, so you will usually
-find the term abbreviated as "regex" or "regexp". 
+> عبارت منظم یک گروه از کارکترها یا نمادهاست که برای پیدا کردن یک الگوی مشخص در یک متن به کار گرفته می شود.
+</div>
 
-Imagine you are writing an application and you want to set the rules for when a
-user chooses their username. We want to allow the username to contain letters,
-numbers, underscores and hyphens. We also want to limit the number of characters
-in username so it does not look ugly. We use the following regular expression to
-validate a username:
+<div dir="rtl">
+یک عبارت منظم یک الگو است که با رشته ای حاص مطابقت دارد. عبارت منظم در اعتبار سنجی داده های ورودی فرم ها، پیدا کردن یک زیر متن در یک متن بزرگتر بر اساس یک الگوی ویژ] و مواردی از این دست به کار گرفته می شود. عبارت "Regular expression" کمی ثقیل است، پس معمولا بیشتر مخفف آن  - "regex" یا "regexp" - را به کار می برند.
 
+فرض کنید یه برنامه نوشته اید و می خواهید قوانینی برای گزینش نام کاربری برا کاربران بگزارید.  می خواهیم اجازه دهی که نام کاربری شامل حروف، اعداد، خط زیر و خط فاصله باشد. همچنین می خواهیم تعداد مشخصه ها یا همان کارکترها در نام کاربری محدود کنیم . ما از چنین عبارت منظمی برای اعتبار سنجی نام کاربری استفاده می کنیم:
+</div>
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
+<div dir="rtl">
+عبارت منظم به کار رفته در اینجا رشته `john_doe` و `jo-hn_doe` و `john12_as` می پذیرد ولی `Jo` را به دلیل کوتاه بودن بیش از حد و همچنین به کار بردن حروف بزرگ نمی پذیرد.
+</div>
+<div dir="rtl">
 
-Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and
-`john12_as`. It does not match `Jo` because that string contains uppercase
-letter and also it is too short.
+## فهرست
 
-## Table of Contents
-
-- [Basic Matchers](#1-basic-matchers)
+- [پایه ای ترین همخوانی](#1-basic-matchers)
 - [Meta character](#2-meta-characters)
   - [Full stop](#21-full-stop)
   - [Character set](#22-character-set)
@@ -85,30 +83,33 @@ letter and also it is too short.
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
 - [Greedy vs lazy matching](#6-greedy-vs-lazy-matching)
+</div>
+<div dir="rtl">
 
-## 1. Basic Matchers
+## 1. پایه ای ترین همخوانی
 
-A regular expression is just a pattern of characters that we use to perform
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-
+یک عبارت منظم در واقع یک الگو برای جست و جو در یک متن است. برای مثال عبارت منظم  `the` به معنی : حرف
+`t`, پس از آن حرف `h`, پس از آن حرف  `e` است.
+</div>
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+<div dir="rtl">
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
+[عبارت منظم را در عمل ببینید](https://regex101.com/r/dmRygT/1)
+
+عبارت منظم `123` با رشته `123` مطابقت دارد. عبارت منظم با مقایسه حرف به حرف و کارکتر به کارکترش با متن مورد نظر تطابق را می یابد. همچنین عبارت منظم حساس به اندازه (بزرگی یا کوچکی حروف) هستند. بنابر این واژه ی `The` با  `the` همخوان نیست.
+</div>
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+<div dir="rtl">
+
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/1paXsy/1)
+</div>
 
 ## 2. Meta Characters
 
