@@ -416,7 +416,7 @@ shorthand character sets are as follows:
 |\W|Matches non-alphanumeric characters: `[^\w]`|
 |\d|Matches digit: `[0-9]`|
 |\D|Matches non-digit: `[^\d]`|
-|\s|Matches whitespace character: `[\t\n\f\r\p{Z}]`|
+|\s|Matches whitespace character: `[ \t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace character: `[^\s]`|
 
 ## 4. Lookaround
