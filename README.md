@@ -31,7 +31,7 @@
 * [Tiếng Việt](translations/README-vn.md)
 * [فارسی](translations/README-fa.md)
 
-## What is Regular Expression?
+## What are Regular Expressions?
 
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
