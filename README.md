@@ -60,7 +60,7 @@ letter and also it is too short.
 
 - [Basic Matchers](#1-basic-matchers)
 - [Meta Characters](#2-meta-characters)
-  - [Full Stops](#21-full-stops)
+  - [The Full Stop](#21-the-full-stops)
   - [Character Sets](#22-character-sets)
     - [Negated Character Sets](#221-negated-character-sets)
   - [Repetitions](#23-repetitions)
@@ -133,7 +133,7 @@ square brackets. The meta characters are as follows:
 |^|Matches the beginning of the input.|
 |$|Matches the end of the input.|
 
-## 2.1 Full Stops
+## 2.1 The Full Stop
 
 The full stop `.` is the simplest example of a meta character. The meta character `.`
 matches any single character. It will not match return or newline characters.
