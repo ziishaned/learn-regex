@@ -77,10 +77,10 @@ letter and also it is too short.
     - [The Dollar Sign](#282-the-dollar-sign)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
 - [Lookarounds](#4-lookarounds)
-  - [Positive Lookaheads](#41-positive-lookaheads)
-  - [Negative Lookaheads](#42-negative-lookaheads)
-  - [Positive Lookbehinds](#43-positive-lookbehinds)
-  - [Negative Lookbehinds](#44-negative-lookbehinds)
+  - [Positive Lookahead](#41-positive-lookahead)
+  - [Negative Lookahead](#42-negative-lookahead)
+  - [Positive Lookbehind](#43-positive-lookbehind)
+  - [Negative Lookbehind](#44-negative-lookbehind)
 - [Flags](#5-flags)
   - [Case Insensitive](#51-case-insensitive)
   - [Global Search](#52-global-search)
@@ -435,7 +435,7 @@ expressions:
 |?<=|Positive Lookbehind|
 |?<!|Negative Lookbehind|
 
-### 4.1 Positive Lookaheads
+### 4.1 Positive Lookahead
 
 The positive lookahead asserts that the first part of the expression must be
 followed by the lookahead expression. The returned match only contains the text
@@ -454,7 +454,7 @@ or `the` only if it's followed by the word `fat`.
 
 [Test the regular expression](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negative Lookaheads
+### 4.2 Negative Lookahead
 
 Negative lookaheads are used when we need to get all matches from an input string
 that are not followed by a certain pattern. A negative lookahead is written the same way as a
@@ -469,7 +469,7 @@ from the input string that are not followed by a space character and the word `f
 
 [Test the regular expression](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positive Lookbehinds
+### 4.3 Positive Lookbehind
 
 Positive lookbehinds are used to get all the matches that are preceded by a
 specific pattern. Positive lookbehinds are written `(?<=...)`. For example, the
@@ -482,7 +482,7 @@ from the input string that come after the word `The` or `the`.
 
 [Test the regular expression](https://regex101.com/r/avH165/1)
 
-### 4.4 Negative Lookbehinds
+### 4.4 Negative Lookbehind
 
 Negative lookbehinds are used to get all the matches that are not preceded by a
 specific pattern. Negative lookbehinds are written `(?<!...)`. For example, the
