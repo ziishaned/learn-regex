@@ -29,7 +29,6 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
-* [فارسی](../translations/README-fa.md)
 
 ## Что такое Регулярное выражение?
 
