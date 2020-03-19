@@ -95,23 +95,23 @@ Sonderzeichen sind Bausteine von regulären Ausdrücken. Sonderzeichen stehen ni
 
 |Sonderzeichen|Beschreibung|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Der Punkt entspricht jedem einzelnen Zeichen, außer einem Zeilenumbruch.|
+|[ ]|Zeichen-Klasse, entspricht jedem Zeichen innerhalb der eckigen Klammern.|
+|[^ ]|Negierte Zeichen-Klasse, entspricht jedem Zeichen welches nicht innerhalb der eckigen Klammern definiert ist.|
+|*|Entspricht 0 oder mehr Wiederholungen der voran gestellten Zeichen.|
+|+|Entspricht 1 oder mehr Wiederholungen der voran gestellten Zeichen.|
+|?|Macht das vorhergehende Zeichen optional.|
+|{n,m}|Klammern, entspricht mindestens "n", aber nicht mehr als "m" Wiederholungen des Zeichens.|
+|(xyz)|Zeichengruppe, entspricht den Zeichen xyz in der exakten Reihenfolge.|
+|&#124;|Alternation, entspricht entweder den Zeichen vor oder nach dem Sonderzeichen \|.|
+|&#92;|Entfernt das nachfolgende Zeichen. Dies ermöglicht es Zeichen zu blockieren <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Überprüft den Anfang einer Eingabe.|
+|$|Überprüft das Ende einer Eingabe.|
 
-## 2.1 Full stop
+## 2.1 Punkt
 
-Full stop `.` is the simplest example of meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
+Der Punkt `.` ist die einfachste Möglichkeit von Sonderzeichen. Das Sonderzeichen `.`
+ entspricht jedem einzelnen Zeichen. It will not match return or newline characters.
 For example, the regular expression `.ar` means: any character, followed by the
 letter `a`, followed by the letter `r`.
 
