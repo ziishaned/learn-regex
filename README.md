@@ -348,7 +348,6 @@ character.
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
-
 [Test the regular expression](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Anchors
@@ -420,13 +419,17 @@ regular expressions:
 
 Lookbehinds and lookaheads (also called lookarounds) are specific types of
 ***non-capturing groups*** (used to match a pattern but without including it in the matching
-list). Lookarounds are used when we a pattern must be
+list). Lookarounds are used when want to check if a pattern is
 preceded or followed by another pattern. For example, imagine we want to get all
 numbers that are preceded by the `$` character from the string
 `$4.44 and $10.88`. We will use the following regular expression `(?<=\$)[0-9\.]*`
 which means: get all the numbers which contain the `.` character and are preceded
 by the `$` character. These are the lookarounds that are used in regular
 expressions:
+
+<pre>
+"(?<=\$)[0-9.]*" => The prices of monitors vary from $<a href="#learn-regex"><strong>10.88</strong></a> to $<a href="#learn-regex"><strong>4.44</strong></a> 
+</pre>
 
 |Symbol|Description|
 |:----:|----|
