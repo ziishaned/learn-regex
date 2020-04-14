@@ -50,10 +50,10 @@
   <img src="../img/regexp-cn.png" alt="Regular expression">
 </p>
 
-以上的正则表达式可以接受 `john_doe`、`jo-hn_doe`、`john12_as`。
-但不匹配`Jo`，因为它包含了大写的字母而且太短了。
+以上的正規表達式可以接受 `john_doe`、`jo-hn_doe`、`john12_as`。
+但不匹配`Jo`，因為它包含了大寫的字母而且太短了。
 
-目录
+目錄
 =================
 
  * [1. 基本匹配](#1-基本匹配)
