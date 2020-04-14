@@ -21,8 +21,8 @@
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
-* [簡體中文版](../translations/README-cn.md)
-* [繁體中文版](../translations/README-cn.md)
+* [简体中文](../translations/README-cn.md)
+* [繁體中文](../translations/README-tw.md)
 * [日本語](../translations/README-ja.md)
 * [한국어](../translations/README-ko.md)
 * [Turkish](../translations/README-tr.md)
@@ -35,7 +35,7 @@
 
 ## 何謂正規表達式？
 
-> 正则表达式是一组由字母和符号组成的特殊文本，它可以用来从文本中找出满足你想要的格式的句子。
+> 正規表達式是一组由字母和符號组成的特殊文本，它可以用来从文本中找出满足你想要的格式的句子。
 
 一个正则表达式是一种从左到右匹配主体字符串的模式。
 “Regular expression”这个词比较拗口，我们常使用缩写的术语“regex”或“regexp”。
