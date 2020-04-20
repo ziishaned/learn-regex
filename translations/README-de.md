@@ -127,9 +127,7 @@ Zeichensätze werden auch als Zeichenklasse bezeichnet. Zeichensätze werden in 
 </pre>
 [Teste den regulären Ausdruck](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by letter `r`,
-followed by a period `.` character.
+Ein Punkt in einem Zeichensatz bedeutet jedoch einen wörtlichen Punkt. Der reguläre Ausdruck `ar[.]` bedeutet: ein kleingeschriebenes Zeichen `a`, gefolgt vom kleingeschriebenen Buchstaben `r`, gefolgt von dem wörtlichen Zeichen Punkt `.`.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -137,12 +135,9 @@ followed by a period `.` character.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated character set
+### 2.2.1 Invertierter Zeichensatz
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, der reguläre Ausdruck `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+Im Allgemeinen stellt das Caret-Symbol `^` den Anfang einer Zeichenkette dar. Wenn es aber nach der öffnenden eckigen Klammer gesetzt wird, dann wird der Zeichensatz negiert. Als Beispiel, der reguläre Ausdruck `[^c]ar` bedeutet: jeder Buchstabe außer `c`, gefolgt vom Buchstaben `a`, gefolgt vom Buchstaben `r`. 
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
