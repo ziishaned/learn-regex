@@ -46,7 +46,7 @@ Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `
 - [Basis Vergleiche](#1-basic-matchers)
 - [Sonderzeichen](#2-meta-characters)
   - [Punkt](#21-full-stop)
-  - [Character set](#22-character-set)
+  - [Zeichensätze](#22-zeichensaetze)
     - [Invertierter Zeichensatz](#221-negated-character-set)
   - [Wiederholungen](#23-repetitions)
     - [Stern *](#231-the-star)
@@ -111,29 +111,21 @@ Sonderzeichen sind Bausteine von regulären Ausdrücken. Sonderzeichen stehen ni
 ## 2.1 Punkt
 
 Der Punkt `.` ist die einfachste Möglichkeit von Sonderzeichen. Das Sonderzeichen `.`
- entspricht jedem einzelnen Zeichen. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+ entspricht jedem einzelnen Zeichen. Es wird kein Zeilenumbruch oder Enter-Zeichen gefunden. Als Beispiel, der reguläre Ausdruck `.ar` bedeutet: ein beliebiges Zeichen, gefolgt von dem Buchstaben `a`, gefolgt vom Buchstaben `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
+[Teste den regulären Ausdruck](https://regex101.com/r/xc9GkU/1)
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+## 2.2 Zeichensätze
 
-## 2.2 Character set
-
-Character sets are also called character class. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Zeichensätze werden auch als Zeichenklasse bezeichnet. Zeichensätze werden in eckige Klammern angegeben. Um den Bereich der Zeichen anzugeben ist ein Bindestrich zu verwenden. Die Reihenfolge des Bereiches in den eckigen Klammern spielt keine Rolle. Zum Beispiel bedeutet der reguläre Ausdruck `[Tt]he`: ein groß geschriebenes `T` oder ein kleingeschriebenes `t`, gefolgt vom Buchstaben `h` und weiter gefolgt vom Buchstaben `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
-
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/2ITLQ4/1)
 
 A period inside a character set, however, means a literal period. The regular
 expression `ar[.]` means: a lowercase character `a`, followed by letter `r`,
@@ -143,20 +135,20 @@ followed by a period `.` character.
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 Negated character set
 
 In general, the caret symbol represents the start of the string, but when it is
 typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
+example, der reguläre Ausdruck `[^c]ar` means: any character except `c`,
 followed by the character `a`, followed by the letter `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 Repetitions
 
@@ -169,14 +161,14 @@ situations.
 The symbol `*` matches zero or more repetitions of the preceding matcher. The
 regular expression `a*` means: zero or more repetitions of preceding lowercase
 character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
+the repetitions of the whole character set. For example, der reguläre Ausdruck
 `[a-z]*` means: any number of lowercase letters in a row.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/7m8me5/1)
 
 The `*` symbol can be used with the meta character `.` to match any string of
 characters `.*`. The `*` symbol can be used with the whitespace character `\s`
@@ -189,12 +181,12 @@ followed by zero or more spaces.
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 The Plus
 
 The symbol `+` matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: lowercase letter `c`, followed by
+example, der reguläre Ausdruck `c.+t` means: lowercase letter `c`, followed by
 at least one character, followed by the lowercase character `t`. It needs to be
 clarified that `t` is the last `t` in the sentence.
 
@@ -202,13 +194,13 @@ clarified that `t` is the last `t` in the sentence.
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/Dzf9Aa/1)
 
 ### 2.3.3 The Question Mark
 
 In regular expression the meta character `?` makes the preceding character
 optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional the uppercase
+For example, der reguläre Ausdruck `[T]?he` means: Optional the uppercase
 letter `T`, followed by the lowercase character `h`, followed by the lowercase
 character `e`.
 
@@ -216,28 +208,28 @@ character `e`.
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 Braces
 
 In regular expression braces that are also called quantifiers are used to
 specify the number of times that a character or a group of characters can be
-repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
+repeated. For example, der reguläre Ausdruck `[0-9]{2,3}` means: Match at least
 2 digits but not more than 3 ( characters in the range of 0 to 9).
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression
+We can leave out the second number. For example, der reguläre Ausdruck
 `[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma the
 regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
@@ -245,13 +237,13 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/Sivu30/1)
 
 ## 2.5 Capturing Group
 
@@ -259,16 +251,16 @@ A capturing group is a group of sub-patterns that is written inside Parentheses
 `(...)`. Like as we discussed before that in regular expression if we put a quantifier 
 after a character then it will repeat the preceding character. But if we put quantifier
 after a capturing group then it repeats the whole capturing group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
+der reguläre Ausdruck `(ab)*` matches zero or more repetitions of the character
 "ab". We can also use the alternation `|` meta character inside capturing group.
-For example, the regular expression `(c|g|p)ar` means: lowercase character `c`,
+For example, der reguläre Ausdruck `(c|g|p)ar` means: lowercase character `c`,
 `g` or `p`, followed by character `a`, followed by character `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/tUxrBG/1)
 
 Note that capturing groups do not only match but also capture the characters for use in 
 the parent language. The parent language could be python or javascript or virtually any
@@ -278,14 +270,14 @@ language that implements regular expressions in a function definition.
 
 A non-capturing group is a capturing group that only matches the characters, but 
 does not capture the group. A non-capturing group is denoted by a `?` followed by a `:` 
-within parenthesis `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
+within parenthesis `(...)`. For example, der reguläre Ausdruck `(?:c|g|p)ar` is similar to 
 `(c|g|p)ar` in that it matches the same characters but will not create a capture group.
 
 <pre>
 "(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Rm7Me8/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/Rm7Me8/1)
 
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
@@ -308,7 +300,7 @@ in parentheses can be met and it will match.
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/fBXyX0/1)
 
 ## 2.7 Escaping special character
 
@@ -317,8 +309,8 @@ allows us to specify a symbol as a matching character including reserved
 characters `{ } [ ] / \ + * . $ ^ | ?`. To use a special character as a matching
 character prepend `\` before it.
 
-For example, the regular expression `.` is used to match any character except
-newline. Now to match `.` in an input string the regular expression
+For example, der reguläre Ausdruck `.` is used to match any character except
+newline. Now to match `.` in an input string der reguläre Ausdruck
 `(f|c|m)at\.?` means: lowercase letter `f`, `c` or `m`, followed by lowercase
 character `a`, followed by lowercase letter `t`, followed by optional `.`
 character.
@@ -327,7 +319,7 @@ character.
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Anchors
 
@@ -352,13 +344,13 @@ lowercase character `h`, followed by lowercase character `e`.
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/jXrKne/1)
 
 ### 2.8.2 Dollar
 
@@ -371,13 +363,13 @@ character and the matcher must be end of the string.
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/t0AkOd/1)
 
 ##  3. Shorthand Character Sets
 
@@ -421,7 +413,7 @@ followed by the lookahead expression. The returned match only contains the text
 that is matched by the first part of the expression. To define a positive
 lookahead, parentheses are used. Within those parentheses, a question mark with
 equal sign is used like this: `(?=...)`. Lookahead expression is written after
-the equal sign inside parentheses. For example, the regular expression
+the equal sign inside parentheses. For example, der reguläre Ausdruck
 `(T|t)he(?=\sfat)` means: optionally match lowercase letter `t` or uppercase
 letter `T`, followed by letter `h`, followed by letter `e`. In parentheses we
 define positive lookahead which tells regular expression engine to match `The`
@@ -431,7 +423,7 @@ or `the` which are followed by the word `fat`.
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Negative Lookahead
 
@@ -447,7 +439,7 @@ character.
 "(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Positive Lookbehind
 
@@ -460,7 +452,7 @@ from input string that are after the word `The` or `the`.
 "(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/avH165/1)
 
 ### 4.4 Negative Lookbehind
 
@@ -473,7 +465,7 @@ string that are not after the word `The` or `the`.
 "(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Flags
 
@@ -492,7 +484,7 @@ integral part of the RegExp.
 The `i` modifier is used to perform case-insensitive matching. For example, the
 regular expression `/The/gi` means: uppercase letter `T`, followed by lowercase
 character `h`, followed by character `e`. And at the end of regular expression
-the `i` flag tells the regular expression engine to ignore the case. As you can
+the `i` flag tells der reguläre Ausdruck engine to ignore the case. As you can
 see we also provided `g` flag because we want to search for the pattern in the
 whole input string.
 
@@ -500,40 +492,40 @@ whole input string.
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/ahfiuh/1)
 
 ### 5.2 Global search
 
 The `g` modifier is used to perform a global match (find all matches rather than
-stopping after the first match). For example, the regular expression`/.(at)/g`
+stopping after the first match). For example, der reguläre Ausdruck`/.(at)/g`
 means: any character except new line, followed by lowercase character `a`,
 followed by lowercase character `t`. Because we provided `g` flag at the end of
-the regular expression now it will find all matches in the input string, not just the first one (which is the default behavior).
+der reguläre Ausdruck now it will find all matches in the input string, not just the first one (which is the default behavior).
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jnk6gM/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 Multiline
 
 The `m` modifier is used to perform a multi-line match. As we discussed earlier
 anchors `(^, $)` are used to check if pattern is the beginning of the input or
 end of the input string. But if we want that anchors works on each line we use
-`m` flag. For example, the regular expression `/at(.)?$/gm` means: lowercase
+`m` flag. For example, der reguläre Ausdruck `/at(.)?$/gm` means: lowercase
 character `a`, followed by lowercase character `t`, optionally anything except
 new line. And because of `m` flag now regular expression engine matches pattern
 at the end of each line in a string.
@@ -544,7 +536,7 @@ at the end of each line in a string.
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -552,7 +544,7 @@ at the end of each line in a string.
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/E88WE2/1)
 
 ## 6. Greedy vs lazy matching
 By default regex will do greedy matching , means it will match as long as
@@ -562,13 +554,13 @@ possible. we can use `?` to match in lazy way means as short as possible
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
 
 
-[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+[Teste den regulären Ausdruck](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
 "/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
 
 
-[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+[Teste den regulären Ausdruck](https://regex101.com/r/AyAdgJ/2)
 
 
 ## Contribution
