@@ -224,6 +224,12 @@ at least one character, followed by a lowercase `t`. It needs to be
 clarified that`t` is the last `t` in the sentence.
 
 <pre>
+"\s+cat\s+" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the concatenation.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+
+<pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
