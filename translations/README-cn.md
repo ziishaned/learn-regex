@@ -504,6 +504,17 @@
 
 [在线练习](https://regex101.com/r/AyAdgJ/2)
 
+### 7. 占有式匹配(Possesive)
+它和贪婪匹配很像，区别在于：一旦匹配上就会占有，不会再回溯了。
+<pre>
+"w++[a-z]" => abbbbbbbbbb$2343
+w++匹配到了"abbbbbbbbbb",因此它不会再"吐"出一个"b"，那么"[a-z]"就无法匹配到，因此最早匹配失败。
+</pre>
+
+若是贪婪匹配的话，就去掉"+",如下所示
+<pre>
+"w+[a-z]" => <a href="#learn-regex"><strong>abbbbbbbbbb</strong></a>$2343
+</pre>
 ## 贡献
 
 * 报告问题
