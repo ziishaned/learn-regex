@@ -71,9 +71,9 @@ Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `
   - [Mehrzeilig](#53-mehrzeilig)
 - [Gierige oder faule Übereinstimmung](#6-gierige-oder-faule-übereinstimmung)
 
-## 1. Basis Vergleiche
+## 1. Einfache Muster
 
-Ein regulärer Ausdruck ist ein einfaches Muster von Zeichen, welches für eine Suche in Text genutzt wird. Zum Beispiel, der reguläre Ausdruck `the` meint: der Buchstabe `t`, gefolgt durch den Buchstaben `h`, gefolgt durch den Buchstaben `e`.
+Ein regulärer Ausdruck ist einfach nur ein Muster von Zeichen, welches für eine Suche in Text genutzt wird. Der reguläre Ausdruck `the` heißt zum Beispiel: der Buchstabe `t`, gefolgt von dem Buchstaben `h`, gefolgt von dem Buchstaben `e`.
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -81,7 +81,7 @@ Ein regulärer Ausdruck ist ein einfaches Muster von Zeichen, welches für eine 
 
 [Teste den regulären Ausdruck](https://regex101.com/r/dmRygT/1)
 
-Der reguläre Ausdruck `123` entspricht der Zeichenkette `123`. Dieser reguläre Ausdruck kann mit einer Zeichenkette verglichen werden, in dem jedes Zeichen in dem regulären Ausdruck nacheinander verglichen wird. Reguläre Ausdrücke sind normalerweise case sensitiv, Beachtung von Groß-/Kleinschreibung, so dass der Ausdruck `The` nicht mit der Zeichenkette  `the` überein stimmen würde. 
+Der reguläre Ausdruck `123` entspricht der Zeichenkette `123`. Dieser reguläre Ausdruck wird auf Übereinstimmung mit einer Zeichenkette überprüft, indem jedes Zeichen in dem regulären Ausdruck nacheinander mit den Zeichen in der Zeichenkette verglichen wird. Reguläre Ausdrücke sind normalerweise case sensitiv, Beachtung von Groß-/Kleinschreibung, sodass der Ausdruck `The` nicht mit der Zeichenkette  `the` überein stimmen würde. 
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -118,16 +118,16 @@ Der Punkt `.` ist die einfachste Möglichkeit von Sonderzeichen. Das Sonderzeich
 </pre>
 [Teste den regulären Ausdruck](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Zeichensätze
+## 2.2 Zeichenklasse
 
-Zeichensätze werden auch als Zeichenklasse bezeichnet. Zeichensätze werden in eckige Klammern angegeben. Um den Bereich der Zeichen anzugeben ist ein Bindestrich zu verwenden. Die Reihenfolge des Bereiches in den eckigen Klammern spielt keine Rolle. Zum Beispiel bedeutet der reguläre Ausdruck `[Tt]he`: ein groß geschriebenes `T` oder ein kleingeschriebenes `t`, gefolgt vom Buchstaben `h` und weiter gefolgt vom Buchstaben `e`.
+Zeichenklassen werden auch als Zeichenmengen oder -sätze bezeichnet. Sie werden in eckige Klammern definiert. Um eine Zeichenfolge wie `A-Z` oder `0-9` zu definieren, kann ein Bindestrich `-` verwendet werden. Die Reihenfolge sonstiger Zeichen innerhalb der eckigen Klammern spielt keine Rolle. Zum Beispiel bedeutet der reguläre Ausdruck `[Tt]he`: ein groß geschriebenes `T` oder ein kleingeschriebenes `t`, gefolgt vom Buchstaben `h` und weiter gefolgt vom Buchstaben `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 [Teste den regulären Ausdruck](https://regex101.com/r/2ITLQ4/1)
 
-Ein Punkt in einem Zeichensatz bedeutet jedoch einen wörtlichen Punkt. Der reguläre Ausdruck `ar[.]` bedeutet: ein kleingeschriebenes Zeichen `a`, gefolgt vom kleingeschriebenen Buchstaben `r`, gefolgt von dem wörtlichen Zeichen Punkt `.`.
+Ein Punkt in einer Zeichenklasse bedeutet, anders als sonst, einen wörtlichen Punkt. Der reguläre Ausdruck `ar[.]` bedeutet: ein kleingeschriebenes Zeichen `a`, gefolgt vom kleingeschriebenen Buchstaben `r`, gefolgt von einem Punkt-Zeichen `.`.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -135,9 +135,9 @@ Ein Punkt in einem Zeichensatz bedeutet jedoch einen wörtlichen Punkt. Der regu
 
 [Teste den regulären Ausdruck](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Invertierter Zeichensatz
+### 2.2.1 Negierte Zeichenklasse
 
-Im Allgemeinen stellt das Caret-Symbol `^` den Anfang einer Zeichenkette dar. Wenn es aber nach der öffnenden eckigen Klammer gesetzt wird, dann wird der Zeichensatz negiert. Als Beispiel, der reguläre Ausdruck `[^c]ar` bedeutet: jeder Buchstabe außer `c`, gefolgt vom Buchstaben `a`, gefolgt vom Buchstaben `r`. 
+Im Allgemeinen stellt das Zirkumflex `^` den Anfang einer Zeichenkette dar. Wenn es aber nach der öffnenden eckigen Klammer gesetzt wird, dann wird die Zeichenklasse negiert. Als Beispiel, der reguläre Ausdruck `[^c]ar` bedeutet: ein beliebiges Zeichen außer `c`, gefolgt vom Buchstaben `a`, gefolgt vom Buchstaben `r`. 
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -145,19 +145,17 @@ Im Allgemeinen stellt das Caret-Symbol `^` den Anfang einer Zeichenkette dar. We
 
 [Teste den regulären Ausdruck](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Wiederholungen
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+Die Metazeichen `+`, `*` und `?` bieten einen einfachen Weg, anzugeben, wie oft sich ein bestimmter Teilausdruck wiederholen soll. Sie gehören damit zu den sogenannten "Quantoren".
+Sie können sich je nach Situation unterschiedlich verhalten.
 
-### 2.3.1 The Star
+### 2.3.1 Der Stern
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, der reguläre Ausdruck
-`[a-z]*` means: any number of lowercase letters in a row.
+Das Symbol `*` stimmt mit beliebig vielen Wiederholungen des vorhergehenden Teilausdrucks überein. Der Ausdruck `a*` heißt: 
+null, eins oder mehrere `a`s in Folge. Da sich der Stern auf Teilausdrücke bezieht, kann er auch bspw. hinter einer Zeichenklasse stehen
+und stimmt dann mit beliebig vielen Zeichen aus der Klasse in Folge überein. Zum Beispiel bedeutet der Ausdruck `[a-z]*`: eine 
+beliebige Anzahl von Kleinbuchstaben in Folge.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -165,12 +163,10 @@ the repetitions of the whole character set. For example, der reguläre Ausdruck
 
 [Teste den regulären Ausdruck](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by lowercase character `c`,
-followed by lowercase character `a`, followed by lowercase character `t`,
-followed by zero or more spaces.
+Das `*`-Symbol kann zusammen mit dem Metazeichen `.` verwendet werden, um mit einer vollkommen beliebigen Zeichenkette übereinzustimmen `.*`.
+Es kann auch mit der vordefinierten Zeichenklasse `\s` verwendet werden, um mit beliebig viel Leerraum (Leerzeichen, Tabulatoren, Zeilenumbrüchen)
+übereinzustimmen. Der Ausdruck `\s*cat\*` heißt zum Beispiel: null oder mehrere Leerzeichen, gefolgt von dem Buchstaben `c`, gefolgt vom Buchstaben `a`, 
+gefolgt vom Buchstaben `t` und schließlich gefolgt von null oder mehreren Leerzeichen.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
@@ -178,12 +174,11 @@ followed by zero or more spaces.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Das Plus
 
-The symbol `+` matches one or more repetitions of the preceding character. For
-example, der reguläre Ausdruck `c.+t` means: lowercase letter `c`, followed by
-at least one character, followed by the lowercase character `t`. It needs to be
-clarified that `t` is the last `t` in the sentence.
+Das `+`-Symbol stimmt mit einer oder mehr Wiederholungen des vorhergehenden Teilausdrucks überein. Der reguläre Ausdruck
+`c.+t` bedeutet: Buchstabe `c`, gefolgt von mindestens einem beliebigen Zeichen, gefolgt vom Buchstaben `t`. Das `t` ist dabei
+das letzte `t` in der hier zu sehenden Übereinstimmung, wobei es hier auch weitere Übereinstimmungen gäbe (siehe "Teste den regulären Ausdruck").
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -191,13 +186,11 @@ clarified that `t` is the last `t` in the sentence.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Das Fragezeichen
 
-In regular expression the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, der reguläre Ausdruck `[T]?he` means: Optional the uppercase
-letter `T`, followed by the lowercase character `h`, followed by the lowercase
-character `e`.
+In regulären Ausdrücken sorgt das Metazeichen `?` dafür, dass der vorhergehende Teilausdruck optional wird.
+Somit stimmt es mit null oder einer Übereinstimmung des Teilausdrucks überein.
+Zum Beispiel heißt der reguläre Ausdruck `[T]?he`: ein oder kein `T`, gefolgt von dem Buchstaben `h`, gefolgt von dem Buchstaben `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -211,12 +204,11 @@ character `e`.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Geschweifte Klammern
 
-In regular expression braces that are also called quantifiers are used to
-specify the number of times that a character or a group of characters can be
-repeated. For example, der reguläre Ausdruck `[0-9]{2,3}` means: Match at least
-2 digits but not more than 3 ( characters in the range of 0 to 9).
+Geschweifte Klammern `{}` gehören wie die zuvor behandelten Metazeichen zu den Quantoren. Sie werden verwendet, 
+um genau anzugeben wie oft ein Teilausdruck minimal und maximal hintereinander übereinstimmen muss.
+Zum Beispiel bedeutet der reguläre Ausdruck `[0-9]{2,3}`: Mindestens zwei, aber maximal drei Ziffern (Zeichenfolge 0-9) hintereinander.
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -224,9 +216,8 @@ repeated. For example, der reguläre Ausdruck `[0-9]{2,3}` means: Match at least
 
 [Teste den regulären Ausdruck](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, der reguläre Ausdruck
-`[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma the
-regular expression `[0-9]{3}` means: Match exactly 3 digits.
+Die zweite Zahl kann ausgelassen werden. Somit heißt der Ausdruck `[0-9]{2,}`: zwei oder mehr Ziffern in Folge.
+Wenn wir auch das Komma entfernen, heißt `[0-9]{3}`: genau drei Ziffern in Folge.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -240,7 +231,9 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Capturing Group
+## 2.5 Gruppierungen
+
+Eine Gruppierung fasst eine Gruppe von Teilausdrücken in Klammern `(...)` zusammen. 
 
 A capturing group is a group of sub-patterns that is written inside Parentheses 
 `(...)`. Like as we discussed before that in regular expression if we put a quantifier 
