@@ -441,14 +441,9 @@ genutzt werden und sind ein integraler Bestandteil regulärer Ausdrücke.
 ### 5.1 Schreibungsunabhängig
 
 Der `i` Modifikator wird benutzt, um schreibungsunbhängige Übereinstimmungen zu finden. Zum Beispiel heißt der reguläre Ausdruck
-`/The/gi`: großes `T`
-
-The `i` modifier is used to perform case-insensitive matching. For example, the
-regular expression `/The/gi` means: uppercase letter `T`, followed by lowercase
-character `h`, followed by character `e`. And at the end of regular expression
-the `i` flag tells der reguläre Ausdruck engine to ignore the case. As you can
-see we also provided `g` flag because we want to search for the pattern in the
-whole input string.
+`/The/gi`: großes `T`, gefolgt von `h`, dann `e`. Und am Ende des Ausdrucks ist der `i` Modifikator zu finden, welcher der Maschine 
+zu verstehen gibt, dass Groß- und Kleinschreibung ignoriert werden soll. Wie zu sehen ist, wird auch der `g` Modifikator benutzt,
+da wir die gesamte Eingabe nach dem Muster absuchen wollen.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -462,7 +457,7 @@ whole input string.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Global search
+### 5.2 Globale Suche
 
 The `g` modifier is used to perform a global match (find all matches rather than
 stopping after the first match). For example, der reguläre Ausdruck`/.(at)/g`
