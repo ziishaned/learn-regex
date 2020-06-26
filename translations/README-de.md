@@ -22,7 +22,7 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 
-## Was sind reguläre Ausdrücke
+## Was sind Reguläre Ausdrücke?
 
 > Ein regulärer Ausdruck ist eine Gruppe von Buchstaben und Symbolen, die benutzt werden um ein spezifisches Muster in einem Text zu finden
 Ein regulärer Ausdruch ist ein Muster, das mit einem zu durchsuchenden Text von links nach rechts abgeglichen wird. Die Bezeichnung
@@ -41,35 +41,35 @@ den Benutzernamen zu überprüfen:
 
 Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
 
-## Table of Contents
+## Inhaltsverzeichnis
 
-- [Basis Vergleiche](#1-basis-vergleiche)
-- [Sonderzeichen](#2-sonderzeichen)
+- [Einfache Muster](#1-einfache-muster)
+- [Metazeichen](#2-metazeichen)
   - [Punkt](#21-punkt)
   - [Zeichenklasse](#22-zeichenklasse)
     - [Negierte Zeichenklasse](#221-negierte-zeichenklasse)
   - [Wiederholungen](#23-wiederholungen)
-    - [Stern *](#231-der-stern)
-    - [Plus +](#232-das-plus)
-    - [Fragezeichen ?](#233-das-fragezeichen)
+    - [Stern *](#231-stern)
+    - [Plus +](#232-plus)
+    - [Fragezeichen ?](#233-fragezeichen)
   - [Geschweifte Klammern {}](#24-geschweifte-klammern)
-  - [Gruppierung](#25-gruppierung)
+  - [Gruppierung ()](#25-gruppierung)
   - [Alternation |](#26-alternation)
-  - [Auswertung von Sonderzeichen](#27-auswertung-von-sonderzeichen)
+  - [Escaping \](#27-escaping)
   - [Anker](#28-anker)
-    - [Caret ^](#281-caret)
+    - [Zirkumflex ^](#281-zirkumflex)
     - [Dollar $](#282-dollar)
-- [Kurzschreibweisen](#3-kurzschreibweisen)
-- [Umschauen](#4-umschauen)
-  - [Positives Vorrausschauen](#41-positives-vorausschauen)
-  - [Negatives Vorrausschauen](#42-negatives-vorausschauen)
-  - [Positives Zurückschauen](#43-positives-zurückschauen)
-  - [Negatives Zurückschauen](#44-negatives-zurückschauen)
-- [Steuerparameter](#5-steuerparameter)
-  - [Groß-/Kleinschreibung](#51-groß-kleinschreibung)
+- [Vordefinierte Zeichenklassen](#3-vordefinierte-zeichenklassen)
+- [Lookaround](#4-lookaround)
+  - [Positiver Lookahead](#41-positiver-lookahead)
+  - [Negativer Lookahead](#42-negativer-lookahead)
+  - [Positiver Lookbehind](#43-positiver-lookbehind)
+  - [Negativer Lookbehind](#44-negativer-lookbehind)
+- [Modifikatoren](#5-modifikatoren)
+  - [Schreibungsunabhängig i](#51-schreibungsunbhängig)
   - [Globale Suche](#52-globale-suche)
   - [Mehrzeilig](#53-mehrzeilig)
-- [Gierige oder faule Übereinstimmung](#6-gierige-oder-faule-übereinstimmung)
+- [Gierige vs Faule Übereinstimmung](#6-gierige-vs-faule-übereinstimmung)
 
 ## 1. Einfache Muster
 
@@ -151,7 +151,7 @@ Im Allgemeinen stellt das Zirkumflex `^` den Anfang einer Zeichenkette dar. Wenn
 Die Metazeichen `+`, `*` und `?` bieten einen einfachen Weg, anzugeben, wie oft sich ein bestimmter Teilausdruck wiederholen soll. Sie gehören damit zu den sogenannten "Quantifizierern" (eng. *quantifier*).
 Sie können sich je nach Situation unterschiedlich verhalten.
 
-### 2.3.1 Der Stern
+### 2.3.1 Stern
 
 Das Symbol `*` stimmt mit beliebig vielen Wiederholungen des vorhergehenden Teilausdrucks überein. Der Ausdruck `a*` heißt: 
 null, eins oder mehrere `a`s in Folge. Da sich der Stern auf Teilausdrücke bezieht, kann er auch bspw. hinter einer Zeichenklasse stehen
@@ -175,7 +175,7 @@ gefolgt vom Buchstaben `t` und schließlich gefolgt von null oder mehreren Leerz
 
 [Teste den regulären Ausdruck](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 Das Plus
+### 2.3.2 Plus
 
 Das `+`-Symbol stimmt mit einer oder mehr Wiederholungen des vorhergehenden Teilausdrucks überein. Der reguläre Ausdruck
 `c.+t` bedeutet: Buchstabe `c`, gefolgt von mindestens einem beliebigen Zeichen, gefolgt vom Buchstaben `t`. Das `t` ist dabei
@@ -187,7 +187,7 @@ das letzte `t` in der hier zu sehenden Übereinstimmung, wobei es hier auch weit
 
 [Teste den regulären Ausdruck](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 Das Fragezeichen
+### 2.3.3 Fragezeichen
 
 In regulären Ausdrücken sorgt das Metazeichen `?` dafür, dass der vorhergehende Teilausdruck optional wird.
 Somit stimmt es mit null oder einer Übereinstimmung des Teilausdrucks überein.
@@ -283,7 +283,7 @@ gesetzt wurden.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escape
+## 2.7 Escaping
 
 Der Backslash `\` wird in regulären Ausdrücken verwendet, um die besondere Bedeutung des folgenden Zeichens aufzuheben (eng. *escape*) oder ihm eine besondere Bedeutung zu verleihen 
 (s. [Vordefinierte Zeichenklassen](#3-vordefinierte-zeichenklassen)).
@@ -359,7 +359,7 @@ Das sind die vordefinierten Zeichenklassen:
 
 ## 4. Lookaround
 
-Lookbehind ("nach hinten sehend") und Lookahead ("vorausschauend") (auch Lookaround ("Umsehen") genannt) sind besondere Arten von **Gruppierungen ohne Rückwärtsreferenz**
+Lookbehind ("zurückschauen") und Lookahead ("vorausschauen") (auch Lookaround ("Umsehen") genannt) sind besondere Arten von **Gruppierungen ohne Rückwärtsreferenz**
 (zur Erinnerung: das sind Gruppierungen, die zwar mit dem Muster übereinstimmen, aber sich die Übereinstimmung nicht "merken").
 Sie werden in Situationen verwendet, wo wir ein Muster einfangen wollen, dem andere Muster folgen oder vorhergehen.
 Zum Beispiel wollen wir alle Zahlen aus der Zeichenkette `$4.44 and $10.88`, vor denen ein Dollarzeichen `$` steht. Wir benutzen dafür den folgenden regulären Audruck:
@@ -499,7 +499,7 @@ Zeilenumbruch. Wegen des `m` Modifikators wird das Muster nun auf das Ende jeder
 
 [Teste den regulären Ausdruck](https://regex101.com/r/E88WE2/1)
 
-## 6. Gier vs Faulheit
+## 6. Gierige vs Faule Übereinstimmung
 
 Standardmäßig finden reguläre Ausdrücke Übereinstimmungen mit Gier (eng. *greed*), d.h. es wird nach den längsten Übereinstimmungen gesucht. 
 Mit `?` können wir faul (eng. *lazy*) suchen, d.h. es wird nach den kürzesten Übereinstimmungen gesucht.
