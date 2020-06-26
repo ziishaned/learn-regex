@@ -442,7 +442,7 @@ genutzt werden und sind ein integraler Bestandteil regulärer Ausdrücke.
 
 Der `i` Modifikator wird benutzt, um schreibungsunbhängige Übereinstimmungen zu finden. Zum Beispiel heißt der reguläre Ausdruck
 `/The/gi`: großes `T`, gefolgt von `h`, dann `e`. Und am Ende des Ausdrucks ist der `i` Modifikator zu finden, welcher der Maschine 
-zu verstehen gibt, dass Groß- und Kleinschreibung ignoriert werden soll. Wie zu sehen ist, wird auch der `g` Modifikator benutzt,
+zu verstehen gibt, dass Groß- und Kleinschreibung ignoriert werden sollen. Wie zu sehen ist, wird auch der `g` Modifikator benutzt,
 da wir die gesamte Eingabe nach dem Muster absuchen wollen.
 
 <pre>
@@ -459,11 +459,10 @@ da wir die gesamte Eingabe nach dem Muster absuchen wollen.
 
 ### 5.2 Globale Suche
 
-The `g` modifier is used to perform a global match (find all matches rather than
-stopping after the first match). For example, der reguläre Ausdruck`/.(at)/g`
-means: any character except new line, followed by lowercase character `a`,
-followed by lowercase character `t`. Because we provided `g` flag at the end of
-der reguläre Ausdruck now it will find all matches in the input string, not just the first one (which is the default behavior).
+Der `g` Modifikator wird benutzt, um eine globale Suche durchzuführen (alle Übereinstimmungen finden, nicht nach der ersten aufhören).
+Zum Beispiel heißt der reguläre Ausdruck `/.(at)/g`: ein beliebiges Zeichen (außer Zeilenumbruch), gefolgt von `a`, gefolgt von `t`.
+Weil wir den `g` Modifikator angegeben haben, findet der reguläre Ausdruck nun alle Übereinstimmungen in der Eingabe, nicht nur die erste
+(was das Standardverhalten ist).
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -477,15 +476,12 @@ der reguläre Ausdruck now it will find all matches in the input string, not jus
 
 [Teste den regulären Ausdruck](https://regex101.com/r/dO1nef/1)
 
-### 5.3 Multiline
+### 5.3 Mehrzeilig
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier
-anchors `(^, $)` are used to check if pattern is the beginning of the input or
-end of the input string. But if we want that anchors works on each line we use
-`m` flag. For example, der reguläre Ausdruck `/at(.)?$/gm` means: lowercase
-character `a`, followed by lowercase character `t`, optionally anything except
-new line. And because of `m` flag now regular expression engine matches pattern
-at the end of each line in a string.
+Der `m` Modifikator wird benutzt, um eine mehrzeilige Suche durchzuführen. Wie zuvor erwähnt werden Anker `(^, $)` genutzt, um zu überprüfen,
+ob ein Muster dem Anfang oder dem Ende der Eingabe entspricht. Wenn wir stattdessen wollen, dass Anker zeilenweise funktionieren, nutzen wir den `m`
+Modifikator. Zum Beispiel bedeutet der reguläre Ausdruck `/at(.)?$/gm`: `a`, gefolgt von `t`, dann optional ein beliebiges Zeichen außer 
+Zeilenumbruch. Wegen des `m` Modifikators wird das Muster nun auf das Ende jeder Zeile statt nur das Ende der gesamten Eingabe angewandt.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -503,9 +499,10 @@ at the end of each line in a string.
 
 [Teste den regulären Ausdruck](https://regex101.com/r/E88WE2/1)
 
-## 6. Greedy vs lazy matching
-By default regex will do greedy matching , means it will match as long as
-possible. we can use `?` to match in lazy way means as short as possible
+## 6. Gier vs Faulheit
+
+Standardmäßig finden reguläre Ausdrücke Übereinstimmungen mit Gier (eng. *greed*), d.h. es wird nach den längsten Übereinstimmungen gesucht. 
+Mit `?` können wir faul (eng. *lazy*) suchen, d.h. es wird nach den kürzesten Übereinstimmungen gesucht.
 
 <pre>
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
@@ -519,14 +516,13 @@ possible. we can use `?` to match in lazy way means as short as possible
 
 [Teste den regulären Ausdruck](https://regex101.com/r/AyAdgJ/2)
 
+## Beitragen
 
-## Contribution
+* Öffne pull requests mit Verbesserungen
+* Diskutiere Ideen in issues
+* Erzähl es anderen
+* Gebt Rückmeldung [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
-* Open pull request with improvements
-* Discuss ideas in issues
-* Spread the word
-* Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
-
-## License
+## Lizenz
 
 MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
