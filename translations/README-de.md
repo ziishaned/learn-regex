@@ -521,7 +521,7 @@ Mit `?` können wir faul (eng. *lazy*) suchen, d.h. es wird nach den kürzesten 
 * Öffne pull requests mit Verbesserungen
 * Diskutiere Ideen in issues
 * Erzähl es anderen
-* Gebt Rückmeldung [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Gib Rückmeldung [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
 ## Lizenz
 
