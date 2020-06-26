@@ -24,22 +24,21 @@
 
 ## Was sind Reguläre Ausdrücke?
 
-> Ein regulärer Ausdruck ist eine Gruppe von Buchstaben und Symbolen, die benutzt werden um ein spezifisches Muster in einem Text zu finden
+> Ein regulärer Ausdruck ist eine Gruppe von Buchstaben und Symbolen, die benutzt werden um ein bestimmtes Muster in einem Text zu finden.
 Ein regulärer Ausdruch ist ein Muster, das mit einem zu durchsuchenden Text von links nach rechts abgeglichen wird. Die Bezeichnung
-"Regulärer Ausdruck" ist in der Praxis unüblich und stattdessen wird häufig die Englische Abkürzung "Regex" verwendet. Reguläre
-Ausdrücke werden verwendet um Fragemente eines Textes zu ersetzen, Formulare zu validieren, Segmente eines Textes anhand eines
+"Regulärer Ausdruck" ist in der Praxis unüblich und stattdessen wird häufig die Englische Abkürzung "Regex" oder "RegExp" (*regular expression*) verwendet. Reguläre
+Ausdrücke werden verwendet, um Fragemente eines Textes zu ersetzen, Formulare zu validieren, Segmente eines Textes anhand eines
 Musters zu extrahieren und für vieles mehr.
 
-Angenommen Du schreibst eine Applikation und möchtest die Regeln definieren, nach denen ein Benutzer seinen Benutzernamen auswählen
+Angenommen, Du schreibst eine Anwendung und möchtest die Regeln definieren, nach denen ein Benutzer seinen Benutzernamen auswählen
 kann. Wir möchten festlegen, dass der Benutzernamen Buchstaben, Ziffern, Unter- und Bindestriche beinhalten darf. Außerdem wollen
-wir die Anzahl der Zeichen limitieren, damit der Name nicht unlesbar wird. Dazu verwenden wir den folgenden regulären Ausdruck um
-den Benutzernamen zu überprüfen:
+wir die Anzahl der Zeichen limitieren, damit der Name nicht unlesbar wird. Dazu verwenden wir den folgenden regulären Ausdruck:
 <br/><br/>
 <p align="center">
   <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-Der abgebildete reguläre Ausdruck erlaubt bspw. folgende Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
+Der abgebildete reguläre Ausdruck erlaubt bspw. die Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Der Eingabe `Jo` wird nicht akzeptiert, da sie einen Großbuchstaben enthält und zu kurz ist.
 
 ## Inhaltsverzeichnis
 
@@ -81,7 +80,8 @@ Ein regulärer Ausdruck ist einfach nur ein Muster von Zeichen, welches für ein
 
 [Teste den regulären Ausdruck](https://regex101.com/r/dmRygT/1)
 
-Der reguläre Ausdruck `123` entspricht der Zeichenkette `123`. Dieser reguläre Ausdruck wird auf Übereinstimmung mit einer Zeichenkette überprüft, indem jedes Zeichen in dem regulären Ausdruck nacheinander mit den Zeichen in der Zeichenkette verglichen wird. Reguläre Ausdrücke sind normalerweise case sensitiv, Beachtung von Groß-/Kleinschreibung, sodass der Ausdruck `The` nicht mit der Zeichenkette  `the` überein stimmen würde. 
+Der reguläre Ausdruck `123` entspricht der Zeichenkette `123`. Auf Übereinstimmung mit einer Zeichenkette wird er überprüft, indem jedes Zeichen in dem regulären Ausdruck nacheinander mit jedem Zeichen der Zeichenkette verglichen wird. 
+Reguläre Ausdrücke berücksichtigen normalerweise Groß- und Kleinschreibung, sodass etwa der Ausdruck `The` nicht mit der Zeichenkette  `the` übereinstimmen würde. 
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
