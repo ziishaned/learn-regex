@@ -1,19 +1,36 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## Traductions:
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文（简体）版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## Qu'est-ce qu'une expression régulière?
 
@@ -28,7 +45,7 @@ le pseudonyme à contenir des lettres, des nombres, des underscores et des trait
 de caractères dans le pseudonyme pour qu'il n'ait pas l'air moche. Nous utilisons l'expression régulière suivante pour valider un pseudonyme:
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-fr.png" alt="Expressions régulières">
+  <img src="../img/regexp-fr.png" alt="Expressions régulières">
 </p>
 
 L'expression régulière ci-dessus peut accepter les chaines de caractères (string) `john_doe`, `jo-hn_doe` et `john12_as`. Ça ne fonctionne pas avec `Jo` car cette chaine de caractères (string) contient une lettre majuscule et elle est trop courte.
@@ -467,4 +484,4 @@ Grâce au drapeau `m` maintenant le moteur d'expression régulière trouve le sc
 
 ## License
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

@@ -1,19 +1,36 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## 번역:
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文（简体）版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## 정규표현식이란 무엇인가?
 
@@ -25,7 +42,7 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 위의 정규 표현식은 `john_doe`, `jo-hn_doe`, 그리고 `john12_as` 문자열을 받아들일 수 있다. `Jo`는 대문자를 포함하고 있고 길이가 너무 짧기 때문에 위의 정규표현식과 매칭되지 않는다.
@@ -43,7 +60,8 @@
     - [덧셈 부호](#232-덧셈-부호)
     - [물음표](#233-물음표)
   - [중괄호](#24-중괄호)
-  - [문자 그룹](#25-문자-그룹)
+  - [캡쳐링 그룹](#25-캡쳐-그룹)
+    - [논-캡쳐링 그룹](#251-논-캡쳐링-그룹)
   - [대안 부호](#26-대안-부호)
   - [특수 문자 이스케이핑](#27-특수-문자-이스케이핑)
   - [앵커 부호](#28-앵커-부호)
@@ -59,6 +77,7 @@
   - [대소문자 구분없음](#51-대소문자-구분없음)
   - [전체 검색](#52-전체-검색)
   - [멀티 라인](#53-멀티-라인)
+- [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른-매칭)
 
 ## 1. 기본 매쳐
 
@@ -80,23 +99,22 @@
 
 ## 2. 메타 문자
 
-메타 문자들은 정규 표현식의 빌딩 블락들이다. 메타 문자들은 자체적인 의미를 가지지 않고 특별한 방식으로 해석되어진다. 어떤 메타 문자열들은 특별한 의미를 가지며 대괄호안에서 쓰인다.
-아래는 이러한 메타 문자열들이다:
+메타 문자들은 정규 표현식의 빌딩 블락들이다. 메타 문자들은 자체적인 의미를 가지지 않고 특별한 방식으로 해석되어진다. 어떤 메타 문자열들은 특별한 의미를 가지며 대괄호안에서 쓰인다. 아래는 이러한 메타 문자열들이다:
 
 |메타 문자|설명|
-|:----:|----|
+|:----:| ----|
 |.|온점(Period)는 줄바꿈을 제외한 어떤 종류의 단일 문자와 매치.|
 |[ ]|문자 클래스. 대괄호 사이에 있는 문자들로 매치.|
 |[^ ]|부정 문자 클래스. 대괄호 안에 포함되지 않은 모든 문자들로 매치.|
-|*|이 메타 문자의 바로 앞에 있는 심볼이 0번 이상 반복된 문자들과 매치.|
+|\*|이 메타 문자의 바로 앞에 있는 심볼이 0번 이상 반복된 문자들과 매치.|
 |+|이 메타 문자의 바로 앞에 있는 심볼이 한번 이상 반복된 문자들과 매치.|
 |?|이 메타 문자의 바로 앞에 있는 심볼을 선택적(optional)으로 만듬.|
 |{n,m}|중괄호. 이 메타 문자의 바로 앞에 위치한 심볼이 최소 n번 최대 m번의 반복된 문자들과 매치.|
 |(xyz)|문자 그룹. 문자열 xyz와 정확히 같은 순서를 가진 문자들과 매치.|
 |&#124;|대안. 문자가 이 메타 문자의 앞에 있는 심볼이거나 뒤에 있는 심볼이면 매치.|
-|&#92;|다음 문자 이스케이프(Escape). 예약된 문자열들 <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>을 이스케이핑함으로써 그 자체와 매칭되는 것을 허용.|
+|&#92;|다음 문자 이스케이프(Escape). 예약된 문자열들 <code>[ ] ( ) { } . \* + ? ^ \$ \ &#124;</code>을 이스케이핑함으로써 그 자체와 매칭되는 것을 허용.|
 |^|입력의 시작과 매치.|
-|$|입력의 끝과 매치.|
+|\$|입력의 끝과 매치.|
 
 ## 2.1 마침표
 
@@ -161,7 +179,7 @@
 ### 2.3.2 덧셈 부호
 
 `+` 부호는 부호 앞에 위치한 문자가 한번 이상 반복되는 패턴을 만드는데 사용된다. 예를 들어, 정규 표현식 `c.+t`는 소문자 `c`가 나오고, 그 뒤에 한개 이상의 문자가 나온 후, 소문자 `t`가 나오는 패턴을 의미한다. 여기서 문자 `t`는 해당 문장의 제일 마지막 글자 `t`라는것을 명확히할 필요가 있다.
-  w
+
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
@@ -208,15 +226,29 @@
 
 [Test the regular expression](https://regex101.com/r/Sivu30/1)
 
-## 2.5 문자 그룹
+## 2.5 캡쳐링 그룹
 
-문자 그룹은 괄호 `(...)` 안에 쓰여진 하위 패턴들의 그룹이다. 위에서 논의했듯이, 정규 표현식에서 하나의 문자 뒤에 정량자(quantifier)를 넣는 경우에는 해당 문자의 반복을 나타낸다. 하지만, 만약 하나의 문자 그룹 뒤에 정량자를 넣는 경우에는 문자 그룹 전체의 반복을 나타내게 된다. 예를 들어, 정규 표현식 `(ab)*`는 문자 "ab"가 0번 이상 반복되는 패턴을 의미한다. 대안 부호인 `|` 또한 문자 그룹 내부에서 사용할 수 있다. 예를 들어, 정규 표현식 `(c|g|p)ar`은 소문자 `c`, `g` 혹은 `p`가 나온 이후에 문자 `a`가 나오고 그 뒤에 문자 `r`이 나오는 패턴을 의미한다.
+캡쳐링 그룹은 괄호 `(...)` 안에 쓰여진 하위 패턴들의 그룹이다. 위에서 논의했듯이, 정규 표현식에서 하나의 문자 뒤에 정량자(quantifier)를 넣는 경우에는 해당 문자의 반복을 나타낸다. 하지만, 만약 하나의 캡쳐링 그룹 뒤에 정량자를 넣는 경우에는 캡쳐링 그룹 전체의 반복을 나타내게 된다. 예를 들어, 정규 표현식 `(ab)*`는 문자 "ab"가 0번 이상 반복되는 패턴을 의미한다. 대안 부호인 `|` 또한 문자 그룹 내부에서 사용할 수 있다. 예를 들어, 정규 표현식 `(c|g|p)ar`은 소문자 `c`, `g` 혹은 `p`가 나온 이후에 문자 `a`가 나오고 그 뒤에 문자 `r`이 나오는 패턴을 의미한다.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/tUxrBG/1)
+
+캡처링 그룹은 부모 언어에서 사용하기 위해 문자를 일치시킬뿐만 아니라 문자를 캡처한다는 점에 유의해야 한다. 부모 언어는 파이썬이나 자바 스크립트 또는 함수 정의에서 정규 표현식을 구현하는 거의 모든 언어가 될 수 있다.
+
+### 2.5.1 논-캡쳐링 그룹
+
+논-캡쳐링 그룹은 오직 문자열에 매칭되지만, 그룹을 캡쳐하지 않는 캡쳐링 그룹이다. 논-캡쳐링 그룹은 `(...)` 괄호안에 `?:` 로 표시된다. 예를 들어 정규식 `(?:c|g|p)ar` 는 `(c|g|p)ar`와 같은 문자열을 매칭하는 것에서 유사하지만, 캡쳐링 그룹을 만들지 않는다.
+
+<pre>
+"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/Rm7Me8/1)
+
+논-캡처링 그룹은 찾기 및 변경 기능에서 사용하거나 캡처 그룹 함께 사용하여 다른 종류의 출력 생성시 overview를 유지할 때 유용하다. 또한 [4. 전후방탐색](#4-전후방탐색)를 보아라.
 
 ## 2.6 대안 부호
 
@@ -290,7 +322,7 @@
 
 ## 4. 전후방탐색
 
-때때로 전후방탐색<sub>Lookaround</sub>이라고 알려진 후방탐색<sub>Lookbehind</sub>과 전방탐색<sub>Lookahead</sub>은 (패턴 매칭을 위해서 사용되지만 매칭된 리스트에는 포함되지 않는) ***넌-캡쳐링 그룹*** 의 특정 종류들이다. 전후방탐색은 하나의 패턴이 다른 특정 패턴 전이나 후에 나타나는 조건을 가지고 있을때 사용한다. 예를 들어, 우리가 입력 문자열 `$4.44 and $10.88`에 대해서 달러 부호 `$`이후에 나오는 모든 숫자를 매칭시키고 싶다고 하자. 이때 정규 표현식 `(?<=\$)[0-9\.]*`를 사용할 수 있다. 이 정규 표현식은 `$` 문자 뒤에 나오는 문자 `.`을 포함한 모든 숫자 문자를 의미한다. 다음은 정규 표현식에서 사용되는 전후방탐색들이다.
+때때로 전후방탐색<sub>Lookaround</sub>이라고 알려진 후방탐색<sub>Lookbehind</sub>과 전방탐색<sub>Lookahead</sub>은 (패턴 매칭을 위해서 사용되지만 매칭된 리스트에는 포함되지 않는) **_넌-캡쳐링 그룹_** 의 특정 종류들이다. 전후방탐색은 하나의 패턴이 다른 특정 패턴 전이나 후에 나타나는 조건을 가지고 있을때 사용한다. 예를 들어, 우리가 입력 문자열 `$4.44 and $10.88`에 대해서 달러 부호 `$`이후에 나오는 모든 숫자를 매칭시키고 싶다고 하자. 이때 정규 표현식 `(?<=\$)[0-9\.]*`를 사용할 수 있다. 이 정규 표현식은 `$` 문자 뒤에 나오는 문자 `.`을 포함한 모든 숫자 문자를 의미한다. 다음은 정규 표현식에서 사용되는 전후방탐색들이다.
 
 |부호|설명|
 |:----:|----|
@@ -331,7 +363,7 @@
 
 ### 4.4 부정형 후방탐색
 
-부정형 후방탐색는 특정 패턴이 뒤에 나오지 않기를 바라는 상황에서 사용된다. 부정형 후방탐색는 `(?<!...)`로 표시된다. 예를 들어, 정규 표현식 `(?<!(T|t)he\s)(cat)`은 앞에 `The ` 혹은 `the `가 위치하지 않는 모든 `cat` 문자열을 의미한다.
+부정형 후방탐색는 특정 패턴이 뒤에 나오지 않기를 바라는 상황에서 사용된다. 부정형 후방탐색는 `(?<!...)`로 표시된다. 예를 들어, 정규 표현식 `(?<!(T|t)he\s)(cat)`은 앞에 `The` 혹은 `the` 가 위치하지 않는 모든 `cat` 문자열을 의미한다.
 
 <pre>
 "(?&lt;![T|t]he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
@@ -401,6 +433,21 @@
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
+## 6. 탐욕적 vs 게으른 매칭
+기본적으로 정규 표현식은 탐욕적(greedy) 매칭을 수행하는데, 이는 가능한 한 길게 매칭하는 것을 의미한다. 우리는 `?`를 사용하여 게으른(lazy) 방법 매칭할 수 있으며, 가능한 한 짧게 매칭하는 것을 의미한다.
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. 
+</pre>
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. 
+</pre>
+
+[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+
 ## 기여 방법
 
 * 이슈 리포팅
@@ -410,4 +457,4 @@
 
 ## 라이센스
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

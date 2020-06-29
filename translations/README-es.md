@@ -1,32 +1,49 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## Traducciones:
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文（简体）版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## Qué es una expresión regular?
 
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
 
-Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para remplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
+Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para reemplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
 
 Imagina que estás escribiendo una aplicación y quieres agregar reglas para cuando el usuario elija su nombre de usuario. Nosotros queremos permitir que el nombre de usuario contenga letras, números, guión bajo (raya), y guión medio. También queremos limitar el número de caracteres en el nombre de usuario para que no se vea feo. Para ello usamos la siguiente expresión regular para validar el nombre de usuario.
 
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-es.png" alt="Expresión regular">
+  <img src="../img/regexp-es.png" alt="Expresión regular">
 </p>
 
 La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe` y `john12_as`. Sin embargo, la expresión no coincide con el nombre de usuario `Jo` porque es una cadena de caracteres que contiene letras mayúsculas y es demasiado corta.
@@ -466,4 +483,4 @@ el motor de expresión regular coincide con el patrón al final de cada línea d
 
 ## Licencia
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)

@@ -1,19 +1,36 @@
-<br/>
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+    <br/>
+    <a href="https://github.com/ziishaned/learn-regex">
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+    <br /><br />
+    <p>
+        <a href="https://twitter.com/home?status=Learn%20regex%20the%20easy%20way%20by%20%40ziishaned%20http%3A//github.com/ziishaned/learn-regex">
+            <img src="https://img.shields.io/badge/twitter-tweet-blue.svg?style=flat-square"/>
+        </a>
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/badge/feedback-@ziishaned-blue.svg?style=flat-square" />
+        </a>
+    </p>
+</p>
+
 
 ## 翻訳
 
-* [English](README.md)
-* [Español](README-es.md)
-* [Français](README-fr.md)
-* [Português do Brasil](README-pt_BR.md)
-* [中文（简体）版](README-cn.md)
-* [日本語](README-ja.md)
-* [한국어](README-ko.md)
-* [Turkish](README-tr.md)
-* [Greek](README-gr.md)
+* [English](../README.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## 正規表現とは
 
@@ -31,10 +48,10 @@
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-この正規表現によって `john_doe`、`jo-hn_doe`、`john12_as` などは許容されることになります。
+この正規表現によって `john_doe, jo-hn_doe, john12_as` などは許容されることになります。
 一方で `Jo` は大文字を含む上に短すぎるため許容されません。
 
 ## 目次
@@ -130,7 +147,7 @@
 文字集合を指定するには角括弧でくくります。
 文字の範囲を指定するにはハイフンを使用します。
 角括弧内の文字の記述順はマッチングには関係ありません。
-例えば `[Tt]he` という正規表現は大文字 `T` または小文字 `t` の後に `h`、 `e` が続く文字列を表します。
+例えば `[Tt]he` という正規表現は大文字 `T` または小文字 `t` の後に `h`, `e` が続く文字列を表します。
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -152,7 +169,7 @@
 通常キャレットは文字列の開始を意味するメタ文字ですが、角括弧内で最初に使用されると
 文字集合を否定する意味を持つようになります。
 例えば `[^c]ar` という正規表現は `c` 以外の任意の文字列の後に
-`a`、`r` が続く文字列を表します。
+`a`, `r` が続く文字列を表します。
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -162,7 +179,7 @@
 
 ## 2.3 繰り返し
 
-`+`、 `*`、 `?` はパターンが何回続くのかを指定するためのメタ文字になります。
+`+`, `*`, `?` はパターンが何回続くのかを指定するためのメタ文字になります。
 これらのメタ文字は異なるシチュエーションで異なる振る舞いをします。
 
 ### 2.3.1 アスタリスク
@@ -182,7 +199,7 @@
 任意の文字列を表現できます。
 またスペースを表す `\s` と併用することで空白文字を表現できます。
 例えば `\s*cat\s*` という正規表現は 0 個以上のスペースの後に
-小文字の `c`、 `a`、 `t` が続き、その後に 0 個以上のスペースが続きます。
+小文字の `c`, `a`, `t` が続き、その後に 0 個以上のスペースが続きます。
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
@@ -208,7 +225,7 @@
 正規表現におけるメタ文字 `?` は直前の文字がオプションであることを意味します。
 すなわち直前の文字が 0 個または 1 個現れることを意味します。
 例えば `[T]?he` という正規表現は大文字の `T` が 0 個または 1 個出現し、
-その後に小文字の `h`、 `e` が続くことを意味します。
+その後に小文字の `h`, `e` が続くことを意味します。
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -259,7 +276,7 @@
 文字グループ全体が繰り返すことを意味します。
 例えば、 `(ab)*` という正規表現は "ab" という文字列の 0 個以上の繰り返しにマッチします。
 文字グループ内では選言 `|` も使用することができます。
-例えば、`(c|g|p)ar` という正規表現は小文字の `c`、 `g`、 `p` のいずれかの後に
+例えば、`(c|g|p)ar` という正規表現は小文字の `c`, `g`, `p` のいずれかの後に
 `a` が続き、さらに `r` が続くことを意味します。
 
 <pre>
@@ -290,7 +307,7 @@
 記号として指定できるようになります。
 例えば `.` という正規表現は改行を除く任意の文字として使用されますが、
 `(f|c|m)at\.?` という正規表現では `.` 自体にマッチします。
-この正規表現は小文字の `f`、 `c` または `m` の後に小文字の `a`、 `t` が続き、
+この正規表現は小文字の `f`, `c` または `m` の後に小文字の `a`, `t` が続き、
 さらに `.` が 0 個または 1 個続きます。
 
 <pre>
@@ -313,7 +330,7 @@
 しかし `^b` という正規表現は前の文字列に対してはどれにもマッチしません。
 "b" は `abc` という入力文字列の開始ではないからです。
 他の例を見てみます。`^(T|t)he` は大文字の `T` または小文字の `t` から始まる文字列で
-その後に小文字の `h`、 `e` が続くことを意味します。
+その後に小文字の `h`, `e` が続くことを意味します。
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -386,7 +403,7 @@
 肯定的な先読みを定義するには括弧を使用します。
 その括弧の中で疑問符と等号を合わせて `(?=...)` のようにします。
 先読みのパターンは括弧の中の等号の後に記述します。
-例えば `(T|t)he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`、 `e` が続きます。
+例えば `(T|t)he(?=\sfat)` という正規表現は小文字の `t` か大文字の `T` のどちらかの後に `h`, `e` が続きます。
 括弧内で肯定的な先読みを定義していますが、これは `The` または `the` の後に
 `fat` が続くことを表しています。
 
@@ -449,7 +466,7 @@
 ### 5.1 大文字・小文字を区別しない
 
 修飾子 `i` は大文字・小文字を区別したくないときに使用します。
-例えば `/The/gi` という正規表現は大文字の `T` の後に小文字の `h`、 `e` が続くという意味ですが、
+例えば `/The/gi` という正規表現は大文字の `T` の後に小文字の `h`, `e` が続くという意味ですが、
 最後の `i` で大文字・小文字を区別しない設定にしています。
 文字列内の全マッチ列を検索したいのでフラグ `g` も渡しています。
 
@@ -470,7 +487,7 @@
 修飾子 `g` はグローバル検索（最初のマッチ列を検索する代わりに全マッチ列を検索する）を
 行うために使用します。
 例えば `/.(at)/g` という正規表現は、改行を除く任意の文字列の後に
-小文字の `a`、 `t` が続きます。正規表現の最後にフラグ `g` を渡すことで、
+小文字の `a`, `t` が続きます。正規表現の最後にフラグ `g` を渡すことで、
 最初のマッチだけではなく（これがデフォルトの動作です）、入力文字列内の全マッチ列を検索するようにしています。
 
 <pre>
@@ -490,7 +507,7 @@
 修飾子 `m` は複数行でマッチさせたいときに使用します。
 前述で `(^, $)` という入力文字列の開始と終了を示すためのアンカーについて説明しましたが、
 フラグ `m` は複数行でマッチさせるためのアンカーとして使用できます。
-例えば `/at(.)?$/gm` という正規表現は小文字の `a`、 `t` に続き、改行を除く
+例えば `/at(.)?$/gm` という正規表現は小文字の `a`, `t` に続き、改行を除く
 任意の文字が 0 個または 1 個続くという意味ですが、
 フラグ `m` を渡すことで入力文字列の各行でパターンを検索させることができます。
 
@@ -519,4 +536,4 @@
 
 ## ライセンス
 
-MIT © [Zeeshan Ahmed](mailto:ziishaned@gmail.com)
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
