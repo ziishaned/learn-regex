@@ -32,7 +32,7 @@
 * [Tiếng Việt](translations/README-vn.md)
 * [فارسی](translations/README-fa.md)
 
-## What are Regular Expressions?
+## What is Regular Expression?
 
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
@@ -280,7 +280,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 ## 2.5 Capturing Groups
 
-A capturing group is a group of sub-patterns that is written inside parentheses 
+A capturing group is a group of subpatterns that is written inside parentheses 
 `(...)`. As discussed before, in regular expressions, if we put a quantifier 
 after a character then it will repeat the preceding character. But if we put a quantifier
 after a capturing group then it repeats the whole capturing group. For example,
@@ -356,7 +356,7 @@ character.
 
 In regular expressions, we use anchors to check if the matching symbol is the
 starting symbol or ending symbol of the input string. Anchors are of two types:
-The first type is the caret `^` that check if the matching character is the first
+The first type is the caret `^` that checks if the matching character is the first
 character of the input and the second type is the dollar sign `$` which checks if a matching
 character is the last character of the input string.
 
