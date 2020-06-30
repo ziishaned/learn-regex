@@ -591,6 +591,21 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 
 [Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
+## 7. Backreferences
+A backreference in a regular expression identifies a previously matched group and looks for exactly the same text again. A simple example of the use of backreferences is when you wish to look for adjacent, repeated words in some text.
+
+<pre>
+"/([a-z])\1/g" => Ha<a href="#learn-regex"><strong>pp</strong></a>ine<a href="#learn-regex"><strong>ss</strong></a>. </pre>
+
+
+[Test the regular expression](https://regex101.com/r/5Nclso/1)
+
+<pre>
+"/(\")(.*?)\1/" => He said "<a href="#learn-regex"><strong>She's beautiful</strong></a>" </pre>
+
+
+[Test the regular expression](https://regex101.com/r/ykVPb4/1)
+
 
 ## Contribution
 
