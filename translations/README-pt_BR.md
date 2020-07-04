@@ -36,7 +36,7 @@
 
 > Expressão Regular é um grupo de caracteres ou símbolos utilizado para encontrar um padrão específico a partir de um texto.
 
-Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. A expressão "Expressão regular" é longa e difícil de falar; você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
+Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. O termo "Expressão regular" é longo e difícil de falar; você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.
 
 Imagine que você está escrevendo uma aplicação e quer colocar regras para quando um usuário escolher seu username. Nós queremos permitir que o username contenha letras, números, underlines e hífens. Nós também queremos limitar o número de caracteres para não ficar muito feio. Então usamos a seguinte expressão regular para validar o username:
 
@@ -307,7 +307,7 @@ As expressões regulares fornecem abreviações para conjuntos de caracteres com
 
 ## 4. Olhar ao Redor
 
-Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos como lookarounds (olhar ao redor), são tipos específicos de ***grupo de não captura*** (utilizado para encontrar um padrão, mas não incluí-lo na lista de ocorrêncoas). Lookarounds são usados quando temos a condição de que determinado padrão seja precedido ou seguido de outro padrão. Por exemplo, queremos capturar todos os números precedidos do caractere `$` da seguinte string de entrada: `$4.44 and $10.88`. Vamos usar a seguinte expressão regular `(?<=\$)[0-9\.]*` que significa: procure todos os números que contêm o caractere `.` e são precedidos pelo caractere `$`. A seguir estão os lookarounds que são utilizados em expressões regulares:
+Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos como lookarounds (olhar ao redor), são tipos específicos de ***grupo de não captura*** (utilizado para encontrar um padrão, mas não incluí-lo na lista de ocorrências). Lookarounds são usados quando temos a condição de que determinado padrão seja precedido ou seguido de outro padrão. Por exemplo, queremos capturar todos os números precedidos do caractere `$` da seguinte string de entrada: `$4.44 and $10.88`. Vamos usar a seguinte expressão regular `(?<=\$)[0-9\.]*` que significa: procure todos os números que contêm o caractere `.` e são precedidos pelo caractere `$`. A seguir estão os lookarounds que são utilizados em expressões regulares:
 
 |Símbolo|Descrição|
 |:----:|----|
@@ -318,7 +318,7 @@ Lookbehind (olhar atrás) e lookahead (olhar à frente), às vezes conhecidos co
 
 ### 4.1 Lookahead Positivo
 
-O lookahead positivo impõe que a primeira parte da expressão deve ser seguida pela expressão lookahead. A combinação retornada contém apenas o texto que encontrado pela primeira parte da expressão. Para definir um lookahead positivo, deve-se usar parênteses. Dentro desses parênteses, é usado um ponto de interrogação seguido de um sinal de igual, dessa forma: `(?=...)`. Expressões lookahead são escritas depois do sinal de igual dentro do parênteses. Por exemplo, a expressão regular `[T|t]he(?=\sfat)` significa: encontre a letra minúscula `t` ou a letra maiúscula `T`, seguida da letra `h`, seguida da letra `e`. Entre parênteses, nós definimos o lookahead positivo que diz para o motor de expressões regulares para encontrar `The` ou `the` que são seguidos pela palavra `fat`.
+O lookahead positivo impõe que a primeira parte da expressão deve ser seguida pela expressão lookahead. A combinação retornada contém apenas o texto que é encontrado pela primeira parte da expressão. Para definir um lookahead positivo, deve-se usar parênteses. Dentro desses parênteses, é usado um ponto de interrogação seguido de um sinal de igual, dessa forma: `(?=...)`. Expressões lookahead são escritas depois do sinal de igual dentro do parênteses. Por exemplo, a expressão regular `[T|t]he(?=\sfat)` significa: encontre a letra minúscula `t` ou a letra maiúscula `T`, seguida da letra `h`, seguida da letra `e`. Entre parênteses, nós definimos o lookahead positivo que diz para o motor de expressões regulares para encontrar `The` ou `the` que são seguidos pela palavra `fat`.
 
 <pre>
 "[T|t]he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -400,7 +400,7 @@ O modificador `g` é usado para realizar uma busca global (encontrar todas as oc
 
 ### 5.3 Multilinhas
 
-O modificador `m` é usado para realizar uma busca em várias linhas. Como falamos antes, as âncoras `(^, $)` são usadas para verificar se o padrão está no início ou no final da string de entrada. Mas se queremos que as âncoras funcionem em cada uma das linhas, usamos a flag `m`. Por exemplo, a expressão regular `/at(.)?$/gm` significa: o caractere minúsculo `a`, seguido do caractere minúsculo `t`, opcionalmente seguido por qualquer caractere, exceto nova linha. E por causa da flag `m`, agora o motor de expressões regulares encontra o padrão no final de cada uma das linhas da string.
+O modificador `m` é usado para realizar uma busca em várias linhas. Como falamos antes, as âncoras `(^, $)` são usadas para verificar se o padrão está no início ou no final da string de entrada respectivamente. Mas se queremos que as âncoras funcionem em cada uma das linhas, usamos a flag `m`. Por exemplo, a expressão regular `/.at(.)?$/gm` significa: o caractere minúsculo `a`, seguido do caractere minúsculo `t`, opcionalmente seguido por qualquer caractere, exceto nova linha. E por causa da flag `m`, agora o motor de expressões regulares encontra o padrão no final de cada uma das linhas da string.
 
 <pre>
 "/.at(.)?$/" => The fat
