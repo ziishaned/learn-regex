@@ -25,7 +25,7 @@
 ## Was sind Reguläre Ausdrücke?
 
 > Ein regulärer Ausdruck ist eine Gruppe von Buchstaben und Symbolen, die benutzt werden um ein bestimmtes Muster in einem Text zu finden.
-Ein regulärer Ausdruch ist ein Muster, das mit einem zu durchsuchenden Text von links nach rechts abgeglichen wird. Die Bezeichnung
+Ein regulärer Ausdruck ist ein Muster, das mit einem zu durchsuchenden Text von links nach rechts abgeglichen wird. Die Bezeichnung
 "Regulärer Ausdruck" ist in der Praxis unüblich und stattdessen wird häufig die Englische Abkürzung "Regex" oder "RegExp" (*regular expression*) verwendet. Reguläre
 Ausdrücke werden verwendet, um Fragemente eines Textes zu ersetzen, Formulare zu validieren, Segmente eines Textes anhand eines
 Musters zu extrahieren und für vieles mehr.
