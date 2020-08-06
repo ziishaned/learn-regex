@@ -61,7 +61,7 @@ letter and also it is too short.
 
 - [Basic Matchers](#1-basic-matchers)
 - [Meta Characters](#2-meta-characters)
-  - [The Full Stop](#21-the-full-stops)
+  - [The Full Stop](#21-the-full-stop)
   - [Character Sets](#22-character-sets)
     - [Negated Character Sets](#221-negated-character-sets)
   - [Repetitions](#23-repetitions)
