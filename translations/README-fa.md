@@ -14,7 +14,9 @@
     </p>
 </p>
 
-## برگردان ها:
+<div dir="rtl">
+
+## ترجمه‌ها
 
 * [English](../README.md)
 * [Español](../translations/README-es.md)
@@ -31,35 +33,25 @@
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
 
-<div dir="rtl">
-
 ## عبارت منظم چیست؟
-</div>
-<div dir="rtl">
 
-> عبارت منظم یک گروه از کارکترها یا نمادهاست که برای پیدا کردن یک الگوی مشخص در یک متن به کار گرفته می شود.
-</div>
+> عبارت منظم یک گروه از حروف یا نماد‌ها است که برای پیدا کردن الگو در یک متن استفاده می‌شود.
 
-<div dir="rtl">
-یک عبارت منظم یک الگو است که با رشته ای حاص مطابقت دارد. عبارت منظم در اعتبار سنجی داده های ورودی فرم ها، پیدا کردن یک زیر متن در یک متن بزرگتر بر اساس یک الگوی ویژ] و مواردی از این دست به کار گرفته می شود. عبارت "Regular expression" کمی ثقیل است، پس معمولا بیشتر مخفف آن  - "regex" یا "regexp" - را به کار می برند.
+عبارت منظم یک الگو است که از چپ به راست با متنی خاص مطابقت پیدا میکند. عبارت منظم در جایگزین کردن کلمات در یک متن، تایید اعتبار اطلاعات ورودی یک فرم، استخراج یک تکه متن از یک متن طولانی‌تر بر اساس یک الگو و از این قبیل موارد کاربرد دارد. عبارت "Regular expression" کمی طولانی است، پس معمولا بیشتر از مخفف آن  - "regex" یا "regexp" - استفاده می‌شود.
 
-فرض کنید یه برنامه نوشته اید و می خواهید قوانینی برای گزینش نام کاربری برا کاربران بگزارید.  می خواهیم اجازه دهی که نام کاربری شامل حروف، اعداد، خط زیر و خط فاصله باشد. همچنین می خواهیم تعداد مشخصه ها یا همان کارکترها در نام کاربری محدود کنیم . ما از چنین عبارت منظمی برای اعتبار سنجی نام کاربری استفاده می کنیم:
-</div>
+فرض کنید برنامه‌ای نوشته‌اید و می‌خواهید در آن برای تعیین نام کاربری قانون بگذارید. نام‌های کاربری می‌توانند شامل حروف، اعداد، آندرسکور "_" و خط فاصله باشند. همچنین میخواهید تعداد حروف نام کاربری را محدود کنید. میتوانید از عبارت منظم زیر برای چک کردن نام کاربری استفاده کنید:
 <br/><br/>
 <p align="center">
-  <img src="../img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-fa.png" alt="Regular expression">
 </p>
-<div dir="rtl">
-عبارت منظم به کار رفته در اینجا رشته `john_doe` و `jo-hn_doe` و `john12_as` می پذیرد ولی `Jo` را به دلیل کوتاه بودن بیش از حد و همچنین به کار بردن حروف بزرگ نمی پذیرد.
-</div>
-<div dir="rtl">
+عبارت منظم بالا `john_doe`، `jo-hn_dow` و `john12_as` را قبول می‌کند. اما `Jo` را قبول نمیکند چون دارای یک حرف بزرگ و همچنین کوتاه‌تر از انتظار است.
 
 ## فهرست
 
-- [پایه ای ترین همخوانی](#1-basic-matchers)
-- [Meta character](#2-meta-characters)
-  - [Full stop](#21-full-stop)
-  - [Character set](#22-character-set)
+- [تطبیق ساده](#1-basic-matchers)
+- [کاراکتر‌های ماورا](#2-meta-characters)
+  - [نقطه](#21-full-stop)
+  - [دسته کاراکتر](#22-character-set)
     - [Negated character set](#221-negated-character-set)
   - [Repetitions](#23-repetitions)
     - [The Star](#231-the-star)
@@ -83,92 +75,84 @@
   - [Global search](#52-global-search)
   - [Multiline](#53-multiline)
 - [Greedy vs lazy matching](#6-greedy-vs-lazy-matching)
-</div>
-<div dir="rtl">
 
-## 1. پایه ای ترین همخوانی
+## 1. تطبیق ساده
 
-یک عبارت منظم در واقع یک الگو برای جست و جو در یک متن است. برای مثال عبارت منظم  `the` به معنی : حرف
-`t`, پس از آن حرف `h`, پس از آن حرف  `e` است.
-</div>
+عبارت منظم نوعی الگو است که برای جستجو کردن در یک متن استفاده می‌شود. برای مثال عبارت منظم  `the` یعنی: `t`، به دنبال حرف `h`، به دنیال حرف `e`.
+<div dir="ltr">
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
+</div>
 
-<div dir="rtl">
 
 [عبارت منظم را در عمل ببینید](https://regex101.com/r/dmRygT/1)
 
-عبارت منظم `123` با رشته `123` مطابقت دارد. عبارت منظم با مقایسه حرف به حرف و کارکتر به کارکترش با متن مورد نظر تطابق را می یابد. همچنین عبارت منظم حساس به اندازه (بزرگی یا کوچکی حروف) هستند. بنابر این واژه ی `The` با  `the` همخوان نیست.
-</div>
+عبارت منظم `123` با رشته `123` مطابقت دارد. عبارت منظم با مقایسه حرف به حرف و کارکتر به کارکتر با متن مورد نظر تطابق را می‌یابد. همچنین عبارت منظم به بزرگی و کوچکی حروف حساسند (بزرگی یا کوچکی حروف). بنابر این واژه‌ی `The` با  `the` یکی نیست.
 
+<div dir="ltr">
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
-
-<div dir="rtl">
-
-[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/1paXsy/1)
 </div>
 
-## 2. Meta Characters
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/1paXsy/1)
 
-Meta characters are the building blocks of the regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
+## 2. کاراکتر‌های ماورا
 
-|Meta character|Description|
+کاراکتر‌های ماورا پایه و اساس عبارت‌های منظم‌اند. کاراکتر‌‌های ماورا در مقایسه متن معنی خودشان را نمی‌دهند بلکه به صورت خاصی به آنها نگاه می‌شود. بعضی از کاراکتر‌های ماورا معنی خاصی می‌دهند و داخل براکت نوشته می‌شوند.
+
+|کاراکتر ماورا|توضیحات|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|نقطه با هر کاراکتری بجز خط جدید تطبیق داده می‌شود.|
+|[ ]|گروه کاراکتر. با هر کاراکتری که داخل براکت‌ها هست تطبیق داده می‌شود.|
+|[^ ]|گروه کاراکتر مخالف. با هر کاراکتری که داخل براکت‌ها نیست تطبیق داده می‌شود.|
+|*|با صفر یا بیشتر تکرار عبارت قبلی تطبیق داده می‌شود.|
+|+|با یک یا بیشتر تکرار عبارت قبلی تطبیق داده می‌شود.|
+|?|عبارت قبلی را اختیاری می‌کند.|
+|{n,m}|کمانک. به تعداد حداقل m و حداکثر n با عبارت قبلی تطبیق پیدا می‌کند.|
+|(xyz)|گروه کاراکتر‌ها. با کاراکتر‌های xyz دقیقا به ترتیب تطبیق پیدا می‌کند.|
+|&#124;|جایگزینی. با عبارت قبل  یا بعد از &#124; تطبیق پیدا می‌کند.|
+|&#92;|کاراکتر بعدی را خنثی و به عنوان یک کاراکتر عادی در نظر می‌گیرد. این برای تطبیق خود کاراکتر‌های ماورا  <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code> کاربرد دارد.|
+|^|با ابتدای متن تطبیق پیدا می‌کند.|
+|$|با انتهای متن تطبیق پیدا می‌کند.|
 
-## 2.1 Full stop
+## 2.1 نقطه
 
-Full stop `.` is the simplest example of meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+نقطه `.` ساده‌ترین مثال برای یک کاراکتر ماوراست. نقطه با هر کاراکتری بجز خط جدید منطبق می‌شود. برای مثال عبارت منظم `.ar` یعنی: هر کاراکتری، به دنبال حرف `a`، به دنبال حرف `r`.
 
+<div dir="ltr">
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+</div>
 
-## 2.2 Character set
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/xc9GkU/1)
 
-Character sets are also called character class. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+## 2.2 دسته کاراکتر
 
+براکت‌ها برای نمایش دادن دسته کاراکتر‌ها استفاده می‌شود. برای تعیین یک محدوده از کاراکتر‌ها مب‌توانید از خط فاصله درون براکت‌ها استفاده کنید. ترتیب محدوده درون براکت‌ها اهمیتی ندارد. مثلا، عبارت منظم `[Tt]he` یعنی: `T` یا `t`، به دنبال `h`، به دنبال `e`.
+
+<div dir="ltr">
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by letter `r`,
-followed by a period `.` character.
+با این حال، نقطه درون دسته کاراکترها،خاصیت کاراکتر ماورا را ندارد و به معنی واقعی یک نقطه است. عبارت منظم `ar[.]` یعنی: حرف کوچک `a`، به دنبال حرف `r`، به دنبال کاراکتر نقطه.
 
+<div dir="ltr">
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/wL3xtE/1)
+
+</div>
 
 ### 2.2.1 Negated character set
 
