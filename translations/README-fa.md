@@ -44,7 +44,8 @@
 <p align="center">
   <img src="../img/regexp-fa.png" alt="Regular expression">
 </p>
-عبارت منظم بالا `john_doe`، `jo-hn_dow` و `john12_as` را قبول می‌کند. اما `Jo` را قبول نمیکند چون دارای یک حرف بزرگ و همچنین کوتاه‌تر از انتظار است.
+
+عبارت منظم بالا `john_doe`، `jo-hn_doe` و `john12_as` را قبول می‌کند. اما `Jo` را قبول نمی‌کند چراکه کوتاه تر از انتظار است و شامل حروف بزرگ انگلیسی می‌شود.
 
 ## فهرست
 
@@ -52,11 +53,11 @@
 - [کاراکتر‌های ماورا](#2-meta-characters)
   - [نقطه](#21-full-stop)
   - [دسته کاراکتر](#22-character-set)
-    - [Negated character set](#221-negated-character-set)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
+    - [دسته کاراکتر مخالف](#221-negated-character-set)
+  - [تکرار‌ها](#23-repetitions)
+    - [ستاره](#231-the-star)
+    - [علامت جمع](#232-the-plus)
+    - [علامت سوال](#233-the-question-mark)
   - [Braces](#24-braces)
   - [Character Group](#25-character-group)
   - [Alternation](#26-alternation)
@@ -125,7 +126,6 @@
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
-
 </div>
 
 [این عبارت منظم را در عمل ببنیند](https://regex101.com/r/xc9GkU/1)
@@ -152,87 +152,81 @@
 
 [این عبارت منظم را در عمل ببنیند](https://regex101.com/r/wL3xtE/1)
 
-</div>
 
-### 2.2.1 Negated character set
+### 2.2.1 دسته کاراکتر مخالف
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+به طور کلی، نماد ^ نشان دهنده شروع متن است، اما وقتی بعد از باز شدن براکت از آن استفاده شود گروه کاراکتر را مخالف می‌کند. برای مثال، عبارت منظم `[^c]ar` یعنی: هر کاراکتری بجز `c`، به دنبال `a`، به دنبال `r`.
 
+<div dir="ltr">
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 تکرار‌ها
 
-Following meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+می‌توانید یعد از عبارت خود از کاراکترهای `+`، `*` یا `?` استفاده کنید. این کاراکتر‌های برای نشان دادن اینکه چند بار می‌خواهید الگوی قبلی تکرار شود کاربرد دارد. این کاراکترها در وضعیت مختلف عملکرد متفاوت دارند.
 
-### 2.3.1 The Star
+### 2.3.1 ستاره
 
-The symbol `*` matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
-`[a-z]*` means: any number of lowercase letters in a row.
+ستاره `*` به معنی تکرار صفربار یا بیشتر الگوی قبلی است. عبار منظم `a*` یعنی: تکرار صفر بار یا بیشتر کاراکتر `a`. اگر ستاره بعد از گروه کاراکترها بیاید، برای تکرار کل گروه کاراکتر از آن استفاده می‌شود. برای مثال، عبارت منظم `[a-z]*` یعنی هر تعداد کاراکتر کوچک انگلیسی.
 
+<div dir="ltr">
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by lowercase character `c`,
-followed by lowercase character `a`, followed by lowercase character `t`,
-followed by zero or more spaces.
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/7m8me5/1)
 
+`*` میتواند برای کاراکتر ماورا `.`استفاده شود، در این صورت عبارت منظم با هر متنی منطبق می‌شود. از `*` می‌شود برای کاراکتر جای خالی `\s` استفاده کرد، در این صورت با کاراکتر مانند اسپیس و تب منطبق می‌شود. برای مثال، `\s*cat\s*` یعنی تعداد صفر یا بیشتر اسپیس یا تب، به دنبال کاراکتر `c`، به دنبال `a`، به دنبال `t` ، به دنبال تعداد صفر یا بیشتر کاراکتر.
+
+<div dir="ltr">
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 علامت جمع
 
-The symbol `+` matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: lowercase letter `c`, followed by
-at least one character, followed by the lowercase character `t`. It needs to be
-clarified that `t` is the last `t` in the sentence.
+علامت جمع با یک یا تعداد بیشتر از تکرار کاراکتر قبلی منطبق می‌شود. برای مثال عبارت منظم `c.+t` یعنی: کاراکتر `c`، به دنبال حداقل یک کاراکتر، به دنبال کاراکتر `t`.
 
+<div dir="ltr">
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 علامت سوال
 
-In regular expression the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional the uppercase
-letter `T`, followed by the lowercase character `h`, followed by the lowercase
-character `e`.
+در عبارت منظم، علامت سوال `?` باعث می‌شود که عبارت یا کاراکتر قبل از آن اختیاری شود، یعنی صفر یا یک بار تکرار شود. برای مثال `[T]?he` یعنی: یک `T` اختیاری، به دنبال `h` به دنبال `e`.
 
+<div dir="ltr">
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/cIg9zm/1)
 
+
+<div dir="ltr">
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
+</div>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[این عبارت منظم را در عمل ببنیند](https://regex101.com/r/kPpO2x/1)
 
+
+</div>
 ## 2.4 Braces
 
 In regular expression braces that are also called quantifiers are used to
