@@ -30,6 +30,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## 정규표현식이란 무엇인가?
 
@@ -76,7 +77,7 @@
   - [대소문자 구분없음](#51-대소문자-구분없음)
   - [전체 검색](#52-전체-검색)
   - [멀티 라인](#53-멀티-라인)
-- [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른 매칭)
+- [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른-매칭)
 
 ## 1. 기본 매쳐
 

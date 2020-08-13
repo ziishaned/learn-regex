@@ -30,11 +30,13 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [فارسی](../translations/README-fa.md)
 
 ## Qué es una expresión regular?
+
 > Una expresión regular es un grupo de caracteres o símbolos, los cuales son usados para buscar un patrón específico dentro de un texto.
 
-Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para remplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
+Una expresión regular es un patrón que que se compara con una cadena de caracteres de izquierda a derecha. La palabra "expresión regular" puede también ser escrita como "Regex" o "Regexp". Las expresiones regulares se utilizan para reemplazar un texto dentro de una cadena de caracteres (*string*), validar formularios, extraer una porción de una cadena de caracteres (*substring*) basado en la coincidencia de una patrón, y muchas cosas más.
 
 Imagina que estás escribiendo una aplicación y quieres agregar reglas para cuando el usuario elija su nombre de usuario. Nosotros queremos permitir que el nombre de usuario contenga letras, números, guión bajo (raya), y guión medio. También queremos limitar el número de caracteres en el nombre de usuario para que no se vea feo. Para ello usamos la siguiente expresión regular para validar el nombre de usuario.
 
@@ -430,7 +432,7 @@ El modificador `g` se utiliza para realizar una coincidencia global
 Por ejemplo, la expresión regular `/.(At)/g` significa: cualquier carácter,
 excepto la nueva línea, seguido del carácter en minúscula `a`, seguido del carácter
 en minúscula `t`. Debido a que proveimos el indicador `g` al final de la expresión
-regular, ahora encontrará todas las coincidencias de toda la cadena de entrada, no sólo la 
+regular, ahora encontrará todas las coincidencias de toda la cadena de entrada, no sólo la
 primera instancia (el cual es el comportamiento normal).
 
 
