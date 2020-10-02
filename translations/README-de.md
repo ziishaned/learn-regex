@@ -357,7 +357,7 @@ Das sind die vordefinierten Zeichenklassen:
 |\s|Stimmt mit Leerraum überein: `[\t\n\f\r\p{Z}]`|
 |\S|Stimmt mit allem außer Leerraum überein: `[^\s]`|
 
-## 4. Lookaround
+## 4. Umsehen (Lookaround)
 
 Lookbehind ("zurückschauen") und Lookahead ("vorausschauen") (auch Lookaround ("Umsehen") genannt) sind besondere Arten von **Gruppierungen ohne Rückwärtsreferenz**
 (zur Erinnerung: das sind Gruppierungen, die zwar mit dem Muster übereinstimmen, aber sich die Übereinstimmung nicht "merken").
@@ -374,7 +374,7 @@ Das sind die Lookarounds, die es gibt:
 |?<=|Positiver Lookbehind|
 |?<!|Negativer Lookbehind|
 
-### 4.1 Positiver Lookahead
+### 4.1 Positives Vorausschauen (Lookahead)
 
 Ein positiver Lookahead versichert, dass der Teilausdruck vor dem Lookahead von dem Lookahead-Teilausdruck gefolgt wird.
 Das Ergebnis der Übereinstimmung beinhaltet dabei nur den Teilausdruck vor dem Lookahead.
@@ -390,7 +390,7 @@ ist eine zusätzliche Bedingung, die dafür sorgt, dass der Ausdruck nur mit `th
 
 [Teste den regulären Ausdruck](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negativer Lookahead
+### 4.2 Negatives Vorausschauen (Lookahead)
 
 Negative Lookaheads werden verwendet, um alle Übereinstimmungen in einer Zeichenkette zu bekommen, auf die **nicht** ein bestimmtes Muster folgt.
 Ein Negativer Lookahead wird wie ein positiver Lookahead definiert, nur dass statt einem Gleichheitszeichen ein Ausrufezeichen `!` benutzt wird, d.h.
@@ -402,7 +402,7 @@ Ein Negativer Lookahead wird wie ein positiver Lookahead definiert, nur dass sta
 
 [Teste den regulären Ausdruck](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positiver Lookbehind
+### 4.3 Positives Zurückschauen (Lookbehind)
 
 Positive Lookbehinds werden verwendet, um alle Übereinstimmungen in einer Zeichenkette zu bekommen, denen ein bestimmtes Muster vorhergeht.
 Postive Lookbehinds werden mit `(?<=...)` notiert. Der reguläre Ausdruck `(?<=(T|t)he\s)(fat|mat)` zum Beispiel bedeutet: alle `fat` oder `mat`, 
@@ -438,9 +438,9 @@ genutzt werden und sind ein integraler Bestandteil regulärer Ausdrücke.
 |g|Globale Suche: Die Suche geht durch die gesamte Eingabe.|
 |m|Mehrzeilig: Anker-Metazeichen funktionieren für Anfang/Ende jeder Zeile.|
 
-### 5.1 Schreibungsunabhängig
+### 5.1 Groß-/Kleinschreibung unempfindlich
 
-Der `i` Modifikator wird benutzt, um schreibungsunbhängige Übereinstimmungen zu finden. Zum Beispiel heißt der reguläre Ausdruck
+Der `i` Modifikator wird benutzt, um unabhängige Übereinstimmungen bei der Groß-/Kleinschreibung zu finden. Zum Beispiel heißt der reguläre Ausdruck
 `/The/gi`: großes `T`, gefolgt von `h`, dann `e`. Und am Ende des Ausdrucks ist der `i` Modifikator zu finden, welcher der Maschine 
 zu verstehen gibt, dass Groß- und Kleinschreibung ignoriert werden sollen. Wie zu sehen ist, wird auch der `g` Modifikator benutzt,
 da wir die gesamte Eingabe nach dem Muster absuchen wollen.
@@ -499,27 +499,29 @@ Zeilenumbruch. Wegen des `m` Modifikators wird das Muster nun auf das Ende jeder
 
 [Teste den regulären Ausdruck](https://regex101.com/r/E88WE2/1)
 
-## 6. Gierige vs Faule Übereinstimmung
+## 6. Gierige vs. faule Übereinstimmung
 
 Standardmäßig finden reguläre Ausdrücke Übereinstimmungen mit Gier (eng. *greed*), d.h. es wird nach den längsten Übereinstimmungen gesucht. 
 Mit `?` können wir faul (eng. *lazy*) suchen, d.h. es wird nach den kürzesten Übereinstimmungen gesucht.
 
 <pre>
-"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>.
+</pre>
 
 
 [Teste den regulären Ausdruck](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
-"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat.
+</pre>
 
 
 [Teste den regulären Ausdruck](https://regex101.com/r/AyAdgJ/2)
 
 ## Beitragen
 
-* Öffne pull requests mit Verbesserungen
-* Diskutiere Ideen in issues
+* Öffne Pull Requests mit Verbesserungen
+* Diskutiere Ideen in Issues
 * Erzähl es anderen
 * Gib Rückmeldung [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
