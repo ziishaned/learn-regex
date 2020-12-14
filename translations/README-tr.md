@@ -266,7 +266,7 @@ Düzenli ifadelerde miktar belirliyiciler olarakda bilinen süslü parantezler, 
 karakterin veya karakter grubunun kaç defa tekrar edebileceğini belirtmek için
 kullanılırlar.
 
-Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 0 aralığındaki karakterlerden, en
+Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 9 aralığındaki karakterlerden, en
 az 2 en fazla 3 defa ile eşleş.
 
 <pre>
