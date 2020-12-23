@@ -34,6 +34,8 @@
 
 ## 정규표현식이란 무엇인가?
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > 정규표현식은 텍스트에서 특정 패턴을 찾아내는데 사용되는 문자 혹은 기호들의 집합이다.
 
 정규표현식(Regular expression)은 대상 문자열에 왼쪽에서 오른쪽 방향으로 매칭되는 하나의 패턴이다. "Regular expression"이라고 매번 발음하기 어렵기 때문에, 보통 약어로 "regex" 혹은 "regexp", "정규식"으로 축약되어 사용된다. 정규 표현식은 문자열 내부의 텍스트 대체, 포맷의 유효성 검사, 패턴 매칭을 기반으로한 문자열에서 일부 텍스트를 추출, 그리고 그 외에 다양한 목적을 위해 사용된다.

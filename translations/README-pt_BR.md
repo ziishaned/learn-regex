@@ -34,6 +34,8 @@
 
 ## O que é uma Expressão Regular?
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > Expressão Regular é um grupo de caracteres ou símbolos utilizado para encontrar um padrão específico a partir de um texto.
 
 Uma expressão regular é um padrão que é comparado com uma cadeia de caracteres da esquerda para a direita. O termo "Expressão regular" é longo e difícil de falar; você geralmente vai encontrar o termo abreviado como "regex" ou "regexp". Expressões regulares são usadas para substituir um texto dentro de uma string, validar formulários, extrair uma parte de uma string baseada em um padrão encontrado e muito mais.

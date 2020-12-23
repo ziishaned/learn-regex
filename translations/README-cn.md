@@ -34,6 +34,8 @@
 
 ## 什么是正则表达式？
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > 正则表达式是一组由字母和符号组成的特殊文本，它可以用来从文本中找出满足你想要的格式的句子。
 
 一个正则表达式是一种从左到右匹配主体字符串的模式。

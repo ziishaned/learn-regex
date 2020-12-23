@@ -34,6 +34,8 @@
 
 ## Qu'est-ce qu'une expression régulière?
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > Une expression régulière est un groupement de caractères ou symboles utilisés pour trouver un schéma spécifique dans un texte.
 
 Une expression régulière est un schéma qui est comparé à une chaîne de caractères (string) de gauche à droite. Le mot "Expression régulière"

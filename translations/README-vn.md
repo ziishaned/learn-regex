@@ -36,6 +36,8 @@
 
 ## Biểu thức chính quy là gì?
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > Biểu thức chính quy là một nhóm các ký tự hoặc ký hiệu được sử dụng để tìm một mẫu cụ thể từ một văn bản.
 
 Biểu thức chính quy là một khuôn mẫu được khớp với chuỗi các từ, từ trái sang phải. Từ "Biểu thức chính quy" là một câu cửa miệng, bạn thường sẽ tìm thấy thuật ngữ viết tắt là "regex" hoặc "regexp". Biểu thức chính quy được sử dụng để thay thế một văn bản trong một chuỗi, xác thực mẫu, trích xuất một chuỗi con từ một chuỗi dựa trên khớp mẫu và hơn thế nữa.

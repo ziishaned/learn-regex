@@ -34,6 +34,8 @@
 
 ## Düzenli İfade Nedir?
 
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
+
 > Düzenli ifade, bir metinden belirli bir deseni bulmak için kullanılan bir karakter veya sembol grubudur.
 
 Bir düzenli ifade soldan sağa söz konusu harf öbekleriyle eşleşen bir desendir.
