@@ -237,7 +237,7 @@ clarified that`t` is the last `t` in the sentence.
 In regular expressions, the meta character `?` makes the preceding character
 optional. This symbol matches zero or one instance of the preceding character.
 For example, the regular expression `[T]?he` means: Optional uppercase
-`T`, followed by a lowercase `h`, followed bya lowercase `e`.
+`T`, followed by a lowercase `h`, followed by a lowercase `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
