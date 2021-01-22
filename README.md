@@ -1,8 +1,13 @@
 <p align="center">
     <br/>
-    <a href="https://github.com/ziishaned/learn-regex">
-        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    <a href="https://gum.co/learn-regex">
+        <img src="https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="Download PDF">
     </a>
+    
+        <a href="https://twitter.com/ziishaned">
+            <img src="https://img.shields.io/twitter/follow/ziishaned.svg?style=social" />
+        </a>
+
     <br /><br />
     <p>
         <a href="https://twitter.com/ziishaned">
