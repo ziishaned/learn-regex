@@ -1,23 +1,23 @@
 <p align="center">
     <br/>
     <a href="https://github.com/ziishaned/learn-regex">	
-        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">	
-    </a>	
-    
-    <br />
+        <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+    </a>
+</p>
+<br/>
+<p align="center">
     <a href="https://gum.co/learn-regex">
         <img src="https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="Download PDF">
     </a>
+</p>
 
-    <br /><br />
-    <p>
-        <a href="https://twitter.com/ziishaned">
-            <img src="https://img.shields.io/twitter/follow/ziishaned.svg?style=social" />
-        </a>
-        <a href="https://github.com/ziishaned">
-            <img src="https://img.shields.io/github/followers/ziishaned.svg?label=Follow%20%40ziishaned&style=social" />
-        </a>
-    </p>
+<p align="center">
+    <a href="https://twitter.com/ziishaned">
+        <img src="https://img.shields.io/twitter/follow/ziishaned.svg?style=social" />
+    </a>
+    <a href="https://github.com/ziishaned">
+        <img src="https://img.shields.io/github/followers/ziishaned.svg?label=Follow%20%40ziishaned&style=social" />
+    </a>
 </p>
 
 ## Translations:
