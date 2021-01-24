@@ -26,9 +26,11 @@
 
 ## What is Regular Expression?
 
-<a href="https://gum.co/learn-regex">
-    <img src="https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="Download PDF">
-</a>
+<p>
+    <a href="https://gum.co/learn-regex">
+        <img src="https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="Download PDF">
+    </a>
+</p>
 
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
