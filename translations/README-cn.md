@@ -159,6 +159,8 @@
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
+"ar[\.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
+"ar[\.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar\.</strong></a>
 </pre>
 
 [在线练习](https://regex101.com/r/wL3xtE/1)
