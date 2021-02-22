@@ -305,7 +305,7 @@ within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 `(c|g|p)ar` in that it matches the same characters but will not create a capture group.
 
 <pre>
-"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+"(?:c|g|p)ar" => The c<a href="#learn-regex"><strong>ar</strong></a> is p<a href="#learn-regex"><strong>ar</strong></a>ked in the g<a href="#learn-regex"><strong>ar</strong></a>age.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/Rm7Me8/1)
