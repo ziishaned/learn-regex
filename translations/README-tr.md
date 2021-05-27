@@ -73,6 +73,7 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
     - [Soru İşareti](#233-soru-İşareti)
   - [Süslü Parantez](#24-süslü-parantez)
   - [Karakter Grubu](#25-karakter-grubu)
+      - [Karakter Grubu Olmayanlar](#251-karakter-grubu-olmayanlar)
   - [Değişim](#26-değişim)
   - [Özel Karakter Hariç Tutma](#27-Özel-karakter-hariç-tutma)
   - [Sabitleyiciler](#28-sabitleyiciler)
@@ -88,7 +89,7 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
   - [Büyük/Küçük harf duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
   - [Bütünsel Arama](#52-genel-arama)
   - [Çok satırlı](#53-Çok-satırlı)
-
+- [Açgözlü vs Tembel Eşleştirme](#6-açgözlü-vs-tembel-eşleştirme)
 ## 1. Temel Eşleştiriciler
 
 Bir düzenli ifade bir metin içinde arama yapabilmek için kullandığımız bir karakter desenidir.
@@ -268,7 +269,7 @@ Düzenli ifadelerde miktar belirliyiciler olarakda bilinen süslü parantezler, 
 karakterin veya karakter grubunun kaç defa tekrar edebileceğini belirtmek için
 kullanılırlar.
 
-Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 0 aralığındaki karakterlerden, en
+Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 9 aralığındaki karakterlerden, en
 az 2 en fazla 3 defa ile eşleş.
 
 <pre>
@@ -314,6 +315,21 @@ karakteri, ardından `a` karakteri, ardından `r` karakteri gelir.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/tUxrBG/1)
+
+Not olarak yakalanan gruplar yalnızca eşleşmez, ayrıca yakalanan karakterler ana dil içinde kullanılır.Bu ana dil Python,JavaScript ve neredeyse herhangi bir dilde düzenli ifadelerin fonksiyon tanımlamalarında olabilir.
+
+### 2.5.1 Karakter Grubu Olmayanlar
+
+Karakter grubu olmayan bir grup, karakterlerle eşleşen ancak grubu yakalayamayan bir yakalama grubudur. Karakter grubu olmayan bir grup parantez içinde`(...)` önce `?` ve ardından `:` ile gösterilir. Örneğin, `(?:c|g|p)ar` düzenli ifadesi, aynı karakterlerle eşleştiği ancak bir yakalama grubu oluşturmayacağı için `(c|g|p)ar` ifadesine benzer.
+
+<pre>
+"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/Rm7Me8/1)
+
+Karakter grubu olmayanlar bul-ve-değiştir işlevselliğinde kullanıldığında veya karakter gruplarıyla karıştırıldığında, herhangi bir başka tür çıktı üretirken genel görünümü korumak için kullanışlı olabilir.
+Ayrıca bakınız [4. Bakınmak](#4-bakınmak).
 
 ## 2.6 Değişim
 
@@ -591,6 +607,21 @@ eşleştirir.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/E88WE2/1)
+
+## 6. Açgözlü vs Tembel Eşleştirme
+
+Varsayılan olarak, bir düzenli ifade açgözlü bir eşleştirme yapacaktır, bu da eşleşmenin mümkün olduğu kadar çok olacağı anlamına gelir. Tembel bir şekilde eşleştirmek için `?` kullanabiliriz, bu da eşleşme olabildiğince kısa olacaktır.
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/AyAdgJ/2)
 
 ## Contribution
 
