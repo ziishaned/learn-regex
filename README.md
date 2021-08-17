@@ -421,7 +421,7 @@ regular expressions:
 
 Lookbehinds and lookaheads (also called lookarounds) are specific types of
 ***non-capturing groups*** (used to match a pattern but without including it in the matching
-list). Lookarounds are used when we a pattern must be
+list). Lookarounds are used when a pattern must be
 preceded or followed by another pattern. For example, imagine we want to get all
 numbers that are preceded by the `$` character from the string
 `$4.44 and $10.88`. We will use the following regular expression `(?<=\$)[0-9\.]*`
