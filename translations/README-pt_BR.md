@@ -78,6 +78,7 @@ A expressão regular acima aceita as strings `john_doe`, `jo-hn_doe` e `john12_a
   - [Indiferente à Maiúsculas](#51-indiferente-à-maiúsculas)
   - [Busca Global](#52-busca-global)
   - [Multilinhas](#53-multilinhas)
+- [Guloso vs Não-Guloso](#6-guloso-vs-não-guloso)
 
 ## 1. Combinações Básicas
 
@@ -419,6 +420,23 @@ O modificador `m` é usado para realizar uma busca em várias linhas. Como falam
 </pre>
 
 [Teste a RegExp](https://regex101.com/r/E88WE2/1)
+
+### 6. Guloso vs Não-Guloso
+
+Por padrão, uma regex irá realizar uma consulta gulosa, isto significa que a busca irá capturar ao padrão mais longo possível. Nós podemos usar `?` para buscar de uma forma não-gulosa, isto significa que a busca irá capturar ao padrão mais curto possível.
+
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+
+[Teste a RegExp](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[Teste a RegExp](https://regex101.com/r/AyAdgJ/2)
+
 
 ## Contribution
 
