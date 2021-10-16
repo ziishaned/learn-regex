@@ -30,6 +30,7 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## Что такое Регулярное выражение?
 
