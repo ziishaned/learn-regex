@@ -122,7 +122,7 @@ Meta karakterler aşağıdaki gibidir:
 
 |Meta karakter|Açıklama|
 |:----:|----|
-|.|Satır sonuç hariç herhangi bir karakterle eşleşir.|
+|.|Satır başlangıcı hariç herhangi bir karakterle eşleşir.|
 |[ ]|Köşeli parantezler arasında bulunan herhangi bir karakterle eşleşir.|
 |[^ ]|Köşeli parantez içerisinde yer alan `^` işaretinden sonra girilen karakterler haricindeki karakterlerle eşleşir.|
 |*|Kendisinden önce yazılan karakterin sıfır veya daha fazla tekrarı ile eşleşir.|
