@@ -150,7 +150,7 @@ gelir.
 
 ## 2.2 Karakter Takımı
 
-Karakter takımları aryıca Karakter sınıfı olarak bilinir. Karakter takımlarını
+Karakter takımları ayrıca Karakter sınıfı olarak bilinir. Karakter takımlarını
 belirtmek için köşeli ayraçlar kullanılır. Karakterin aralığını belirtmek için
 bir karakter takımında tire kullanın. Köşeli parantezlerdeki karakter aralığının
 sıralaması önemli değildir.
