@@ -463,7 +463,7 @@ Düzenli ifadelerde kullanılan bakınma sembolleri aşadaki gibidir:
 |?=|Positive Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme varsa` sonuç döndürür.)|
 |?!|Negative Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme yoksa` sonuç döndürür.)|
 |?<=|Positive Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme varsa` sonuç döndürür.)|
-|?<-!-|Negative Lookbehind Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.|
+|?<-!-|Negative Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.)|
 
 ### 4.1 Positive Lookahead
 
