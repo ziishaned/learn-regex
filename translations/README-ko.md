@@ -31,6 +31,7 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## 정규표현식이란 무엇인가?
 

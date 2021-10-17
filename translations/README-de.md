@@ -21,6 +21,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [עברית](translations/README-he.md)
 
 ## Was sind Reguläre Ausdrücke?
 
