@@ -66,8 +66,8 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
 - [Temel Eşleştiriciler](#1-temel-eşleştiriciler)
 - [Meta Karakterler](#2-meta-karakterler)
   - [Nokta](#21-nokta)
-  - [Karakter takımı](#22-karakter-takımı)
-    - [Negatiflenmiş karakter seti](#221-negatiflenmiş-karakter-seti)
+  - [Karakter Takımı](#22-karakter-takımı)
+    - [Negatiflenmiş Karakter Seti](#221-negatiflenmiş-karakter-seti)
   - [Tekrarlar](#23-tekrarlar)
     - [Yıldız İşareti](#231-yıldız-İşareti)
     - [Artı İşareti](#232-artı-İşareti)
@@ -78,8 +78,8 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
   - [Değişim](#26-değişim)
   - [Özel Karakter Hariç Tutma](#27-Özel-karakter-hariç-tutma)
   - [Sabitleyiciler](#28-sabitleyiciler)
-    - [Ters v işareti](#281-Şapka-İşareti)
-    - [Dolar işareti](#282-dolar-İşareti)
+    - [Şapka İşareti](#281-Şapka-İşareti)
+    - [Dolar İşareti](#282-dolar-İşareti)
 - [Kısaltma Karakter Takımları](#3-kısaltma-karakter-takımları)
 - [Bakınmak](#4-bakınmak)
   - [Olumlu Bakınma](#41-positive-lookahead)
@@ -87,10 +87,11 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
   - [Positive Lookbehind](#43-positive-lookbehind)
   - [Negative Lookbehind](#44-negative-lookbehind)
 - [İşaretler](#5-İşaretler)
-  - [Büyük/Küçük harf duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
+  - [Büyük/Küçük Harf Duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
   - [Bütünsel Arama](#52-genel-arama)
-  - [Çok satırlı](#53-Çok-satırlı)
+  - [Çok Satırlı](#53-Çok-satırlı)
 - [Açgözlü vs Tembel Eşleştirme](#6-açgözlü-vs-tembel-eşleştirme)
+
 ## 1. Temel Eşleştiriciler
 
 Bir düzenli ifade bir metin içinde arama yapabilmek için kullandığımız bir karakter desenidir.
