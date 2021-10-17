@@ -169,7 +169,7 @@ beliebige Anzahl von Kleinbuchstaben in Folge.
 
 Das `*`-Symbol kann zusammen mit dem Metazeichen `.` verwendet werden, um mit einer vollkommen beliebigen Zeichenkette übereinzustimmen `.*`.
 Es kann auch mit der vordefinierten Zeichenklasse `\s` verwendet werden, um mit beliebig viel Leerraum (Leerzeichen, Tabulatoren, Zeilenumbrüchen)
-übereinzustimmen. Der Ausdruck `\s*cat\*` heißt zum Beispiel: null oder mehrere Leerzeichen, gefolgt von dem Buchstaben `c`, gefolgt vom Buchstaben `a`, 
+übereinzustimmen. Der Ausdruck `\s*cat\s*` heißt zum Beispiel: null oder mehrere Leerzeichen, gefolgt von dem Buchstaben `c`, gefolgt vom Buchstaben `a`, 
 gefolgt vom Buchstaben `t` und schließlich gefolgt von null oder mehreren Leerzeichen.
 
 <pre>
