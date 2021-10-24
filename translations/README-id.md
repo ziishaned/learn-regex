@@ -86,29 +86,28 @@ surat dan juga terlalu pendek.
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 
-## 1. Basic Matchers
+## 1. Pencocokan Dasar
 
-A regular expression is just a pattern of characters that we use to perform a
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-
+Ekspresi reguler hanyalah pola karakter yang kita gunakan untuk melakukan
+pencarian dalam teks. Misalnya, ekspresi reguler `the` berarti: huruf
+`t`, diikuti huruf `h`, diikuti huruf `e`.
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Uji Ekspresi reguler](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
+Ekspresi reguler `123` cocok dengan string `123`. Ekspresi reguler adalah
+dicocokkan dengan string input dengan membandingkan setiap karakter di reguler
+ekspresi ke setiap karakter dalam string input, satu demi satu. Reguler
+ekspresi biasanya peka huruf besar/kecil sehingga ekspresi reguler `The` akan
+tidak cocok dengan string `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Uji Ekspresi reguler](https://regex101.com/r/1paXsy/1)
 
 ## 2. Meta Characters
 
