@@ -48,7 +48,7 @@ memvalidasi nama pengguna:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 Ekspresi reguler di atas dapat menerima string `john_doe`, `jo-hn_doe` dan
