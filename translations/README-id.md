@@ -26,7 +26,7 @@
 * [עברית](translations/README-he.md)
 * [Bahasa Indonesia](translations/README-id.md)
 
-## What is Regular Expression?
+## Apa itu Ekspresi Reguler?
 
 <p>
     <a href="https://gum.co/learn-regex">
@@ -34,55 +34,53 @@
     </a>
 </p>
 
-> A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
+> Ekspresi reguler adalah sekelompok karakter atau simbol yang digunakan untuk menemukan pola tertentu dalam sebuah teks.
 
-A regular expression is a pattern that is matched against a subject string from
-left to right. Regular expressions are used to replace text within a string, 
-validating forms, extracting a substring from a string based on a pattern match, 
-and so much more. The term "regular expression" is a mouthful, so you will usually
-find the term abbreviated to "regex" or "regexp". 
+Ekspresi reguler adalah pola yang dicocokkan dengan string subjek dari
+kiri ke kanan. 
+Ekspresi reguler digunakan untuk mengganti teks dalam string,memvalidasi formulir, mengekstraksi substring dari string berdasarkan kecocokan pola, dan masih banyak lagi. Istilah "ekspresi reguler" adalah seteguk, jadi kamu biasanya akan temukan istilah yang disingkat menjadi "regex" atau "regexp". 
 
-Imagine you are writing an application and you want to set the rules for when a
-user chooses their username. We want to allow the username to contain letters,
-numbers, underscores and hyphens. We also want to limit the number of characters
-in the username so it does not look ugly. We can use the following regular expression to
-validate the username:
+Bayangkan Anda sedang menulis aplikasi dan Anda ingin menetapkan aturan kapan a
+pengguna memilih nama pengguna mereka. Kami ingin mengizinkan nama pengguna berisi huruf,
+angka, garis bawah, dan tanda hubung. Kami juga ingin membatasi jumlah karakter
+di username agar tidak terlihat jelek. Kita dapat menggunakan ekspresi reguler berikut untuk
+memvalidasi nama pengguna:
 
 <br/><br/>
 <p align="center">
   <img src="./img/regexp-en.png" alt="Regular expression">
 </p>
 
-The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
-`john12_as`. It does not match `Jo` because that string contains an uppercase
-letter and also it is too short.
+Ekspresi reguler di atas dapat menerima string `john_doe`, `jo-hn_doe` dan
+`john12_as`. Itu tidak cocok dengan `Jo` karena string itu berisi huruf besar
+surat dan juga terlalu pendek.
 
-## Table of Contents
+## Daftar isi
 
-- [Basic Matchers](#1-basic-matchers)
-- [Meta Characters](#2-meta-characters)
-  - [The Full Stop](#21-the-full-stop)
-  - [Character Sets](#22-character-sets)
-    - [Negated Character Sets](#221-negated-character-sets)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
-  - [Capturing Groups](#25-capturing-groups)
+- [Pencocokan Dasar](#1-basic-matchers)
+- [Karakter Meta](#2-meta-characters)
+  - [Titik](#21-the-full-stop)
+  - [Set Karakter](#22-character-sets)
+    - [Set Karakter yang Dinegasikan](#221-negated-character-sets)
+  - [Repetisi](#23-repetitions)
+    - [Tanda Bintang](#231-the-star)
+    - [Tanda Tambah](#232-the-plus)
+    - [Tanda Tanya](#233-the-question-mark)
+  - [Tanda Kurung besar](#24-braces)
+  - [Penangkapan group](#25-capturing-groups)
       - [Non-Capturing Groups](#251-non-capturing-groups)
-  - [Alternation](#26-alternation)
-  - [Escaping Special Characters](#27-escaping-special-characters)
-  - [Anchors](#28-anchors)
-    - [The Caret](#281-the-caret)
-    - [The Dollar Sign](#282-the-dollar-sign)
-- [Shorthand Character Sets](#3-shorthand-character-sets)
+  - [Alternasi](#26-alternation)
+  - [Karakter spesial](#27-escaping-special-characters)
+  - [Jangkar](#28-anchors)
+    - [Tanda Karet](#281-the-caret)
+    - [Tanda Dollar](#282-the-dollar-sign)
+- [Shorthand Set Karakter](#3-shorthand-character-sets)
 - [Lookarounds](#4-lookarounds)
   - [Positive Lookahead](#41-positive-lookahead)
   - [Negative Lookahead](#42-negative-lookahead)
   - [Positive Lookbehind](#43-positive-lookbehind)
   - [Negative Lookbehind](#44-negative-lookbehind)
-- [Flags](#5-flags)
+- [Bendera](#5-flags)
   - [Case Insensitive](#51-case-insensitive)
   - [Global Search](#52-global-search)
   - [Multiline](#53-multiline)
