@@ -59,7 +59,7 @@ surat dan juga terlalu pendek.
 
 - [Pencocokan Dasar](#1-basic-matchers)
 - [Karakter Meta](#2-meta-characters)
-  - [Titik](#21-the-full-stop)
+  - [Tanda Titik](#21-the-full-stop)
   - [Set Karakter](#22-character-sets)
     - [Set Karakter yang Dinegasikan](#221-negated-character-sets)
   - [Repetisi](#23-repetitions)
@@ -109,40 +109,40 @@ tidak cocok dengan string `the`.
 
 [Uji Ekspresi reguler](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Karakter Meta
 
-Meta characters are the building blocks of regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
+Karakter meta adalah blok bangunan ekspresi reguler. Meta
+karakter tidak berdiri sendiri tetapi sebaliknya ditafsirkan dalam beberapa
+cara spesial. Beberapa karakter meta memiliki arti khusus dan tertulis di dalamnya
+tanda kurung siku. Karakter metanya adalah sebagai berikut:
 
-|Meta character|Description|
+|Karakter Meat|Deskripsi|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Titik cocok dengan karakter tunggal apa pun kecuali jeda baris.|
+|[ ]|Kelas karakter. Cocok dengan karakter apa pun yang ada di antara tanda kurung siku.|
+|[^ ]|Kelas karakter yang dinegasikan. Cocok dengan karakter apa pun yang tidak ada di antara tanda kurung siku|
+|*|Mencocokkan 0 atau lebih pengulangan dari simbol sebelumnya.|
+|+|Mencocokkan 1 atau lebih pengulangan dari simbol sebelumnya.|
+|?|Menjadikan simbol sebelumnya opsional.|
+|{n,m}|Braces. Cocok setidaknya "n" tetapi tidak lebih dari "m" pengulangan simbol sebelumnya.|
+|(xyz)|Kelompok karakter. Mencocokkan karakter xyz dalam urutan yang tepat.|
+|&#124;|AAlternasi. Cocok dengan karakter sebelum atau karakter setelah simbol.|
+|&#92;|Escape karakter berikutnya. Ini memungkinkan Anda untuk mencocokkan karakter yang dipesan <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Cocok dengan awal input.|
+|$|Cocok dengan akhir input.|
 
-## 2.1 The Full Stop
+## 2.1 Tanda Titik
 
-The full stop `.` is the simplest example of a meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+Tanda titik `.` adalah contoh paling sederhana dari karakter meta. Karakter meta `.`
+cocok dengan karakter tunggal apa pun. Itu tidak akan cocok dengan karakter kembali atau baris baru.
+Misalnya, ekspresi reguler `.ar` berarti: karakter apa pun, diikuti oleh
+huruf `a`, diikuti dengan huruf `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Uji Ekspresi Reguler](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 Character Sets
 
