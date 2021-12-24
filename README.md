@@ -112,6 +112,8 @@ not match the string `the`.
 
 [Test the regular expression](https://regex101.com/r/1paXsy/1)
 
+**[⬆ back to top](#table-of-contents)**
+
 ## 2. Meta Characters
 
 Meta characters are the building blocks of regular expressions.  Meta
@@ -402,6 +404,8 @@ character and the matcher must be at the end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
+**[⬆ back to top](#table-of-contents)**
+
 ##  3. Shorthand Character Sets
 
 There are a number of convenient shorthands for commonly used character sets/
@@ -416,6 +420,8 @@ regular expressions:
 |\D|Matches non-digits: `[^\d]`|
 |\s|Matches whitespace characters: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace characters: `[^\s]`|
+
+**[⬆ back to top](#table-of-contents)**
 
 ## 4. Lookarounds
 
@@ -496,6 +502,8 @@ string that are not after the word `The` or `the`.
 
 [Test the regular expression](https://regex101.com/r/8Efx5G/1)
 
+**[⬆ back to top](#table-of-contents)**
+
 ## 5. Flags
 
 Flags are also called modifiers because they modify the output of a regular
@@ -575,6 +583,8 @@ at the end of each line in a string.
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
+**[⬆ back to top](#table-of-contents)**
+    
 ## 6. Greedy vs Lazy Matching
 By default, a regex will perform a greedy match, which means the match will be as long as
 possible. We can use `?` to match in a lazy way, which means the match should be as short as possible.
@@ -591,6 +601,7 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 
 [Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
+**[⬆ back to top](#table-of-contents)**
 
 ## Contribution
 
