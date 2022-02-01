@@ -5,8 +5,6 @@
     </a>
 </p>
 
-<a href="https://liberapay.com/ziishaned/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-
 ## Translations:
 
 * [English](README.md)
