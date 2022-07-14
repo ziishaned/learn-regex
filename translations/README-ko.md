@@ -174,7 +174,7 @@
 `*` 부호는 메타 문자 `.`와 함께 모든 문자열과 매치되는 패턴을 만드는데 사용될 수 있다. 또한, `*` 부호는 공백 문자 `\s`와 함께 공백 문자들로 이루어진 문자열과 매치되는 패턴을 만드는데 사용될 수 있다. 예를 들어, 정규 표현식 `\s*cat\s*`는 0번 이상 공백문자가 나온 이후에 소문자 `c`, 소문자 `a`, 소문자 `t`가 자체로 나오고 그 뒤에 다시 0번 이상의 공백문자가 나오는 패턴을 의미한다.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/gGrwuz/1)

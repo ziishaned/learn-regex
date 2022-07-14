@@ -172,7 +172,7 @@ El símbolo `*` coincide con cero o más repeticiones del marcador anterior. La 
 El símbolo `*` se puede utilizar con el meta-carácter `.` para que coincida con cualquier cadena de caracteres `.*`. El símbolo `*` se puede utilizar con el carácter de espacio en blanco `\s` para que coincida con una cadena de caracteres de espacio en blanco. Por ejemplo, la expresión `\s*cat\s*` significa: cero o más espacios, seguido por el carácter en minúscula `c`, seguido del carácter en minúscula `a`, seguido del carácter en minúscula `t`, seguido de cero o más espacios.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Prueba la expresión regular](https://regex101.com/r/gGrwuz/1)

@@ -223,7 +223,7 @@ ardından küçük `c` karakteri gelir, ardından küçük `a` karakteri gelir, 
 küçük `t` karakteri gelir, ardından sıfır veya daha fazla boşluk gelir.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/gGrwuz/1)

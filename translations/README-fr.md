@@ -181,7 +181,7 @@ d'espaces, suivis du caractère `c` minuscule, suivi par le caractère `a` minus
 zéro ou plus d'espaces.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Essayer l'expression régulière](https://regex101.com/r/gGrwuz/1)
