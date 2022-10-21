@@ -1,6 +1,6 @@
 <p align="center">
     <br/>
-    <a href="https://github.com/ziishaned/learn-regex">	
+    <a href="https://github.com/ziishaned/learn-regex">
         <img src="https://i.imgur.com/bYwl7Vf.png" alt="Учим регулярки">
     </a>
 </p>
