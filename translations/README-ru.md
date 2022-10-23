@@ -8,7 +8,7 @@
 ## Переводы:
 
 * [English](../README.md)
-* [German](translations/README-de.md)
+* [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
