@@ -593,15 +593,15 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 This becomes even more useful when using the global flag. 
 
 <pre>
-"/(.*at)/" => The <a href="#learn-regex"><strong>fat cat</strong></a> sat on the mat and another fat cat<a href="#learn-regex"><strong> got jealous.</strong></a>. </pre>
+"/(fa.*?at)/g" => The <a href="#learn-regex"><strong>fat cat</strong></a> sat on the mat and another fat cat <a href="#learn-regex"><strong>got jealous.</strong></a>. </pre>
 
 Without using this the `?` to match in a lazy way it would look like this.
 
 <pre>
-"/(.*at)/" => The <a href="#learn-regex"><strong>fat cat sat on the mat and another fat cat</strong></a> got jealous.</pre>
+"/(fa.*at)/g" => The <a href="#learn-regex"><strong>fat cat sat on the mat and another fat cat </strong></a>got jealous.</pre>
 
 
-[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+[Test the regular expression](https://regex101.com/r/hxE4kq/1)
 
 
 ## Contribution
