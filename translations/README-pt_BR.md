@@ -174,7 +174,7 @@ O símbolo `*` corresponde a zero ou mais repetições do padrão antecedente. A
 O símbolo `*` pode ser usado junto do metacaractere `.` para encontrar qualquer string de caracteres `.*`. O símbolo `*` pode ser usado com o caractere de espaço em branco `\s` para encontrar uma string de caracteres em branco. Por exemplo, a expressão `\s*cat\s*` significa: zero ou mais espaços, seguidos do caractere minúsculo `c`, seguido do caractere minúsculo `a`, seguido do caractere minúsculo `t`, seguido de zero ou mais espaços.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Teste a RegExp](https://regex101.com/r/gGrwuz/1)
