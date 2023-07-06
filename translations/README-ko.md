@@ -18,6 +18,7 @@
 ## 번역:
 
 * [English](../README.md)
+* [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
@@ -31,7 +32,7 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
-* [עברית](translations/README-he.md)
+* [עברית](../translations/README-he.md)
 
 ## 정규표현식이란 무엇인가?
 

@@ -8,7 +8,7 @@
 ## Translations:
 
 * [English](../README.md)
-* German
+* [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
@@ -21,7 +21,8 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
-* [עברית](translations/README-he.md)
+* [فارسی](../translations/README-fa.md)
+* [עברית](../translations/README-he.md)
 
 ## Was sind Reguläre Ausdrücke?
 
