@@ -5,6 +5,7 @@
     </a>
 </p>
 
+
 ## Translations:
 
 * [English](README.md)
@@ -25,7 +26,7 @@
 * [עברית](translations/README-he.md)
 * [Bahasa Indonesia](translations/README-id.md)
 
-## What is Regular Expression?
+## Apa itu Ekspresi Reguler?
 
 <p>
     <a href="https://gum.co/learn-regex">
@@ -33,118 +34,115 @@
     </a>
 </p>
 
-> A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
+> Ekspresi reguler adalah sekelompok karakter atau simbol yang digunakan untuk menemukan pola tertentu dalam sebuah teks.
 
-A regular expression is a pattern that is matched against a subject string from
-left to right. Regular expressions are used to replace text within a string, 
-validate forms, extract a substring from a string based on a pattern match, 
-and so much more. The term "regular expression" is a mouthful, so you will usually
-find the term abbreviated to "regex" or "regexp". 
+Ekspresi reguler adalah pola yang dicocokkan dengan string subjek dari
+kiri ke kanan. 
+Ekspresi reguler digunakan untuk mengganti teks dalam string,memvalidasi formulir, mengekstraksi substring dari string berdasarkan kecocokan pola, dan masih banyak lagi. Istilah "ekspresi reguler" adalah seteguk, jadi kamu biasanya akan temukan istilah yang disingkat menjadi "regex" atau "regexp". 
 
-Imagine you are writing an application and you want to set the rules for when a
-user chooses their username. We want to allow the username to contain letters,
-numbers, underscores and hyphens. We also want to limit the number of characters
-in the username so it does not look ugly. We can use the following regular expression to
-validate the username:
+Bayangkan Anda sedang menulis aplikasi dan Anda ingin menetapkan aturan kapan a
+pengguna memilih nama pengguna mereka. Kami ingin mengizinkan nama pengguna berisi huruf,
+angka, garis bawah, dan tanda hubung. Kami juga ingin membatasi jumlah karakter
+di username agar tidak terlihat jelek. Kita dapat menggunakan ekspresi reguler berikut untuk
+memvalidasi nama pengguna:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
-`john12_as`. It does not match `Jo` because that string contains an uppercase
-letter and also it is too short.
+Ekspresi reguler di atas dapat menerima string `john_doe`, `jo-hn_doe` dan
+`john12_as`. Itu tidak cocok dengan `Jo` karena string itu berisi huruf besar
+surat dan juga terlalu pendek.
 
-## Table of Contents
+## Daftar isi
 
-- [Basic Matchers](#1-basic-matchers)
-- [Meta Characters](#2-meta-characters)
-  - [The Full Stop](#21-the-full-stop)
-  - [Character Sets](#22-character-sets)
-    - [Negated Character Sets](#221-negated-character-sets)
-  - [Repetitions](#23-repetitions)
-    - [The Star](#231-the-star)
-    - [The Plus](#232-the-plus)
-    - [The Question Mark](#233-the-question-mark)
-  - [Braces](#24-braces)
-  - [Capturing Groups](#25-capturing-groups)
+- [Pencocokan Dasar](#1-basic-matchers)
+- [Karakter Meta](#2-meta-characters)
+  - [Tanda Titik](#21-the-full-stop)
+  - [Set Karakter](#22-character-sets)
+    - [Set Karakter yang Dinegasikan](#221-negated-character-sets)
+  - [Repetisi](#23-repetitions)
+    - [Tanda Bintang](#231-the-star)
+    - [Tanda Tambah](#232-the-plus)
+    - [Tanda Tanya](#233-the-question-mark)
+  - [Tanda Kurung besar](#24-braces)
+  - [Penangkapan group](#25-capturing-groups)
       - [Non-Capturing Groups](#251-non-capturing-groups)
-  - [Alternation](#26-alternation)
-  - [Escaping Special Characters](#27-escaping-special-characters)
-  - [Anchors](#28-anchors)
-    - [The Caret](#281-the-caret)
-    - [The Dollar Sign](#282-the-dollar-sign)
-- [Shorthand Character Sets](#3-shorthand-character-sets)
+  - [Alternasi](#26-alternation)
+  - [Karakter spesial](#27-escaping-special-characters)
+  - [Jangkar](#28-anchors)
+    - [Tanda Karet](#281-the-caret)
+    - [Tanda Dollar](#282-the-dollar-sign)
+- [Shorthand Set Karakter](#3-shorthand-character-sets)
 - [Lookarounds](#4-lookarounds)
   - [Positive Lookahead](#41-positive-lookahead)
   - [Negative Lookahead](#42-negative-lookahead)
   - [Positive Lookbehind](#43-positive-lookbehind)
   - [Negative Lookbehind](#44-negative-lookbehind)
-- [Flags](#5-flags)
+- [Bendera](#5-flags)
   - [Case Insensitive](#51-case-insensitive)
   - [Global Search](#52-global-search)
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 
-## 1. Basic Matchers
+## 1. Pencocokan Dasar
 
-A regular expression is just a pattern of characters that we use to perform a
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-
+Ekspresi reguler hanyalah pola karakter yang kita gunakan untuk melakukan
+pencarian dalam teks. Misalnya, ekspresi reguler `the` berarti: huruf
+`t`, diikuti huruf `h`, diikuti huruf `e`.
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[Uji Ekspresi reguler](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
+Ekspresi reguler `123` cocok dengan string `123`. Ekspresi reguler adalah
+dicocokkan dengan string input dengan membandingkan setiap karakter di reguler
+ekspresi ke setiap karakter dalam string input, satu demi satu. Reguler
+ekspresi biasanya peka huruf besar/kecil sehingga ekspresi reguler `The` akan
+tidak cocok dengan string `the`.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[Uji Ekspresi reguler](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Karakter Meta
 
-Meta characters are the building blocks of regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
+Karakter meta adalah blok bangunan ekspresi reguler. Meta
+karakter tidak berdiri sendiri tetapi sebaliknya ditafsirkan dalam beberapa
+cara spesial. Beberapa karakter meta memiliki arti khusus dan tertulis di dalamnya
+tanda kurung siku. Karakter metanya adalah sebagai berikut:
 
-|Meta character|Description|
+|Karakter Meat|Deskripsi|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Titik cocok dengan karakter tunggal apa pun kecuali jeda baris.|
+|[ ]|Kelas karakter. Cocok dengan karakter apa pun yang ada di antara tanda kurung siku.|
+|[^ ]|Kelas karakter yang dinegasikan. Cocok dengan karakter apa pun yang tidak ada di antara tanda kurung siku|
+|*|Mencocokkan 0 atau lebih pengulangan dari simbol sebelumnya.|
+|+|Mencocokkan 1 atau lebih pengulangan dari simbol sebelumnya.|
+|?|Menjadikan simbol sebelumnya opsional.|
+|{n,m}|Braces. Cocok setidaknya "n" tetapi tidak lebih dari "m" pengulangan simbol sebelumnya.|
+|(xyz)|Kelompok karakter. Mencocokkan karakter xyz dalam urutan yang tepat.|
+|&#124;|AAlternasi. Cocok dengan karakter sebelum atau karakter setelah simbol.|
+|&#92;|Escape karakter berikutnya. Ini memungkinkan Anda untuk mencocokkan karakter yang dipesan <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Cocok dengan awal input.|
+|$|Cocok dengan akhir input.|
 
-## 2.1 The Full Stop
+## 2.1 Tanda Titik
 
-The full stop `.` is the simplest example of a meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+Tanda titik `.` adalah contoh paling sederhana dari karakter meta. Karakter meta `.`
+cocok dengan karakter tunggal apa pun. Itu tidak akan cocok dengan karakter kembali atau baris baru.
+Misalnya, ekspresi reguler `.ar` berarti: karakter apa pun, diikuti oleh
+huruf `a`, diikuti dengan huruf `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[Uji Ekspresi Reguler](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 Character Sets
 
@@ -596,7 +594,8 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 * Open a pull request with improvements
 * Discuss ideas in issues
 * Spread the word
+* Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
 ## License
 
-MIT &copy; Zeeshan Ahmad
+MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
