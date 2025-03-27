@@ -179,7 +179,7 @@ ardından bir `.` karakteri gelir.
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negatiflenmiş karakter seti
+### 2.2.1 Dışlanmış Karakter Seti
 
 Genellikle, şapka `^` sembolü harf öbeğinin başlangıcını temsil eder, ama köşeli
 parantez içinde kullanıldığında verilen karakter takımını hariç tutar.
@@ -224,7 +224,7 @@ ardından küçük `c` karakteri gelir, ardından küçük `a` karakteri gelir, 
 küçük `t` karakteri gelir, ardından sıfır veya daha fazla boşluk gelir.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/gGrwuz/1)
@@ -248,7 +248,7 @@ az bir karakter vardır.
 ### 2.3.3 Soru İşareti
 
 Düzenli ifadelerde `?` meta karakterinden önce girilen karakteri opsiyonel
-olarak tanımlar. Bu sembol önce gelen karakterin sıfır veya bir örbeğiyle
+olarak tanımlar. Bu sembol önce gelen karakterin sıfır veya bir örneğiyle
 eşleşir.
 
 Örneğin, `[T]?he` ifadesinin anlamı: opsiyonel büyük `T` harfi, ardından küçük
@@ -319,7 +319,7 @@ karakteri, ardından `a` karakteri, ardından `r` karakteri gelir.
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/tUxrBG/1)
 
-Not olarak yakalanan gruplar yalnızca eşleşmez, ayrıca yakalanan karakterler ana dil içinde kullanılır.Bu ana dil Python,JavaScript ve neredeyse herhangi bir dilde düzenli ifadelerin fonksiyon tanımlamalarında olabilir.
+Not olarak yakalanan gruplar yalnızca eşleşmez, ayrıca yakalanan karakterler ana dil içinde kullanılır.Bu ana dil Python, JavaScript ve neredeyse herhangi bir dilde düzenli ifadelerin fonksiyon tanımlamalarında olabilir.
 
 ### 2.5.1 Karakter Grubu Olmayanlar
 
@@ -462,14 +462,14 @@ Düzenli ifadelerde kullanılan bakınma sembolleri aşadaki gibidir:
 
 |Sembol|Açıklama|
 |:----:|----|
-|?=|Positive Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme varsa` sonuç döndürür.)|
-|?!|Negative Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme yoksa` sonuç döndürür.)|
-|?<=|Positive Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme varsa` sonuç döndürür.)|
-|?<-!-|Negative Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.)|
+|?=|Pozitif İleri Bakınma (Verdiğimiz ifade sonrası arar ve `eşleşme varsa` sonuç döndürür.)|
+|?!|Negatif İleri Bakınma (Verdiğimiz ifade sonrası arar ve `eşleşme yoksa` sonuç döndürür.)|
+|?<=|Pozitif Geri Bakınma (Verdiğimiz ifade öncesini arar ve `eşleşme varsa` sonuç döndürür.)|
+|?<!|Negatif Geri Bakınma (Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.)|
 
-### 4.1 Positive Lookahead
+### 4.1 Pozitif İleri Bakınma
 
-Positive Lookahead, ifadenin ilk bölümü bakınma ifadesiyle devam etmesi
+Pozitif ileri bakınma, ifadenin ilk bölümü bakınma ifadesiyle devam etmesi
 gerektiğini savunur. Bulunan eşleşme yalnızca ifadenin ilk bölümüyle eşleşen
 metin içerir. Olumlu bir bakınma tanımlamak için, içinde eşittir işareti yer
 alan parantezler `(?=...)` şeklinde kullanılır. Bakınma ifadesi parantezler
@@ -486,10 +486,10 @@ edeceğini tanımlıyoruz.
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negative Lookahead
+### 4.2 Negatif İleri Bakınma
 
-Negative Lookahead sembolü positive lookahead tersine, verdiğimiz desenle devam
-etmemesi durumunda eşleşir. Bu sembol positive lookahead gibi tanımlanır ama `=`
+Negatif ileri bakınma sembolü positive lookahead tersine, verdiğimiz desenle devam
+etmemesi durumunda eşleşir. Bu sembol pozitif ileri bakınma gibi tanımlanır ama `=`
 işareti yerine `!` kullanılır.
 
 `[T|t]he(?!\sfat)` ifadesinin anlamı: opsiyonel küçük bir `t` ya da büyük `T`
@@ -503,9 +503,9 @@ boşluk olan bir `fat` öbeği olmamalıdır.
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positive Lookbehind
+### 4.3 Pozitif Geri Bakınma
 
-Positive Lookbehind, belirli bir desenden önceki eşleşmeleri almak için
+Pozitif geri bakınma, belirli bir desenden önceki eşleşmeleri almak için
 kullanılır. `(?<=...)` ile gösterilir.
 
 Örneğin, `(?<=[T|t]he\s)(fat|mat)` ifadesinin anlamı: Öncesinde `The` veya `the`
@@ -517,9 +517,9 @@ kullanılır. `(?<=...)` ile gösterilir.
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/avH165/1)
 
-### 4.4 Negative Lookbehind
+### 4.4 Negatif Geri Bakınma
 
-Negative Lookbehind, belirli bir desenden önce olmayan eşleşmeleri almak için
+Negatif geri bakınma, belirli bir desenden önce olmayan eşleşmeleri almak için
 kullanılır. `(?<=!..)` ile gösterilir.
 
 Örneğin, `(?<!(T|t)he\s)(cat)` ifadesinin anlamı: Öncesinde `The` veya `the`
@@ -533,9 +533,9 @@ kullanılır. `(?<=!..)` ile gösterilir.
 
 ## 5. İşaretler
 
-İşaretler ayrıca düzenleyiciler olarak bilinirler, çünkü onlar bir düzenli
+İşaretler ayrıca düzenleyiciler olarak bilinirler, çünkü bir düzenli
 ifadenin çıktısını düzenlerler. Bu işaretler herhangi bir sırada veya
-kombinasyonda kullanılabilirler, ve bunlar Düzenli İfadelerin ayrılmaz bir
+kombinasyonda kullanılabilirler ve Düzenli İfadelerin ayrılmaz bir
 parçasıdırlar.
 
 |İşaret|Açıklama|
@@ -544,7 +544,7 @@ parçasıdırlar.
 |g|Genel Arama: Girilen harf öbeği boyunca bir desen arar.|
 |m|Çok satırlı: Sabitleyici meta karakteri her satırda çalışır.|
 
-### 5.1 Büyük/Küçük harf duyarlılığı
+### 5.1 Büyük/Küçük Harf Duyarlılığı
 
 `i` işaretleyicisi büyük/küçük harfe duyarsız eşleştirme yapmak için kullanılır.
 
@@ -626,13 +626,13 @@ Varsayılan olarak, bir düzenli ifade açgözlü bir eşleştirme yapacaktır, 
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/AyAdgJ/2)
 
-## Contribution
+## Katkı Sağla
 
-* Report issues
-* Open pull request with improvements
-* Spread the word
-* Reach out to me directly at ziishaned@gmail.com or [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Hataları Raporla
+* İyileştirmeler iç Pull Request aç
+* Paylaş
+* Geri bildirim için [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)'den eriş
 
-## License
+## Lisans
 
 MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
