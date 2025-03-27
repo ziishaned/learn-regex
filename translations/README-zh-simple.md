@@ -269,6 +269,22 @@
 
 [在线练习](https://regex101.com/r/tUxrBG/1)
 
+我们需要注意捕获组不仅可以匹配，而已可以捕获源编程语言的字符。源编程语言 (the parent language)可以是Python，Javascript或者任意其他实现了正则表达式的编程语言。
+
+### 2.5.1 非捕获组
+
+非捕获组是一个仅仅匹配字符的捕获组，但是它不捕获任意组与文本，也不针对组合计进行计数。非捕获组可以由被`:`跟着的`?`所表示，整个表达被`(...)`囊括。例如，正则表达式`(?:c|g|p)ar`与`(c|g|p)ar`相似，它们匹配相同的字符串，但是前者并不会捕获任意一个组。
+
+<pre>
+"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+[在线练习](https://regex101.com/r/Rm7Me8/1)
+
+非捕获组在“查找和替换”的情况(find-and-replace functionality)下会很有帮助。
+另外，如果非捕获组和捕获组被混合的时候，非捕获组可以帮助我们去得到一个匹配的概况。
+另请参阅[4. 前后关联约束(前后预查)](#4-前后关联约束前后预查)。
+
 ## 2.6 `|` 或运算符
 
 或运算符就表示或, 用作判断条件.
