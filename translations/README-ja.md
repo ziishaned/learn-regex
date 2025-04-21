@@ -206,7 +206,7 @@
 小文字の `c`, `a`, `t` が続き、その後に 0 個以上のスペースが続きます。
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/gGrwuz/1)
