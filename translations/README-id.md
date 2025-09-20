@@ -25,8 +25,9 @@
 * [Русский](translations/README-ru.md)
 * [Tiếng Việt](translations/README-vn.md)
 * [فارسی](translations/README-fa.md)
+* [Bahasa Indonesia](translations/README-id.md)
 
-## Apa Itu Ekspresi Reguler?
+## Apakah Ekspresi Reguler Itu?
 
 <p>
     <a href="https://gum.co/learn-regex">
@@ -34,17 +35,16 @@
     </a>
 </p>
 
+> Ekspresi reguler adalah sekumpulan karakter atau simbol yang digunakan untuk mencari pola tertentu dalam teks.
 
-> Ekspresi reguler ialah kumpulan dari karakter atau simbol yang digunakan untuk mencari pola tertentu dalam sebuah teks.
+Ekspresi reguler merupakan pola yang dicocokkan dengan string subjek dari kiri ke kanan. Ekspresi reguler digunakan untuk mengganti teks dalam string, memvalidasi formulir, mengekstrak substring dari string berdasarkan kecocokan pola, dan masih banyak lagi. Istilah "ekspresi reguler" terdengar panjang, sehingga Anda biasanya akan menemukan istilah ini disingkat menjadi "regex" atau "regexp".
 
-Sebuah ekspresi reguler adalah pola yang dicocokkan terhadap sebuah rangkaian subyek dari kiri ke kanan.Ekspresi reguler digunakan untuk menggantikan teks dalam sebuah rangkaian,memvaliadsi formulir, mengekstraksi sub-rangkaian dari rangkaian dengan berdasarkan pada kecocokan pola, dan masih banyak lagi
-
-Bayangkan lah Anda menulis sebuah aplikasi dan Anda ingin membuat aturan jika seorang pengguna memilih nama pengguna. Kita ingin mengizinkan nama pengguna mengandung huruf, angka, garis bawah dan tanda hubung. Kita juga ingin membatasi jumlah karakter dalam nama pengguna sehingga tidak terlihat jelek. Kita bisa menggunakan ekspresi reguler berikut untuk memvalidasi nama pengguna :
+Bayangkan Anda sedang menulis aplikasi dan ingin membuat aturan ketika pengguna memilih nama pengguna. Kita ingin mengizinkan nama pengguna berisi huruf, angka, garis bawah, dan tanda hubung. Kita juga ingin membatasi jumlah karakter dalam nama pengguna agar tidak terlihat buruk. Kita dapat menggunakan ekspresi reguler berikut untuk memvalidasi nama pengguna:
 <br/><br/>
 <p align="center">
   <img src="./img/regexp-id.png" alt="Regular expression">
 </p>
-Ekspresi reguler di atas dapat menerima rangakaian kata `jo-hn_doe`,`jo-hn-doe` dan `john12_as`. Pola ini tidka cocok dengan `Jo` karena rangkaian ini menggandung huruf besar dan terlalu pendek.
+Ekspresi reguler di atas dapat menerima string `john_doe`, `jo-hn_doe`, dan `john12_as`. Pola ini tidak cocok dengan `Jo` karena string tersebut mengandung huruf besar dan terlalu pendek.
 
 ## Daftar Isi :
 
@@ -79,14 +79,14 @@ Ekspresi reguler di atas dapat menerima rangakaian kata `jo-hn_doe`,`jo-hn-doe` 
 
 ## 1. Pencocokan Dasar
 
-Sebuah ekspresi reguler hanyalah pola karakter yang kita gunakan untuk melakukan pencarian dalam teks. Sebagai contoh, ekspresi reguler `the` berarti: huruf `t`, diikuti oleh huruf `h`, diikuti oleh huruf `e`.
+Ekspresi reguler hanyalah pola karakter yang kita gunakan untuk melakukan pencarian dalam teks. Sebagai contoh, ekspresi reguler `the` berarti: huruf `t`, diikuti oleh huruf `h`, diikuti oleh huruf `e`.
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
 [Uji Ekspresi Reguler](https://regex101.com/r/dmRygT/1)
 
-Ekspresi reguler `123` akan cocok dengan string `123`. Ekspresi reguler dicocokkan dengan string masukan dengan cara membandingkan setiap karakter dalam ekspresi reguler dengan setiap karakter dalam string masukan, satu per satu. Biasanya, ekspresi reguler bersifat case-sensitive (peka terhadap huruf besar/kecil), sehingga ekspresi reguler `The` tidak akan cocok dengan string `the`.
+Ekspresi reguler `123` akan cocok dengan string `123`. Ekspresi reguler dicocokkan dengan string masukan dengan membandingkan setiap karakter dalam ekspresi reguler dengan setiap karakter dalam string masukan, satu per satu. Biasanya, ekspresi reguler bersifat peka terhadap huruf besar/kecil (case-sensitive), sehingga ekspresi reguler `The` tidak akan cocok dengan string `the`.
 
 Ini berarti huruf besar dan huruf kecil dianggap berbeda dalam pencocokan pola menggunakan ekspresi reguler, kecuali jika diatur untuk mengabaikan perbedaan tersebut.
 
@@ -96,34 +96,31 @@ Ini berarti huruf besar dan huruf kecil dianggap berbeda dalam pencocokan pola m
 
 [Uji Ekspresi Reguler](https://regex101.com/r/1paXsy/1)
 
-## 2. Meta Characters
+## 2. Karakter Meta
 
-Meta characters are the building blocks of regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
+Karakter meta adalah blok bangunan dari ekspresi reguler. Karakter meta tidak berdiri sendiri tetapi diinterpretasikan dengan cara khusus. Beberapa karakter meta memiliki makna khusus dan ditulis di dalam tanda kurung siku. Berikut adalah karakter meta yang tersedia:
 
-|Meta character|Description|
+|Karakter Meta|Deskripsi|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|Titik mencocokkan karakter tunggal apa pun kecuali jeda baris.|
+|[ ]|Kelas karakter. Mencocokkan karakter apa pun yang terkandung di antara tanda kurung siku.|
+|[^ ]|Kelas karakter yang dinegasikan. Mencocokkan karakter apa pun yang tidak terkandung di antara tanda kurung siku|
+|*|Mencocokkan 0 atau lebih pengulangan dari simbol sebelumnya.|
+|+|Mencocokkan 1 atau lebih pengulangan dari simbol sebelumnya.|
+|?|Membuat simbol sebelumnya opsional.|
+|{n,m}|Tanda kurung kurawal. Mencocokkan setidaknya "n" tetapi tidak lebih dari "m" pengulangan dari simbol sebelumnya.|
+|(xyz)|Kelompok karakter. Mencocokkan karakter xyz dalam urutan yang tepat.|
+|&#124;|Alternasi. Mencocokkan karakter sebelum atau karakter setelah simbol.|
+|&#92;|Meloloskan karakter berikutnya. Ini memungkinkan Anda mencocokkan karakter yang dipesan <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|Mencocokkan awal dari input.|
+|$|Mencocokkan akhir dari input.|
 
-## 2.1 The Full Stop
+## 2.1 Titik
 
-The full stop `.` is the simplest example of a meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
+Titik `.` adalah contoh paling sederhana dari karakter meta. Karakter meta `.`
+mencocokkan karakter tunggal apa pun. Ini tidak akan mencocokkan karakter return atau newline.
+Sebagai contoh, ekspresi reguler `.ar` berarti: karakter apa pun, diikuti oleh
+huruf `a`, diikuti oleh huruf `r`.
 
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -131,13 +128,13 @@ letter `a`, followed by the letter `r`.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/xc9GkU/1)
 
-## 2.2 Character Sets
+## 2.2 Set Karakter
 
-Character sets are also called character classes. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside the square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
+Set karakter juga disebut kelas karakter. Tanda kurung siku digunakan untuk
+menentukan set karakter. Gunakan tanda hubung di dalam set karakter untuk menentukan
+rentang karakter. Urutan rentang karakter di dalam tanda kurung siku
+tidak masalah. Sebagai contoh, ekspresi reguler `[Tt]he` berarti: huruf besar
+`T` atau huruf kecil `t`, diikuti oleh huruf `h`, diikuti oleh huruf `e`.
 
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -145,9 +142,9 @@ doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
 
 [Uji Ekspresi Reguler](https://regex101.com/r/2ITLQ4/1)
 
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by the letter `r`,
-followed by a period `.` character.
+Namun, titik di dalam set karakter berarti titik literal. Ekspresi reguler
+`ar[.]` berarti: karakter huruf kecil `a`, diikuti oleh huruf `r`,
+diikuti oleh karakter titik `.`.
 
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
@@ -155,12 +152,12 @@ followed by a period `.` character.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/wL3xtE/1)
 
-### 2.2.1 Negated Character Sets
+### 2.2.1 Set Karakter yang Dinegasikan
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+Secara umum, simbol caret mewakili awal dari string, tetapi ketika ditulis
+setelah tanda kurung siku pembuka, itu menegasikan set karakter. Sebagai
+contoh, ekspresi reguler `[^c]ar` berarti: karakter apa pun kecuali `c`,
+diikuti oleh karakter `a`, diikuti oleh huruf `r`.
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -168,19 +165,19 @@ followed by the character `a`, followed by the letter `r`.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/nNNlq3/1)
 
-## 2.3 Repetitions
+## 2.3 Perulangan
 
-The meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+Karakter meta `+`, `*` atau `?` digunakan untuk menentukan berapa kali
+subpola dapat terjadi. Karakter meta ini bertindak berbeda dalam situasi
+yang berbeda.
 
-### 2.3.1 The Star
+### 2.3.1 Tanda Bintang
 
-The `*` symbol matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of the preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
-`[a-z]*` means: any number of lowercase letters in a row.
+Simbol `*` mencocokkan nol atau lebih pengulangan dari pencocok sebelumnya. Ekspresi reguler
+`a*` berarti: nol atau lebih pengulangan dari karakter huruf kecil sebelumnya
+`a`. Namun, jika muncul setelah set karakter atau kelas, maka itu menemukan
+pengulangan dari seluruh set karakter. Sebagai contoh, ekspresi reguler
+`[a-z]*` berarti: sejumlah huruf kecil dalam barisan.
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -188,12 +185,12 @@ the repetitions of the whole character set. For example, the regular expression
 
 [Uji Ekspresi Reguler](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by a lowercase `c`,
-followed by a lowercase `a`, followed by a lowercase `t`,
-followed by zero or more spaces.
+Simbol `*` dapat digunakan dengan karakter meta `.` untuk mencocokkan string karakter apa pun
+`.*`. Simbol `*` juga dapat digunakan dengan karakter spasi `\s`
+untuk mencocokkan string karakter spasi. Sebagai contoh, ekspresi
+`\s*cat\s*` berarti: nol atau lebih spasi, diikuti oleh huruf kecil `c`,
+diikuti oleh huruf kecil `a`, diikuti oleh huruf kecil `t`,
+diikuti oleh nol atau lebih spasi.
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
@@ -201,12 +198,12 @@ followed by zero or more spaces.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/gGrwuz/1)
 
-### 2.3.2 The Plus
+### 2.3.2 Tanda Tambah
 
-The `+` symbol matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: a lowercase `c`, followed by
-at least one character, followed by a lowercase `t`. It needs to be
-clarified that`t` is the last `t` in the sentence.
+Simbol `+` mencocokkan satu atau lebih pengulangan dari karakter sebelumnya. Sebagai
+contoh, ekspresi reguler `c.+t` berarti: huruf kecil `c`, diikuti oleh
+setidaknya satu karakter, diikuti oleh huruf kecil `t`. Perlu
+dijelaskan bahwa `t` adalah `t` terakhir dalam kalimat.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -214,15 +211,15 @@ clarified that`t` is the last `t` in the sentence.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/Dzf9Aa/1)
 
-### 2.3.3 The Question Mark
+### 2.3.3 Tanda Tanya
 
-In regular expressions, the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional uppercase
-`T`, followed by a lowercase `h`, followed by a lowercase `e`.
+Dalam ekspresi reguler, karakter meta `?` membuat karakter sebelumnya
+opsional. Simbol ini mencocokkan nol atau satu instance dari karakter sebelumnya.
+Sebagai contoh, ekspresi reguler `[T]?he` berarti: Opsional huruf besar
+`T`, diikuti oleh huruf kecil `h`, diikuti oleh huruf kecil `e`.
 
 <pre>
-"[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
+"[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
 [Uji Ekspresi Reguler](https://regex101.com/r/cIg9zm/1)
@@ -233,12 +230,12 @@ For example, the regular expression `[T]?he` means: Optional uppercase
 
 [Uji Ekspresi Reguler](https://regex101.com/r/kPpO2x/1)
 
-## 2.4 Braces
+## 2.4 Tanda Kurung Kurawal
 
-In regular expressions, braces (also called quantifiers) are used to
-specify the number of times that a character or a group of characters can be
-repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
-2 digits, but not more than 3, ranging from 0 to 9.
+Dalam ekspresi reguler, tanda kurung kurawal (juga disebut quantifier) digunakan untuk
+menentukan berapa kali karakter atau kelompok karakter dapat
+diulang. Sebagai contoh, ekspresi reguler `[0-9]{2,3}` berarti: Cocokkan setidaknya
+2 digit, tetapi tidak lebih dari 3, berkisar dari 0 hingga 9.
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -246,9 +243,9 @@ repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
 
 [Uji Ekspresi Reguler](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression
-`[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma, the
-regular expression `[0-9]{3}` means: Match exactly 3 digits.
+Kita dapat menghilangkan angka kedua. Sebagai contoh, ekspresi reguler
+`[0-9]{2,}` berarti: Cocokkan 2 atau lebih digit. Jika kita juga menghapus koma, ekspresi reguler
+`[0-9]{3}` berarti: Cocokkan tepat 3 digit.
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -262,16 +259,16 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/Sivu30/1)
 
-## 2.5 Capturing Groups
+## 2.5 Kelompok Penangkapan
 
-A capturing group is a group of subpatterns that is written inside parentheses 
-`(...)`. As discussed before, in regular expressions, if we put a quantifier 
-after a character then it will repeat the preceding character. But if we put a quantifier
-after a capturing group then it repeats the whole capturing group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside a capturing group.
-For example, the regular expression `(c|g|p)ar` means: a lowercase `c`,
-`g` or `p`, followed by `a`, followed by `r`.
+Kelompok penangkapan adalah kelompok subpola yang ditulis di dalam tanda kurung 
+`(...)`. Seperti yang dibahas sebelumnya, dalam ekspresi reguler, jika kita meletakkan quantifier 
+setelah karakter maka itu akan mengulang karakter sebelumnya. Namun, jika kita meletakkan quantifier
+setelah kelompok penangkapan maka itu mengulang seluruh kelompok penangkapan. Sebagai contoh,
+ekspresi reguler `(ab)*` mencocokkan nol atau lebih pengulangan dari karakter
+"ab". Kita juga dapat menggunakan alternasi `|` karakter meta di dalam kelompok penangkapan.
+Sebagai contoh, ekspresi reguler `(c|g|p)ar` berarti: huruf kecil `c`,
+`g` atau `p`, diikuti oleh `a`, diikuti oleh `r`.
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -279,16 +276,16 @@ For example, the regular expression `(c|g|p)ar` means: a lowercase `c`,
 
 [Uji Ekspresi Reguler](https://regex101.com/r/tUxrBG/1)
 
-Note that capturing groups do not only match, but also capture, the characters for use in 
-the parent language. The parent language could be Python or JavaScript or virtually any
-language that implements regular expressions in a function definition.
+Perhatikan bahwa kelompok penangkapan tidak hanya mencocokkan, tetapi juga menangkap karakter untuk digunakan dalam 
+bahasa induk. Bahasa induk dapat berupa Python, JavaScript, atau hampir semua
+bahasa yang mengimplementasikan ekspresi reguler dalam definisi fungsi.
 
-### 2.5.1 Non-Capturing Groups
+### 2.5.1 Kelompok Non-Penangkapan
 
-A non-capturing group is a capturing group that matches the characters but 
-does not capture the group. A non-capturing group is denoted by a `?` followed by a `:` 
-within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
-`(c|g|p)ar` in that it matches the same characters but will not create a capture group.
+Kelompok non-penangkapan adalah kelompok penangkapan yang mencocokkan karakter tetapi 
+tidak menangkap kelompok. Kelompok non-penangkapan dilambangkan dengan `?` diikuti oleh `:` 
+di dalam tanda kurung `(...)`. Sebagai contoh, ekspresi reguler `(?:c|g|p)ar` mirip dengan 
+`(c|g|p)ar` dalam hal itu mencocokkan karakter yang sama tetapi tidak akan membuat kelompok penangkapan.
 
 <pre>
 "(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -296,22 +293,22 @@ within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 
 [Uji Ekspresi Reguler](https://regex101.com/r/Rm7Me8/1)
 
-Non-capturing groups can come in handy when used in find-and-replace functionality or 
-when mixed with capturing groups to keep the overview when producing any other kind of output. 
-See also [4. Lookaround](#4-lookaround).
+Kelompok non-penangkapan dapat berguna ketika digunakan dalam fungsionalitas find-and-replace atau 
+ketika dicampur dengan kelompok penangkapan untuk menjaga gambaran ketika menghasilkan jenis output lainnya. 
+Lihat juga [4. Lookaround](#4-lookaround).
 
-## 2.6 Alternation
+## 2.6 Alternasi
 
-In a regular expression, the vertical bar `|` is used to define alternation.
-Alternation is like an OR statement between multiple expressions. Now, you may be
-thinking that character sets and alternation work the same way. But the big
-difference between character sets and alternation is that character sets work at the
-character level but alternation works at the expression level. For example, the
-regular expression `(T|t)he|car` means: either (an uppercase `T` or a lowercase
-`t`, followed by a lowercase `h`, followed by a lowercase `e`) OR
-(a lowercase `c`, followed by a lowercase `a`, followed by
-a lowercase `r`). Note that I included the parentheses for clarity, to show that either expression
-in parentheses can be met and it will match.
+Dalam ekspresi reguler, batang vertikal `|` digunakan untuk mendefinisikan alternasi.
+Alternasi seperti pernyataan OR antara beberapa ekspresi. Sekarang, Anda mungkin
+berpikir bahwa set karakter dan alternasi bekerja dengan cara yang sama. Namun, perbedaan besar
+antara set karakter dan alternasi adalah bahwa set karakter bekerja pada
+tingkat karakter tetapi alternasi bekerja pada tingkat ekspresi. Sebagai contoh, ekspresi reguler
+`(T|t)he|car` berarti: baik (huruf besar `T` atau huruf kecil
+`t`, diikuti oleh huruf kecil `h`, diikuti oleh huruf kecil `e`) ATAU
+(huruf kecil `c`, diikuti oleh huruf kecil `a`, diikuti oleh
+huruf kecil `r`). Perhatikan bahwa saya menyertakan tanda kurung untuk kejelasan, untuk menunjukkan bahwa ekspresi mana pun
+dalam tanda kurung dapat dipenuhi dan itu akan cocok.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -319,16 +316,16 @@ in parentheses can be met and it will match.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/fBXyX0/1)
 
-## 2.7 Escaping Special Characters
+## 2.7 Meloloskan Karakter Khusus
 
-A backslash `\` is used in regular expressions to escape the next character. This
-allows us to include reserved characters such as `{ } [ ] / \ + * . $ ^ | ?` as matching characters. To use one of these special character as a matching character, prepend it with `\`.
+Backslash `\` digunakan dalam ekspresi reguler untuk meloloskan karakter berikutnya. Ini
+memungkinkan kita untuk menyertakan karakter yang dipesan seperti `{ } [ ] / \ + * . $ ^ | ?` sebagai karakter pencocokan. Untuk menggunakan salah satu karakter khusus ini sebagai karakter pencocokan, tambahkan `\` di depannya.
 
-For example, the regular expression `.` is used to match any character except a
-newline. Now, to match `.` in an input string, the regular expression
-`(f|c|m)at\.?` means: a lowercase `f`, `c` or `m`, followed by a lowercase
-`a`, followed by a lowercase `t`, followed by an optional `.`
-character.
+Sebagai contoh, ekspresi reguler `.` digunakan untuk mencocokkan karakter apa pun kecuali
+newline. Sekarang, untuk mencocokkan `.` dalam string input, ekspresi reguler
+`(f|c|m)at\.?` berarti: huruf kecil `f`, `c` atau `m`, diikuti oleh huruf kecil
+`a`, diikuti oleh huruf kecil `t`, diikuti oleh opsional `.`
+karakter.
 
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
@@ -336,24 +333,24 @@ character.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/DOc5Nu/1)
 
-## 2.8 Anchors
+## 2.8 Penanda Posisi
 
-In regular expressions, we use anchors to check if the matching symbol is the
-starting symbol or ending symbol of the input string. Anchors are of two types:
-The first type is the caret `^` that checks if the matching character is the first
-character of the input and the second type is the dollar sign `$` which checks if a matching
-character is the last character of the input string.
+Dalam ekspresi reguler, kita menggunakan penanda posisi untuk memeriksa apakah simbol pencocokan adalah
+simbol awal atau simbol akhir dari string input. Penanda posisi terdiri dari dua jenis:
+Jenis pertama adalah caret `^` yang memeriksa apakah karakter pencocokan adalah karakter pertama
+dari input dan jenis kedua adalah tanda dolar `$` yang memeriksa apakah karakter pencocokan
+adalah karakter terakhir dari string input.
 
-### 2.8.1 The Caret
+### 2.8.1 Tanda Karat (Caret)
 
-The caret symbol `^` is used to check if a matching character is the first character
-of the input string. If we apply the following regular expression `^a` (meaning 'a' must be
-the starting character) to the string `abc`, it will match `a`. But if we apply
-the regular expression `^b` to the above string, it will not match anything.
-Because in the string `abc`, the "b" is not the starting character. Let's take a look
-at another regular expression `^(T|t)he` which means: an uppercase `T` or
-a lowercase `t` must be the first character in the string, followed by a
-lowercase `h`, followed by a lowercase `e`.
+Simbol caret `^` digunakan untuk memeriksa apakah karakter pencocokan adalah karakter pertama
+dari string input. Jika kita menerapkan ekspresi reguler berikut `^a` (berarti 'a' harus
+menjadi karakter awal) ke string `abc`, itu akan mencocokkan `a`. Namun, jika kita menerapkan
+ekspresi reguler `^b` ke string di atas, itu tidak akan mencocokkan apa pun.
+Karena dalam string `abc`, "b" bukan karakter awal. Mari kita lihat
+ekspresi reguler lain `^(T|t)he` yang berarti: huruf besar `T` atau
+huruf kecil `t` harus menjadi karakter pertama dalam string, diikuti oleh
+huruf kecil `h`, diikuti oleh huruf kecil `e`.
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -367,12 +364,12 @@ lowercase `h`, followed by a lowercase `e`.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/jXrKne/1)
 
-### 2.8.2 The Dollar Sign
+### 2.8.2 Tanda Dolar
 
-The dollar sign `$` is used to check if a matching character is the last character
-in the string. For example, the regular expression `(at\.)$` means: a
-lowercase `a`, followed by a lowercase `t`, followed by a `.`
-character and the matcher must be at the end of the string.
+Tanda dolar `$` digunakan untuk memeriksa apakah karakter pencocokan adalah karakter terakhir
+dalam string. Sebagai contoh, ekspresi reguler `(at\.)$` berarti: huruf kecil
+`a`, diikuti oleh huruf kecil `t`, diikuti oleh karakter
+`.` dan pencocok harus berada di akhir string.
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
@@ -386,52 +383,52 @@ character and the matcher must be at the end of the string.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/t0AkOd/1)
 
-##  3. Shorthand Character Sets
+## 3. Set Karakter Singkatan
 
-There are a number of convenient shorthands for commonly used character sets/
-regular expressions:
+Ada sejumlah singkatan yang nyaman untuk set karakter yang umum digunakan/
+ekspresi reguler:
 
-|Shorthand|Description|
+|Singkatan|Deskripsi|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digits: `[0-9]`|
-|\D|Matches non-digits: `[^\d]`|
-|\s|Matches whitespace characters: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace characters: `[^\s]`|
+|.|Karakter apa pun kecuali baris baru|
+|\w|Mencocokkan karakter alfanumerik: `[a-zA-Z0-9_]`|
+|\W|Mencocokkan karakter non-alfanumerik: `[^\w]`|
+|\d|Mencocokkan digit: `[0-9]`|
+|\D|Mencocokkan non-digit: `[^\d]`|
+|\s|Mencocokkan karakter spasi: `[\t\n\f\r\p{Z}]`|
+|\S|Mencocokkan karakter non-spasi: `[^\s]`|
 
 ## 4. Lookarounds
 
-Lookbehinds and lookaheads (also called lookarounds) are specific types of
-***non-capturing groups*** (used to match a pattern but without including it in the matching
-list). Lookarounds are used when we a pattern must be
-preceded or followed by another pattern. For example, imagine we want to get all
-numbers that are preceded by the `$` character from the string
-`$4.44 and $10.88`. We will use the following regular expression `(?<=\$)[0-9\.]*`
-which means: get all the numbers which contain the `.` character and are preceded
-by the `$` character. These are the lookarounds that are used in regular
-expressions:
+Lookbehinds dan lookaheads (juga disebut lookarounds) adalah jenis khusus dari
+***kelompok non-penangkapan*** (digunakan untuk mencocokkan pola tetapi tanpa menyertakannya dalam daftar
+pencocokan). Lookarounds digunakan ketika pola harus
+didahului atau diikuti oleh pola lain. Sebagai contoh, bayangkan kita ingin mendapatkan semua
+angka yang didahului oleh karakter `$` dari string
+`$4.44 and $10.88`. Kita akan menggunakan ekspresi reguler berikut `(?<=\$)[0-9\.]*`
+yang berarti: dapatkan semua angka yang mengandung karakter `.` dan didahului
+oleh karakter `$`. Berikut adalah lookarounds yang digunakan dalam ekspresi
+reguler:
 
-|Symbol|Description|
+|Simbol|Deskripsi|
 |:----:|----|
-|?=|Positive Lookahead|
-|?!|Negative Lookahead|
-|?<=|Positive Lookbehind|
-|?<!|Negative Lookbehind|
+|?=|Positif Lookahead|
+|?!|Negatif Lookahead|
+|?<=|Positif Lookbehind|
+|?<!|Negatif Lookbehind|
 
-### 4.1 Positive Lookahead
+### 4.1 Positif Lookahead
 
-The positive lookahead asserts that the first part of the expression must be
-followed by the lookahead expression. The returned match only contains the text
-that is matched by the first part of the expression. To define a positive
-lookahead, parentheses are used. Within those parentheses, a question mark with
-an equals sign is used like this: `(?=...)`. The lookahead expressions is written after
-the equals sign inside parentheses. For example, the regular expression
-`(T|t)he(?=\sfat)` means: match either a lowercase `t` or an uppercase
- `T`, followed by the letter `h`, followed by the letter `e`. In parentheses we
-define a positive lookahead which tells the regular expression engine to match `The`
-or `the` only if it's followed by the word `fat`.
+Positif lookahead menegaskan bahwa bagian pertama dari ekspresi harus
+diikuti oleh ekspresi lookahead. Pencocokan yang dikembalikan hanya berisi teks
+yang dicocokkan oleh bagian pertama dari ekspresi. Untuk mendefinisikan positif
+lookahead, tanda kurung digunakan. Di dalam tanda kurung tersebut, tanda tanya dengan
+tanda sama dengan digunakan seperti ini: `(?=...)`. Ekspresi lookahead ditulis setelah
+tanda sama dengan di dalam tanda kurung. Sebagai contoh, ekspresi reguler
+`(T|t)he(?=\sfat)` berarti: cocokkan huruf kecil `t` atau huruf besar
+ `T`, diikuti oleh huruf `h`, diikuti oleh huruf `e`. Dalam tanda kurung kita
+mendefinisikan positif lookahead yang memberitahu mesin ekspresi reguler untuk mencocokkan `The`
+atau `the` hanya jika diikuti oleh kata `fat`.
 
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -439,14 +436,14 @@ or `the` only if it's followed by the word `fat`.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/IDDARt/1)
 
-### 4.2 Negative Lookahead
+### 4.2 Negatif Lookahead
 
-Negative lookaheads are used when we need to get all matches from an input string
-that are not followed by a certain pattern. A negative lookahead is written the same way as a
-positive lookahead. The only difference is, instead of an equals sign `=`, we
-use an exclamation mark `!` to indicate negation i.e. `(?!...)`. Let's take a look at the following
-regular expression `(T|t)he(?!\sfat)` which means: get all `The` or `the` words
-from the input string that are not followed by a space character and the word `fat`.
+Negatif lookahead digunakan ketika kita perlu mendapatkan semua pencocokan dari string input
+yang tidak diikuti oleh pola tertentu. Negatif lookahead ditulis dengan cara yang sama seperti
+positif lookahead. Satu-satunya perbedaan adalah, alih-alih tanda sama dengan `=`, kita
+menggunakan tanda seru `!` untuk menunjukkan negasi yaitu `(?!...)`. Mari kita lihat ekspresi reguler berikut
+`(T|t)he(?!\sfat)` yang berarti: dapatkan semua kata `The` atau `the`
+dari string input yang tidak diikuti oleh karakter spasi dan kata `fat`.
 
 <pre>
 "(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -454,12 +451,12 @@ from the input string that are not followed by a space character and the word `f
 
 [Uji Ekspresi Reguler](https://regex101.com/r/V32Npg/1)
 
-### 4.3 Positive Lookbehind
+### 4.3 Positif Lookbehind
 
-Positive lookbehinds are used to get all the matches that are preceded by a
-specific pattern. Positive lookbehinds are written `(?<=...)`. For example, the
-regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words
-from the input string that come after the word `The` or `the`.
+Positif lookbehind digunakan untuk mendapatkan semua pencocokan yang didahului oleh
+pola tertentu. Positif lookbehind ditulis `(?<=...)`. Sebagai contoh, ekspresi reguler
+`(?<=(T|t)he\s)(fat|mat)` berarti: dapatkan semua kata `fat` atau `mat`
+dari string input yang datang setelah kata `The` atau `the`.
 
 <pre>
 "(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
@@ -467,39 +464,39 @@ from the input string that come after the word `The` or `the`.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/avH165/1)
 
-### 4.4 Negative Lookbehind
+### 4.4 Negatif Lookbehind
 
-Negative lookbehinds are used to get all the matches that are not preceded by a
-specific pattern. Negative lookbehinds are written `(?<!...)`. For example, the
-regular expression `(?<!(T|t)he\s)(cat)` means: get all `cat` words from the input
-string that are not after the word `The` or `the`.
+Negatif lookbehind digunakan untuk mendapatkan semua pencocokan yang tidak didahului oleh
+pola tertentu. Negatif lookbehind ditulis `(?<!...)`. Sebagai contoh, ekspresi reguler
+`(?<!(T|t)he\s)(cat)` berarti: dapatkan semua kata `cat` dari string input
+yang tidak setelah kata `The` atau `the`.
 
 <pre>
-"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+"(?<!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
 [Uji Ekspresi Reguler](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Flags
 
-Flags are also called modifiers because they modify the output of a regular
-expression. These flags can be used in any order or combination, and are an
-integral part of the RegExp.
+Flags juga disebut modifier karena mereka memodifikasi output dari ekspresi
+reguler. Flags ini dapat digunakan dalam urutan atau kombinasi apa pun, dan merupakan
+bagian integral dari RegExp.
 
-|Flag|Description|
+|Flag|Deskripsi|
 |:----:|----|
-|i|Case insensitive: Match will be case-insensitive.|
-|g|Global Search: Match all instances, not just the first.|
-|m|Multiline: Anchor meta characters work on each line.|
+|i|Tidak peka huruf: Pencocokan akan tidak peka terhadap huruf besar/kecil.|
+|g|Pencarian Global: Cocokkan semua instance, bukan hanya yang pertama.|
+|m|Multiline: Karakter meta anchor bekerja pada setiap baris.|
 
-### 5.1 Case Insensitive
+### 5.1 Tidak Peka Huruf
 
-The `i` modifier is used to perform case-insensitive matching. For example, the
-regular expression `/The/gi` means: an uppercase `T`, followed by a lowercase
-`h`, followed by an `e`. And at the end of regular expression
-the `i` flag tells the regular expression engine to ignore the case. As you can
-see, we also provided `g` flag because we want to search for the pattern in the
-whole input string.
+Modifier `i` digunakan untuk melakukan pencocokan yang tidak peka terhadap huruf. Sebagai contoh, ekspresi reguler
+`/The/gi` berarti: huruf besar `T`, diikuti oleh huruf kecil
+`h`, diikuti oleh `e`. Dan di akhir ekspresi reguler
+flag `i` memberitahu mesin ekspresi reguler untuk mengabaikan huruf besar/kecil. Seperti yang Anda bisa
+lihat, kita juga menyediakan flag `g` karena kita ingin mencari pola dalam
+seluruh string input.
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -513,13 +510,13 @@ whole input string.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/ahfiuh/1)
 
-### 5.2 Global Search
+### 5.2 Pencarian Global
 
-The `g` modifier is used to perform a global match (finds all matches rather than
-stopping after the first match). For example, the regular expression`/.(at)/g`
-means: any character except a new line, followed by a lowercase `a`,
-followed by a lowercase `t`. Because we provided the `g` flag at the end of
-the regular expression, it will now find all matches in the input string, not just the first one (which is the default behavior).
+Modifier `g` digunakan untuk melakukan pencocokan global (menemukan semua pencocokan daripada
+berhenti setelah pencocokan pertama). Sebagai contoh, ekspresi reguler `/.(at)/g`
+berarti: karakter apa pun kecuali baris baru, diikuti oleh huruf kecil `a`,
+diikuti oleh huruf kecil `t`. Karena kita menyediakan flag `g` di akhir
+ekspresi reguler, sekarang akan menemukan semua pencocokan dalam string input, bukan hanya yang pertama (yang merupakan perilaku default).
 
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
@@ -533,15 +530,15 @@ the regular expression, it will now find all matches in the input string, not ju
 
 [Uji Ekspresi Reguler](https://regex101.com/r/dO1nef/1)
 
-### 5.3 Multiline
+### 5.3 Baris Berganda
 
-The `m` modifier is used to perform a multi-line match. As we discussed earlier,
-anchors `(^, $)` are used to check if a pattern is at the beginning of the input or
-the end. But if we want the anchors to work on each line, we use
-the `m` flag. For example, the regular expression `/at(.)?$/gm` means: a lowercase
-`a`, followed by a lowercase `t` and, optionally, anything except
-a new line. And because of the `m` flag, the regular expression engine now matches patterns
-at the end of each line in a string.
+Modifier `m` digunakan untuk melakukan pencocokan multi-baris. Seperti yang kita bahas sebelumnya,
+anchor `(^, $)` digunakan untuk memeriksa apakah pola berada di awal input atau
+di akhir. Tetapi jika kita ingin anchor bekerja pada setiap baris, kita menggunakan
+flag `m`. Sebagai contoh, ekspresi reguler `/at(.)?$/gm` berarti: huruf kecil
+`a`, diikuti oleh huruf kecil `t` dan, secara opsional, apa pun kecuali
+baris baru. Dan karena flag `m`, mesin ekspresi reguler sekarang mencocokkan pola
+di akhir setiap baris dalam string.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -559,9 +556,9 @@ at the end of each line in a string.
 
 [Uji Ekspresi Reguler](https://regex101.com/r/E88WE2/1)
 
-## 6. Greedy vs Lazy Matching
-By default, a regex will perform a greedy match, which means the match will be as long as
-possible. We can use `?` to match in a lazy way, which means the match should be as short as possible.
+## 6. Pencocokan Serakah vs Malas
+Secara default, regex akan melakukan pencocokan serakah (greedy), yang berarti pencocokan akan selama
+mungkin. Kita dapat menggunakan `?` untuk mencocokkan dengan cara malas (lazy), yang berarti pencocokan harus sesingkat mungkin.
 
 <pre>
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
@@ -576,13 +573,13 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 [Uji Ekspresi Reguler](https://regex101.com/r/AyAdgJ/2)
 
 
-## Contribution
+## Kontribusi
 
-* Open a pull request with improvements
-* Discuss ideas in issues
-* Spread the word
-* Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+* Buka pull request dengan perbaikan
+* Diskusikan ide dalam issues
+* Sebarkan informasi
+* Hubungi dengan feedback apa pun [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
 
-## License
+## Lisensi
 
 MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
