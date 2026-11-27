@@ -478,7 +478,7 @@ regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words
 from the input string that come after the word `The` or `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/avH165/1)

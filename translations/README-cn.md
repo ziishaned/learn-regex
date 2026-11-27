@@ -65,7 +65,7 @@
  	* [2.2 字符集](#22-字符集)
 		* [2.2.1 否定字符集](#221-否定字符集)
 	* [2.3 重复次数](#23-重复次数)
-		* [2.3.1 * 号](#231--号)
+		* [2.3.1 \* 号](#231--号)
 		* [2.3.2 + 号](#232--号)
 		* [2.3.3 ? 号](#233--号)
 	* [2.4 {} 号](#24--号)
@@ -429,7 +429,7 @@
 例如，表达式 `(?<=(T|t)he\s)(fat|mat)` 匹配 `fat` 和 `mat`，且其前跟着 `The` 或 `the`。
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [在线练习](https://regex101.com/r/avH165/1)
