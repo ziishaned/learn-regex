@@ -11,6 +11,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -21,6 +22,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -56,20 +58,20 @@ Der abgebildete reguläre Ausdruck erlaubt bspw. Die Eingaben `john_doe`, `jo-hn
     - [Plus +](#232-plus)
     - [Fragezeichen ?](#233-fragezeichen)
   - [Geschweifte Klammern {}](#24-geschweifte-klammern)
-  - [Gruppierung ()](#25-gruppierung)
+  - [Gruppierung ()](#25-gruppierungen)
   - [Alternation |](#26-alternation)
   - [Escaping \](#27-escaping)
   - [Anker](#28-anker)
     - [Zirkumflex ^](#281-zirkumflex)
     - [Dollar $](#282-dollar)
 - [Vordefinierte Zeichenklassen](#3-vordefinierte-zeichenklassen)
-- [Lookaround](#4-lookaround)
-  - [Positiver Lookahead](#41-positiver-lookahead)
-  - [Negativer Lookahead](#42-negativer-lookahead)
-  - [Positiver Lookbehind](#43-positiver-lookbehind)
+- [Lookaround](#4-umsehen-lookaround)
+  - [Positiver Lookahead](#41-positives-vorausschauen-lookahead)
+  - [Negativer Lookahead](#42-negatives-vorausschauen-lookahead)
+  - [Positiver Lookbehind](#43-positives-zurückschauen-lookbehind)
   - [Negativer Lookbehind](#44-negativer-lookbehind)
 - [Modifikatoren](#5-modifikatoren)
-  - [Schreibungsunabhängig i](#51-schreibungsunbhängig)
+  - [Schreibungsunabhängig i](#51-groß-kleinschreibung-unempfindlich)
   - [Globale Suche](#52-globale-suche)
   - [Mehrzeilig](#53-mehrzeilig)
 - [Gierige vs Faule Übereinstimmung](#6-gierige-vs-faule-übereinstimmung)
@@ -268,7 +270,7 @@ Somit gleicht der reguläre Ausdruck `(?:c|g|p)ar` dem Ausdruck `(c|g|p)ar` in s
 [Teste den regulären Ausdruck](https://regex101.com/r/Rm7Me8/1)
 
 Gruppierungen ohne Rückwärtsreferenz können für Finden-und-Ersetzen oder in Kombination mit normalen Gruppierungen nützlich sein, um den Überblick zu behalten, 
-wenn auf Basis der Übereinstimmungen eine Ausgabe erzeugt wird. Siehe auch [4. Lookaround](#4-lookaround).
+wenn auf Basis der Übereinstimmungen eine Ausgabe erzeugt wird. Siehe auch [4. Lookaround](#4-umsehen-lookaround).
 
 ## 2.6 Alternation
 
@@ -413,7 +415,7 @@ Postive Lookbehinds werden mit `(?<=...)` notiert. Der reguläre Ausdruck `(?<=(
 die nach `The ` oder `the ` kommen, stimmen überein.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Teste den regulären Ausdruck](https://regex101.com/r/avH165/1)

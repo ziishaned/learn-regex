@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -76,8 +78,8 @@ string με βάση κάποιου μοτίβου αναζήτησης και �
   - [Ομάδα Χαρακτήρων](#25-Ομάδα-Χαρακτήρων)
   - [Εναλλαγή](#26-Εναλλαγή)
   - [Ειδικός Χαρακτήρας Διαφυγής](#27-Ειδικός-Χαρακτήρας-Διαφυγής)
-  - [Σύμβολα "Άγκυρες"](#28-Σύμβολα-"Άγκυρες")
-    - [Το Σύμβολο ^](#281-Το-Σύμβολο-^)
+  - [Σύμβολα "Άγκυρες"](#28-σύμβολα-άγκυρες)
+    - [Το Σύμβολο ^](#281-το-σύμβολο-)
     - [Το Δολάριο](#282-Το-Δολάριο)
 - [Συντομογραφίες Συνόλων Χαρακτήρων](#3-Συντομογραφίες-Συνόλων-Χαρακτήρων)
 - [Αναζήτηση](#4-Αναζήτηση)
@@ -461,7 +463,7 @@ string με βάση κάποιου μοτίβου αναζήτησης και �
 επιστρέφει όλες τις λέξεις `fat` ή `mat` που βρίσκονται μετά την λέξη `The` ή `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Δοκιμή της κανονικής έκφρασης](https://regex101.com/r/avH165/1)

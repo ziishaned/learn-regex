@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -68,7 +70,7 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
 - [Meta Karakterler](#2-meta-karakterler)
   - [Nokta](#21-nokta)
   - [Karakter Takımı](#22-karakter-takımı)
-    - [Negatiflenmiş Karakter Seti](#221-negatiflenmiş-karakter-seti)
+    - [Negatiflenmiş Karakter Seti](#221-dışlanmış-karakter-seti)
   - [Tekrarlar](#23-tekrarlar)
     - [Yıldız İşareti](#231-yıldız-İşareti)
     - [Artı İşareti](#232-artı-İşareti)
@@ -83,10 +85,10 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
     - [Dolar İşareti](#282-dolar-İşareti)
 - [Kısaltma Karakter Takımları](#3-kısaltma-karakter-takımları)
 - [Bakınmak](#4-bakınmak)
-  - [Olumlu Bakınma](#41-positive-lookahead)
-  - [Olumsuz Bakınma](#42-negative-lookahead)
-  - [Positive Lookbehind](#43-positive-lookbehind)
-  - [Negative Lookbehind](#44-negative-lookbehind)
+  - [Olumlu Bakınma](#41-pozitif-i̇leri-bakınma)
+  - [Olumsuz Bakınma](#42-negatif-i̇leri-bakınma)
+  - [Positive Lookbehind](#43-pozitif-geri-bakınma)
+  - [Negative Lookbehind](#44-negatif-geri-bakınma)
 - [İşaretler](#5-İşaretler)
   - [Büyük/Küçük Harf Duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
   - [Bütünsel Arama](#52-genel-arama)
@@ -512,7 +514,7 @@ kullanılır. `(?<=...)` ile gösterilir.
 öbekleri olan tüm `fat` veya `mat` öbeklerini getir.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/avH165/1)

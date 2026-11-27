@@ -20,6 +20,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -30,6 +31,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -61,7 +63,7 @@
 
 ## فهرست
 
-- [پایه ای ترین همخوانی](#1-basic-matchers)
+- [پایه ای ترین همخوانی](#1-پایه-ای-ترین-همخوانی)
 - [Meta character](#2-meta-characters)
   - [Full stop](#21-full-stop)
   - [Character set](#22-character-set)
@@ -71,7 +73,7 @@
     - [The Plus](#232-the-plus)
     - [The Question Mark](#233-the-question-mark)
   - [Braces](#24-braces)
-  - [Character Group](#25-character-group)
+  - [Character Group](#25-capturing-group)
   - [Alternation](#26-alternation)
   - [Escaping special character](#27-escaping-special-character)
   - [Anchors](#28-anchors)
@@ -487,7 +489,7 @@ regular expression `(?<=(T|t)he\s)(fat|mat)` means: get all `fat` or `mat` words
 from input string that are after the word `The` or `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/avH165/1)

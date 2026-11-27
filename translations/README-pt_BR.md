@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -77,7 +79,7 @@ A expressão regular acima aceita as strings `john_doe`, `jo-hn_doe` e `john12_a
   - [Lookbehind Positivo](#43-lookbehind-positivo)
   - [Lookbehind Negativo](#44-lookbehind-negativo)
 - [Flags](#5-flags)
-  - [Indiferente à Maiúsculas](#51-indiferente-à-maiúsculas)
+  - [Indiferente à Maiúsculas](#51-indiferente-a-maiúsculas)
   - [Busca Global](#52-busca-global)
   - [Multilinhas](#53-multilinhas)
 - [Guloso vs Não-Guloso](#6-guloso-vs-não-guloso)
@@ -346,7 +348,7 @@ O lookahead negativo é usado quando nós precisamos encontrar todas as ocorrên
 Lookbehind positivo é usado para encontrar todas as ocorrências que são precedidas por um padrão específico. O lookbehind positivo é indicado por `(?<=...)`. Por exemplo, a expressão regular `(?<=[T|t]he\s)(fat|mat)` significa: obtenha todas as palavras `fat` ou `mat` da string de entrada, que estão depois das palavras `The` ou `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Teste a RegExp](https://regex101.com/r/avH165/1)

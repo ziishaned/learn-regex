@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -59,28 +61,28 @@ L'expression régulière ci-dessus peut accepter les chaines de caractères (str
 - [Introduction](#1-introduction)
 - [Meta-caractères](#2-meta-caractères)
   - [Full stop](#21-full-stop)
-  - [Inclusion de caractères](#22-inclusion-de-caractères)
+  - [Inclusion de caractères](#22-inclusions-de-caractères)
     - [Exclusion de caractères](#221-exclusion-de-caractères)
   - [Répétitions](#23-répétitions)
-    - [Astérisque](#231-Asterisque)
+    - [Astérisque](#231-astérisque)
     - [Le Plus](#232-le-plus)
-    - [Le Point d'Interrogation](#233-le-point-d'interrogation)
+    - [Le Point d'Interrogation](#233-le-point-dinterrogation)
   - [Accolades](#24-accolades)
   - [Groupement de caractères](#25-groupement-de-caractères)
   - [Alternation](#26-alternation)
-  - [Caractère d'échappement](#27-caractère-d'échappement)
+  - [Caractère d'échappement](#27-caractère-déchappement)
   - [Ancres](#28-ancres)
     - [Circonflexe](#281-circonflexe)
     - [Dollar](#282-dollar)
 - [Liste de caractères abrégés](#3-liste-de-caractères-abrégés)
 - [Recherche](#4-recherche)
-  - [Recherche avant positive](#41-recherche-avant-positive)
-  - [Recherche avant négative](#42-recherche-avant-négative)
-  - [Recherche arrière positive](#43-recherche-arrière-positive)
-  - [Recherche arrière négative](#44-recherche-arrière-négative)
+  - [Recherche avant positive](#41-recherche-en-avant-positive)
+  - [Recherche avant négative](#42-recherche-en-avant-négative)
+  - [Recherche arrière positive](#43-recherche-en-arrière-positive)
+  - [Recherche arrière négative](#44-recherche-en-arrière-négative)
 - [Drapeaux](#5-drapeaux)
   - [Insensible à la casse](#51-insensible-à-la-casse)
-  - [Correspondance globale](#52-recherche-globale)
+  - [Correspondance globale](#52-correspondance-globale)
   - [Multilignes](#53-multilignes)
 
 ## 1. Introduction
@@ -391,7 +393,7 @@ La recherche en arrière positive est utilisée pour trouver une chaine de carac
 se trouve après le mot `The` ou `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Essayer l'expression régulière](https://regex101.com/r/avH165/1)

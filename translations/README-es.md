@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -57,7 +59,7 @@ La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe`
 - [Meta-caracteres](#2-meta-caracteres)
   - [Full stop](#21-full-stop)
   - [Conjunto de caracteres](#22-conjunto-de-caracteres)
-    - [Conjunto de caracteres negados](#221-conjunto-de-caracteres-negado)
+    - [Conjunto de caracteres negados](#221-conjunto-de-caracteres-negados)
   - [Repeticiones](#23-repeticiones)
     - [Asterisco](#231-asterisco)
     - [Signo más](#232-signo-de-más)
@@ -72,7 +74,7 @@ La expresión regular anterior puede aceptar las cadenas `john_doe`, `jo-hn_doe`
 - [Conjunto de caracteres abreviados](#3-conjunto-de-caracteres-abreviados)
 - [Mirar alrededor](#4-mirar-alrededor)
   - [Mirar hacia delante positivo](#41-mirar-hacia-adelate-positivo)
-  - [Mirar hacia delante negativo](#42-mirar-hacia-delaten-negativo)
+  - [Mirar hacia delante negativo](#42-mirar-hacia-adelate-negativo)
   - [Mirar hacia atrás positivo](#43-mirar-hacia-atras-positivo)
   - [Mirar hacia atrás negativo](#44-mirar-hacia-atras-negativo)
 - [Indicadores](#5-indicadores)
@@ -374,7 +376,7 @@ Por ejemplo, la expresión regular `(? <= [T|t]he\s)(fat|mat)` significa: obtene
 `fat` o `mat` de la cadena de entrada después de la palabra `The` o `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Prueba la expresión regular](https://regex101.com/r/avH165/1)

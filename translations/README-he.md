@@ -13,6 +13,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -23,6 +24,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -74,7 +76,7 @@
   - [חלופה](#26-חלופה)
   - [התעלמות מתווים מיוחדים](#27-התעלמות-מתווים-מיוחדים)
   - [עוגנים](#28-עוגנים)
-    - [ה-"קרט"](#281-ה-"קרט")
+    - [ה-"קרט"](#281-ה-קרט)
     - [סימן הדולר](#282-סימן-הדולר)
 - [קיצורי מערכות תווים](#3-קיצורי-מערכות-תווים)
 - [הסתכלויות](#4-הסתכלויות)
@@ -300,7 +302,7 @@
 
 קבוצות שאינן מלכדות יכולות להיות שימושיות כאשר יש צורך בפונקציונליות של חיפוש והחלפה
 או כאשר מעורבת גם קבוצת לכידה בכדי לשמור על הסקירה כאשר מפיקים כל סוג אחר של פלט. 
-ניתן לראות גם ב [4. Lookaround](#4-lookaround).
+ניתן לראות גם ב [4. Lookaround](#4-הסתכלויות).
 
 ## 2.6 חלופה
 
@@ -451,7 +453,7 @@
 שמפריד בינהן.
 
 <pre dir="ltr">
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [בדוק.י את הביטוי הרגולרי](https://regex101.com/r/avH165/1)

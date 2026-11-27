@@ -17,8 +17,10 @@
 ## Translations:
 
 * [English](../README.md)
+* [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -29,8 +31,9 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
-* [עברית](translations/README-he.md)
+* [עברית](../translations/README-he.md)
 
 ## 什么是正则表达式?
 
@@ -269,7 +272,7 @@
 
 [在线练习](https://regex101.com/r/tUxrBG/1)
 
-我们需要注意捕获组不仅可以匹配，而已可以捕获源编程语言的字符。源编程语言 (the parent language)可以是Python，Javascript或者任意其他实现了正则表达式的编程语言。
+我们需要注意捕获组不仅可以匹配，而且可以捕获源编程语言的字符。源编程语言 (the parent language)可以是Python，Javascript或者任意其他实现了正则表达式的编程语言。
 
 ### 2.5.1 非捕获组
 
@@ -384,7 +387,7 @@
 
 ### 4.1 `?=...` 前置约束(存在)
 
-`?=...` 前置约束(存在), 表示第一部分表达式必须跟在 `?=...`定义的表达式之后.
+`?=...` 前置约束(存在), 表示第一部分表达式之后必须跟着 `?=...` 定义的表达式.
 
 返回结果只瞒住第一部分表达式.
 定义一个前置约束(存在)要使用 `()`. 在括号内部使用一个问号和等号: `(?=...)`. 
@@ -417,7 +420,7 @@
 例如, 表达式 `(?<=[T|t]he\s)(fat|mat)` 匹配 `fat` 和 `mat`, 且其前跟着 `The` 或 `the`.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [在线练习](https://regex101.com/r/avH165/1)
@@ -484,7 +487,7 @@
 
 像之前介绍的 `(^,$)` 用于检查格式是否是在待检测字符串的开头或结尾. 但我们如果想要它在每行的开头和结尾生效, 我们需要用到多行修饰符 `m`.
 
-例如, 表达式 `/at(.)?$/gm` 表示在待检测字符串每行的末尾搜索 `at`后跟0个或1个 `.` 的字符串, 并返回全部结果.
+例如, 表达式 `/.at(.)?$/gm` 表示在待检测字符串每行的末尾搜索: 除换行符外的任意字符, 后跟 `at`, 再后跟 0 个或 1 个除换行符外的任意字符, 并返回全部结果.
 
 <pre>
 "/.at(.)?$/" => The fat
