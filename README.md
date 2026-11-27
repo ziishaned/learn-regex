@@ -510,7 +510,7 @@ language.
 |\p{Ll}|Matches any lowercase letter|
 |\p{N}|Matches any kind of number|
 |\p{P}|Matches any punctuation character|
-|\p{Z}|Matches any kind of whitespace or separator|
+|\p{Z}|Matches any separator, such as a space or a non-breaking space, but not a tab or a line break|
 |\P{L}|Matches anything that is not a letter (an uppercase `P` negates the category)|
 
 For example, the regular expression `\p{L}+` means: one or more letters in a row.
@@ -766,8 +766,10 @@ A modifier can also be applied to just a part of the regular expression by
 writing that part after a colon within the same parentheses. For example, in the
 regular expression `(?i:t)he` only the letter `t` is case-insensitive.
 
-Inline modifiers are supported by PCRE, Python, Java, .NET and Go.
-JavaScript is the main exception. Also note that the global flag `g` cannot be
+Inline modifiers are supported by PCRE, Python, Java, .NET and Go. JavaScript
+does not support the `(?i)` form, and only recent JavaScript engines support
+the form that applies to a part of the regular expression, such as `(?i:t)he`.
+Also note that the global flag `g` cannot be
 written inline, because it tells the parent language how to use the regular
 expression rather than changing what the regular expression matches.
 
@@ -899,7 +901,9 @@ exactly three or exactly six hexadecimal digits. It should accept `#1a2b3c` and
 `^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$` combines [anchors](#28-anchors),
 [character sets](#22-character-sets), [braces](#24-braces) and
 [alternation](#26-alternation). The anchors make sure that nothing comes before
-or after the color code.
+or after the color code. Remember from [2.8.2](#282-the-dollar-sign) that in
+many engines `$` still accepts a line break at the very end of the string. To
+rule that out, replace the `$` with `\z` (`\Z` in Python).
 
 </details>
 
@@ -911,7 +915,8 @@ should accept `2024-06-30`, but not `2024-6-30`, `24-06-30` or `2024/06/30`.
 
 `^\d{4}-\d{2}-\d{2}$` uses the [shorthand](#3-shorthand-character-sets) `\d`
 for a digit. Note that it only checks the format, so it also accepts
-`2024-99-99`.
+`2024-99-99`. As in the previous exercise, use `\z` instead of `$` if a line
+break at the end of the string must be rejected.
 
 </details>
 
@@ -959,6 +964,10 @@ would produce a single match from the first `<` to the last `>`. Another
 solution is `<[^>]+>`, which uses a
 [negated character set](#221-negated-character-sets).
 
+Both solutions only work for simple markup like the one above. In a tag such as
+`<a title="1 > 0">`, they stop at the `>` inside the attribute. To process real
+HTML, use an HTML parser instead of a regular expression.
+
 </details>
 
 ## Further Reading
@@ -967,9 +976,10 @@ Regular expressions come from the theory of formal languages. A regular
 expression in the original, mathematical sense describes a
 [regular language](https://en.wikipedia.org/wiki/Regular_language), and such an
 expression can be turned into a finite automaton that checks any input in a
-time proportional to the length of the input. Features such as backreferences
-and lookarounds go beyond that theory, which is why engines that support them
-use backtracking instead.
+time proportional to the length of the input. Backreferences go beyond that
+theory: with them, a regular expression can describe languages that are not
+regular, and those cannot be checked by a finite automaton. This is one of the
+reasons why most engines use backtracking instead.
 
 * [Regular Expression Matching Can Be Simple And Fast](https://swtch.com/~rsc/regexp/regexp1.html)
   by Russ Cox explains how finite automata are used to match regular
