@@ -60,8 +60,8 @@ letter and also it is too short.
 
 > **Note:** Regular expression syntax differs slightly between engines (also
 > called "flavors") such as PCRE, JavaScript, Python, Java, .NET and POSIX. This
-> guide sticks to the PCRE-style syntax that most modern engines share, and every
-> example links to [regex101](https://regex101.com) so you can try it out. A few
+> guide sticks to the PCRE-style syntax that most modern engines share, and most
+> examples link to [regex101](https://regex101.com) so you can try them out. A few
 > features, such as lookbehinds, are not available in every engine, so check the
 > documentation of the language or tool you are using. Wikipedia has a
 > [comparison of regular expression engines](https://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines).
@@ -80,6 +80,7 @@ letter and also it is too short.
   - [Braces](#24-braces)
   - [Capturing Groups](#25-capturing-groups)
       - [Non-Capturing Groups](#251-non-capturing-groups)
+      - [Named Capturing Groups](#252-named-capturing-groups)
   - [Alternation](#26-alternation)
   - [Escaping Special Characters](#27-escaping-special-characters)
   - [Anchors](#28-anchors)
@@ -87,17 +88,25 @@ letter and also it is too short.
     - [The Dollar Sign](#282-the-dollar-sign)
     - [Word Boundaries](#283-word-boundaries)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
+  - [Unicode Categories](#31-unicode-categories)
+  - [POSIX Character Classes](#32-posix-character-classes)
 - [Lookarounds](#4-lookarounds)
   - [Positive Lookahead](#41-positive-lookahead)
   - [Negative Lookahead](#42-negative-lookahead)
   - [Positive Lookbehind](#43-positive-lookbehind)
   - [Negative Lookbehind](#44-negative-lookbehind)
+  - [Combining Lookarounds](#45-combining-lookarounds)
 - [Flags](#5-flags)
   - [Case Insensitive](#51-case-insensitive)
   - [Global Search](#52-global-search)
   - [Multiline](#53-multiline)
+  - [Single Line](#54-single-line)
+  - [Inline Modifiers](#55-inline-modifiers)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 - [Backreferences](#7-backreferences)
+- [Catastrophic Backtracking](#8-catastrophic-backtracking)
+- [Exercises](#9-exercises)
+- [Further Reading](#further-reading)
 
 ## 1. Basic Matchers
 
@@ -245,6 +254,10 @@ clarified that `t` is the last `t` in the sentence.
 
 [Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
 
+The difference between `+` and `*` shows when there may be nothing to repeat:
+`ca*t` matches `ct`, `cat` and `caat`, whereas `ca+t` only matches `cat` and
+`caat`.
+
 ### 2.3.3 The Question Mark
 
 In regular expressions, the meta character `?` makes the preceding character
@@ -330,6 +343,24 @@ within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
 See also [4. Lookarounds](#4-lookarounds).
+
+### 2.5.2 Named Capturing Groups
+
+Capturing groups are numbered from left to right, which gets hard to follow once
+a regular expression has several of them. A capturing group can be given a name
+instead by writing `?<name>` right after the opening parenthesis. For example,
+the regular expression `(?<year>[0-9]{4})-(?<month>[0-9]{2})` means: four digits,
+captured in a group named `year`, followed by a hyphen, followed by two digits,
+captured in a group named `month`.
+
+<pre>
+"(?&lt;year>[0-9]{4})-(?&lt;month>[0-9]{2})" => The report is due on <a href="#learn-regex"><strong>2024-06</strong></a>.
+</pre>
+
+The parent language then gives access to the captured text by name. In
+JavaScript, for example, `match.groups.year` is `2024` and `match.groups.month`
+is `06`. Some languages use a slightly different syntax: Python writes named
+groups as `(?P<name>...)`.
 
 ## 2.6 Alternation
 
@@ -418,6 +449,12 @@ character and the matcher must be at the end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
+Be careful when using `$` to validate input. In many engines (PCRE, Python, Java
+and .NET among them, but not JavaScript) `$` also matches right before a line
+break at the very end of the string, so `^[a-z]+$` accepts the string `abc`
+followed by a line break as well. If that matters, use the anchor that only
+matches at the very end of the string: `\z` in most engines, `\Z` in Python.
+
 ### 2.8.3 Word Boundaries
 
 The word boundary `\b` matches a position rather than a character: the position
@@ -458,6 +495,60 @@ regular expressions:
 |\D|Matches non-digits: `[^\d]`|
 |\s|Matches whitespace characters: `[\t\n\f\r\p{Z}]`|
 |\S|Matches non-whitespace characters: `[^\s]`|
+
+### 3.1 Unicode Categories
+
+A character set such as `[a-zA-Z]` only covers the letters of the English
+alphabet. To match letters of any language, we can use Unicode categories, which
+are written `\p{...}`. For example, `\p{L}` matches any kind of letter from any
+language.
+
+|Shorthand|Description|
+|:----:|----|
+|\p{L}|Matches any letter|
+|\p{Lu}|Matches any uppercase letter|
+|\p{Ll}|Matches any lowercase letter|
+|\p{N}|Matches any kind of number|
+|\p{P}|Matches any punctuation character|
+|\p{Z}|Matches any kind of whitespace or separator|
+|\P{L}|Matches anything that is not a letter (an uppercase `P` negates the category)|
+
+For example, the regular expression `\p{L}+` means: one or more letters in a row.
+
+<pre>
+"\p{L}+" => <a href="#learn-regex"><strong>naïve</strong></a> <a href="#learn-regex"><strong>café</strong></a> <a href="#learn-regex"><strong>東京</strong></a> 42
+</pre>
+
+Unicode categories are supported by PCRE, Java, .NET, Ruby and Go. JavaScript
+supports them when the `u` flag is set, as in `/\p{L}+/gu`. Python's built-in
+`re` module does not support them.
+
+### 3.2 POSIX Character Classes
+
+POSIX character classes are another way to write commonly used character sets.
+They are written `[:name:]` and are only valid inside the square brackets of a
+character set, so the regular expression that matches a digit is `[[:digit:]]`.
+They can be combined with other characters in the same set: `[[:alpha:]_]`
+matches a letter or an underscore.
+
+|Class|Description|
+|:----:|----|
+|[:alpha:]|Letters|
+|[:digit:]|Digits|
+|[:alnum:]|Letters and digits|
+|[:upper:]|Uppercase letters|
+|[:lower:]|Lowercase letters|
+|[:space:]|Whitespace characters|
+|[:punct:]|Punctuation characters|
+|[:xdigit:]|Hexadecimal digits: `[0-9a-fA-F]`|
+
+<pre>
+"[[:digit:]]+" => The number was <a href="#learn-regex"><strong>9</strong></a>.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.<a href="#learn-regex"><strong>0</strong></a>.
+</pre>
+
+POSIX character classes are supported by PCRE, Ruby and the POSIX tools such as
+`grep`, `sed` and `awk`. They are not available in JavaScript, Python, Java or
+.NET.
 
 ## 4. Lookarounds
 
@@ -543,6 +634,22 @@ string that are not after the word `The` or `the`.
 
 [Test the regular expression](https://regex101.com/r/8Efx5G/1)
 
+### 4.5 Combining Lookarounds
+
+A lookaround only checks its pattern and does not move forward in the input
+string. This means that several lookarounds can be placed at the same position,
+and all of them have to succeed, which works like an AND between conditions. For
+example, the regular expression `^(?=.*[0-9])(?=.*[a-z]).{8,}$` means: from the
+beginning of the line, there must be a digit somewhere ahead, AND there must be a
+lowercase letter somewhere ahead, and the line must be at least 8 characters
+long.
+
+<pre>
+"/^(?=.*[0-9])(?=.*[a-z]).{8,}$/gm" => password
+                                       <a href="#learn-regex"><strong>passw0rd</strong></a>
+                                       12345678
+</pre>
+
 ## 5. Flags
 
 Flags are also called modifiers because they modify the output of a regular
@@ -554,6 +661,7 @@ integral part of the RegExp.
 |i|Case insensitive: Match will be case-insensitive.|
 |g|Global Search: Match all instances, not just the first.|
 |m|Multiline: Anchor meta characters work on each line.|
+|s|Single line: The full stop also matches line breaks.|
 
 ### 5.1 Case Insensitive
 
@@ -623,6 +731,46 @@ line in a string.
 
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
+### 5.4 Single Line
+
+As we discussed earlier, the full stop `.` matches any character except a line
+break. The `s` modifier (also called "dot all") makes the full stop match line
+breaks too, so that a pattern such as `.*` can continue across several lines.
+For example, the regular expression `/The.*mat/s` means: `The`, followed by any
+number of any characters including line breaks, followed by `mat`.
+
+<pre>
+"/The.*mat/" => The fat
+                cat sat on the mat.
+</pre>
+
+<pre>
+"/The.*mat/s" => <a href="#learn-regex"><strong>The fat</strong></a>
+                 <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
+</pre>
+
+### 5.5 Inline Modifiers
+
+Instead of adding a flag after the closing delimiter, most engines also allow
+turning a modifier on inside the regular expression itself. This is useful when
+the regular expression is passed around as a plain string, for example in a
+configuration file. An inline modifier is written at the beginning of the
+regular expression as a question mark followed by the flag letters within
+parentheses: `(?i)`, `(?m)`, `(?s)`, or combined as in `(?im)`. For example, the regular expression `(?i)the` means the same as `/the/i`.
+
+<pre>
+"/(?i)the/g" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+</pre>
+
+A modifier can also be applied to just a part of the regular expression by
+writing that part after a colon within the same parentheses. For example, in the
+regular expression `(?i:t)he` only the letter `t` is case-insensitive.
+
+Inline modifiers are supported by PCRE, Python, Java, .NET and Go.
+JavaScript is the main exception. Also note that the global flag `g` cannot be
+written inline, because it tells the parent language how to use the regular
+expression rather than changing what the regular expression matches.
+
 ## 6. Greedy vs Lazy Matching
 
 By default, a regex will perform a greedy match, which means the match will be as long as
@@ -686,6 +834,153 @@ Captured groups can also be used in the replacement text of a find-and-replace
 operation, where they are usually written as `$1`, `$2` (or `\1`, `\2`, depending
 on the language). In JavaScript, for example,
 `"John Smith".replace(/(\w+)\s(\w+)/, "$2, $1")` returns `Smith, John`.
+
+## 8. Catastrophic Backtracking
+
+Most regular expression engines work by backtracking: when one way of matching
+the input fails, the engine goes back and tries the next possible way. Usually
+this is fast, but some regular expressions can be matched against the same input
+in an enormous number of ways, and the engine may try them all before it gives
+up. This is called catastrophic backtracking.
+
+The classic example is the regular expression `^(a+)+$`, which has a quantifier
+inside a group that is repeated by another quantifier. Applied to a string of
+`a` characters followed by a `!`, it can never match, but the engine first tries
+every possible way of dividing the `a` characters between the inner and the
+outer `+`. Each additional `a` doubles the amount of work: with 20 `a`
+characters the answer is instant, with 30 it can take seconds, and with 40 it
+can take hours.
+
+<pre>
+"^(a+)+$" => aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!
+</pre>
+
+If such a regular expression is applied to input that comes from a user, a
+single short string can keep a server busy for a very long time. This kind of
+attack is known as Regular expression Denial of Service
+([ReDoS](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS)).
+To avoid it:
+
+* Do not put a quantifier on a group that itself ends in a quantifier, such as
+  `(a+)+` or `(.*a)*`. Here `a+` matches exactly the same strings as `(a+)+`.
+* Make sure the alternatives of a repeated group cannot match the same text,
+  unlike in `(a|aa)+`.
+* Limit the length of the input before applying the regular expression.
+* For untrusted input, consider an engine that does not backtrack and always
+  runs in linear time, such as RE2 or the engines of Go and Rust. These engines
+  do not support backreferences and lookarounds.
+
+## 9. Exercises
+
+Try to write a regular expression for each of the following tasks before you
+look at the solution. There is often more than one correct answer.
+
+**1.** Match the word `cat` only where it is a word of its own.
+
+<pre>
+The <a href="#learn-regex"><strong>cat</strong></a> sat on the concatenation with another <a href="#learn-regex"><strong>cat</strong></a>.
+</pre>
+
+<details>
+<summary>Solution</summary>
+
+`\bcat\b` uses a [word boundary](#283-word-boundaries) on both sides, so the
+`cat` in `concatenation` is not matched.
+
+</details>
+
+**2.** Check that a string is a hexadecimal color code: a `#` followed by
+exactly three or exactly six hexadecimal digits. It should accept `#1a2b3c` and
+`#FFF`, but not `#12`, `#1234`, `#12345g` or `1a2b3c`.
+
+<details>
+<summary>Solution</summary>
+
+`^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$` combines [anchors](#28-anchors),
+[character sets](#22-character-sets), [braces](#24-braces) and
+[alternation](#26-alternation). The anchors make sure that nothing comes before
+or after the color code.
+
+</details>
+
+**3.** Check that a string has the format of a date written as `YYYY-MM-DD`. It
+should accept `2024-06-30`, but not `2024-6-30`, `24-06-30` or `2024/06/30`.
+
+<details>
+<summary>Solution</summary>
+
+`^\d{4}-\d{2}-\d{2}$` uses the [shorthand](#3-shorthand-character-sets) `\d`
+for a digit. Note that it only checks the format, so it also accepts
+`2024-99-99`.
+
+</details>
+
+**4.** Find all the prices, without the `$` character in front of them.
+
+<pre>
+Coffee costs $<a href="#learn-regex"><strong>4.50</strong></a>, tea costs $<a href="#learn-regex"><strong>3</strong></a> and 12 cookies cost $<a href="#learn-regex"><strong>10.88</strong></a>.
+</pre>
+
+<details>
+<summary>Solution</summary>
+
+`(?<=\$)\d+(\.\d{2})?` uses a [positive lookbehind](#43-positive-lookbehind)
+to require the `$` without including it in the match, which is why `12` is not
+matched. The group with the `?` makes the cents optional.
+
+</details>
+
+**5.** Find the words that were typed twice in a row by accident.
+
+<pre>
+It was <a href="#learn-regex"><strong>the the</strong></a> best of times, it <a href="#learn-regex"><strong>was was</strong></a> the worst of times.
+</pre>
+
+<details>
+<summary>Solution</summary>
+
+`\b(\w+)\s+\1\b` captures a word in a group and uses the
+[backreference](#7-backreferences) `\1` to require the same word again after
+some whitespace.
+
+</details>
+
+**6.** Match each HTML tag on its own.
+
+<pre>
+<a href="#learn-regex"><strong>&lt;b></strong></a>bold<a href="#learn-regex"><strong>&lt;/b></strong></a> and <a href="#learn-regex"><strong>&lt;i></strong></a>italic<a href="#learn-regex"><strong>&lt;/i></strong></a>
+</pre>
+
+<details>
+<summary>Solution</summary>
+
+`<.+?>` uses a [lazy](#6-greedy-vs-lazy-matching) quantifier. The greedy `<.+>`
+would produce a single match from the first `<` to the last `>`. Another
+solution is `<[^>]+>`, which uses a
+[negated character set](#221-negated-character-sets).
+
+</details>
+
+## Further Reading
+
+Regular expressions come from the theory of formal languages. A regular
+expression in the original, mathematical sense describes a
+[regular language](https://en.wikipedia.org/wiki/Regular_language), and such an
+expression can be turned into a finite automaton that checks any input in a
+time proportional to the length of the input. Features such as backreferences
+and lookarounds go beyond that theory, which is why engines that support them
+use backtracking instead.
+
+* [Regular Expression Matching Can Be Simple And Fast](https://swtch.com/~rsc/regexp/regexp1.html)
+  by Russ Cox explains how finite automata are used to match regular
+  expressions.
+* [Regular-Expressions.info](https://www.regular-expressions.info/) is a
+  detailed reference that also covers the differences between the engines, for
+  example for [Unicode](https://www.regular-expressions.info/unicode.html),
+  [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html)
+  and [catastrophic backtracking](https://www.regular-expressions.info/catastrophic.html).
+* [regex101](https://regex101.com) lets you test and debug regular expressions
+  and explains each part of them.
 
 ## Contribution
 
