@@ -510,7 +510,7 @@ language.
 |\p{Ll}|Matches any lowercase letter|
 |\p{N}|Matches any kind of number|
 |\p{P}|Matches any punctuation character|
-|\p{Z}|Matches any separator, such as a space or a non-breaking space, but not a tab or a line break|
+|\p{Z}|Matches any separator, such as a space or a non-breaking space, but not a tab or the line break characters `\n` and `\r`|
 |\P{L}|Matches anything that is not a letter (an uppercase `P` negates the category)|
 
 For example, the regular expression `\p{L}+` means: one or more letters in a row.
