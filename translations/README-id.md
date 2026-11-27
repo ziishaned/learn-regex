@@ -7,23 +7,24 @@
 
 ## Terjemahan:
 
-* [English](README.md)
-* [German](translations/README-de.md)
-* [Español](translations/README-es.md)
-* [Français](translations/README-fr.md)
-* [Português do Brasil](translations/README-pt_BR.md)
-* [中文版](translations/README-cn.md)
-* [日本語](translations/README-ja.md)
-* [한국어](translations/README-ko.md)
-* [Turkish](translations/README-tr.md)
-* [Greek](translations/README-gr.md)
-* [Magyar](translations/README-hu.md)
-* [Polish](translations/README-pl.md)
-* [Русский](translations/README-ru.md)
-* [Tiếng Việt](translations/README-vn.md)
-* [Bahasa Indonesia](translations/README-id.md)
-* [فارسی](translations/README-fa.md)
-* [עברית](translations/README-he.md)
+* [English](../README.md)
+* [German](../translations/README-de.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
+* [فارسی](../translations/README-fa.md)
+* [עברית](../translations/README-he.md)
 
 
 ## Apa itu Ekspresi Reguler?
@@ -59,32 +60,32 @@ surat dan juga terlalu pendek.
 
 ## Table of Contents
 
-- [Pencocokan Dasar](#1-basic-matchers)
-- [Karakter Meta](#2-meta-characters)
-  - [Perhentian Penuh](#21-the-full-stop)
-  - [Set Karakter](#22-character-sets)
-    - [Set Karakter yang Dinegasikan](#221-negated-character-sets)
-  - [Pengulangan](#23-repetitions)
-    - [Tanda Bintang](#231-the-star)
-    - [Tanda Tambah](#232-the-plus)
-    - [Tanda Tanya](#233-the-question-mark)
+- [Pencocokan Dasar](#1-pencocokan-dasar)
+- [Karakter Meta](#2-karakter-meta)
+  - [Perhentian Penuh](#21-perhentian-penuh)
+  - [Set Karakter](#22-set-karakter)
+    - [Set Karakter yang Dinegasikan](#221-set-karakter-yang-dinegasikan)
+  - [Pengulangan](#23-pengulangan)
+    - [Tanda Bintang](#231-tanda-bintang)
+    - [Tanda Tambah](#232-tanda-tambah)
+    - [Tanda Tanya](#233-tanda-tanya)
   - [Kurung Kurawal](#24-braces)
-  - [Menangkap Grup](#25-capturing-groups)
-      - [Grup yang Tidak Menangkap](#251-non-capturing-groups)
-  - [Alternasi](#26-alternation)
-  - [Karakter Spesial](#27-escaping-special-characters)
-  - [Anchor Text](#28-anchors)
-    - [Tanda Sisipan](#281-the-caret)
-    - [Tanda Dollar](#282-the-dollar-sign)
-- [Set Karakter Singkatan](#3-shorthand-character-sets)
-- [Melihat](#4-lookarounds)
-  - [Pandangan ke Depan Positif](#41-positive-lookahead)
-  - [Pandangan ke Depan Negatif](#42-negative-lookahead)
-  - [Pandangan Positif ke Belakang](#43-positive-lookbehind)
-  - [Pandangan negatif ke belakang](#44-negative-lookbehind)
-- [Bendera](#5-flags)
-  - [Tidak peka huruf besar/kecil](#51-case-insensitive)
-  - [Pencarian Global](#52-global-search)
+  - [Menangkap Grup](#25-menangkap-grup)
+      - [Grup yang Tidak Menangkap](#251-grup-yang-tidak-menangkap)
+  - [Alternasi](#26-alternasi)
+  - [Karakter Spesial](#27-karakter-spesial)
+  - [Anchor Text](#28-anchor-text)
+    - [Tanda Sisipan](#281-tanda-sisipan)
+    - [Tanda Dollar](#282-tanda-dolar)
+- [Set Karakter Singkatan](#3-set-karakter-singkatan)
+- [Melihat](#4-melihat-lihat)
+  - [Pandangan ke Depan Positif](#41-pandangan-ke-depan-positif)
+  - [Pandangan ke Depan Negatif](#42-pandangan-ke-depan-negatif)
+  - [Pandangan Positif ke Belakang](#43-pandangan-positif-ke-belakang)
+  - [Pandangan negatif ke belakang](#44-pandangan-negatif-ke-belakang)
+- [Bendera](#5-bendera)
+  - [Tidak peka huruf besar/kecil](#51-tidak-peka-huruf-besarkecil)
+  - [Pencarian Global](#52-pencarian-global)
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 
@@ -314,7 +315,7 @@ dalam tanda kurung `(...)`. Misalnya, ekspresi reguler `(?:c|g|p)ar` mirip denga
 
 Grup yang tidak menangkap dapat berguna saat digunakan dalam fungsi temukan-dan-ganti atau
 ketika dicampur dengan grup penangkap untuk menjaga gambaran umum saat memproduksi jenis keluaran lainnya.
-Lihat juga [4. Melihat-lihat](#4-lookaround).
+Lihat juga [4. Melihat-lihat](#4-melihat-lihat).
 
 ## 2.6 Alternasi
 
@@ -478,7 +479,7 @@ ekspresi reguler `(?<=(T|t)he\s)(fat|mat)` artinya: dapatkan semua kata `fat` at
 dari string input yang datang setelah kata `The` atau `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/avH165/1)

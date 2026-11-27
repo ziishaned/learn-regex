@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 ## Co to jest wyrażenie regularne?
@@ -298,9 +300,10 @@ W wyrażeniach regularnych pionowa kreska `|` oznacza alternatywę.
 Działa jak warunek pomiędzy różnymi wyrażeniami. Teraz możesz pomyśleć, że
 to działa tak samo jak zestaw znaków. Różnica polega na tym, że zestaw znaków
 działa na poziomie znaków, natomiast alternatywa na poziomie wyrażenia. Na przykład
-wyrażenie regularne `(T|t)he|car` oznacza: dużą literę `T` lub małą `t`,
-następującą po niej literę `h`, następującą po niej literę `e` lub `c`, następującą
-po niej literę `a`, następującą po niej literę `r`.
+wyrażenie regularne `(T|t)he|car` oznacza: albo (dużą literę `T` lub małą `t`,
+następującą po niej literę `h`, następującą po niej literę `e`), albo (małą literę `c`,
+następującą po niej literę `a`, następującą po niej literę `r`). Nawiasy w tym opisie
+dodano dla jasności: dopasowane zostanie dowolne z dwóch wyrażeń w nawiasach.
 
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
@@ -446,7 +449,7 @@ wzorcem. Wyrażenie lookbehind zapisujemy tak: `(?<=...)`. Na przykład, wyraże
 które znajdują się po słowach `The` lub `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Przetestuj wyrażenie](https://regex101.com/r/avH165/1)

@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -449,7 +451,7 @@ A `(?<=(T|t)he\s)(fat|mat)` jelentése: szedd ki az összes `fat` vagy `mat` sz�
 amelyek a `The` vagy a `the` szavak után vannak.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Teszteld a reguláris kifejezést](https://regex101.com/r/avH165/1)

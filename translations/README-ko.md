@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -64,7 +66,7 @@
     - [덧셈 부호](#232-덧셈-부호)
     - [물음표](#233-물음표)
   - [중괄호](#24-중괄호)
-  - [캡쳐링 그룹](#25-캡쳐-그룹)
+  - [캡쳐링 그룹](#25-캡쳐링-그룹)
     - [논-캡쳐링 그룹](#251-논-캡쳐링-그룹)
   - [대안 부호](#26-대안-부호)
   - [특수 문자 이스케이핑](#27-특수-문자-이스케이핑)
@@ -360,7 +362,7 @@
 긍정형 후방탐색는 특정 패턴뒤에 나오는 문자열 매치를 가져오기 위해서 사용된다. 긍정형 후방탐색는 `(?<=...)`로 표시된다. 예를 들어, 정규 표현식 `(?<=[T|t]he\s)(fat|mat)`는 입력 문자열에서 `The` 혹은 `the` 뒤에 공백이 나오고, 그 뒤에 `fat` 또는 `mat`이 나오는 패턴을 의미한다.
 
 <pre>
-"(?<=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=[T|t]he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Test the regular expression](https://regex101.com/r/avH165/1)

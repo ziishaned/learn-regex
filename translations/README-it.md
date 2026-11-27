@@ -8,22 +8,24 @@
 
 ## Translations:
 
-* [English](README.md)
-* [German](translations/README-de.md)
-* [Español](translations/README-es.md)
-* [Français](translations/README-fr.md)
-* [Português do Brasil](translations/README-pt_BR.md)
-* [中文版](translations/README-cn.md)
-* [日本語](translations/README-ja.md)
-* [한국어](translations/README-ko.md)
-* [Turkish](translations/README-tr.md)
-* [Greek](translations/README-gr.md)
-* [Magyar](translations/README-hu.md)
-* [Polish](translations/README-pl.md)
-* [Русский](translations/README-ru.md)
-* [Tiếng Việt](translations/README-vn.md)
-* [فارسی](translations/README-fa.md)
-* [עברית](translations/README-he.md)
+* [English](../README.md)
+* [German](../translations/README-de.md)
+* [Español](../translations/README-es.md)
+* [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
+* [Português do Brasil](../translations/README-pt_BR.md)
+* [中文版](../translations/README-cn.md)
+* [日本語](../translations/README-ja.md)
+* [한국어](../translations/README-ko.md)
+* [Turkish](../translations/README-tr.md)
+* [Greek](../translations/README-gr.md)
+* [Magyar](../translations/README-hu.md)
+* [Polish](../translations/README-pl.md)
+* [Русский](../translations/README-ru.md)
+* [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
+* [فارسی](../translations/README-fa.md)
+* [עברית](../translations/README-he.md)
 
 
 ## Cosa sono le Espressioni Regolari?
@@ -49,34 +51,34 @@ L'espressione regolare riportata sopra può accettare le stringhe `john_doe`, `j
 
 ## Sommario
 
-- [Corrispondenze di base](#1-basic-matchers)
-- [Caratteri jolly](#2-meta-characters)
-  - [Il punto](#21-the-full-stop)
-  - [Classe di caratteri](#22-character-sets)
-    - [Negazione di classe di carattere](#221-negated-character-sets)
-  - [Ripetizioni](#23-repetitions)
-    - [Simbolo Asterisco](#231-the-star)
-    - [Simbolo Più](#232-the-plus)
-    - [Carattere Punto di Domanda](#233-the-question-mark)
-  - [Parentesi](#24-braces)
-  - [Raggruppamento e cattura di caratteri](#25-capturing-groups)
-      - [Raggruppamento di caratteri senza cattura](#251-non-capturing-groups)
-  - [Alternativa](#26-alternation)
-  - [Carattere speciale Escape](#27-escaping-special-characters)
-  - [Ancore](#28-anchors)
-    - [Segno di omissione ^](#281-the-caret)
-    - [Il simbolo del dollaro](#282-the-dollar-sign)
-- [Classe di caratteri rapide](#3-shorthand-character-sets)
-- [Guardarsi intorno](#4-lookarounds)
-  - [Lookahead positivo](#41-positive-lookahead)
-  - [Lookahead negativo](#42-negative-lookahead)
-  - [Lookbehind positivo](#43-positive-lookbehind)
-  - [Lookbehind negativo](#44-negative-lookbehind)
-- [Opzioni](#5-flags)
-  - [Sensibilità ai caratteri maiuscoli e minuscoli](#51-case-insensitive)
-  - [Ricerca globale](#52-global-search)
-  - [Riga multipla](#53-multiline)
-- [Corrispondenza vorace vs pigra](#6-greedy-vs-lazy-matching)
+- [Corrispondenze di base](#1-corrispondenze-di-base)
+- [Caratteri jolly](#2-caratteri-jolly)
+  - [Il punto](#21-il-punto)
+  - [Classe di caratteri](#22-classi-di-carattere)
+    - [Negazione di classe di carattere](#221-negazione-di-classe-di-carattere)
+  - [Ripetizioni](#23-ripetizioni)
+    - [Simbolo Asterisco](#231-simbolo-asterisco)
+    - [Simbolo Più](#232-simbolo-più)
+    - [Carattere Punto di Domanda](#233-carattere-punto-di-domanda)
+  - [Parentesi](#24-parentesi-graffe)
+  - [Raggruppamento e cattura di caratteri](#25-raggruppamento-e-cattura-di-caratteri)
+      - [Raggruppamento di caratteri senza cattura](#251-raggruppamento-di-caratteri-senza-cattura)
+  - [Alternativa](#26-alternativa)
+  - [Carattere speciale Escape](#27-carattere-speciale-escape)
+  - [Ancore](#28-ancore)
+    - [Segno di omissione ^](#281-il-carattere-di-negazione-)
+    - [Il simbolo del dollaro](#282-il-simbolo-del-dollaro)
+- [Classe di caratteri rapide](#3-classe-di-caratteri-rapide)
+- [Guardarsi intorno](#4-guardarsi-intorno)
+  - [Lookahead positivo](#41-lookahead-positivo)
+  - [Lookahead negativo](#42-lookahead-negativo)
+  - [Lookbehind positivo](#43-lookbehind-positivo)
+  - [Lookbehind negativo](#44-lookbehind-negativo)
+- [Opzioni](#5-opzioni)
+  - [Sensibilità ai caratteri maiuscoli e minuscoli](#51-non-sensibilità-maiuscolo--minuscolo)
+  - [Ricerca globale](#52-ricerca-globale)
+  - [Riga multipla](#53-multi-riga)
+- [Corrispondenza vorace vs pigra](#6-corrispondenza-vorace-vs-pigra)
 
 ## 1. Corrispondenze di base
 
@@ -255,7 +257,7 @@ Un gruppo di caratteri senza cattura è un gruppo utilizzato per la corrisponden
 [Verifica l'espressione regolare](https://regex101.com/r/Rm7Me8/1)
 
 I gruppi senza cattura sono utili per funzioni di ricerca e sostituzione o quando utilizzati in abbinata con gruppi di cattura per produrre diversi tipi di output.
-Vedere anche [4. Guardarsi intorno](#4-lookaround).
+Vedere anche [4. Guardarsi intorno](#4-guardarsi-intorno).
 
 ## 2.6 Alternativa
 
@@ -371,7 +373,7 @@ Lookahead negativo è utilizzato per ottenere corrispondenza con una stringa che
 Lookbehind positivo è utilizzato per trovare il testo preceduto da uno specifico schema. Il lookbehind positivo è sxcritto come `(?<=...)`. Ad esempio, l'espressione regolare `(?<=(T|t)he\s)(fat|mat)` corrisponde a: tutte le parole `fat` o `mat` che seguono la parola `The` o `the`.
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [Verifica l'espressione regolare](https://regex101.com/r/avH165/1)

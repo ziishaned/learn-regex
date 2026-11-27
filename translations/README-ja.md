@@ -21,6 +21,7 @@
 * [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
+* [Italiano](../translations/README-it.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
 * [中文版](../translations/README-cn.md)
 * [日本語](../translations/README-ja.md)
@@ -31,6 +32,7 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
+* [Bahasa Indonesia](../translations/README-id.md)
 * [فارسی](../translations/README-fa.md)
 * [עברית](../translations/README-he.md)
 
@@ -83,10 +85,9 @@
   - [肯定的な後読み](#43-肯定的な後読み)
   - [否定的な後読み](#44-否定的な後読み)
 - [フラグ](#5-フラグ)
-  - [大文字・小文字を区別しない](#51-大文字・小文字を区別しない)
+  - [大文字・小文字を区別しない](#51-大文字小文字を区別しない)
   - [グローバル検索](#52-グローバル検索)
   - [複数行](#53-複数行)
-- [おまけ](#おまけ)
 
 ## 1. 基本的な Matcher
 
@@ -439,7 +440,7 @@
 `The` または `the` の後に続く全ての `fat` または `mat` が取得できます。
 
 <pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+"(?&lt;=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
 [正規表現の動作確認をする](https://regex101.com/r/avH165/1)
