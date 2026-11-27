@@ -209,7 +209,7 @@ együtt, hogy illeszkedjen egy whitespace-ekből álló karakterláncra. Példá
 aztán egy kisbetűs `a`, aztán egy kisbetűs `t`, amit még nulla vagy több szóköz követ.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Teszteld a reguláris kifejezést](https://regex101.com/r/gGrwuz/1)

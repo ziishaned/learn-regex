@@ -216,7 +216,7 @@ string με βάση κάποιου μοτίβου αναζήτησης και �
  από τον πεζό χαρακτήρα `t`, που ακολουθείται από μηδέν ή περισσότερα κενά.
 
 <pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex">con<strong>cat</strong>enation</a>.
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
 [Δοκιμή της κανονικής έκφρασης](https://regex101.com/r/gGrwuz/1)
