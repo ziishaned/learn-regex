@@ -11,6 +11,7 @@
 * [German](translations/README-de.md)
 * [Español](translations/README-es.md)
 * [Français](translations/README-fr.md)
+* [Italiano](translations/README-it.md)
 * [Português do Brasil](translations/README-pt_BR.md)
 * [中文版](translations/README-cn.md)
 * [日本語](translations/README-ja.md)
@@ -57,6 +58,14 @@ The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
 `john12_as`. It does not match `Jo` because that string contains an uppercase
 letter and also it is too short.
 
+> **Note:** Regular expression syntax differs slightly between engines (also
+> called "flavors") such as PCRE, JavaScript, Python, Java, .NET and POSIX. This
+> guide sticks to the PCRE-style syntax that most modern engines share, and every
+> example links to [regex101](https://regex101.com) so you can try it out. A few
+> features, such as lookbehinds, are not available in every engine, so check the
+> documentation of the language or tool you are using. Wikipedia has a
+> [comparison of regular expression engines](https://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines).
+
 ## Table of Contents
 
 - [Basic Matchers](#1-basic-matchers)
@@ -76,6 +85,7 @@ letter and also it is too short.
   - [Anchors](#28-anchors)
     - [The Caret](#281-the-caret)
     - [The Dollar Sign](#282-the-dollar-sign)
+    - [Word Boundaries](#283-word-boundaries)
 - [Shorthand Character Sets](#3-shorthand-character-sets)
 - [Lookarounds](#4-lookarounds)
   - [Positive Lookahead](#41-positive-lookahead)
@@ -87,6 +97,7 @@ letter and also it is too short.
   - [Global Search](#52-global-search)
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
+- [Backreferences](#7-backreferences)
 
 ## 1. Basic Matchers
 
@@ -99,6 +110,10 @@ search in a text.  For example, the regular expression `the` means: the letter
 </pre>
 
 [Test the regular expression](https://regex101.com/r/dmRygT/1)
+
+In the examples throughout this guide, the matches are highlighted in the test
+string. Unless an example shows its flags explicitly, as in `/the/g`, all the
+matches are highlighted, as if the [global flag](#52-global-search) were set.
 
 The regular expression `123` matches the string `123`. The regular expression is
 matched against an input string by comparing each character in the regular
@@ -222,7 +237,7 @@ followed by zero or more spaces.
 The `+` symbol matches one or more repetitions of the preceding character. For
 example, the regular expression `c.+t` means: a lowercase `c`, followed by
 at least one character, followed by a lowercase `t`. It needs to be
-clarified that`t` is the last `t` in the sentence.
+clarified that `t` is the last `t` in the sentence.
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -314,7 +329,7 @@ within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
-See also [4. Lookaround](#4-lookaround).
+See also [4. Lookarounds](#4-lookarounds).
 
 ## 2.6 Alternation
 
@@ -358,7 +373,8 @@ In regular expressions, we use anchors to check if the matching symbol is the
 starting symbol or ending symbol of the input string. Anchors are of two types:
 The first type is the caret `^` that checks if the matching character is the first
 character of the input and the second type is the dollar sign `$` which checks if a matching
-character is the last character of the input string.
+character is the last character of the input string. In addition, the word
+boundary `\b` checks if the match is at the beginning or the end of a word.
 
 ### 2.8.1 The Caret
 
@@ -402,6 +418,32 @@ character and the matcher must be at the end of the string.
 
 [Test the regular expression](https://regex101.com/r/t0AkOd/1)
 
+### 2.8.3 Word Boundaries
+
+The word boundary `\b` matches a position rather than a character: the position
+between a word character (`\w`) and a non-word character (`\W`), or between a
+word character and the beginning or the end of the string. It is mostly used to
+search for whole words. For example, the regular expression `\bfat\b` means: a
+lowercase `f`, followed by a lowercase `a`, followed by a lowercase `t`, where
+the match must be a word of its own and not a part of a longer word.
+
+<pre>
+"\bfat\b" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the fatty rat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/y4Au4D/8)
+
+If we only put a word boundary in front, the regular expression `\bfat` matches
+every `fat` that is at the beginning of a word.
+
+<pre>
+"\bfat" => The <a href="#learn-regex"><strong>fat</strong></a> cat. sat. on the mat with the <a href="#learn-regex"><strong>fat</strong></a>ty cat.
+</pre>
+
+[Test the regular expression](https://regex101.com/r/nAOq0x/1)
+
+The opposite is `\B`, which matches every position that is not a word boundary.
+
 ##  3. Shorthand Character Sets
 
 There are a number of convenient shorthands for commonly used character sets/
@@ -410,8 +452,8 @@ regular expressions:
 |Shorthand|Description|
 |:----:|----|
 |.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
+|\w|Matches alphanumeric characters and the underscore: `[a-zA-Z0-9_]`|
+|\W|Matches everything except alphanumeric characters and the underscore: `[^\w]`|
 |\d|Matches digits: `[0-9]`|
 |\D|Matches non-digits: `[^\d]`|
 |\s|Matches whitespace characters: `[\t\n\f\r\p{Z}]`|
@@ -436,18 +478,23 @@ expressions:
 |?<=|Positive Lookbehind|
 |?<!|Negative Lookbehind|
 
+Note that lookbehinds are not supported by every regular expression engine.
+JavaScript, for example, has only supported them since ES2018, and older
+browsers (such as Safari before version 16.4, which includes every browser on
+iOS before 16.4) fail to parse a regular expression that contains a lookbehind.
+
 ### 4.1 Positive Lookahead
 
 The positive lookahead asserts that the first part of the expression must be
 followed by the lookahead expression. The returned match only contains the text
 that is matched by the first part of the expression. To define a positive
 lookahead, parentheses are used. Within those parentheses, a question mark with
-an equals sign is used like this: `(?=...)`. The lookahead expressions is written after
+an equals sign is used like this: `(?=...)`. The lookahead expression is written after
 the equals sign inside parentheses. For example, the regular expression
 `(T|t)he(?=\sfat)` means: match either a lowercase `t` or an uppercase
  `T`, followed by the letter `h`, followed by the letter `e`. In parentheses we
 define a positive lookahead which tells the regular expression engine to match `The`
-or `the` only if it's followed by the word `fat`.
+or `the` only if it's followed by a whitespace character and the word `fat`.
 
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
@@ -532,7 +579,7 @@ whole input string.
 ### 5.2 Global Search
 
 The `g` modifier is used to perform a global match (finds all matches rather than
-stopping after the first match). For example, the regular expression`/.(at)/g`
+stopping after the first match). For example, the regular expression `/.(at)/g`
 means: any character except a new line, followed by a lowercase `a`,
 followed by a lowercase `t`. Because we provided the `g` flag at the end of
 the regular expression, it will now find all matches in the input string, not just the first one (which is the default behavior).
@@ -554,10 +601,11 @@ the regular expression, it will now find all matches in the input string, not ju
 The `m` modifier is used to perform a multi-line match. As we discussed earlier,
 anchors `(^, $)` are used to check if a pattern is at the beginning of the input or
 the end. But if we want the anchors to work on each line, we use
-the `m` flag. For example, the regular expression `/at(.)?$/gm` means: a lowercase
-`a`, followed by a lowercase `t` and, optionally, anything except
-a new line. And because of the `m` flag, the regular expression engine now matches patterns
-at the end of each line in a string.
+the `m` flag. For example, the regular expression `/.at(.)?$/gm` means: any
+character except a new line, followed by a lowercase `a`, followed by a
+lowercase `t` and, optionally, anything except a new line. And because of the
+`m` flag, the regular expression engine now matches patterns at the end of each
+line in a string.
 
 <pre>
 "/.at(.)?$/" => The fat
@@ -576,49 +624,68 @@ at the end of each line in a string.
 [Test the regular expression](https://regex101.com/r/E88WE2/1)
 
 ## 6. Greedy vs Lazy Matching
+
 By default, a regex will perform a greedy match, which means the match will be as long as
 possible. We can use `?` to match in a lazy way, which means the match should be as short as possible.
+The `?` is placed directly after a quantifier, so `*?`, `+?`, `??` and `{2,3}?` are the lazy
+versions of `*`, `+`, `?` and `{2,3}`.
 
 <pre>
-"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
-
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>.
+</pre>
 
 [Test the regular expression](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
-"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
-
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat.
+</pre>
 
 [Test the regular expression](https://regex101.com/r/AyAdgJ/2)
 
-This becomes even more useful when using the global flag. 
+Lazy matching becomes even more useful together with the global flag, because
+every match then ends as early as possible:
 
 <pre>
-"/(fa.*?at)/g" => The <a href="#learn-regex"><strong>fat cat</strong></a> sat on the mat and another <a href="#learn-regex"><strong>fat cat</strong></a> got jealous.</pre>
-
-Without using this the `?` to match in a lazy way it would look like this.
-
-<pre>
-"/(fa.*at)/g" => The <a href="#learn-regex"><strong>fat cat sat on the mat and another fat cat </strong></a>got jealous.</pre>
-
+"/(fa.*?at)/g" => The <a href="#learn-regex"><strong>fat cat</strong></a> sat on the mat and another <a href="#learn-regex"><strong>fat cat</strong></a> got jealous.
+</pre>
 
 [Test the regular expression](https://regex101.com/r/hxE4kq/1)
 
-## 7. Backreferences
-A backreference in a regular expression identifies a previously matched group and looks for exactly the same text again. A simple example of the use of backreferences is when you wish to look for adjacent, repeated words in some text.
+Without the `?`, the greedy version matches everything from the first `fa` to the last `at`:
 
 <pre>
-"/([a-z])\1/g" => Ha<a href="#learn-regex"><strong>pp</strong></a>ine<a href="#learn-regex"><strong>ss</strong></a>. </pre>
+"/(fa.*at)/g" => The <a href="#learn-regex"><strong>fat cat sat on the mat and another fat cat</strong></a> got jealous.
+</pre>
 
+## 7. Backreferences
+
+A backreference matches the same text that was matched earlier by a
+[capturing group](#25-capturing-groups). Capturing groups are numbered from left
+to right, starting at 1, so `\1` refers to the text captured by the first group,
+`\2` to the text captured by the second group, and so on. For example, the
+regular expression `([a-z])\1` means: a lowercase letter, followed by the very
+same letter again. It finds all the doubled letters.
+
+<pre>
+"/([a-z])\1/g" => Ha<a href="#learn-regex"><strong>pp</strong></a>ine<a href="#learn-regex"><strong>ss</strong></a>
+</pre>
 
 [Test the regular expression](https://regex101.com/r/5Nclso/1)
 
-<pre>
-"/(\")(.*?)\1/" => He said "<a href="#learn-regex"><strong>She's beautiful</strong></a>" </pre>
+The regular expression `(\")(.*?)\1` means: a double quote, followed by as few
+characters as possible, followed by whatever the first group matched, which is
+the closing double quote.
 
+<pre>
+"/(\")(.*?)\1/" => He said <a href="#learn-regex"><strong>"She's beautiful"</strong></a>
+</pre>
 
 [Test the regular expression](https://regex101.com/r/ykVPb4/1)
 
+Captured groups can also be used in the replacement text of a find-and-replace
+operation, where they are usually written as `$1`, `$2` (or `\1`, `\2`, depending
+on the language). In JavaScript, for example,
+`"John Smith".replace(/(\w+)\s(\w+)/, "$2, $1")` returns `Smith, John`.
 
 ## Contribution
 
